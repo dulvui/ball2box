@@ -1,4 +1,4 @@
-extends Spatial
+extends Node
 
 var ball
 
@@ -15,7 +15,7 @@ func _ready():
 		$AnimationPlayer.play("Idle")
 	fade_in_objects()
 		
-	ball = $Ball
+	ball = $Spatial/Ball
 
 	var pos = ball.initial_position
 	ball.queue_free()
@@ -26,8 +26,8 @@ func _ready():
 		
 	
 	ball.connect("reset_ball",self,"_on_Ball_reset_ball")
-	$Star1.connect("star_hit",self,"on_star1_hit")
-	$Star2.connect("star_hit",self,"on_star2_hit")
+	$Spatial/Star1.connect("star_hit",self,"on_star1_hit")
+	$Spatial/Star2.connect("star_hit",self,"on_star2_hit")
 
 
 func fade_in_objects():
@@ -63,7 +63,7 @@ func _on_Menu_shop():
 	$UI/Menu.hide()
 	$UI/Shop.show()
 	$UI/Shop.animation_player.play("FadeIn")
-	$Base/Shop3D.shop()
+	$Spatial/Base/Shop3D.shop()
 	
 
 
@@ -74,13 +74,13 @@ func _on_Shop_back():
 	
 	$UI/Menu.show()
 	$UI/Menu.animation_player.play("FadeIn")
-	$Base/Shop3D.menu()
+	$Spatial/Base/Shop3D.menu()
 	$AnimationPlayer.play("GoToMenu")
 
 
 func _on_Shop_select():
 	if Global.unlock_ball():
-		$Base/Shop3D.select()
+		$Spatial/Base/Shop3D.select()
 		
 		$UI/Shop.animation_player.play("FadeOut")
 		yield($UI/Shop.animation_player,"animation_finished")
@@ -88,7 +88,7 @@ func _on_Shop_select():
 		
 		$UI/Menu.show()
 		$UI/Menu.animation_player.play("FadeIn")
-		$Base/Shop3D.menu()
+		$Spatial/Base/Shop3D.menu()
 		$AnimationPlayer.play("GoToMenu")
 		
 		var pos = ball.initial_position
@@ -103,11 +103,11 @@ func _on_Shop_select():
 
 
 func _on_Shop_prev():
-	$Base/Shop3D.prev()
+	$Spatial/Base/Shop3D.prev()
 
 
 func _on_Shop_next():
-	$Base/Shop3D.next()
+	$Spatial/Base/Shop3D.next()
 
 
 func _on_LevelComplete_replay():
@@ -115,8 +115,8 @@ func _on_LevelComplete_replay():
 	$UI/LevelComplete.reset_stars()
 	AudioMachine.reset()
 	fade_in_pop_objects()
-	$Star1.show_star()
-	$Star2.show_star()
+	$Spatial/Star1.show_star()
+	$Spatial/Star2.show_star()
 
 
 func _on_Pause_pressed():
@@ -129,8 +129,8 @@ func _on_Pause_pressed():
 func _on_Ball_reset_ball():
 	$UI/LevelComplete.reset_stars()
 	AudioMachine.reset()
-	$Star1.show_star()
-	$Star2.show_star()
+	$Spatial/Star1.show_star()
+	$Spatial/Star2.show_star()
 	
 	fade_in_pop_objects()
 		
@@ -142,5 +142,5 @@ func _on_LevelComplete_menu():
 	$UI/Menu.animation_player.play("FadeIn")
 	$UI/LevelComplete.reset_stars()
 	AudioMachine.reset()
-	$Star1.show_star()
-	$Star2.show_star()
+	$Spatial/Star1.show_star()
+	$Spatial/Star2.show_star()

@@ -22,9 +22,7 @@ _global_script_class_icons={
 
 config/name="Ball2Box"
 run/main_scene="res://src/screens/splah/SplashScreen.tscn"
-boot_splash/image="res://splash.png"
-boot_splash/bg_color=Color( 0.0392157, 0.164706, 0.298039, 1 )
-config/icon="res://icon.png"
+boot_splash/bg_color=Color( 0.105882, 0.105882, 0.231373, 1 )
 
 [autoload]
 
@@ -62,7 +60,6 @@ translations=PoolStringArray( "res://assets/i18n/UltimateTossi18n.de.translation
 
 [physics]
 
-3d/smooth_trimesh_collision=true
 common/physics_fps=240
 2d/default_gravity_vector=Vector2( 0, 9.8 )
 3d/default_gravity_vector=Vector3( 0, -9.8, 0 )
@@ -70,6 +67,7 @@ common/physics_interpolation=true
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 quality/driver/fallback_to_gles2=true
 vram_compression/import_etc=true
 vram_compression/import_pvrtc=true
