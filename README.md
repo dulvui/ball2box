@@ -14,27 +14,27 @@ Every donations means a lot to me and helps me to cover the Apple Developer fees
 ## Table of contents
 - [Ball2Box](#ball2box)
   - [Table of contents](#table-of-contents)
-- [Setup](#setup)
-- [Contributions](#contributions)
-- [Licenses](#licenses)
+  - [Setup](#setup)
+  - [Contributions](#contributions)
+  - [Licenses](#licenses)
   - [Third party assets](#third-party-assets)
     - [Audio](#audio)
     - [2D assets](#2d-assets)
     - [3D assets](#3d-assets)
     - [Font](#font)
 
-# Setup
+## Setup
 Get the latest version of the Godot Engine editor and check out the  
 repo. Then open the `game/project.godot` file with the editor.
 
 For further instructions, like exporting to mobile, please read the official [Godot Docs](https://docs.godotengine.org/en/stable/).
 
-# Contributions
+## Contributions
 If you want to contribute to the project, please fork the repo,    
 make your changes and make a pull request with a short description  
 of the changes you made.
 
-# Licenses
+## Licenses
 The game itself is licensed under the [GNU AGPL v3.0](LICENSE) license and all  
 assets made by myself are licensed under the [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/) license.
 
