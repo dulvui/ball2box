@@ -18,7 +18,7 @@
 resource_name = "FadeIn"
 length = 0.8
 tracks/0/type = "value"
-tracks/0/path = NodePath("Spatial/Base/Camera:translation")
+tracks/0/path = NodePath("Base/Camera:translation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -45,7 +45,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=2]
 length = 0.4
 tracks/0/type = "value"
-tracks/0/path = NodePath("Spatial/Base/Camera:translation")
+tracks/0/path = NodePath("Base/Camera:translation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -60,7 +60,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=3]
 length = 0.4
 tracks/0/type = "value"
-tracks/0/path = NodePath("Spatial/Base/Camera:translation")
+tracks/0/path = NodePath("Base/Camera:translation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -74,7 +74,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=4]
 tracks/0/type = "value"
-tracks/0/path = NodePath("Spatial/Base/Camera:translation")
+tracks/0/path = NodePath("Base/Camera:translation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -89,7 +89,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=18]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Spatial/Base/Camera:translation")
+tracks/0/path = NodePath("Base/Camera:translation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -316,19 +316,16 @@ visible = true
 
 [node name="Menu" parent="UI" instance=ExtResource( 3 )]
 
-[node name="LevelComplete" parent="UI" instance=ExtResource( 6 )]
-
 [node name="Pause" type="Button" parent="UI"]
 modulate = Color( 1, 1, 1, 0.705882 )
 margin_left = 601.684
 margin_top = 12.0
 margin_right = 665.684
-margin_bottom = 96.0
+margin_bottom = 138.0
 rect_scale = Vector2( 0.9, 0.9 )
 icon = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="LevelComplete" parent="UI" instance=ExtResource( 6 )]
 
 [node name="Control" type="Control" parent="."]
 margin_left = 108.702
@@ -355,6 +352,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.06394, 9.04416, 0.575264 )
 [connection signal="prev" from="UI/Shop" to="." method="_on_Shop_prev"]
 [connection signal="select" from="UI/Shop" to="." method="_on_Shop_select"]
 [connection signal="shop" from="UI/Menu" to="." method="_on_Menu_shop"]
+[connection signal="pressed" from="UI/Pause" to="." method="_on_Pause_pressed"]
 [connection signal="menu" from="UI/LevelComplete" to="." method="_on_LevelComplete_menu"]
 [connection signal="replay" from="UI/LevelComplete" to="." method="_on_LevelComplete_replay"]
-[connection signal="pressed" from="UI/Pause" to="." method="_on_Pause_pressed"]

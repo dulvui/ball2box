@@ -121,7 +121,9 @@ func _on_LevelComplete_replay():
 
 func _on_Pause_pressed():
 	AudioMachine.click()
+	print("pause")
 	if not get_tree().paused:
+		print("pause pass")
 		$UI/Menu.show()
 		$UI/Menu.animation_player.play("FadeIn")
 		get_tree().paused = true
