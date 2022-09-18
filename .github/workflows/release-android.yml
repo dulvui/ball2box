@@ -1,4 +1,4 @@
-name: Release Android
+name: Android
 
 # only when version file changes, the action runs
 # tag triggering doesn't support caching
