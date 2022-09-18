@@ -26,7 +26,7 @@ func _ready():
 	music = config.get_value("music", "mute", false)
 	current_level = config.get_value("current_level", "key", 1)
 	unlocked_balls = config.get_value("balls", "unlocked", [1])
-	coins = config.get_value("coins", "amount", 999999999)
+	coins = config.get_value("coins", "amount", 0)
 	BallMachine.set_ball_index(config.get_value("ball", "selected", 0))
 	if config.has_section_key("level", "stars"):
 		level_stars = config.get_value("level","stars")

@@ -7,7 +7,7 @@
 [ext_resource path="res://src/actors/ball/starter-ball/Ball.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/ui/level-complete/LevelComplete.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/actors/star/Star.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/background.png" type="Texture" id=8]
+[ext_resource path="res://assets/background2.png" type="Texture" id=8]
 [ext_resource path="res://src/ui/coins/Coins.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/screens/shop/Shop.tscn" type="PackedScene" id=10]
 [ext_resource path="res://materials/wall-material.tres" type="Material" id=11]
@@ -153,7 +153,7 @@ mesh = SubResource( 6 )
 material/0 = ExtResource( 11 )
 
 [node name="Backgorund" type="MeshInstance" parent="Base"]
-transform = Transform( 20, 0, 0, 0, -2.18557e-06, -77, 0, 50, -3.36578e-06, 0, 37.6553, -6.80032 )
+transform = Transform( 20, 0, 0, 0, -2.18557e-06, -59.44, 0, 50, -2.5982e-06, 0, 37.6553, -6.80032 )
 mesh = SubResource( 16 )
 material/0 = SubResource( 17 )
 
