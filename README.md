@@ -11,8 +11,9 @@ Every donations means a lot to me and helps me to cover the Apple Developer fees
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P4BYZUR)
 
-**Table of contents**
+## Table of contents
 - [Ball2Box](#ball2box)
+  - [Table of contents](#table-of-contents)
 - [Setup](#setup)
 - [Contributions](#contributions)
 - [Licenses](#licenses)
