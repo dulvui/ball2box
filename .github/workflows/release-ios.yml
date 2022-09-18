@@ -6,6 +6,7 @@ on:
       - "version-ios"
       - ".github/workflows/release-ios.yml"
       - "exportOptions.plist"
+      - "game/AppIcons/*"
 
 env:
   PROJECT_NAME: Ball2Box

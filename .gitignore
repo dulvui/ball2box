@@ -18,6 +18,3 @@ game/android/
 *.apk
 *.aab
 *.keystore
-
-# MacOS
-.DS_Store
