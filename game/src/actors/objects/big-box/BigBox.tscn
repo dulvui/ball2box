@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/actors/objects/base-object/BaseObject.tscn" type="PackedScene" id=2]
+[ext_resource path="res://materials/wall-physics-material.tres" type="PhysicsMaterial" id=3]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.682353, 0.890196, 1, 1 )
+
+[sub_resource type="ConcavePolygonShape" id=3]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[node name="BigBox" instance=ExtResource( 2 )]
+
+[node name="MeshInstance" type="MeshInstance" parent="Body" index="0"]
+transform = Transform( 2, 0, 0, 0, 6, 0, 0, 0, 1.5, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="StaticBody" type="StaticBody" parent="Body/MeshInstance" index="0"]
+physics_material_override = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Body/MeshInstance/StaticBody" index="0"]
+shape = SubResource( 3 )

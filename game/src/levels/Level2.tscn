@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/levels/base-level/LevelBase.tscn" type="PackedScene" id=1]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.5
+bounce = 0.9
+
+[node name="LevelBase" instance=ExtResource( 1 )]
+
+[node name="ShopRoof" parent="Base" index="5"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 1, 0, 73, 0 )
+
+[node name="Ball" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.956, 1, 0 )
+physics_material_override = SubResource( 1 )
+
+[node name="Bin" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25728, 6.83709, -0.139484 )
+
+[node name="Star1" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.84516, 8.34366, -0.2 )
+
+[node name="Star2" parent="." index="7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.77803, 14.4096, -0.2 )

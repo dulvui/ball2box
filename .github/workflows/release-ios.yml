@@ -1,0 +1,73 @@
+name: Export to iOS and release to Test Flight
+
+on:
+  push:
+    paths:
+      - "version-ios"
+      - ".github/workflows/release-ios.yml"
+      - "exportOptions.plist"
+
+env:
+  PROJECT_NAME: Ball2Box
+  WORKING_DIRECTORY: game
+  EXPORT_PRESET_CFG: ${{ secrets.GODOT_EXPORTS_PRESET_CFG }}
+  BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
+  PROVISION_PROFILE_BASE64: ${{ secrets.PROVISION_PROFILE_BASE64 }}
+  P12_PASSWORD: ${{ secrets.P12_PASSWORD }}
+
+jobs:
+  deploy:
+    runs-on: macos-12
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      # https://docs.github.com/en/actions/deployment/deploying-xcode-applications/installing-an-apple-certificate-on-macos-runners-for-xcode-development
+      - name: Install the Apple certificate and provisioning profile
+        run: |
+          # create variables
+          CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
+          PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
+          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+
+          # import certificate and provisioning profile from secrets
+          echo -n "$BUILD_CERTIFICATE_BASE64" | base64 --decode --output $CERTIFICATE_PATH
+          echo -n "$PROVISION_PROFILE_BASE64" | base64 --decode --output $PP_PATH
+
+          # create temporary keychain
+          security create-keychain -p "" $KEYCHAIN_PATH
+          security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
+          security unlock-keychain -p "" $KEYCHAIN_PATH
+
+          # import certificate to keychain
+          security import $CERTIFICATE_PATH -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
+          security list-keychain -d user -s $KEYCHAIN_PATH
+
+          security default-keychain -s $KEYCHAIN_PATH
+          security set-key-partition-list -S apple-tool:,apple: -s -k "" $KEYCHAIN_PATH
+
+          # apply provisioning profile
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
+
+      - name: Set version and short version
+        run: echo "VERSION=$(cat version-ios)" >> $GITHUB_ENV
+
+      - name: Create and config export_presets.cfg
+        run: |
+          echo $EXPORT_PRESET_CFG > $WORKING_DIRECTORY/export_presets.cfg
+          sed -i -e "s|VERSION_CODE|$VERSION|g" $WORKING_DIRECTORY/export_presets.cfg
+          sed -i -e "s|VERSION_NAME|$VERSION|g" $WORKING_DIRECTORY/export_presets.cfg
+          sed -i -e "s|IOS_SHORT_VERSION|$VERSION|g" $WORKING_DIRECTORY/export_presets.cfg
+          sed -i -e "s|IOS_VERSION|$VERSION|g" $WORKING_DIRECTORY/export_presets.cfg
+          cat $WORKING_DIRECTORY/export_presets.cfg
+
+      - name: Export and release to Testflight
+        uses: dulvui/godot-ios-release@v0.1
+        with:
+          working-directory: $WORKING_DIRECTORY
+          project-name: $PROJECT_NAME
+          provision-profile-path: ~/Library/MobileDevice/Provisioning\ Profiles/build_pp.mobileprovision
+          apple-id-username: ${{ secrets.APPLE_ID_USERNAME }}
+          apple-id-password: ${{ secrets.APPLE_ID_PASSWORD }}
+          cache-version: 3

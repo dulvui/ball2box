@@ -1,0 +1,23 @@
+# Godot-specific ignores
+game/.import/
+game/export.cfg
+game/export_presets.cfg
+export_presets-ga.cfg
+
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+*.~lock.translations.csv#
+
+# Mono-specific ignores
+game/.mono/
+game/data_*/
+
+# Android
+game/android/
+*.apk
+*.aab
+*.keystore
+
+# MacOS
+.DS_Store

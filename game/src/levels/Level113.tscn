@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/actors/objects/rotator/Rotator.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/actors/objects/triangle/Triangle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/levels/base-level/LevelBase.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/actors/objects/big-box/BigBox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/actors/objects/circle/Circle.tscn" type="PackedScene" id=5]
+
+[node name="LevelBase" instance=ExtResource( 3 )]
+
+[node name="Background" parent="Base" index="1"]
+transform = Transform( 0.32, 0, 0, 0, 0.32, 0, 0, 0, 0.2, -0.035, -5.04859, -6 )
+
+[node name="Star1" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.66036, 22.503, 0 )
+
+[node name="Star2" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.991709, 30.8258, -0.712694 )
+
+[node name="Ball" parent="." index="4"]
+transform = Transform( -0.999964, 0.00846475, 0, -0.00846475, -0.999964, 0, 0, 0, 1, 7.85412, 1.11249, -0.00337219 )
+can_sleep = false
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+
+[node name="Bin" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75845, 5.1269, 0 )
+
+[node name="Rotator" parent="." index="7" instance=ExtResource( 1 )]
+transform = Transform( -0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, -5.54443, 8.45408, 0.225021 )
+
+[node name="Triangle" parent="." index="8" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.122746, 13.1242, 0 )
+
+[node name="Triangle2" parent="." index="9" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74295, 11.1351, 0 )
+
+[node name="Triangle3" parent="." index="10" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74912, 14.7137, 0 )
+
+[node name="BigBox" parent="." index="11" instance=ExtResource( 4 )]
+transform = Transform( 0.607941, 0, 0, 0, 1, 0, 0, 0, 1, 7.3257, 28.534, 0.00775146 )
+
+[node name="Circle" parent="." index="12" instance=ExtResource( 5 )]
+transform = Transform( 0.627748, 0.0102778, 0, -0.00919297, 0.701827, 0, 0, 0, 1, 7.42129, 18.7488, 0 )
+
+[node name="Circle2" parent="." index="13" instance=ExtResource( 5 )]
+transform = Transform( 0.627815, 0, 0, 0, 0.701902, 0, 0, 0, 1, -7.4986, 18.5613, 0 )

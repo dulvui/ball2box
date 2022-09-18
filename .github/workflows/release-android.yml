@@ -1,0 +1,52 @@
+name: Release Android
+
+# only when version file changes, the action runs
+# tag triggering doesn't support caching
+on:
+  push:
+    paths:
+      - "version"
+      - ".github/workflows/release-android.yml"
+
+env:
+  RELEASE_KEY_STORE_BASE64: ${{ secrets.SIGNING_KEY_BASE64 }}
+  SERVICE_ACCOUNT_JSON: ${{ secrets.SERVICE_ACCOUNT_JSON }}
+  DEBUG_KEY_STORE_BASE64: ${{ secrets.DEBUG_SIGNING_KEY_BASE64 }}
+  EXPORT_PRESET_CFG: ${{ secrets.GODOT_EXPORTS_PRESET_CFG }}
+  WORKING_DIRECTORY: game
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Create service-account.json
+        run: echo $SERVICE_ACCOUNT_JSON > service-account.json
+
+      - name: Create release keystore
+        run: echo $RELEASE_KEY_STORE_BASE64 | base64 --decode > keystore.keystore
+
+      - name: Create debug keystore
+        run: echo $DEBUG_KEY_STORE_BASE64 | base64 --decode > debug.keystore
+
+      - name: Set version number and version code
+        run: |
+          echo "VERSION_NAME=$(cat version | cut -f1 -d-)" >> $GITHUB_ENV
+          echo "VERSION_CODE=$(cat version | cut -f2 -d-)" >> $GITHUB_ENV
+
+      - name: Create and config export_presets.cfg
+        run: |
+          echo $EXPORT_PRESET_CFG > $WORKING_DIRECTORY/export_presets.cfg
+          sed -i "s|KEYSTORE_PATH|$GITHUB_WORKSPACE/keystore.keystore|g" $WORKING_DIRECTORY/export_presets.cfg
+          sed -i "s|VERSION_CODE|$VERSION_CODE|g" $WORKING_DIRECTORY/export_presets.cfg
+          sed -i "s|VERSION_NAME|$VERSION_NAME|g" $WORKING_DIRECTORY/export_presets.cfg
+
+      - name: Export signed apk and release to internal testing
+        uses: dulvui/godot-android-release@v1
+        with:
+          working-directory: $WORKING_DIRECTORY
+          package-name: com.salvai.ultimatetoss
+          release-file: ./Ball2Box.apk
+          cache-version: 1

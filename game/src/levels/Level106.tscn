@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/actors/objects/shooter/Shooter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/levels/base-level/LevelBase.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/actors/objects/tube/Tube.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/actors/objects/resizing-square/ResizingSquare.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/actors/objects/separator/Separator.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/actors/objects/resizing-circle/ResizingCircle.tscn" type="PackedScene" id=7]
+
+[node name="LevelBase" instance=ExtResource( 3 )]
+
+[node name="Star1" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.10256, 22.6819, 0 )
+
+[node name="Star2" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.57623, 18.8396, -1.90735e-06 )
+
+[node name="Ball" parent="." index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.37982, 5.09225, 0 )
+can_sleep = false
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+
+[node name="Bin" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.53391, 1.48986, 0 )
+
+[node name="Mover" parent="." index="7" instance=ExtResource( 2 )]
+pause_mode = 1
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.43831, -0.458233, 0 )
+
+[node name="Separator" parent="." index="8" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 0.46843, 0, 0, 0, -0.983112, -4.52161, 13.5906, 0 )
+
+[node name="ResizingCircle" parent="." index="9" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.38519, 23.3942, -0.365147 )
+
+[node name="Separator2" parent="." index="10" instance=ExtResource( 6 )]
+transform = Transform( 0.500179, 0, 0, 0, 0.295887, 0, 0, 0, 1, -2.43709, 5.52316, 0 )
+
+[node name="Tube" parent="." index="11" instance=ExtResource( 4 )]
+transform = Transform( 0.54679, 0.507073, 0, -0.467201, 0.593455, 0, 0, 0, 1, 1.75598, 17.4029, 0 )
+
+[node name="ResizingSquare" parent="." index="12" instance=ExtResource( 5 )]
+pause_mode = 0
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.86718, 8.88016, 0 )

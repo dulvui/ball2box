@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/snare02.ogg-8de6804c3bab6232ab234bf4e1facf3a.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/snare02.ogg"
+dest_files=[ "res://.import/snare02.ogg-8de6804c3bab6232ab234bf4e1facf3a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

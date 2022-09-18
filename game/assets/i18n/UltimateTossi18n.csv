@@ -1,0 +1,43 @@
+keys,en,de,it,es
+PLAY,play,spielen,gioca,juega
+BALLS,balls,baelle,palle,balotas
+LEVELS,levels,levels,livelli,niveles
+BACK,back,zurück,ritorna,regresa
+SELECT,select,auswählen,seleziona,seleciona
+CODE,code,kode,codice,codigo
+CODE_HERE,code here,kode hier,codice qua,codigo aqui
+INSTERT_CODE,insert code,kode einfügen,metti codice,ponga codigo
+OKAY,okay,okay,okay,okay
+CODE_INFO,Enter {amount} codes of friends to get infinite lifes,Gib {amount} Kodes von Freunden ein für unendliches Leben,Metti {amount} codici di amici e prendi vite infinite,Ponga {amount} codigos de maigos y tienes vidas infinidas
+YOUR_CODE,Your code:,Dein Kode:,Il tuo codice:,Tu codigo:
+CODE_OK,code correct,Kode richtig,codice giusto,codigo corecto
+CODE_ERROR,code not correct,Kode falsh,codice errato,codigo no corecto
+CODE_THANKS,"Thanks you for sharing
+Enjoy inifinite lifes","Danke fürs Teilen
+Viel Spaß mit undenlichen Leben","Grazie per condividere
+Divertiti con vite infinite","Gracias por compartir
+Disfruta las vidas infinidas"
+NEXT_LEVEL,level {amount},level {amount},level {amount},level {amount}
+REPLAY,replay,nochmal,rigioca,repetir
+MENU,menu,menü,menu,menu
+WATCH_AD,watch ad,schaue ad,guarda ad,mira ad
+TELL_FRIENDS,code,kode,codice,codigo
+BUY,buy,kaufen,compra,compra
+BUY_INFO,"Infinite Lifes
+No Ads
+
+For just a coffee :)","Unendlliche Leben
+Keine Ads
+
+Für nur einem Kaffee :)","Vite infinite
+Niente Ads
+
+Solo per un caffe :)","Vidas infinidas
+No Ads
+
+Solo por un cafe :)"
+CODE_SHARE,share your code with friends,Teile dein Kode mit Freunden,Condividi il tuo codice con amici,Comparti tu codigo con amigos
+FOLLOW,follow us,folge uns,seguici,siganos
+MORE_GAMES,more games,mehr spiele,piu giochi,mas juegos
+RATE,rate us,bewerte uns,votaci,califica nos
+SKIP,wait or,warte oder,aspetta o,espera o
