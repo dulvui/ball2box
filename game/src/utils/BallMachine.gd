@@ -65,7 +65,7 @@ onready var balls = [{"id": 1 , "model":starter, "real": starter_real, "price": 
 					{"id": 8 ,"model":pickball,"real":pickball_real, "price": 64},
 					{"id": 9 ,"model":mathball,"real":mathball_real, "price": 124},
 					{"id": 10 ,"model":japanball,"real":japan_real, "price": 30},
-					{"id": 11 ,"model":italyball,"real":italy_real, "price": 2},
+					{"id": 11 ,"model":italyball,"real":italy_real, "price": 30},
 					{"id": 12 ,"model":spainball,"real":spain_real, "price": 30},
 					{"id": 13 ,"model":germanyball,"real":germany_real, "price": 30},
 					{"id": 14 ,"model":croatiaball,"real":croatia_real, "price": 30},
