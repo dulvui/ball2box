@@ -249,6 +249,7 @@ margin_top = 300.0
 margin_right = 388.0
 margin_bottom = 430.0
 text = "menu"
+
 [connection signal="visibility_changed" from="." to="." method="_on_LevelComplete_visibility_changed"]
 [connection signal="pressed" from="Buttons/NextLevel" to="." method="_on_NextLevel_pressed"]
 [connection signal="pressed" from="Buttons/Replay" to="." method="_on_Replay_pressed"]

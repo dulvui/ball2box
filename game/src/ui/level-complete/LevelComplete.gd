@@ -29,7 +29,6 @@ func _on_Replay_pressed():
 	animation_player.play("FadeOut")
 	yield(animation_player,"animation_finished")
 	hide()
-#	AdMob.destroy_banner()
 #	get_tree().change_scene("res://src/levels/Level%s.tscn"%str(Global.current_level))
 
 
@@ -38,7 +37,6 @@ func _on_NextLevel_pressed():
 	if Global.current_level < Global.LEVELS :
 		Global.current_level = Global.current_level+1
 		get_tree().change_scene("res://src/levels/Level%s.tscn"%str(Global.current_level))
-#		AdMob.destroy_banner()
 
 func _on_LevelComplete_visibility_changed():
 	if visible:

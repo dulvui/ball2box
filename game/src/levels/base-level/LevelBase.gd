@@ -12,7 +12,6 @@ func _ready():
 		$AnimationPlayer.play("FadeIn")
 	else:
 		get_tree().paused = false
-		$AnimationPlayer.play("Idle")
 	fade_in_objects()
 		
 	ball = $Ball

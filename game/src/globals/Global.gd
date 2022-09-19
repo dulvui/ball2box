@@ -46,10 +46,6 @@ func _ready():
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"), music)
 	
 		
-#	if ads and (OS.get_name() == "Android" or OS.get_name() == "iOS"):
-#		AdMob.load_banner()
-	
-		
 func save_data():
 	config.set_value("music","mute",music)
 	config.set_value("sfx","mute",sfx)

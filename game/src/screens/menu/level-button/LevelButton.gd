@@ -27,4 +27,3 @@ func _on_Button_pressed():
 		AudioMachine.play_click()
 		Global.current_level = level
 		get_tree().change_scene("res://src/levels/Level%s.tscn"%level)
-#		AdMob.destroy_banner()
