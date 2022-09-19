@@ -27,9 +27,9 @@ boot_splash/bg_color=Color( 0.105882, 0.105882, 0.231373, 1 )
 
 [autoload]
 
-Global="*res://src/globals/Global.tscn"
 BallMachine="*res://src/utils/BallMachine.gd"
 AudioMachine="*res://src/utils/audio-machine/AudioMachine.tscn"
+Global="*res://src/globals/Global.tscn"
 
 [display]
 

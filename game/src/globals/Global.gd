@@ -108,13 +108,13 @@ func count_levels():
 	var count = 0
 	var dir = Directory.new()
 	dir.open("res://src/levels/")
-	dir.list_dir_begin()
+	dir.list_dir_begin(true)
 	
-	while true:
-		var file = dir.get_next()
-		if file == "":
-			break
-		else:
-			count += 1;
-	return count - 1
+	var file_name = dir.get_next()
+	while file_name != "":
+		if file_name != "base-level":
+			count += 1
+		file_name = dir.get_next()
+
+	return count 
 	
