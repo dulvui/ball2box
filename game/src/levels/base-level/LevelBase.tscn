@@ -228,7 +228,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 62, 0 )
 [node name="Camera" type="Camera" parent="Base"]
 pause_mode = 2
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, 26 )
-current = true
 
 [node name="CPUParticlesBlue" type="CPUParticles" parent="Base"]
 pause_mode = 2

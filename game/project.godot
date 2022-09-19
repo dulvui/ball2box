@@ -24,6 +24,7 @@ config/name="Ball2Box"
 run/main_scene="res://src/screens/splah/SplashScreen.tscn"
 boot_splash/image="res://splash.png"
 boot_splash/bg_color=Color( 0.105882, 0.105882, 0.231373, 1 )
+config/icon="res://icon.png"
 
 [autoload]
 
