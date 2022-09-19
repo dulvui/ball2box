@@ -6,7 +6,7 @@
 
 [node name="Coins" type="HBoxContainer"]
 pause_mode = 2
-modulate = Color( 1, 1, 1, 0.705882 )
+modulate = Color( 1, 1, 1, 0.647059 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -18.0
@@ -25,6 +25,5 @@ texture = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 104.0
-margin_right = 257.0
+margin_right = 104.0
 margin_bottom = 118.0
-text = "405"

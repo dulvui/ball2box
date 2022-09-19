@@ -10,6 +10,7 @@ func _ready():
 		Global.just_opened = false
 		$UI/Menu.animation_player.play("FirstFadeIn")
 		$AnimationPlayer.play("FadeIn")
+		$AnimationPlayer.play("TopbarFadeIn")
 	else:
 		get_tree().paused = false
 	fade_in_objects()

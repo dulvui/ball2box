@@ -4,9 +4,6 @@
 
 [node name="LevelBase" instance=ExtResource( 1 )]
 
-[node name="Camera" parent="Base" index="8"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, 26 )
-
 [node name="Ball" parent="." index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 0 )
 can_sleep = false
