@@ -5,20 +5,17 @@
 
 [node name="LevelBase" instance=ExtResource( 3 )]
 
-[node name="Star1" parent="." index="2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2873, 31.362, 0 )
-
-[node name="Star2" parent="." index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.366161, 14.4384, -1.90735e-06 )
-
-[node name="Ball" parent="." index="4"]
+[node name="Ball" parent="." index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26, 0 )
 can_sleep = false
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
-[node name="Bin" parent="." index="5"]
+[node name="Bin" parent="." index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Star1" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2873, 31.362, 0 )
 
 [node name="PopObject" parent="." index="7" instance=ExtResource( 6 )]
 transform = Transform( 1.41421, -7.07107, 0, 1.41421, 7.07107, 0, 0, 0, 1, -7, 24, 0 )
@@ -37,3 +34,6 @@ transform = Transform( 1.41421, 7.07107, 0, -1.41421, 7.07107, 0, 0, 0, 1, 7, 18
 
 [node name="PopObject6" parent="." index="12" instance=ExtResource( 6 )]
 transform = Transform( 1.41421, 7.07107, 0, -1.41421, 7.07107, 0, 0, 0, 1, 7, 12, 0 )
+
+[node name="Star2" parent="." index="13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.366161, 14.4384, -1.90735e-06 )
