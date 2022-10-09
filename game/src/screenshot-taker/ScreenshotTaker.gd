@@ -3,7 +3,7 @@ extends Spatial
 const resolutions = {
 	 "Android" :Vector2(1080,1920),
 	 "iPhone5.5" :Vector2(1242, 2208),
-	 "iPhone6.5" :Vector2(1170, 2532),
+	 "iPhone6.5" :Vector2(1284, 2778),
 	 "iPhone6.7": Vector2(1290, 2796),
 	 "iPad12.9" : Vector2(2048, 2732)
 	}
