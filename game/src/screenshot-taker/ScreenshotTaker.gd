@@ -3,8 +3,8 @@ extends Spatial
 const resolutions = {
 	 "Android" :Vector2(1080,1920),
 	 "iPhone5.5" :Vector2(1242, 2208),
-	 "iPhone6.5" :Vector2(1170,2532),
-	 "iPhone6.7": Vector2(1290,2796),
+	 "iPhone6.5" :Vector2(1170, 2532),
+	 "iPhone6.7": Vector2(1290, 2796),
 	 "iPad12.9" : Vector2(2048, 2732)
 	}
 	
@@ -30,8 +30,19 @@ func _ready():
 		for resolution in resolutions.keys():
 			OS.set_window_size(resolutions.get(resolution))
 
-			yield(get_tree().create_timer(1), "timeout")
-			var image = get_viewport().get_texture().get_data()
+			yield(get_tree().create_timer(2), "timeout")
+			
+			# calculate x/y offset for biiger screens like iPads to center the screenshot
+			var x = (resolutions.get(resolution).x - get_viewport().get_texture().get_size().x) / 2
+			var y = (resolutions.get(resolution).y - get_viewport().get_texture().get_size().y) / 2
+			var fullscreen = Rect2(0 - x, 0 - y, resolutions.get(resolution).x, resolutions.get(resolution).y)
+			
+			print("x: " + str(x) + ",y: " + str(y))
+			print(get_viewport().get_texture().get_size())
+			print(resolutions.get(resolution))
+			print(fullscreen)
+			
+			var image = get_viewport().get_texture().get_data().get_rect(fullscreen)
 			image.flip_y()
 			image.save_png("../screenshots/" + resolution + "-" + str(scene_counter) + ".png")
 		scene_counter += 1
