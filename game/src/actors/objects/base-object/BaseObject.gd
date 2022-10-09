@@ -15,7 +15,6 @@ func fade_in():
 	if not visible or new:
 		new = false
 		show()
-		print("fade in object")
 		animation_player.play("FadeIn")
 		yield(animation_player,"animation_finished")
 		if delay > 0:
@@ -34,7 +33,6 @@ func fade_in():
 			yield(animation_player,"animation_finished")
 			
 			show()
-			print("fade in object")
 			animation_player.play("FadeIn")
 			yield(animation_player,"animation_finished")
 			if delay > 0:

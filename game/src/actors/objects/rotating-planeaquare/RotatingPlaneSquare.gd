@@ -7,7 +7,6 @@ func _ready():
 
 
 func fade_in():
-	print("fade in object")
 	animation_player.play("FadeIn")
 	yield(animation_player,"animation_finished")
 	animation_player.play("Rotate")
