@@ -85,6 +85,10 @@ func _on_Shop_back():
 	$UI/Menu.animation_player.play("FadeIn")
 	$Base/Shop3D.menu()
 	$AnimationPlayer.play("GoToMenu")
+	
+	# reset level after coming back from shop
+	_on_Ball_reset_ball()
+	ball.reset()
 
 
 func _on_Shop_select():
