@@ -236,19 +236,19 @@ __meta__ = {
 [node name="NextLevel" type="Button" parent="Buttons"]
 margin_right = 388.0
 margin_bottom = 130.0
-text = "next level"
+text = "NEXT"
 
 [node name="Replay" type="Button" parent="Buttons"]
 margin_top = 150.0
 margin_right = 388.0
 margin_bottom = 280.0
-text = "replay"
+text = "REPLAY"
 
 [node name="Menu" type="Button" parent="Buttons"]
 margin_top = 300.0
 margin_right = 388.0
 margin_bottom = 430.0
-text = "menu"
+text = "MENU"
 
 [connection signal="visibility_changed" from="." to="." method="_on_LevelComplete_visibility_changed"]
 [connection signal="pressed" from="Buttons/NextLevel" to="." method="_on_NextLevel_pressed"]
