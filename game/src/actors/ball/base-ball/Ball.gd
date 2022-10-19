@@ -88,10 +88,6 @@ func reset_no_signal():
 	rotation = Vector3.ZERO
 
 
-
-
-
-
 func _on_Ball_body_entered(body):
 	$Sound.play()
 	

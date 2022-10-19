@@ -71,9 +71,7 @@ tracks/0/keys = {
 "values": [ Vector3( 2, 2, 2 ), Vector3( 1.8, 1.8, 1.8 ), Vector3( 2, 2, 2 ) ]
 }
 
-[node name="Bin" type="StaticBody" groups=[
-"objects",
-]]
+[node name="Bin" type="StaticBody" groups=["objects"]]
 pause_mode = 2
 physics_material_override = SubResource( 1 )
 script = ExtResource( 1 )
@@ -83,7 +81,6 @@ transform = Transform( 1.8, 0, 0, 0, 0.2, 0, 0, 0, 1.4, 0, 0.2, 0 )
 material_override = ExtResource( 2 )
 use_in_baked_light = true
 mesh = SubResource( 2 )
-material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1.8, 0, 0, 0, 0.2, 0, 0, 0, 1.4, 0, 0.2, 0 )
@@ -158,9 +155,7 @@ use_in_baked_light = true
 mesh = SubResource( 8 )
 material/0 = ExtResource( 2 )
 
-[node name="BallDetector" type="Area" parent="." groups=[
-"ball",
-]]
+[node name="BallDetector" type="Area" parent="." groups=["ball"]]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 collision_layer = 2
 collision_mask = 2
@@ -176,6 +171,7 @@ one_shot = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/FadeIn = SubResource( 14 )
 anims/Size = SubResource( 15 )
+
 [connection signal="body_entered" from="BallDetector" to="." method="_on_BallDetector_body_entered"]
 [connection signal="body_exited" from="BallDetector" to="." method="_on_BallDetector_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

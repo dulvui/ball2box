@@ -22,3 +22,15 @@ func _on_BallDetector_body_exited(body):
 	
 func fade_in():
 	$AnimationPlayer.play("FadeIn")
+	
+func hide():
+	visible = false
+	collision_layer = 0
+	collision_mask = 0
+	$BallDetector.monitoring = false
+	
+func show():
+	visible = true
+	collision_layer = 1
+	collision_mask = 1
+	$BallDetector.monitoring = true

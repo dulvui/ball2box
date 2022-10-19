@@ -2,15 +2,24 @@ extends Spatial
 
 var ball
 
+
+
 func _ready():
 	AudioMachine.reset()
-	
 	if Global.just_opened:
-		get_tree().paused = true
 		Global.just_opened = false
-		$UI/Menu.animation_player.play("FirstFadeIn")
-		$AnimationPlayer.play("FadeIn")
-		$AnimationPlayer.play("TopbarFadeIn")
+		
+		if Global.tutorial_done:
+			get_tree().paused = true
+			$UI/Menu.animation_player.play("FirstFadeIn")
+			$AnimationPlayer.play("FadeIn")
+			$AnimationPlayer.play("TopbarFadeIn")
+			$UI/Tutorial.queue_free()
+		else:
+			get_tree().paused = false
+			$Bin.hide()
+			$UI/Tutorial.visible = true
+			$UI/Tutorial.start()
 	else:
 		get_tree().paused = false
 	fade_in_objects()
@@ -146,3 +155,9 @@ func _on_LevelComplete_menu():
 	AudioMachine.reset()
 	$Star1.show_star()
 	$Star2.show_star()
+	
+
+func _on_Tutorial_done():
+	$Bin.show()
+	Global.tutorial_done = true
+	Global.save_data()

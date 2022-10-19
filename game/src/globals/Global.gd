@@ -10,6 +10,9 @@ var current_level = 1
 
 var just_opened = true
 
+var tutorial_done = false
+
+
 var level_stars = [0]
 
 var unlocked_balls
@@ -24,6 +27,7 @@ func _ready():
 #	if err == OK: # if not, something went wrong with the file loading
 	sfx = config.get_value("sfx", "mute", false)
 	music = config.get_value("music", "mute", false)
+	tutorial_done = config.get_value("tutorial", "done", false)
 	current_level = config.get_value("current_level", "key", 1)
 	unlocked_balls = config.get_value("balls", "unlocked", [1])
 	coins = config.get_value("coins", "amount", 0)
@@ -54,6 +58,7 @@ func save_data():
 	config.set_value("ball","selected", BallMachine.get_index())
 	config.set_value("coins","amount",coins)
 	config.set_value("level","stars",level_stars)
+	config.set_value("tutorial", "done", tutorial_done)
 	config.save("user://settings.cfg")
 
 func set_level_stars(stars):

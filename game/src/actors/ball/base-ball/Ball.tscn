@@ -5,9 +5,7 @@
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.94902, 0.0901961, 0.0901961, 1 )
 
-[node name="Ball" type="RigidBody" groups=[
-"ball",
-]]
+[node name="Ball" type="RigidBody" groups=["ball"]]
 collision_layer = 2
 mass = 6.28
 continuous_cd = true
@@ -24,4 +22,5 @@ material_override = SubResource( 3 )
 
 [node name="ImmediateGeometryDown" type="ImmediateGeometry" parent="."]
 material_override = SubResource( 3 )
+
 [connection signal="body_entered" from="." to="." method="_on_Ball_body_entered"]
