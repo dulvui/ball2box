@@ -112,6 +112,10 @@ func _on_Shop_select():
 		add_child(ball)
 			
 		ball.connect("reset_ball",self,"_on_Ball_reset_ball")
+		
+		# reset level after coming back from shop
+		_on_Ball_reset_ball()
+		ball.reset()
 	
 
 
