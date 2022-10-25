@@ -71,4 +71,3 @@ jobs:
           provision-profile-path: ~/Library/MobileDevice/Provisioning\ Profiles/build_pp.mobileprovision
           apple-id-username: ${{ secrets.APPLE_ID_USERNAME }}
           apple-id-password: ${{ secrets.APPLE_ID_PASSWORD }}
-          cache-version: 3

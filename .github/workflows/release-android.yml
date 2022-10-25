@@ -52,4 +52,3 @@ jobs:
           working-directory: $WORKING_DIRECTORY
           package-name: com.salvai.ultimatetoss
           release-file: ./Ball2Box.apk
-          cache-version: 1
