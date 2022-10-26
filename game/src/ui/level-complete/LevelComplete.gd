@@ -35,7 +35,7 @@ func _on_Replay_pressed():
 func _on_NextLevel_pressed():
 	AudioMachine.click()
 	if Global.current_level < Global.LEVELS :
-		Global.current_level = Global.current_level+1
+		Global.current_level = Global.current_level + 1
 		get_tree().change_scene("res://src/levels/Level%s.tscn"%str(Global.current_level))
 
 func _on_LevelComplete_visibility_changed():
