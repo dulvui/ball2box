@@ -1,6 +1,7 @@
 # Ball2Box
 [![Android](https://github.com/dulvui/ball2box/actions/workflows/release-android.yml/badge.svg)](https://github.com/dulvui/ball2box/actions/workflows/release-android.yml)
-[![iOS](https://github.com/dulvui/ball2box/actions/workflows/release-ios.yml/badge.svg)](https://github.com/dulvui/ball2box/actions/workflows/release-ios.yml)
+[![iOS](https://github.com/dulvui/ball2box/actions/workflows/release-ios.yml/badge.svg)](https://github.com/dulvui/ball2box/actions/workflows/release-ios.yml)  
+
 Snake game made with libGDX with 60 levels.  
 This game is open source, with no ads and no tracking.
 
