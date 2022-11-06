@@ -1,15 +1,11 @@
 # Ball2Box
+[![Android](https://github.com/dulvui/ball2box/actions/workflows/release-android.yml/badge.svg)](https://github.com/dulvui/ball2box/actions/workflows/release-android.yml)
+[![iOS](https://github.com/dulvui/ball2box/actions/workflows/release-ios.yml/badge.svg)](https://github.com/dulvui/ball2box/actions/workflows/release-ios.yml)
 Snake game made with libGDX with 60 levels.  
 This game is open source, with no ads and no tracking.
 
 <a href="https://play.google.com/store/apps/details?id=com.salvai.ultimatetoss" target="_blank"><img src="store-images/PlayStore.svg" alt="Get it on Google Play" height="49"></a>
 <a href="https://apps.apple.com/us/app/ball2box/id1522604143" target="_blank"><img src="store-images/AppStore.svg" alt="Download on the App Store" height="50" ></a>
-
-
-If you like the game, consider supporting me on Ko-fi :-)  
-Every donations means a lot to me and helps me to cover the Apple Developer fees.
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P4BYZUR)
 
 ## Table of contents
 - [Ball2Box](#ball2box)
@@ -27,9 +23,9 @@ Every donations means a lot to me and helps me to cover the Apple Developer fees
 ## Screenshots
 <div>
   <img src="screenshots/Android-1.png" alt="Level 1" width="200"/>
-  <img src="screenshots/Android-2.png" alt="Level 1" width="200"/>
-  <img src="screenshots/Android-3.png" alt="Level 1" width="200"/>
-  <img src="screenshots/Android-4.png" alt="Level 1" width="200"/>
+  <img src="screenshots/Android-2.png" alt="Level 2" width="200"/>
+  <img src="screenshots/Android-3.png" alt="Level 3" width="200"/>
+  <img src="screenshots/Android-4.png" alt="Level 4" width="200"/>
 </div>
 
 ## Setup
