@@ -1,12 +1,9 @@
-name: iOS
+name: iOS upload
 
 on:
   push:
-    paths:
-      - "version-ios"
-      - ".github/workflows/release-ios.yml"
-      - "exportOptions.plist"
-      - "game/AppIcons/*"
+    branches:    
+      - 'upload'
 
 env:
   PROJECT_NAME: Ball2Box
@@ -63,8 +60,8 @@ jobs:
           sed -i -e "s|IOS_VERSION|$VERSION|g" $WORKING_DIRECTORY/export_presets.cfg
           cat $WORKING_DIRECTORY/export_presets.cfg
 
-      - name: Export and release to Testflight
-        uses: dulvui/godot-ios-release@v0.1
+      - name: Export and upload to Testflight
+        uses: dulvui/godot-ios-upload@v1.0
         with:
           working-directory: $WORKING_DIRECTORY
           project-name: $PROJECT_NAME
