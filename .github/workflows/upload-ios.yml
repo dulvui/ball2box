@@ -64,7 +64,7 @@ jobs:
           cat $WORKING_DIRECTORY/export_presets.cfg
 
       - name: Export and upload to Testflight
-        uses: dulvui/godot-ios-upload@1.0
+        uses: dulvui/godot-ios-upload@v1
         with:
           working-directory: $WORKING_DIRECTORY
           project-name: $PROJECT_NAME
