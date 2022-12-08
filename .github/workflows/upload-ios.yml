@@ -7,6 +7,7 @@ on:
     paths:
       - "version-ios"
       - ".github/workflows/upload-ios.yml"
+      - "exportOptions.plist"
 
 env:
   PROJECT_NAME: Ball2Box
