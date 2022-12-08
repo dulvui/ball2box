@@ -3,7 +3,10 @@ name: Android upload
 on:
   push:
     branches:    
-      - 'upload'
+      - 'prod'
+    paths:
+      - "version"
+      - ".github/workflows/upload-android.yml"
 
 env:
   RELEASE_KEY_STORE_BASE64: ${{ secrets.SIGNING_KEY_BASE64 }}

@@ -3,7 +3,10 @@ name: iOS upload
 on:
   push:
     branches:    
-      - 'upload'
+      - 'prod'
+    paths:
+      - "version-ios"
+      - ".github/workflows/upload-ios.yml"
 
 env:
   PROJECT_NAME: Ball2Box
