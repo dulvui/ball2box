@@ -1,6 +1,13 @@
 extends Spatial
 
+const moveTrans = Tween.TRANS_LINEAR
+const moveEase = Tween.EASE_OUT
+
+onready var camera:Camera = $Base/Camera
+onready var tween:Tween = $Tween
+
 var ball
+
 
 
 
@@ -51,10 +58,12 @@ func fade_in_pop_objects():
 func on_star1_hit():
 	$UI/LevelComplete.add_star()
 	AudioMachine.hit(false)
+	_camera_shake()
 	
 func on_star2_hit():
 	$UI/LevelComplete.add_star()
 	AudioMachine.hit(false)
+	_camera_shake()
 
 	
 
@@ -135,6 +144,19 @@ func _on_LevelComplete_replay():
 	fade_in_pop_objects()
 	$Star1.show_star()
 	$Star2.show_star()
+
+func _camera_shake():
+	var start_position = camera.translation
+	
+	var shakes:int = (randi()%3) + 1
+	for i in shakes:
+		var random_vector = camera.translation - Vector3(rand_range(-1,1),rand_range(-1,1), rand_range(-1,1))
+		tween.interpolate_property(camera, "translation",camera.translation, random_vector, 0.1, moveTrans, moveEase)
+		tween.start()
+		yield(tween, "tween_all_completed")
+	
+	tween.interpolate_property(camera, "translation", camera.translation, start_position, 0.2, moveTrans, moveEase)
+	tween.start()
 
 
 func _on_Pause_pressed():

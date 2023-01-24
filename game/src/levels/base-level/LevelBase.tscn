@@ -152,6 +152,8 @@ anims/GoToShop = SubResource( 3 )
 anims/RESET = SubResource( 18 )
 anims/TopbarFadeIn = SubResource( 19 )
 
+[node name="Tween" type="Tween" parent="."]
+
 [node name="Base" type="Spatial" parent="."]
 
 [node name="Floor" type="StaticBody" parent="Base"]

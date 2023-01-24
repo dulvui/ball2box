@@ -67,7 +67,6 @@ func _shoot():
 		shooting = true
 		mode = RigidBody.MODE_RIGID
 		var direction = (touch_start - touch_pos)
-		print(direction)
 		apply_central_impulse(Vector3(- direction.x, direction.y , 0) * SPEED)
 	
 func reset():
