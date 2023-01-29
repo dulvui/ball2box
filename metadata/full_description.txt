@@ -1,0 +1,8 @@
+Can you get all three stars in all levels?
+
+Swipe to shoot the ball into the box in over 100 levels. Only one finger needed so it's the perfect game for school or other boring tasks during your day.
+Like basketball but you need only one finger to swipe.
+Over 100 colorful and increasing challenging levels and over 20 different balls are waiting to be unlocked by you.
+Are you ready to collect the 3 stars in every level?
+
+Created with ❤️ using Godot Engine v3.5.1
