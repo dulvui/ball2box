@@ -23,10 +23,10 @@ This game is open source, with no ads and no tracking.
 
 ## Screenshots
 <div>
-  <img src="screenshots/Android-1.png" alt="Level 1" width="200"/>
-  <img src="screenshots/Android-2.png" alt="Level 2" width="200"/>
-  <img src="screenshots/Android-3.png" alt="Level 3" width="200"/>
-  <img src="screenshots/Android-4.png" alt="Level 4" width="200"/>
+  <img src="metadata/en-US/images/phoneScreenshots/Android-1.png" alt="Level 1" width="200"/>
+  <img src="metadata/en-US/images/phoneScreenshots/Android-2.png" alt="Level 2" width="200"/>
+  <img src="metadata/en-US/images/phoneScreenshots/Android-3.png" alt="Level 3" width="200"/>
+  <img src="metadata/en-US/images/phoneScreenshots/Android-4.png" alt="Level 4" width="200"/>
 </div>
 
 ## Setup
