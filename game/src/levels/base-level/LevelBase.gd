@@ -58,12 +58,12 @@ func fade_in_pop_objects():
 func on_star1_hit():
 	$UI/LevelComplete.add_star()
 	AudioMachine.hit(false)
-	_camera_shake()
+#	_camera_shake()
 	
 func on_star2_hit():
 	$UI/LevelComplete.add_star()
 	AudioMachine.hit(false)
-	_camera_shake()
+#	_camera_shake()
 
 	
 
