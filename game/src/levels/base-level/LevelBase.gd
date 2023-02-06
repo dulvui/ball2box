@@ -1,15 +1,12 @@
 extends Spatial
 
-const moveTrans = Tween.TRANS_LINEAR
-const moveEase = Tween.EASE_OUT
+const moveTrans:int = Tween.TRANS_LINEAR
+const moveEase:int = Tween.EASE_OUT
 
 onready var camera:Camera = $Base/Camera
 onready var tween:Tween = $Tween
 
 var ball
-
-
-
 
 func _ready():
 	AudioMachine.reset()
@@ -24,7 +21,6 @@ func _ready():
 			$UI/Tutorial.queue_free()
 		else:
 			get_tree().paused = false
-			$Bin.hide()
 			$UI/Tutorial.visible = true
 			$UI/Tutorial.start()
 	else:
@@ -68,6 +64,10 @@ func on_star2_hit():
 	
 
 func _on_Bin_win():
+	if $UI/Tutorial and $UI/Tutorial.visible:
+		$UI/Tutorial.queue_free()
+		Global.tutorial_done = true
+		Global.save_data()
 	AudioMachine.hit(true)
 	$UI/LevelComplete.show()
 

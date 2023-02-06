@@ -72,6 +72,7 @@ game/assets/musicOff.png
 game/assets/left.png
 game/assets/audioOn.png
 game/assets/audioOff.png
+game/assets/arrowDown.png
 ```
 
 "National Flags" by Wikimedia is licensed under Public Domain (https://en.wikipedia.org/wiki/Gallery_of_sovereign_state_flags)
