@@ -22,6 +22,8 @@ func _on_BallDetector_body_exited(body):
 	
 func fade_in():
 	$AnimationPlayer.play("FadeIn")
+	yield($AnimationPlayer,"animation_finished")
+	$AnimationPlayer.play("Size")
 	
 func hide():
 	visible = false

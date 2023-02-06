@@ -68,11 +68,12 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 2, 2, 2 ), Vector3( 1.8, 1.8, 1.8 ), Vector3( 2, 2, 2 ) ]
+"values": [ Vector3( 1.05, 1.05, 1.05 ), Vector3( 0.95, 0.95, 0.95 ), Vector3( 1.05, 1.05, 1.05 ) ]
 }
 
 [node name="Bin" type="StaticBody" groups=["objects"]]
 pause_mode = 2
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 physics_material_override = SubResource( 1 )
 script = ExtResource( 1 )
 
@@ -165,7 +166,7 @@ transform = Transform( 0.6, 0, 0, 0, 0.1, 0, 0, 0, 0.4, -0.001, 0.6, -0.01 )
 shape = SubResource( 13 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.001
+wait_time = 0.01
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
