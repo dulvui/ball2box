@@ -36,7 +36,7 @@ jobs:
           echo "VERSION_NAME=$(cat version | cut -f1 -d-)" >> $GITHUB_ENV
           echo "VERSION_CODE=$(cat version | cut -f2 -d-)" >> $GITHUB_ENV
 
-      - name: Change to GLES2
+      - name: Change driver to GLES2
         run: echo 'quality/driver/driver_name="GLES2"' >> game/project.godot
 
       - name: Create and config export_presets.cfg
