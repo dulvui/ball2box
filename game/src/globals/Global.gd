@@ -1,24 +1,25 @@
 extends Node
 
-var config
+var config:ConfigFile
 
-var coins
+var coins:int
 
-onready var LEVELS = count_levels()
+onready var LEVELS:int = count_levels()
 
-var current_level = 1
+var current_level:int = 1
 
-var just_opened = true
+var just_opened:bool = true
 
-var tutorial_done = false
+var tutorial_swipe_done:bool = false
+var tutorial_tap_done:bool = false
 
 
-var level_stars = [0]
+var level_stars:Array = [0]
 
-var unlocked_balls
+var unlocked_balls:Array
 
-var music
-var sfx
+var music:bool
+var sfx:bool
 
 func _ready():
 	randomize()
@@ -27,7 +28,8 @@ func _ready():
 #	if err == OK: # if not, something went wrong with the file loading
 	sfx = config.get_value("sfx", "mute", false)
 	music = config.get_value("music", "mute", false)
-	tutorial_done = config.get_value("tutorial", "done", false)
+	tutorial_swipe_done = config.get_value("tutorial", "swipe", false)
+	tutorial_tap_done = config.get_value("tutorial", "tap", false)
 	current_level = config.get_value("current_level", "key", 1)
 	unlocked_balls = config.get_value("balls", "unlocked", [1])
 	coins = config.get_value("coins", "amount", 0)
@@ -58,7 +60,8 @@ func save_data():
 	config.set_value("ball","selected", BallMachine.get_index())
 	config.set_value("coins","amount",coins)
 	config.set_value("level","stars",level_stars)
-	config.set_value("tutorial", "done", tutorial_done)
+	config.set_value("tutorial", "swipe", tutorial_swipe_done)
+	config.set_value("tutorial", "tap", tutorial_tap_done)
 	config.save("user://settings.cfg")
 
 func set_level_stars(stars):

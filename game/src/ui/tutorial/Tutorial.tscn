@@ -1,8 +1,67 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/ui/tutorial/Tutorial.gd" type="Script" id=1]
 [ext_resource path="res://assets/pointer.png" type="Texture" id=2]
 [ext_resource path="res://src/ui/tutorial/arrow/Arrow.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Animation" id=6]
+resource_name = "FadeOut"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "HandFadeOut"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Hand:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hand:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "Swipe"
@@ -72,7 +131,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2.5, 3.5, 4 ),
+"times": PoolRealArray( 0, 3.6, 3.8, 4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
@@ -89,20 +148,9 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 53, 300 ), Vector2( 53, 300 ) ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("Text:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 2.5, 3.5, 4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
-}
 
 [node name="Tutorial" type="Node2D"]
+pause_mode = 2
 position = Vector2( 314, 360 )
 script = ExtResource( 1 )
 
@@ -113,20 +161,12 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FadeOut = SubResource( 6 )
+anims/HandFadeOut = SubResource( 8 )
+anims/RESET = SubResource( 7 )
 anims/Swipe = SubResource( 1 )
 anims/Tap = SubResource( 3 )
 anims/TapFadeIn = SubResource( 5 )
-
-[node name="Text" type="Label" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -256.0
-margin_top = -187.0
-margin_right = 344.0
-margin_bottom = 613.0
-rect_min_size = Vector2( 600, 800 )
-text = "SWIPE"
-align = 1
 
 [node name="Arrow" parent="." instance=ExtResource( 3 )]
 

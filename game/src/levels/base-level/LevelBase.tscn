@@ -292,7 +292,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90741, 0, 0 )
 [node name="UI" type="Node" parent="."]
 
 [node name="Tutorial" parent="UI" instance=ExtResource( 13 )]
-visible = false
 
 [node name="Shop" parent="UI" instance=ExtResource( 10 )]
 visible = true
@@ -330,7 +329,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.06394, 9.04416, 0.575264 )
 
 [connection signal="reset_ball" from="Ball" to="." method="_on_Ball_reset_ball"]
 [connection signal="win" from="Bin" to="." method="_on_Bin_win"]
-[connection signal="done" from="UI/Tutorial" to="." method="_on_Tutorial_done"]
 [connection signal="back" from="UI/Shop" to="." method="_on_Shop_back"]
 [connection signal="next" from="UI/Shop" to="." method="_on_Shop_next"]
 [connection signal="prev" from="UI/Shop" to="." method="_on_Shop_prev"]

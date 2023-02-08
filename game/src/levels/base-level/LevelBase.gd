@@ -10,19 +10,19 @@ var ball
 
 func _ready():
 	AudioMachine.reset()
+	
+	$UI/Tutorial.init()
+	
 	if Global.just_opened:
 		Global.just_opened = false
 		
-		if Global.tutorial_done:
+		if Global.tutorial_swipe_done and Global.tutorial_tap_done:
 			get_tree().paused = true
 			$UI/Menu.animation_player.play("FirstFadeIn")
 			$AnimationPlayer.play("FadeIn")
 			$AnimationPlayer.play("TopbarFadeIn")
-			$UI/Tutorial.queue_free()
 		else:
 			get_tree().paused = false
-			$UI/Tutorial.visible = true
-			$UI/Tutorial.start()
 	else:
 		get_tree().paused = false
 		$AnimationPlayer.play("Idle")
@@ -61,19 +61,17 @@ func on_star2_hit():
 	AudioMachine.hit(false)
 #	_camera_shake()
 
-	
-
-func _on_Bin_win():
-	if $UI/Tutorial and $UI/Tutorial.visible:
-		$UI/Tutorial.queue_free()
-		Global.tutorial_done = true
-		Global.save_data()
-	AudioMachine.hit(true)
-	$UI/LevelComplete.show()
-
 func on_star_hit():
 	$UI/LevelComplete.add_star()
 
+
+func _on_Bin_win():
+	if $UI/Tutorial and $UI/Tutorial.visible:
+		$UI/Tutorial.fade_out()
+		Global.save_data()
+	AudioMachine.hit(true)
+	$UI/LevelComplete.show()
+	
 
 func _on_Menu_shop():
 	$UI/Menu.animation_player.play("FadeOut")
@@ -186,9 +184,3 @@ func _on_LevelComplete_menu():
 	AudioMachine.reset()
 	$Star1.show_star()
 	$Star2.show_star()
-	
-
-func _on_Tutorial_done():
-	$Bin.show()
-	Global.tutorial_done = true
-	Global.save_data()

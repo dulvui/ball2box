@@ -1,29 +1,34 @@
 extends Node2D
 
-signal done
-var swipe_done = false
-var tap_done = false
-
-func start():
-	$AnimationPlayer.play("Swipe")
-
-func tap():
-	$AnimationPlayer.play("Tap")
+func init():
+	if Global.current_level > 1:
+		$Arrow.hide()
 	
+	if not Global.tutorial_swipe_done:
+		$AnimationPlayer.play("Swipe")
+	elif not Global.tutorial_tap_done:
+		$AnimationPlayer.play("Tap")
+	else:
+		queue_free()
+		
+func fade_out():
+	$AnimationPlayer.play("FadeOut")
 	
 func _input(event):
-	if event is InputEventScreenDrag:
-		swipe_done = true
-	elif event is InputEventScreenTouch and swipe_done:
-		if tap_done:
-			emit_signal("done")
-		elif not event.pressed:
+	if event is InputEventScreenDrag and not Global.tutorial_swipe_done:
+		Global.tutorial_swipe_done = true
+		$AnimationPlayer.play("HandFadeOut")
+	elif event is InputEventScreenTouch and Global.tutorial_swipe_done:
+		if not event.pressed:
 			$AnimationPlayer.play("TapFadeIn")
-			$Text.text = "TAP"
-			tap_done = true
+		elif $Hand.modulate.a > 0:
+			$AnimationPlayer.play("HandFadeOut")
 	return false
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "TapFadeIn":
 		$AnimationPlayer.play("Tap")
+		Global.tutorial_tap_done = true
+	elif anim_name == "FadeOut":
+		queue_free()
