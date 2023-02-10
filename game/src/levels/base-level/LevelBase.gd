@@ -11,7 +11,7 @@ var ball
 func _ready():
 	AudioMachine.reset()
 	
-	$UI/Tutorial.init()
+	$Tutorial.init()
 	
 	if Global.just_opened:
 		Global.just_opened = false
@@ -66,8 +66,8 @@ func on_star_hit():
 
 
 func _on_Bin_win():
-	if $UI/Tutorial and $UI/Tutorial.visible:
-		$UI/Tutorial.fade_out()
+	if $Tutorial and $Tutorial.visible:
+		$Tutorial.fade_out()
 		Global.save_data()
 	AudioMachine.hit(true)
 	$UI/LevelComplete.show()
