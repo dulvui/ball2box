@@ -40,14 +40,13 @@ var touch_start = null
 func _input(event):
 	if event is InputEventScreenTouch:
 		if event.pressed:
-			if event.position.y > 140: # to prevent reset on pause
-				
-				if shooting:
-					reset()
-					return true
-				# Down
-				if touch_start == null:
-					touch_start = event.position
+#			if event.position.y > 140: # to prevent reset on pause
+			if shooting:
+				reset()
+				return true
+			# Down
+			if touch_start == null:
+				touch_start = event.position
 		else:
 			# Up
 			_shoot()
@@ -72,11 +71,14 @@ func _shoot():
 func reset():
 	mode = RigidBody.MODE_STATIC
 	shooting = false
+	$AnimationPlayer.play("FadeOut")
+	yield($AnimationPlayer, "animation_finished")
 	emit_signal("reset_ball")
 	translation = initial_position
 	linear_velocity = Vector3.ZERO
 	angular_velocity = Vector3.ZERO
 	rotation = Vector3.ZERO
+	$AnimationPlayer.play("FadeIn")
 	
 func reset_no_signal():
 	mode = RigidBody.MODE_STATIC
