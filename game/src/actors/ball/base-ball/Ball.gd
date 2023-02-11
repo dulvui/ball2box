@@ -2,26 +2,30 @@ extends RigidBody
 
 class_name Ball
 
-signal reset_ball
+signal reset
+signal shoot
 
 
-onready var geometry_up = $ImmediateGeometryUp
-onready var geometry_down = $ImmediateGeometryDown
 
-const SPEED = 1
+onready var geometry_up:GeometryInstance = $ImmediateGeometryUp
+onready var geometry_down:GeometryInstance = $ImmediateGeometryDown
 
-var shooting = false
+const SPEED:int = 1
 
-var initial_position
+var shooting:bool = false
 
-func _ready():
+var initial_position:Vector3
+
+var touch_pos:Vector2
+var touch_start:Vector2
+
+func _ready() -> void:
 	initial_position = transform.origin
 	mode = RigidBody.MODE_STATIC
 
 
 
-
-func _process(delta):
+func _process(delta) -> void:
 	if touch_start != null and touch_pos != null:
 		if touch_start.y > touch_pos.y:
 			draw_indicator_up()
@@ -33,54 +37,47 @@ func _process(delta):
 		geometry_up.clear()
 		geometry_down.clear()
 
-
-var touch_pos = null
-var touch_start = null
 		
-func _input(event):
+func _input(event) -> void:
 	if event is InputEventScreenTouch:
 		if event.pressed:
 #			if event.position.y > 140: # to prevent reset on pause
 			if shooting:
 				reset()
-				return true
 			# Down
-			if touch_start == null:
+			if touch_start == Vector2.ZERO:
 				touch_start = event.position
 		else:
 			# Up
 			_shoot()
-			touch_pos = null
-			touch_start = null
-		
-		return true
+			touch_pos = Vector2.ZERO
+			touch_start = Vector2.ZERO
 	elif event is InputEventScreenDrag:
 		# Move
 		touch_pos = event.position
 
-	return false
-
-func _shoot():
-	if touch_pos != null and touch_start != null and touch_pos.distance_to(touch_start) > 100:
+func _shoot() -> void:
+	if not shooting and touch_pos != Vector2.ZERO and touch_start != Vector2.ZERO and touch_pos.distance_to(touch_start) > 100:
+		emit_signal("shoot")
 		print("distance %s"%touch_pos.distance_to(touch_start))
 		shooting = true
 		mode = RigidBody.MODE_RIGID
 		var direction = (touch_start - touch_pos)
 		apply_central_impulse(Vector3(- direction.x, direction.y , 0) * SPEED)
 	
-func reset():
+func reset() -> void:
+	emit_signal("reset")
 	mode = RigidBody.MODE_STATIC
-	shooting = false
 	$AnimationPlayer.play("FadeOut")
 	yield($AnimationPlayer, "animation_finished")
-	emit_signal("reset_ball")
+	shooting = false
 	translation = initial_position
 	linear_velocity = Vector3.ZERO
 	angular_velocity = Vector3.ZERO
 	rotation = Vector3.ZERO
 	$AnimationPlayer.play("FadeIn")
 	
-func reset_no_signal():
+func reset_no_signal() -> void:
 	mode = RigidBody.MODE_STATIC
 	shooting = false
 	translation = initial_position
@@ -89,51 +86,49 @@ func reset_no_signal():
 	rotation = Vector3.ZERO
 
 
-func _on_Ball_body_entered(body):
+func _on_Ball_body_entered(body) -> void:
 	$Sound.play()
 	
-func draw_indicator_up():
+func draw_indicator_up() -> void:
+	if not shooting and touch_start != Vector2.ZERO and touch_pos != Vector2.ZERO:
+		geometry_up.clear()
+		geometry_up.begin(Mesh.PRIMITIVE_TRIANGLES)
 
-	geometry_up.clear()
-	geometry_up.begin(Mesh.PRIMITIVE_TRIANGLES)
+		# Prepare attributes for add_vertex.
+		geometry_up.set_normal(Vector3(0, 0, 1))
+		geometry_up.set_uv(Vector2(0, 0))
+		# Call last for each vertex, adds the above attributes.
+		geometry_up.add_vertex(Vector3(-0.8, 0, 0))
 
-	# Prepare attributes for add_vertex.
-	geometry_up.set_normal(Vector3(0, 0, 1))
-	geometry_up.set_uv(Vector2(0, 0))
-	# Call last for each vertex, adds the above attributes.
-	geometry_up.add_vertex(Vector3(-0.8, 0, 0))
+		geometry_up.set_normal(Vector3(0, -50, 1))
+		geometry_up.set_uv(Vector2(0, 1))
+		geometry_up.add_vertex(Vector3(0.8, 0, 0))
+				
+		geometry_up.set_normal(Vector3(0, 0, 1))
+		geometry_up.set_uv(Vector2(1, 1))
+		geometry_up.set_uv(Vector2(1, 1))
+		geometry_up.add_vertex(Vector3(-(touch_pos.x - touch_start.x)/60, (touch_pos.y - touch_start.y)/60, 0))
 
-	geometry_up.set_normal(Vector3(0, -50, 1))
-	geometry_up.set_uv(Vector2(0, 1))
-	geometry_up.add_vertex(Vector3(0.8, 0, 0))
-			
-	geometry_up.set_normal(Vector3(0, 0, 1))
-	geometry_up.set_uv(Vector2(1, 1))
-	geometry_up.set_uv(Vector2(1, 1))
-	geometry_up.add_vertex(Vector3(-(touch_pos.x - touch_start.x)/60, (touch_pos.y - touch_start.y)/60, 0))
-
-
-
-	geometry_up.end()
+		geometry_up.end()
 	
 func draw_indicator_down():
+	if not shooting and touch_start != Vector2.ZERO and touch_pos != Vector2.ZERO:
+		geometry_down.clear()
+		geometry_down.begin(Mesh.PRIMITIVE_TRIANGLES)
 
-	geometry_down.clear()
-	geometry_down.begin(Mesh.PRIMITIVE_TRIANGLES)
+		# Prepare attributes for add_vertex.
+		geometry_down.set_normal(Vector3(0, 0, 1))
+		geometry_down.set_uv(Vector2(0, 0))
+		# Call last for each vertex, adds the above attributes.
+		geometry_down.add_vertex(Vector3(-0.8, 0, 0))
 
-	# Prepare attributes for add_vertex.
-	geometry_down.set_normal(Vector3(0, 0, 1))
-	geometry_down.set_uv(Vector2(0, 0))
-	# Call last for each vertex, adds the above attributes.
-	geometry_down.add_vertex(Vector3(-0.8, 0, 0))
+		geometry_down.set_normal(Vector3(0, -50, 1))
+		geometry_down.set_uv(Vector2(0, 1))
+		geometry_down.add_vertex(Vector3(0.8, 0, 0))
+				
+		geometry_down.set_normal(Vector3(0, 0, 1))
+		geometry_down.set_uv(Vector2(1, 1))
+		geometry_down.set_uv(Vector2(1, 1))
+		geometry_down.add_vertex(Vector3((touch_pos.x - touch_start.x)/60, -(touch_pos.y - touch_start.y)/60, 0))
 
-	geometry_down.set_normal(Vector3(0, -50, 1))
-	geometry_down.set_uv(Vector2(0, 1))
-	geometry_down.add_vertex(Vector3(0.8, 0, 0))
-			
-	geometry_down.set_normal(Vector3(0, 0, 1))
-	geometry_down.set_uv(Vector2(1, 1))
-	geometry_down.set_uv(Vector2(1, 1))
-	geometry_down.add_vertex(Vector3((touch_pos.x - touch_start.x)/60, -(touch_pos.y - touch_start.y)/60, 0))
-
-	geometry_down.end()
+		geometry_down.end()

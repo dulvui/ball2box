@@ -1,17 +1,23 @@
 extends Spatial
 
-# Called when the node enters the scene tree for the first time.
+onready var timer:Timer = $Timer
+onready var animation_player:AnimationPlayer = $AnimationPlayer
+
 func swipe():
-	$AnimationPlayer.play("FadeIn")
-	yield($AnimationPlayer, "animation_finished")
-	$AnimationPlayer.play("Swipe")
-	
+	visible = true
+	animation_player.play("FadeInSwipe")
+
 func tap():
-	$AnimationPlayer.play("FadeIn")
-	yield($AnimationPlayer, "animation_finished")
-	$AnimationPlayer.play("Tap")
+	visible = true
+	animation_player.stop()
+	animation_player.play("FadeInTap")
 	
 func fade_out():
-	$AnimationPlayer.play("FadeOut")
-	yield($AnimationPlayer,"animation_finished")
-	queue_free()
+	visible = false
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "FadeInTap":
+		animation_player.play("Tap")
+	elif anim_name == "FadeInSwipe":
+		animation_player.play("Swipe")

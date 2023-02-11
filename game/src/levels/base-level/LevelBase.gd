@@ -16,7 +16,7 @@ func _ready():
 	if Global.just_opened:
 		Global.just_opened = false
 		
-		if Global.tutorial_swipe_done and Global.tutorial_tap_done:
+		if Global.tutorial_swipe_done:
 			get_tree().paused = true
 			$UI/Menu.animation_player.play("FirstFadeIn")
 			$AnimationPlayer.play("FadeIn")
@@ -25,7 +25,7 @@ func _ready():
 			get_tree().paused = false
 	else:
 		get_tree().paused = false
-		$AnimationPlayer.play("Idle")
+#		$AnimationPlayer.play("Idle")
 	fade_in_objects()
 		
 	ball = $Ball
@@ -38,7 +38,8 @@ func _ready():
 	add_child(ball)
 		
 	
-	ball.connect("reset_ball",self,"_on_Ball_reset_ball")
+	ball.connect("reset",self,"_on_Ball_reset")
+	ball.connect("shoot",self,"_on_Ball_shoot")
 	$Star1.connect("star_hit",self,"on_star1_hit")
 	$Star2.connect("star_hit",self,"on_star2_hit")
 
@@ -66,9 +67,9 @@ func on_star_hit():
 
 
 func _on_Bin_win():
-	if $Tutorial and $Tutorial.visible:
+	if has_node("Tutorial"):
 		$Tutorial.fade_out()
-		Global.save_data()
+	Global.save_data()
 	AudioMachine.hit(true)
 	$UI/LevelComplete.show()
 	
@@ -95,7 +96,7 @@ func _on_Shop_back():
 	$AnimationPlayer.play("GoToMenu")
 	
 	# reset level after coming back from shop
-	_on_Ball_reset_ball()
+	_on_Ball_reset()
 	ball.reset()
 
 
@@ -122,7 +123,7 @@ func _on_Shop_select():
 		ball.connect("reset_ball",self,"_on_Ball_reset_ball")
 		
 		# reset level after coming back from shop
-		_on_Ball_reset_ball()
+		_on_Ball_reset()
 		ball.reset()
 	
 
@@ -166,7 +167,18 @@ func _on_Pause_pressed():
 		$UI/Menu.animation_player.play("FadeIn")
 		get_tree().paused = true
 
-func _on_Ball_reset_ball():
+func _on_LevelComplete_menu():
+	ball.reset()
+	$UI/Menu.animation_player.play("FadeIn")
+	$UI/LevelComplete.reset_stars()
+	AudioMachine.reset()
+	$Star1.show_star()
+	$Star2.show_star()
+
+
+
+
+func _on_Ball_reset():
 	$UI/LevelComplete.reset_stars()
 	AudioMachine.reset()
 	$Star1.show_star()
@@ -175,12 +187,10 @@ func _on_Ball_reset_ball():
 	fade_in_pop_objects()
 		
 	Global.save_data()
+	if has_node("Tutorial"):
+		$Tutorial.ball_reset()
 
 
-func _on_LevelComplete_menu():
-	ball.reset()
-	$UI/Menu.animation_player.play("FadeIn")
-	$UI/LevelComplete.reset_stars()
-	AudioMachine.reset()
-	$Star1.show_star()
-	$Star2.show_star()
+func _on_Ball_shoot():
+	if has_node("Tutorial"):
+		$Tutorial.ball_shoot()

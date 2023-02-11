@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://src/levels/base-level/LevelBase.gd" type="Script" id=1]
 [ext_resource path="res://src/screens/shop/Shop3D.tscn" type="PackedScene" id=2]
@@ -59,6 +59,22 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector3( 0, 17, 26 ), Vector3( 0, 55, 26 ) ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "Idle"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Base/Camera:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 17, 26 ), Vector3( 0, 17, 26 ) ]
 }
 
 [sub_resource type="Animation" id=18]
@@ -149,6 +165,7 @@ pause_mode = 2
 anims/FadeIn = SubResource( 1 )
 anims/GoToMenu = SubResource( 2 )
 anims/GoToShop = SubResource( 3 )
+anims/Idle = SubResource( 20 )
 anims/RESET = SubResource( 18 )
 anims/TopbarFadeIn = SubResource( 19 )
 
@@ -327,7 +344,8 @@ margin_bottom = 142.087
 rect_scale = Vector2( 0.9, 0.9 )
 icon = ExtResource( 14 )
 
-[connection signal="reset_ball" from="Ball" to="." method="_on_Ball_reset_ball"]
+[connection signal="reset" from="Ball" to="." method="_on_Ball_reset"]
+[connection signal="shoot" from="Ball" to="." method="_on_Ball_shoot"]
 [connection signal="win" from="Bin" to="." method="_on_Bin_win"]
 [connection signal="back" from="UI/Shop" to="." method="_on_Shop_back"]
 [connection signal="next" from="UI/Shop" to="." method="_on_Shop_next"]
