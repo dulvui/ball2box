@@ -2,8 +2,6 @@ name: iOS upload
 
 on:
   push:
-    branches:    
-      - 'prod'
     paths:
       - "version-ios"
       - ".github/workflows/upload-ios.yml"
@@ -19,6 +17,7 @@ env:
 
 jobs:
   deploy:
+    if: github.ref == 'refs/heads/prod'
     runs-on: macos-12
     steps:
       - name: Checkout source code

@@ -2,8 +2,6 @@ name: Android upload
 
 on:
   push:
-    branches:    
-      - 'prod'
     paths:
       - "version"
       - ".github/workflows/upload-android.yml"
@@ -17,6 +15,7 @@ env:
 
 jobs:
   deploy:
+    if: github.ref == 'refs/heads/prod'
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout source code
