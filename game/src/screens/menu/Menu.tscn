@@ -72,7 +72,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=13]
 resource_name = "InfoFadeIn"
-length = 0.4
+length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Menu:rect_position")
 tracks/0/interp = 1
@@ -95,12 +95,12 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 1280 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 720, 0 ), Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=14]
 resource_name = "InfoFadeOut"
-length = 0.4
+length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Menu:rect_position")
 tracks/0/interp = 1
@@ -108,7 +108,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.2, 0.4 ),
+"times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 720, 0 ), Vector2( 0, 0 ) ]
@@ -120,14 +120,14 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.4 ),
+"times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 1280 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 720, 0 ) ]
 }
 
 [sub_resource type="Animation" id=4]
-length = 0.4
+length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("LevelSelect:rect_position")
 tracks/0/interp = 1
@@ -135,7 +135,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.2, 0.4 ),
+"times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 720, 0 ), Vector2( 0, 0 ) ]
@@ -154,7 +154,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=5]
-length = 0.4
+length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Menu:rect_position")
 tracks/0/interp = 1
@@ -162,7 +162,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.2, 0.4 ),
+"times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 720, 0 ), Vector2( 0, 0 ) ]
@@ -273,7 +273,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 1280 ) ]
+"values": [ Vector2( 720, 0 ) ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -399,6 +399,8 @@ __meta__ = {
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -720.0
+margin_right = -720.0
 
 [node name="Level" type="Label" parent="Menu"]
 anchor_left = 0.5
@@ -554,9 +556,8 @@ rect_scale = Vector2( 0.5, 0.5 )
 text = "simondalvai.com"
 
 [node name="Info" parent="." instance=ExtResource( 10 )]
-margin_top = 1280.0
-margin_right = 2880.0
-margin_bottom = 6400.0
+margin_left = 720.0
+margin_right = 720.0
 
 [connection signal="pressed" from="LevelSelect/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="LevelSelect/Next" to="." method="_on_Next_pressed"]
