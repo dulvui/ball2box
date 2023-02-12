@@ -330,66 +330,80 @@ color = Color( 0.105882, 0.105882, 0.231373, 1 )
 
 [node name="LevelSelect" type="Control" parent="."]
 pause_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 720.0
-margin_right = 720.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 360.0
+margin_top = -640.0
+margin_right = 1080.0
+margin_bottom = 640.0
 theme = ExtResource( 2 )
 
 [node name="Levels" type="GridContainer" parent="LevelSelect"]
 pause_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 50.0
-margin_top = 100.0
-margin_right = -50.0
-margin_bottom = -300.0
+anchor_left = 0.5
+anchor_top = 0.432031
+anchor_right = 0.5
+anchor_bottom = 0.432031
+margin_left = -310.0
+margin_top = -440.0
+margin_right = 310.0
+margin_bottom = 440.0
 rect_scale = Vector2( 0.9, 0.9 )
 rect_pivot_offset = Vector2( 310, 440 )
 custom_constants/vseparation = 206
 custom_constants/hseparation = 21
 columns = 3
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Back" type="Button" parent="LevelSelect"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -126.0
-margin_top = -196.0
-margin_right = 135.0
-margin_bottom = -70.0
+anchor_left = 0.506
+anchor_top = 0.91475
+anchor_right = 0.506
+anchor_bottom = 0.91475
+margin_left = -130.32
+margin_top = -62.88
+margin_right = 130.68
+margin_bottom = 63.12
 rect_min_size = Vector2( 115, 0 )
 text = " menu "
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Next" type="TextureButton" parent="LevelSelect"]
 modulate = Color( 0.529412, 0.917647, 0.807843, 1 )
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -220.0
-margin_top = -234.0
-margin_right = -120.0
-margin_bottom = -134.0
+anchor_left = 0.833
+anchor_top = 0.91375
+anchor_right = 0.833
+anchor_bottom = 0.91375
+margin_left = -99.7601
+margin_top = -99.6001
+margin_right = 0.239929
+margin_bottom = 0.399902
 rect_scale = Vector2( 2, 2 )
 texture_normal = ExtResource( 8 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="Prev" type="TextureButton" parent="LevelSelect"]
 modulate = Color( 0.529412, 0.917647, 0.807843, 1 )
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = -234.0
-margin_right = 120.0
-margin_bottom = -134.0
+anchor_left = 0.167
+anchor_top = 0.91375
+anchor_right = 0.167
+anchor_bottom = 0.91375
+margin_left = -100.24
+margin_top = -99.6001
+margin_right = -0.240005
+margin_bottom = 0.399902
 rect_scale = Vector2( 2, 2 )
 texture_normal = ExtResource( 9 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="Menu" type="Control" parent="."]
@@ -553,9 +567,8 @@ rect_scale = Vector2( 0.5, 0.5 )
 text = "simondalvai.com"
 
 [node name="Info" parent="." instance=ExtResource( 10 )]
-margin_left = 720.0
-margin_right = 2160.0
-margin_bottom = 2560.0
+margin_left = 360.0
+margin_right = 1080.0
 
 [connection signal="pressed" from="LevelSelect/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="LevelSelect/Next" to="." method="_on_Next_pressed"]
