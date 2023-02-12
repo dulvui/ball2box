@@ -349,9 +349,6 @@ rect_pivot_offset = Vector2( 310, 440 )
 custom_constants/vseparation = 206
 custom_constants/hseparation = 21
 columns = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Back" type="Button" parent="LevelSelect"]
 anchor_left = 0.5
@@ -427,7 +424,7 @@ anchor_bottom = 0.5
 margin_left = -198.0
 margin_top = -248.0
 margin_right = 198.0
-margin_bottom = 472.0
+margin_bottom = 327.0
 rect_pivot_offset = Vector2( 188, 0 )
 
 [node name="Play" type="Button" parent="Menu/Buttons"]
@@ -557,7 +554,8 @@ text = "simondalvai.com"
 
 [node name="Info" parent="." instance=ExtResource( 10 )]
 margin_left = 720.0
-margin_right = 720.0
+margin_right = 2160.0
+margin_bottom = 2560.0
 
 [connection signal="pressed" from="LevelSelect/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="LevelSelect/Next" to="." method="_on_Next_pressed"]

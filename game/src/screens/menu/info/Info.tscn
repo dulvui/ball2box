@@ -12,8 +12,14 @@ content_margin_bottom = 10.0
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [node name="Info" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -360.0
+margin_top = -640.0
+margin_right = 360.0
+margin_bottom = 640.0
 theme = ExtResource( 1 )
 script = ExtResource( 3 )
 
@@ -22,6 +28,7 @@ margin_left = 91.0
 margin_top = 78.0
 margin_right = 622.0
 margin_bottom = 675.0
+rect_pivot_offset = Vector2( 265, 298 )
 custom_styles/panel = ExtResource( 2 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
@@ -29,6 +36,7 @@ margin_left = 28.0
 margin_top = 29.0
 margin_right = 508.0
 margin_bottom = 561.0
+rect_pivot_offset = Vector2( 240, 266 )
 custom_styles/normal = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "This game is open source under the [url=https://github.com/dulvui/ball2box/blob/main/LICENSE]AGPL-3.0-or-later[/url] license.
@@ -155,6 +163,7 @@ margin_left = 105.0
 margin_top = 753.0
 margin_right = 610.0
 margin_bottom = 1179.0
+rect_pivot_offset = Vector2( 252, 213 )
 
 [node name="Website" type="Button" parent="HBoxContainer"]
 margin_right = 505.0
