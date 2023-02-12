@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://src/screens/menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://theme.tres" type="Theme" id=2]
@@ -6,8 +6,11 @@
 [ext_resource path="res://assets/musicOn.png" type="Texture" id=4]
 [ext_resource path="res://assets/audioOn.png" type="Texture" id=5]
 [ext_resource path="res://assets/audioOff.png" type="Texture" id=6]
+[ext_resource path="res://assets/information.png" type="Texture" id=7]
 [ext_resource path="res://assets/right.png" type="Texture" id=8]
 [ext_resource path="res://assets/left.png" type="Texture" id=9]
+[ext_resource path="res://src/screens/menu/info/Info.tscn" type="PackedScene" id=10]
+[ext_resource path="res://panel.tres" type="StyleBox" id=11]
 
 [sub_resource type="Animation" id=1]
 length = 0.2
@@ -65,6 +68,62 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "InfoFadeIn"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Menu:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 720, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Info:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 1280 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "InfoFadeOut"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Menu:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 720, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Info:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 1280 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -204,6 +263,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Info:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 1280 ) ]
+}
 
 [sub_resource type="Animation" id=9]
 length = 0.4
@@ -229,15 +300,6 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id=11]
-bg_color = Color( 0.529412, 0.917647, 0.807843, 1 )
-border_width_bottom = 8
-border_color = Color( 0.341176, 0.686275, 0.588235, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
 [node name="MenuBase" type="Control"]
 pause_mode = 2
 anchor_right = 1.0
@@ -250,6 +312,8 @@ script = ExtResource( 1 )
 anims/FadeIn = SubResource( 1 )
 anims/FadeOut = SubResource( 2 )
 anims/FirstFadeIn = SubResource( 3 )
+anims/InfoFadeIn = SubResource( 13 )
+anims/InfoFadeOut = SubResource( 14 )
 anims/LevelFadeIn = SubResource( 4 )
 anims/LevelFadeOut = SubResource( 5 )
 anims/LevelOnlyFadeIn = SubResource( 6 )
@@ -294,15 +358,12 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -115.0
+margin_left = -126.0
 margin_top = -196.0
-margin_right = 115.0
+margin_right = 135.0
 margin_bottom = -70.0
 rect_min_size = Vector2( 115, 0 )
-text = "menu"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = " menu "
 
 [node name="Next" type="TextureButton" parent="LevelSelect"]
 modulate = Color( 0.529412, 0.917647, 0.807843, 1 )
@@ -338,8 +399,6 @@ __meta__ = {
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -607.5
-margin_right = -607.5
 
 [node name="Level" type="Label" parent="Menu"]
 anchor_left = 0.5
@@ -363,17 +422,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -170.0
-margin_top = -240.0
-margin_right = 170.0
-margin_bottom = 480.0
-rect_pivot_offset = Vector2( 150, 0 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_left = -198.0
+margin_top = -248.0
+margin_right = 198.0
+margin_bottom = 472.0
+rect_pivot_offset = Vector2( 188, 0 )
 
 [node name="Play" type="Button" parent="Menu/Buttons"]
-margin_right = 340.0
+margin_right = 396.0
 margin_bottom = 126.0
 text = "PLAY"
 __meta__ = {
@@ -382,7 +438,7 @@ __meta__ = {
 
 [node name="Shop" type="Button" parent="Menu/Buttons"]
 margin_top = 150.0
-margin_right = 340.0
+margin_right = 396.0
 margin_bottom = 276.0
 text = "SHOP"
 __meta__ = {
@@ -391,7 +447,7 @@ __meta__ = {
 
 [node name="Level" type="Button" parent="Menu/Buttons"]
 margin_top = 300.0
-margin_right = 340.0
+margin_right = 396.0
 margin_bottom = 426.0
 text = "LEVELS"
 __meta__ = {
@@ -400,9 +456,9 @@ __meta__ = {
 
 [node name="Settings" type="HBoxContainer" parent="Menu/Buttons"]
 margin_top = 450.0
-margin_right = 340.0
+margin_right = 396.0
 margin_bottom = 570.0
-custom_constants/separation = 100
+custom_constants/separation = 18
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -432,18 +488,15 @@ rect_pivot_offset = Vector2( 50, 50 )
 toggle_mode = true
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Music" type="Panel" parent="Menu/Buttons/Settings"]
 show_behind_parent = true
-margin_left = 220.0
-margin_right = 340.0
+margin_left = 138.0
+margin_right = 258.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 120, 120 )
 rect_pivot_offset = Vector2( 60, 60 )
-custom_styles/panel = SubResource( 11 )
+custom_styles/panel = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -463,6 +516,31 @@ toggle_mode = true
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 3 )
 
+[node name="Info" type="Panel" parent="Menu/Buttons/Settings"]
+show_behind_parent = true
+margin_left = 276.0
+margin_right = 396.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 120 )
+rect_pivot_offset = Vector2( 60, 60 )
+custom_styles/panel = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoButton" type="TextureButton" parent="Menu/Buttons/Settings/Info"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -50.0
+margin_right = 50.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( 50, 50 )
+texture_normal = ExtResource( 7 )
+
 [node name="SimonDalvai" type="LinkButton" parent="Menu"]
 anchor_left = 0.5
 anchor_top = 0.926
@@ -475,6 +553,11 @@ margin_bottom = 88.72
 rect_scale = Vector2( 0.5, 0.5 )
 text = "simondalvai.com"
 
+[node name="Info" parent="." instance=ExtResource( 10 )]
+margin_top = 1280.0
+margin_right = 2880.0
+margin_bottom = 6400.0
+
 [connection signal="pressed" from="LevelSelect/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="LevelSelect/Next" to="." method="_on_Next_pressed"]
 [connection signal="pressed" from="LevelSelect/Prev" to="." method="_on_Prev_pressed"]
@@ -483,4 +566,6 @@ text = "simondalvai.com"
 [connection signal="pressed" from="Menu/Buttons/Level" to="." method="_on_Levels_pressed"]
 [connection signal="pressed" from="Menu/Buttons/Settings/Sfx/SfxButton" to="." method="_on_Sfx_pressed"]
 [connection signal="pressed" from="Menu/Buttons/Settings/Music/MusicButton" to="." method="_on_Music_pressed"]
+[connection signal="pressed" from="Menu/Buttons/Settings/Info/InfoButton" to="." method="_on_InfoButton_pressed"]
 [connection signal="pressed" from="Menu/SimonDalvai" to="." method="_on_SimonDalvai_pressed"]
+[connection signal="back" from="Info" to="." method="_on_Info_back"]

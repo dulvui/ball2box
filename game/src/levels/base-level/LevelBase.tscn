@@ -7,7 +7,7 @@
 [ext_resource path="res://src/actors/ball/starter-ball/Ball.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/ui/level-complete/LevelComplete.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/actors/star/Star.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/background.png" type="Texture" id=8]
+[ext_resource path="res://assets/background-2.png" type="Texture" id=8]
 [ext_resource path="res://src/ui/coins/Coins.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/screens/shop/Shop.tscn" type="PackedScene" id=10]
 [ext_resource path="res://materials/wall-material.tres" type="Material" id=11]
@@ -187,7 +187,7 @@ mesh = SubResource( 6 )
 material/0 = ExtResource( 11 )
 
 [node name="Backgorund" type="MeshInstance" parent="Base"]
-transform = Transform( 20, 0, 0, 0, -2.18557e-06, -59.44, 0, 50, -2.5982e-06, 0, 37.6553, -6.80032 )
+transform = Transform( 15, 0, 0, 0, -4.37114e-08, -60, 0, 1, -2.62268e-06, 0, 37.6553, -6.80032 )
 mesh = SubResource( 16 )
 material/0 = SubResource( 17 )
 
@@ -337,12 +337,13 @@ margin_bottom = 71.2583
 
 [node name="Pause" type="Button" parent="Topbar"]
 modulate = Color( 1, 1, 1, 0.705882 )
-margin_left = 492.982
-margin_top = 16.0869
-margin_right = 556.982
-margin_bottom = 142.087
+margin_left = 490.298
+margin_top = 32.0869
+margin_right = 594.298
+margin_bottom = 158.087
 rect_scale = Vector2( 0.9, 0.9 )
 icon = ExtResource( 14 )
+icon_align = 1
 
 [connection signal="reset" from="Ball" to="." method="_on_Ball_reset"]
 [connection signal="shoot" from="Ball" to="." method="_on_Ball_shoot"]

@@ -14,6 +14,9 @@ func _ready():
 	_set_up_buttons()
 
 
+func _process(delta):
+	$Menu/Level.text = str(Global.current_level)
+
 func _set_up_buttons():
 	for b in $LevelSelect/Levels.get_children():
 		b.queue_free()
@@ -30,9 +33,6 @@ func _set_up_buttons():
 			var button = level_button.instance()
 			button.set_level(i)
 			$LevelSelect/Levels.add_child(button)
-
-func _process(delta):
-	$Menu/Level.text = str(Global.current_level)
 	
 func _on_Play_pressed():
 	AudioMachine.play_click()
@@ -49,8 +49,15 @@ func _on_Music_pressed():
 	AudioMachine.click()
 	animation_player.play("Music")
 	Global.toggle_music()
+	
 
+func _on_InfoButton_pressed():
+	AudioMachine.click()
+	animation_player.play("InfoFadeIn")
 
+func _on_Info_back():
+	AudioMachine.click()
+	animation_player.play("InfoFadeOut")
 
 func _on_Levels_pressed():
 	AudioMachine.click()

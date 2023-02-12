@@ -1,0 +1,179 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://theme.tres" type="Theme" id=1]
+[ext_resource path="res://panel.tres" type="StyleBox" id=2]
+[ext_resource path="res://src/screens/menu/info/Info.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[node name="Info" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 91.0
+margin_top = 78.0
+margin_right = 622.0
+margin_bottom = 675.0
+custom_styles/panel = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+margin_left = 28.0
+margin_top = 29.0
+margin_right = 508.0
+margin_bottom = 561.0
+custom_styles/normal = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "This game is open source under the [url=https://github.com/dulvui/ball2box/blob/main/LICENSE]AGPL-3.0-or-later[/url] license.
+Its created with Godot Engine and lots of love <3
+
+
+[center][b]Credits[/b][/center]
+
+[b]Code[/b]
+Godot Engine by Juan Linietsky, Ariel Manzur and contributors
+MIT
+[url=https://godotengine.org/license]godotengine.org/license[/url]
+
+[b]Audio[/b]
+\"The heist\" Royalty-Free Music by audiohub.com
+CC-BY-4.0
+[url=https://audiohub.com]audiohub.com[/url]
+
+\"Snares and Crash\" by LMMS
+CC0-1.0
+[url=https://github.com/LMMS/assets]github.com/LMMS/assets[/url]
+
+[b]2D[/b]
+\"Game Icons\" by kenney.nl
+CC0-1.0
+[url=https://www.kenney.nl/assets/game-icons]kenney.nl/assets/game-icons[/url]
+
+\"National Flags\" by Wikimedia
+Public Domain
+[url=https://en.wikipedia.org/wiki/Gallery_of_sovereign_state_flags]wikipedia.org/wiki/Gallery_of_sovereign_state_flags[/url]
+
+[b]3D[/b]
+\"Star\" by Savino
+CC0-1.0
+[url=https://opengameart.org/content/star-0]https://opengameart.org/content/star-0[/url]
+
+\"Volleyball\" by PatelDev
+CC-BY-4.0
+[url=https://skfb.ly/6VWCM]skfb.ly/6VWCM[/url]
+
+\"Football\" by siixarn
+CC-BY-4.0
+[url=https://skfb.ly/KqJH]skfb.ly/KqJH[/url]
+
+\"Octoball\" by EZduzziteh
+CC-BY-3.0
+[url=https://opengameart.org/content/some-more-wire-balls]opengameart.org/content/some-more-wire-balls[/url]
+
+[b]Font[/b]
+\"manrope.thin.otf\" by sharanda
+SIL Open Font License
+[url=https://github.com/sharanda/manrope]github.com/sharanda/manrope[/url]
+
+All other assets made by me are licensed under the CC-BY-SA-4.0 license.
+You can find more information and the complete source code on Github.
+
+
+All the best,
+Simon
+
+[url=https://simondalvai.com]simondalvai.com[/url]"
+text = "This game is open source under the AGPL-3.0-or-later license.
+Its created with Godot Engine and lots of love <3
+
+
+Credits
+
+Code
+Godot Engine by Juan Linietsky, Ariel Manzur and contributors
+MIT
+godotengine.org/license
+
+Audio
+\"The heist\" Royalty-Free Music by audiohub.com
+CC-BY-4.0
+audiohub.com
+
+\"Snares and Crash\" by LMMS
+CC0-1.0
+github.com/LMMS/assets
+
+2D
+\"Game Icons\" by kenney.nl
+CC0-1.0
+kenney.nl/assets/game-icons
+
+\"National Flags\" by Wikimedia
+Public Domain
+wikipedia.org/wiki/Gallery_of_sovereign_state_flags
+
+3D
+\"Star\" by Savino
+CC0-1.0
+https://opengameart.org/content/star-0
+
+\"Volleyball\" by PatelDev
+CC-BY-4.0
+skfb.ly/6VWCM
+
+\"Football\" by siixarn
+CC-BY-4.0
+skfb.ly/KqJH
+
+\"Octoball\" by EZduzziteh
+CC-BY-3.0
+opengameart.org/content/some-more-wire-balls
+
+Font
+\"manrope.thin.otf\" by sharanda
+SIL Open Font License
+github.com/sharanda/manrope
+
+All other assets made by me are licensed under the CC-BY-SA-4.0 license.
+You can find more information and the complete source code on Github.
+
+
+All the best,
+Simon
+
+simondalvai.com"
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 105.0
+margin_top = 753.0
+margin_right = 610.0
+margin_bottom = 1179.0
+
+[node name="Website" type="Button" parent="HBoxContainer"]
+margin_right = 505.0
+margin_bottom = 126.0
+text = "website"
+
+[node name="Github" type="Button" parent="HBoxContainer"]
+margin_top = 150.0
+margin_right = 505.0
+margin_bottom = 276.0
+text = "github"
+
+[node name="Back" type="Button" parent="HBoxContainer"]
+margin_top = 300.0
+margin_right = 505.0
+margin_bottom = 426.0
+text = "menu"
+
+[connection signal="meta_clicked" from="Panel/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
+[connection signal="pressed" from="HBoxContainer/Website" to="." method="_on_Website_pressed"]
+[connection signal="pressed" from="HBoxContainer/Github" to="." method="_on_Github_pressed"]
+[connection signal="pressed" from="HBoxContainer/Back" to="." method="_on_Back_pressed"]

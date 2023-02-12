@@ -25,7 +25,6 @@ func _ready():
 			get_tree().paused = false
 	else:
 		get_tree().paused = false
-#		$AnimationPlayer.play("Idle")
 	fade_in_objects()
 		
 	ball = $Ball
@@ -42,7 +41,6 @@ func _ready():
 	ball.connect("shoot",self,"_on_Ball_shoot")
 	$Star1.connect("star_hit",self,"on_star1_hit")
 	$Star2.connect("star_hit",self,"on_star2_hit")
-
 
 func fade_in_objects():
 	for object in get_tree().get_nodes_in_group("objects"):
@@ -160,9 +158,7 @@ func _camera_shake():
 
 func _on_Pause_pressed():
 	AudioMachine.click()
-	print("pause")
 	if not get_tree().paused:
-		print("pause pass")
 		$UI/Menu.show()
 		$UI/Menu.animation_player.play("FadeIn")
 		get_tree().paused = true

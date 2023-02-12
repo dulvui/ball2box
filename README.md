@@ -75,7 +75,7 @@ game/assets/audioOff.png
 game/assets/arrowDown.png
 ```
 
-"National Flags" by Wikimedia is licensed under Public Domain (https://en.wikipedia.org/wiki/Gallery_of_sovereign_state_flags)
+"National Flags" by Wikimedia are licensed under Public Domain (https://en.wikipedia.org/wiki/Gallery_of_sovereign_state_flags)
  ```
  game/assets/flags/
  ```
