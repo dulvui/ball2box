@@ -330,14 +330,10 @@ color = Color( 0.105882, 0.105882, 0.231373, 1 )
 
 [node name="LevelSelect" type="Control" parent="."]
 pause_mode = 2
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 360.0
-margin_top = -640.0
-margin_right = 1080.0
-margin_bottom = 640.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 720.0
+margin_right = 720.0
 theme = ExtResource( 2 )
 
 [node name="Levels" type="GridContainer" parent="LevelSelect"]
@@ -361,9 +357,9 @@ __meta__ = {
 
 [node name="Back" type="Button" parent="LevelSelect"]
 anchor_left = 0.506
-anchor_top = 0.91475
+anchor_top = 0.896
 anchor_right = 0.506
-anchor_bottom = 0.91475
+anchor_bottom = 0.896
 margin_left = -130.32
 margin_top = -62.88
 margin_right = 130.68
@@ -377,9 +373,9 @@ __meta__ = {
 [node name="Next" type="TextureButton" parent="LevelSelect"]
 modulate = Color( 0.529412, 0.917647, 0.807843, 1 )
 anchor_left = 0.833
-anchor_top = 0.91375
+anchor_top = 0.895
 anchor_right = 0.833
-anchor_bottom = 0.91375
+anchor_bottom = 0.895
 margin_left = -99.7601
 margin_top = -99.6001
 margin_right = 0.239929
@@ -393,9 +389,9 @@ __meta__ = {
 [node name="Prev" type="TextureButton" parent="LevelSelect"]
 modulate = Color( 0.529412, 0.917647, 0.807843, 1 )
 anchor_left = 0.167
-anchor_top = 0.91375
+anchor_top = 0.895
 anchor_right = 0.167
-anchor_bottom = 0.91375
+anchor_bottom = 0.895
 margin_left = -100.24
 margin_top = -99.6001
 margin_right = -0.240005
@@ -568,9 +564,8 @@ text = "simondalvai.com"
 
 [node name="Info" parent="." instance=ExtResource( 10 )]
 margin_left = 720.0
-margin_top = 0.0
-margin_right = 1440.0
-margin_bottom = 1280.0
+margin_right = 2880.0
+margin_bottom = 3840.0
 
 [connection signal="pressed" from="LevelSelect/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="LevelSelect/Next" to="." method="_on_Next_pressed"]

@@ -167,9 +167,9 @@ __meta__ = {
 }
 
 [node name="Level" type="Label" parent="."]
-margin_top = 140.0
+margin_top = 36.0
 margin_right = 360.0
-margin_bottom = 258.0
+margin_bottom = 154.0
 rect_scale = Vector2( 2, 2 )
 text = "12"
 align = 1
@@ -178,9 +178,9 @@ align = 1
 modulate = Color( 1, 1, 1, 0 )
 self_modulate = Color( 0.988235, 0.898039, 0.152941, 1 )
 margin_left = 150.0
-margin_top = 420.0
+margin_top = 316.0
 margin_right = 250.0
-margin_bottom = 520.0
+margin_bottom = 416.0
 rect_scale = Vector2( 0.01, 0.01 )
 rect_pivot_offset = Vector2( 50, 50 )
 texture = ExtResource( 3 )
@@ -192,9 +192,9 @@ __meta__ = {
 modulate = Color( 1, 1, 1, 0 )
 self_modulate = Color( 0.984314, 0.956863, 0.745098, 1 )
 margin_left = 310.0
-margin_top = 420.0
+margin_top = 316.0
 margin_right = 410.0
-margin_bottom = 520.0
+margin_bottom = 416.0
 rect_scale = Vector2( 0.1, 0.1 )
 rect_pivot_offset = Vector2( 50, 50 )
 texture = ExtResource( 3 )
@@ -206,9 +206,9 @@ __meta__ = {
 modulate = Color( 1, 1, 1, 0 )
 self_modulate = Color( 0.984314, 0.956863, 0.745098, 1 )
 margin_left = 470.0
-margin_top = 420.0
+margin_top = 316.0
 margin_right = 570.0
-margin_bottom = 520.0
+margin_bottom = 416.0
 rect_scale = Vector2( 0.1, 0.1 )
 rect_pivot_offset = Vector2( 50, 50 )
 texture = ExtResource( 3 )
@@ -223,9 +223,9 @@ anims/FadeOut = SubResource( 2 )
 [node name="Buttons" type="VBoxContainer" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 166.0
-margin_top = 640.0
+margin_top = 536.0
 margin_right = 554.0
-margin_bottom = 1070.0
+margin_bottom = 1100.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 194, 215 )
 custom_constants/separation = 20
@@ -235,22 +235,29 @@ __meta__ = {
 
 [node name="NextLevel" type="Button" parent="Buttons"]
 margin_right = 388.0
-margin_bottom = 130.0
+margin_bottom = 126.0
 text = "NEXT"
 
 [node name="Replay" type="Button" parent="Buttons"]
-margin_top = 150.0
+margin_top = 146.0
 margin_right = 388.0
-margin_bottom = 280.0
+margin_bottom = 272.0
 text = "REPLAY"
 
-[node name="Menu" type="Button" parent="Buttons"]
-margin_top = 300.0
+[node name="Levels" type="Button" parent="Buttons"]
+margin_top = 292.0
 margin_right = 388.0
-margin_bottom = 430.0
+margin_bottom = 418.0
+text = "LEVELS"
+
+[node name="Menu" type="Button" parent="Buttons"]
+margin_top = 438.0
+margin_right = 388.0
+margin_bottom = 564.0
 text = "MENU"
 
 [connection signal="visibility_changed" from="." to="." method="_on_LevelComplete_visibility_changed"]
 [connection signal="pressed" from="Buttons/NextLevel" to="." method="_on_NextLevel_pressed"]
 [connection signal="pressed" from="Buttons/Replay" to="." method="_on_Replay_pressed"]
+[connection signal="pressed" from="Buttons/Levels" to="." method="_on_Levels_pressed"]
 [connection signal="pressed" from="Buttons/Menu" to="." method="_on_Menu_pressed"]

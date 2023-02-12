@@ -12,14 +12,8 @@ content_margin_bottom = 10.0
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [node name="Info" type="Control"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -360.0
-margin_top = -640.0
-margin_right = 360.0
-margin_bottom = 640.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 theme = ExtResource( 1 )
 script = ExtResource( 3 )
 
@@ -152,9 +146,7 @@ You can find more information and the complete source code on Github.
 
 
 All the best,
-Simon
-
-simondalvai.com"
+Simon"
 
 [node name="HBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 105.0

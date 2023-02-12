@@ -2,6 +2,7 @@ extends Control
 
 signal replay
 signal menu
+signal levels
 
 var stars = 1
 
@@ -53,3 +54,8 @@ func _on_Menu_pressed():
 	animation_player.play("FadeOut")
 	yield(animation_player,"animation_finished")
 	hide()
+
+
+func _on_Levels_pressed():
+	AudioMachine.click()
+	emit_signal("levels")

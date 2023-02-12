@@ -190,3 +190,14 @@ func _on_Ball_reset() -> void:
 func _on_Ball_shoot() -> void:
 	if has_node("Tutorial"):
 		$Tutorial.ball_shoot()
+
+
+func _on_LevelComplete_levels():
+	$UI/LevelComplete.hide()
+	ball.reset()
+	$UI/Menu.show()
+	$UI/Menu.animation_player.play("LevelFadeIn")
+	$UI/LevelComplete.reset_stars()
+	AudioMachine.reset()
+	$Star1.show_star()
+	$Star2.show_star()
