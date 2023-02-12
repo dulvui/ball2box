@@ -343,9 +343,9 @@ theme = ExtResource( 2 )
 [node name="Levels" type="GridContainer" parent="LevelSelect"]
 pause_mode = 2
 anchor_left = 0.5
-anchor_top = 0.432031
+anchor_top = 0.407031
 anchor_right = 0.5
-anchor_bottom = 0.432031
+anchor_bottom = 0.407031
 margin_left = -310.0
 margin_top = -440.0
 margin_right = 310.0
