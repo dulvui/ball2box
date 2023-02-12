@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://src/levels/base-level/LevelBase.gd" type="Script" id=1]
 [ext_resource path="res://src/screens/shop/Shop3D.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://materials/wall-physics-material.tres" type="PhysicsMaterial" id=12]
 [ext_resource path="res://src/ui/tutorial/Tutorial.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/pause.png" type="Texture" id=14]
+[ext_resource path="res://src/levels/base-level/Pause.gd" type="Script" id=15]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeIn"
@@ -336,6 +337,7 @@ margin_right = 118.97
 margin_bottom = 71.2583
 
 [node name="Pause" type="Button" parent="Topbar"]
+pause_mode = 2
 modulate = Color( 1, 1, 1, 0.705882 )
 margin_left = 490.298
 margin_top = 32.0869
@@ -344,6 +346,7 @@ margin_bottom = 158.087
 rect_scale = Vector2( 0.9, 0.9 )
 icon = ExtResource( 14 )
 icon_align = 1
+script = ExtResource( 15 )
 
 [connection signal="reset" from="Ball" to="." method="_on_Ball_reset"]
 [connection signal="shoot" from="Ball" to="." method="_on_Ball_shoot"]
