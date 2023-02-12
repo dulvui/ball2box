@@ -1,9 +1,9 @@
 extends Spatial
 
-func size():
+func size() -> void:
 	$AnimationPlayer.play("Size")
 	
-func fade_out():
+func fade_out() -> void:
 	$AnimationPlayer.play("FadeOut")
 	yield($AnimationPlayer,"animation_finished")
 	queue_free()

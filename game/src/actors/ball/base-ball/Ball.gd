@@ -25,8 +25,8 @@ func _ready() -> void:
 
 
 
-func _process(delta) -> void:
-	if touch_start != null and touch_pos != null:
+func _process(delta:float) -> void:
+	if touch_start != Vector2.ZERO and touch_pos != Vector2.ZERO:
 		if touch_start.y > touch_pos.y:
 			draw_indicator_up()
 			geometry_down.clear()
@@ -38,7 +38,7 @@ func _process(delta) -> void:
 		geometry_down.clear()
 
 		
-func _input(event) -> void:
+func _input(event:InputEvent) -> void:
 	if event is InputEventScreenTouch:
 		if event.pressed:
 #			if event.position.y > 140: # to prevent reset on pause

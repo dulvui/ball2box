@@ -6,9 +6,9 @@ const moveEase:int = Tween.EASE_OUT
 onready var camera:Camera = $Base/Camera
 onready var tween:Tween = $Tween
 
-var ball
+var ball:RigidBody
 
-func _ready():
+func _ready() -> void:
 	AudioMachine.reset()
 	
 	$Tutorial.init()
@@ -29,7 +29,7 @@ func _ready():
 		
 	ball = $Ball
 
-	var pos = ball.initial_position
+	var pos:Vector3 = ball.initial_position
 	ball.queue_free()
 	ball = BallMachine.get_real()
 	ball.initial_position = pos
@@ -42,29 +42,29 @@ func _ready():
 	$Star1.connect("star_hit",self,"on_star1_hit")
 	$Star2.connect("star_hit",self,"on_star2_hit")
 
-func fade_in_objects():
+func fade_in_objects() -> void:
 	for object in get_tree().get_nodes_in_group("objects"):
 		object.fade_in()
 		
-func fade_in_pop_objects():
+func fade_in_pop_objects() -> void:
 	for object in get_tree().get_nodes_in_group("pop-objects"):
 		object.fade_in()
 	
-func on_star1_hit():
+func on_star1_hit() -> void:
 	$UI/LevelComplete.add_star()
 	AudioMachine.hit(false)
 #	_camera_shake()
 	
-func on_star2_hit():
+func on_star2_hit() -> void:
 	$UI/LevelComplete.add_star()
 	AudioMachine.hit(false)
 #	_camera_shake()
 
-func on_star_hit():
+func on_star_hit() -> void:
 	$UI/LevelComplete.add_star()
 
 
-func _on_Bin_win():
+func _on_Bin_win() -> void:
 	if has_node("Tutorial"):
 		$Tutorial.fade_out()
 	Global.save_data()
@@ -72,7 +72,7 @@ func _on_Bin_win():
 	$UI/LevelComplete.show()
 	
 
-func _on_Menu_shop():
+func _on_Menu_shop() -> void:
 	$UI/Menu.animation_player.play("FadeOut")
 	$AnimationPlayer.play("GoToShop")
 	yield($UI/Menu.animation_player,"animation_finished")
@@ -83,7 +83,7 @@ func _on_Menu_shop():
 	
 
 
-func _on_Shop_back():
+func _on_Shop_back() -> void:
 	$UI/Shop.animation_player.play("FadeOut")
 	yield($UI/Shop.animation_player,"animation_finished")
 	$UI/Shop.hide()
@@ -98,7 +98,7 @@ func _on_Shop_back():
 	ball.reset()
 
 
-func _on_Shop_select():
+func _on_Shop_select() -> void:
 	if Global.unlock_ball():
 		$Base/Shop3D.select()
 		
@@ -126,15 +126,15 @@ func _on_Shop_select():
 	
 
 
-func _on_Shop_prev():
+func _on_Shop_prev() -> void:
 	$Base/Shop3D.prev()
 
 
-func _on_Shop_next():
+func _on_Shop_next() -> void:
 	$Base/Shop3D.next()
 
 
-func _on_LevelComplete_replay():
+func _on_LevelComplete_replay() -> void:
 	ball.reset_no_signal()
 	$UI/LevelComplete.reset_stars()
 	AudioMachine.reset()
@@ -142,12 +142,12 @@ func _on_LevelComplete_replay():
 	$Star1.show_star()
 	$Star2.show_star()
 
-func _camera_shake():
-	var start_position = camera.translation
+func _camera_shake() -> void:
+	var start_position:Vector3 = camera.translation
 	
 	var shakes:int = (randi()%3) + 1
 	for i in shakes:
-		var random_vector = camera.translation - Vector3(rand_range(-1,1),rand_range(-1,1), rand_range(-1,1))
+		var random_vector:Vector3 = camera.translation - Vector3(rand_range(-1,1),rand_range(-1,1), rand_range(-1,1))
 		tween.interpolate_property(camera, "translation",camera.translation, random_vector, 0.1, moveTrans, moveEase)
 		tween.start()
 		yield(tween, "tween_all_completed")
@@ -156,14 +156,14 @@ func _camera_shake():
 	tween.start()
 
 
-func _on_Pause_pressed():
+func _on_Pause_pressed() -> void:
 	AudioMachine.click()
 	if not get_tree().paused:
 		$UI/Menu.show()
 		$UI/Menu.animation_player.play("FadeIn")
 		get_tree().paused = true
 
-func _on_LevelComplete_menu():
+func _on_LevelComplete_menu() -> void:
 	ball.reset()
 	$UI/Menu.animation_player.play("FadeIn")
 	$UI/LevelComplete.reset_stars()
@@ -174,7 +174,7 @@ func _on_LevelComplete_menu():
 
 
 
-func _on_Ball_reset():
+func _on_Ball_reset() -> void:
 	$UI/LevelComplete.reset_stars()
 	AudioMachine.reset()
 	$Star1.show_star()
@@ -187,6 +187,6 @@ func _on_Ball_reset():
 		$Tutorial.ball_reset()
 
 
-func _on_Ball_shoot():
+func _on_Ball_shoot() -> void:
 	if has_node("Tutorial"):
 		$Tutorial.ball_shoot()

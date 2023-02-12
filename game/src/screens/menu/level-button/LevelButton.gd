@@ -1,9 +1,9 @@
 extends Control
 
-var level = 1
-var stars
+var level:int = 1
+var stars:int
 
-func set_level(l):
+func set_level(l:int) -> void:
 	level = l
 	$MarginContainer/Info/Label.text = str(level)
 	stars = Global.level_stars[level- 1]
@@ -22,7 +22,7 @@ func set_level(l):
 		$MarginContainer/Info/Stars/Star3.modulate = Color("#fce527")
 	
 
-func _on_Button_pressed():
+func _on_Button_pressed() -> void:
 	if stars > -1:
 		AudioMachine.play_click()
 		Global.current_level = level

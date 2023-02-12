@@ -3,20 +3,20 @@ extends Spatial
 onready var timer:Timer = $Timer
 onready var animation_player:AnimationPlayer = $AnimationPlayer
 
-func swipe():
+func swipe() -> void:
 	visible = true
 	animation_player.play("FadeInSwipe")
 
-func tap():
+func tap() -> void:
 	visible = true
 	animation_player.stop()
 	animation_player.play("FadeInTap")
 	
-func fade_out():
+func fade_out() -> void:
 	visible = false
 
 
-func _on_AnimationPlayer_animation_finished(anim_name):
+func _on_AnimationPlayer_animation_finished(anim_name:String) -> void:
 	if anim_name == "FadeInTap":
 		animation_player.play("Tap")
 	elif anim_name == "FadeInSwipe":

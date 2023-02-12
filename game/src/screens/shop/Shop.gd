@@ -5,30 +5,30 @@ signal prev
 signal back
 signal select
 
-onready var animation_player = $AnimationPlayer
+onready var animation_player:AnimationPlayer = $AnimationPlayer
 
-func _ready():
+func _ready() -> void:
 	_set_select_label()
 
-func _on_Next_pressed():
+func _on_Next_pressed() -> void:
 	emit_signal("next")
 	_set_select_label()
 	AudioMachine.click()
 
 
-func _on_Prev_pressed():
+func _on_Prev_pressed() -> void:
 	emit_signal("prev")
 	_set_select_label()
 	AudioMachine.click()
 
 
-func set_values(ball):
-	var mass_tween = Tween.new()
+func set_values(ball:RigidBody) -> void:
+	var mass_tween:Tween = Tween.new()
 	add_child(mass_tween)
 	mass_tween.interpolate_property($Mass, "value", $Mass.value, ball.mass, 0.4, Tween.EASE_IN, Tween.EASE_OUT)
 	mass_tween.start()
 	
-	var bounce_tween = Tween.new()
+	var bounce_tween:Tween = Tween.new()
 	add_child(bounce_tween)
 	bounce_tween.interpolate_property($Bounce, "value", $Bounce.value, ball.bounce, 0.4, Tween.EASE_IN, Tween.EASE_OUT)
 	bounce_tween.start()
