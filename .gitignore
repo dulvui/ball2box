@@ -14,7 +14,8 @@ game/.mono/
 game/data_*/
 
 # Android
-game/android/
+#game/android/
+*.aar
 *.apk
 *.aab
 *.keystore
