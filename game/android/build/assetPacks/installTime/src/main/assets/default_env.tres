@@ -1,0 +1,14 @@
+[gd_resource type="Environment" format=2]
+
+[resource]
+background_mode = 1
+background_color = Color( 0.00392157, 0.00392157, 0.0823529, 1 )
+ambient_light_color = Color( 0.87451, 0.87451, 0.87451, 1 )
+tonemap_white = 16.0
+dof_blur_near_distance = 26.87
+dof_blur_near_transition = 22.13
+dof_blur_near_amount = 1.0
+adjustment_enabled = true
+adjustment_brightness = 1.24
+adjustment_contrast = 0.76
+adjustment_saturation = 1.72

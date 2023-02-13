@@ -1,0 +1,96 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/star.png" type="Texture" id=2]
+[ext_resource path="res://src/screens/menu/level-button/LevelButton.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.529412, 0.917647, 0.807843, 1 )
+border_width_bottom = 12
+border_color = Color( 0.376471, 0.701961, 0.611765, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="LevelButton" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -720.0
+margin_bottom = -1280.0
+rect_scale = Vector2( 0.6, 0.6 )
+size_flags_horizontal = 3
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 321.0
+margin_bottom = 310.0
+rect_scale = Vector2( 0.6, 0.6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+margin_right = 321.0
+margin_bottom = 310.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Info" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 321.0
+margin_bottom = 310.0
+custom_constants/separation = -24
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/Info"]
+margin_top = 58.0
+margin_right = 321.0
+margin_bottom = 176.0
+rect_pivot_offset = Vector2( 160, 59 )
+text = "2022"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stars" type="HBoxContainer" parent="MarginContainer/Info"]
+margin_top = 152.0
+margin_right = 321.0
+margin_bottom = 252.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Star1" type="TextureRect" parent="MarginContainer/Info/Stars"]
+margin_left = 6.0
+margin_right = 106.0
+margin_bottom = 100.0
+texture = ExtResource( 2 )
+
+[node name="Star2" type="TextureRect" parent="MarginContainer/Info/Stars"]
+margin_left = 110.0
+margin_right = 210.0
+margin_bottom = 100.0
+texture = ExtResource( 2 )
+
+[node name="Star3" type="TextureRect" parent="MarginContainer/Info/Stars"]
+margin_left = 214.0
+margin_right = 314.0
+margin_bottom = 100.0
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="MarginContainer"]
+pause_mode = 2
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 321.0
+margin_bottom = 310.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="MarginContainer/Button" to="." method="_on_Button_pressed"]

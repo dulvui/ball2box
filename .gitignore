@@ -14,11 +14,23 @@ game/.mono/
 game/data_*/
 
 # Android
-#game/android/
-*.aar
 *.apk
 *.aab
 *.keystore
+
+# F-Droid
+#game/android/
+*.aar
+/home/dulvui/dev/godot/ball2box/game/android/build/.gradle
+game/android/build/local.properties
+game/android/build/build/
+game/android/build/keystore.properties
+game/android/.idea/
+game/android/build/.idea/
+game/android/build/gradlew.bat
+game/android/build/gradlew
+game/android/build/gradle/
+game/android/build/.gradle/
 
 # screenshots
 screenshots/
