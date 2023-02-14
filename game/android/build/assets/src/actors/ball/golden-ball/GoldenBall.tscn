@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/actors/ball/base-ball/Ball.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/actors/ball/golden-ball/GoldenBallMeshInstance.tscn" type="PackedScene" id=2]
+
+[sub_resource type="PhysicsMaterial" id=1]
+bounce = 0.9
+
+[sub_resource type="SphereShape" id=2]
+
+[node name="GoldenBall" instance=ExtResource( 1 )]
+mass = 6.0
+physics_material_override = SubResource( 1 )
+
+[node name="MeshInstance" parent="." index="3" instance=ExtResource( 2 )]
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="4"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0 )
+shape = SubResource( 2 )

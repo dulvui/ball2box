@@ -112,10 +112,11 @@ android {
         }
 
         manifestPlaceholders = [godotEditorVersion: getGodotEditorVersion()]
-        applicationId 'com.simondalvai.ball2box'
-        versionCode 37
-        versionName '2.2.2'
 
+        // Feel free to modify the application id to your own.
+        applicationId getExportPackageName()
+        versionCode getExportVersionCode()
+        versionName getExportVersionName()
         minSdkVersion getExportMinSdkVersion()
         targetSdkVersion getExportTargetSdkVersion()
 
@@ -152,10 +153,13 @@ android {
         }
 
         release {
-            storeFile file(keystoreProperties['storeFile'])
-            storePassword keystoreProperties['storePassword']
-            keyAlias keystoreProperties['keyAlias']
-            keyPassword keystoreProperties['keyPassword']
+            File keystoreFile = new File(getReleaseKeystoreFile())
+            if (keystoreFile.isFile()) {
+                storeFile keystoreFile
+                storePassword getReleaseKeystorePassword()
+                keyAlias getReleaseKeyAlias()
+                keyPassword getReleaseKeystorePassword()
+            }
         }
     }
 

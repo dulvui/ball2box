@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/actors/objects/pop-object/PopObject.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/actors/objects/box/Box.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/levels/base-level/LevelBase.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/actors/objects/rotator/Rotator.tscn" type="PackedScene" id=4]
+
+[node name="LevelBase" instance=ExtResource( 3 )]
+
+[node name="Star1" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.45386, 31.6595, -1.90735e-06 )
+
+[node name="Star2" parent="." index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.93585, 11.3342, -3.8147e-06 )
+
+[node name="Ball" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32, 0 )
+can_sleep = false
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+
+[node name="Bin" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Box" parent="." index="7" instance=ExtResource( 2 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 23, 0 )
+
+[node name="Box2" parent="." index="8" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 28, 0 )
+
+[node name="Box3" parent="." index="9" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 28, 0 )
+
+[node name="Box4" parent="." index="10" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 18, 0 )
+
+[node name="Box5" parent="." index="11" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 18, 0 )
+
+[node name="PopObject" parent="." index="12" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28, 0 )
+
+[node name="PopObject4" parent="." index="13" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18, 0 )
+
+[node name="PopObject2" parent="." index="14" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 23, 0 )
+
+[node name="PopObject3" parent="." index="15" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 23, 0 )
+
+[node name="Rotator" parent="." index="16" instance=ExtResource( 4 )]
+transform = Transform( -0.639482, 0.284716, 0, -0.284716, -0.639482, 0, 0, 0, 0.7, 0, 12, 0 )
+
+[node name="Rotator2" parent="." index="17" instance=ExtResource( 4 )]
+transform = Transform( -0.639482, 0.284716, 0, -0.284716, -0.639482, 0, 0, 0, 0.7, -6.22465, 7.62951, 0 )
+
+[node name="Rotator3" parent="." index="18" instance=ExtResource( 4 )]
+transform = Transform( -0.639482, 0.284716, 0, -0.284716, -0.639482, 0, 0, 0, 0.7, 6.02599, 7.56329, 1.90735e-06 )

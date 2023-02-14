@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://src/screens/shop/balls/base-ball/BaseBall.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/actors/ball/pick-ball/PickMeshInstance.tscn" type="PackedScene" id=2]
-
-[node name="PickBall" instance=ExtResource( 1 )]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-
-[node name="MeshInstance" parent="." index="0" instance=ExtResource( 2 )]

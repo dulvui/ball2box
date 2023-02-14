@@ -8,9 +8,9 @@
         android:largeScreens="true"
         android:xlargeScreens="true" />
     <application android:label="@string/godot_project_name_string"
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:isGame="true"
-        android:hasFragileUserData="true"
+        android:hasFragileUserData="false"
         android:requestLegacyExternalStorage="false"
         tools:replace="android:allowBackup,android:isGame,android:hasFragileUserData,android:requestLegacyExternalStorage"
         tools:ignore="GoogleAppIndexingWarning"

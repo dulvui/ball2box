@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/actors/ball/green-ball/green-ball-material.tres" type="Material" id=1]
+
+[sub_resource type="SphereMesh" id=1]
+
+[node name="MeshInstance" type="MeshInstance"]
+transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 1 )

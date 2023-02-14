@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/actors/ball/base-ball/starter-ball.tres" type="Material" id=1]
+
+[sub_resource type="SphereMesh" id=1]
+
+[node name="MeshInstance" type="MeshInstance"]
+mesh = SubResource( 1 )
+material/0 = ExtResource( 1 )

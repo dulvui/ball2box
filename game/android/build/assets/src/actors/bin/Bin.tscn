@@ -1,0 +1,178 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://src/actors/bin/Bin.gd" type="Script" id=1]
+[ext_resource path="res://materials/bin-material.tres" type="Material" id=2]
+[ext_resource path="res://assets/target.jpg" type="Texture" id=3]
+
+[sub_resource type="PhysicsMaterial" id=1]
+bounce = 0.8
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="ConvexPolygonShape" id=3]
+points = PoolVector3Array( -1, -1, -1, -1, -1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1 )
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="ConvexPolygonShape" id=5]
+points = PoolVector3Array( -1, -1, -1, -1, -1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1 )
+
+[sub_resource type="CubeMesh" id=6]
+
+[sub_resource type="ConvexPolygonShape" id=7]
+points = PoolVector3Array( -1, -1, -1, -1, -1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1 )
+
+[sub_resource type="CylinderMesh" id=8]
+
+[sub_resource type="ConvexPolygonShape" id=9]
+points = PoolVector3Array( -0.982432, -0.982623, -0.184098, -0.982432, -0.982623, 0.184098, -0.982432, 0.982623, -0.184098, -0.982432, 0.982623, 0.184098, -0.951084, -0.981837, -0.306584, -0.951084, 0.981837, 0.306584, -0.917023, -0.978309, -0.397223, -0.917023, -0.978309, 0.397223, -0.917023, 0.978309, -0.397223, -0.853813, -0.975892, -0.518323, -0.853813, -0.975892, 0.518323, -0.853813, 0.975892, -0.518323, -0.853813, 0.975892, 0.518323, -0.79176, -0.974761, -0.60913, -0.79176, -0.974761, 0.60913, -0.707103, -0.983887, -0.707097, -0.707103, -0.983887, 0.707097, -0.707103, 0.983887, -0.707097, -0.707103, 0.983887, 0.707097, -0.609138, 0.97476, -0.791754, -0.609138, 0.97476, 0.791754, -0.518332, -0.975889, -0.853807, -0.518332, -0.975889, 0.853807, -0.518332, 0.975889, -0.853807, -0.397393, 0.978225, -0.916943, -0.397393, 0.978225, 0.916943, -0.306598, -0.981834, -0.951079, -0.306598, -0.981834, 0.951079, -0.18408, -0.982434, -0.982434, -0.18408, -0.982434, 0.982434, -0.18408, 0.982434, -0.982434, -0.18408, 0.982434, 0.982434, 0.184038, -0.982441, -0.982441, 0.184038, -0.982441, 0.982441, 0.184038, 0.982441, -0.982441, 0.184038, 0.982441, 0.982441, 0.306731, -0.981785, 0.951032, 0.306731, 0.981785, -0.951032, 0.306731, 0.981785, 0.951032, 0.397198, -0.978324, -0.917035, 0.397198, 0.978324, 0.917035, 0.459081, -0.979594, 0.887733, 0.459081, 0.979594, -0.887733, 0.5183, -0.975911, -0.853827, 0.5183, 0.975911, -0.853827, 0.5183, 0.975911, 0.853827, 0.609111, -0.974785, 0.791775, 0.642894, -0.979738, -0.765301, 0.642894, 0.979738, -0.765301, 0.642894, 0.979738, 0.765301, 0.791813, -0.974646, -0.609058, 0.791813, -0.974646, 0.609058, 0.791813, 0.974646, -0.609058, 0.791813, 0.974646, 0.609058, 0.853885, -0.976024, -0.518202, 0.853885, -0.976024, 0.518202, 0.917016, 0.978348, -0.397238, 0.917016, 0.978348, 0.397238, 0.95108, -0.981878, -0.306596, 0.95108, -0.981878, 0.306596, 0.98243, -0.982666, -0.184106, 0.98243, -0.982666, 0.184106, 0.98243, 0.982666, -0.184106, 0.98243, 0.982666, 0.184106 )
+
+[sub_resource type="ConvexPolygonShape" id=10]
+points = PoolVector3Array( -0.982432, -0.982623, -0.184098, -0.982432, -0.982623, 0.184098, -0.982432, 0.982623, -0.184098, -0.982432, 0.982623, 0.184098, -0.951084, -0.981837, -0.306584, -0.951084, 0.981837, 0.306584, -0.917023, -0.978309, -0.397223, -0.917023, -0.978309, 0.397223, -0.917023, 0.978309, -0.397223, -0.853813, -0.975892, -0.518323, -0.853813, -0.975892, 0.518323, -0.853813, 0.975892, -0.518323, -0.853813, 0.975892, 0.518323, -0.79176, -0.974761, -0.60913, -0.79176, -0.974761, 0.60913, -0.707103, -0.983887, -0.707097, -0.707103, -0.983887, 0.707097, -0.707103, 0.983887, -0.707097, -0.707103, 0.983887, 0.707097, -0.609138, 0.97476, -0.791754, -0.609138, 0.97476, 0.791754, -0.518332, -0.975889, -0.853807, -0.518332, -0.975889, 0.853807, -0.518332, 0.975889, -0.853807, -0.397393, 0.978225, -0.916943, -0.397393, 0.978225, 0.916943, -0.306598, -0.981834, -0.951079, -0.306598, -0.981834, 0.951079, -0.18408, -0.982434, -0.982434, -0.18408, -0.982434, 0.982434, -0.18408, 0.982434, -0.982434, -0.18408, 0.982434, 0.982434, 0.184038, -0.982441, -0.982441, 0.184038, -0.982441, 0.982441, 0.184038, 0.982441, -0.982441, 0.184038, 0.982441, 0.982441, 0.306731, -0.981785, 0.951032, 0.306731, 0.981785, -0.951032, 0.306731, 0.981785, 0.951032, 0.397198, -0.978324, -0.917035, 0.397198, 0.978324, 0.917035, 0.459081, -0.979594, 0.887733, 0.459081, 0.979594, -0.887733, 0.5183, -0.975911, -0.853827, 0.5183, 0.975911, -0.853827, 0.5183, 0.975911, 0.853827, 0.609111, -0.974785, 0.791775, 0.642894, -0.979738, -0.765301, 0.642894, 0.979738, -0.765301, 0.642894, 0.979738, 0.765301, 0.791813, -0.974646, -0.609058, 0.791813, -0.974646, 0.609058, 0.791813, 0.974646, -0.609058, 0.791813, 0.974646, 0.609058, 0.853885, -0.976024, -0.518202, 0.853885, -0.976024, 0.518202, 0.917016, 0.978348, -0.397238, 0.917016, 0.978348, 0.397238, 0.95108, -0.981878, -0.306596, 0.95108, -0.981878, 0.306596, 0.98243, -0.982666, -0.184106, 0.98243, -0.982666, 0.184106, 0.98243, 0.982666, -0.184106, 0.98243, 0.982666, 0.184106 )
+
+[sub_resource type="PlaneMesh" id=11]
+
+[sub_resource type="SpatialMaterial" id=12]
+albedo_color = Color( 0.960784, 0.188235, 0.0588235, 1 )
+albedo_texture = ExtResource( 3 )
+metallic = 0.72
+metallic_specular = 0.0
+roughness = 0.39
+
+[sub_resource type="BoxShape" id=13]
+
+[sub_resource type="Animation" id=14]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.01, 0.01, 0.01 ), Vector3( 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 1.05, 1.05, 1.05 ), Vector3( 0.95, 0.95, 0.95 ), Vector3( 1.05, 1.05, 1.05 ) ]
+}
+
+[node name="Bin" type="StaticBody" groups=["objects"]]
+pause_mode = 2
+transform = Transform( 1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0, 0, 0 )
+physics_material_override = SubResource( 1 )
+script = ExtResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1.8, 0, 0, 0, 0.2, 0, 0, 0, 1.4, 0, 0.2, 0 )
+material_override = ExtResource( 2 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1.8, 0, 0, 0, 0.2, 0, 0, 0, 1.4, 0, 0.2, 0 )
+shape = SubResource( 3 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 0.1, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -1.9, 1.5, 0 )
+use_in_baked_light = true
+mesh = SubResource( 4 )
+material/0 = ExtResource( 2 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="."]
+transform = Transform( 0.1, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -1.9, 1.5, 0 )
+shape = SubResource( 5 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( -2.44381e-07, -0.1, 0, 1.5, -1.62921e-08, 0, 0, 0, 1.5, 1.9, 1.5, 0 )
+use_in_baked_light = true
+mesh = SubResource( 6 )
+material/0 = ExtResource( 2 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="."]
+transform = Transform( -2.44381e-07, -0.1, 0, 1.5, -1.62921e-08, 0, 0, 0, 1.5, 1.9, 1.5, 0 )
+shape = SubResource( 7 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="."]
+transform = Transform( 2.6543e-15, 2.44381e-07, 0.1, 0.1, -2.44381e-07, 1.50348e-20, 1.62921e-08, 1.5, -1.62921e-08, 1.9, 3, 0 )
+use_in_baked_light = true
+mesh = SubResource( 8 )
+material/0 = ExtResource( 2 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="."]
+transform = Transform( 2.6543e-15, 2.44381e-07, 0.1, 0.1, -2.44381e-07, 1.50348e-20, 1.62921e-08, 1.5, -1.62921e-08, 1.9, 3, 0 )
+shape = SubResource( 9 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="."]
+transform = Transform( 2.6543e-15, 2.44381e-07, 0.1, 0.1, -2.44381e-07, 1.50348e-20, 1.62921e-08, 1.5, -1.62921e-08, -1.9, 3, 0 )
+use_in_baked_light = true
+mesh = SubResource( 8 )
+material/0 = ExtResource( 2 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="."]
+transform = Transform( 2.6543e-15, 2.44381e-07, 0.1, 0.1, -2.44381e-07, 1.50348e-20, 1.62921e-08, 1.5, -1.62921e-08, -1.9, 3, 0 )
+shape = SubResource( 10 )
+
+[node name="MeshInstance6" type="MeshInstance" parent="."]
+transform = Transform( 3.98147e-14, 1.62921e-08, 2, 1.5, -1.62921e-08, 0, 2.44381e-07, 0.1, -3.25841e-07, 0, 1.5, -1.5 )
+use_in_baked_light = true
+mesh = SubResource( 6 )
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance7" type="MeshInstance" parent="."]
+transform = Transform( 3.98147e-14, 1.62921e-08, 2, 1.5, -1.62921e-08, 0, 2.44381e-07, 0.1, -3.25841e-07, 0, 1.5, 1.5 )
+use_in_baked_light = true
+mesh = SubResource( 6 )
+material/0 = ExtResource( 2 )
+
+[node name="Face" type="MeshInstance" parent="."]
+transform = Transform( 1.5, 0, -2.44381e-07, -2.44381e-07, 2.65431e-15, -1.5, 0, 0.1, 3.98147e-14, 0, 1.5, 1.61 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
+
+[node name="MeshInstance8" type="MeshInstance" parent="."]
+transform = Transform( -1.62921e-08, -2, 0, 0.1, -3.25841e-07, 0, 0, 0, 0.1, 0, 3, 1.5 )
+use_in_baked_light = true
+mesh = SubResource( 8 )
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance9" type="MeshInstance" parent="."]
+transform = Transform( -1.62921e-08, -2, 0, 0.1, -3.25841e-07, 0, 0, 0, 0.1, 0, 3, -1.5 )
+use_in_baked_light = true
+mesh = SubResource( 8 )
+material/0 = ExtResource( 2 )
+
+[node name="BallDetector" type="Area" parent="." groups=["ball"]]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="BallDetector"]
+transform = Transform( 0.6, 0, 0, 0, 0.1, 0, 0, 0, 0.4, -0.001, 0.6, -0.01 )
+shape = SubResource( 13 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.01
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FadeIn = SubResource( 14 )
+anims/Size = SubResource( 15 )
+
+[connection signal="body_entered" from="BallDetector" to="." method="_on_BallDetector_body_entered"]
+[connection signal="body_exited" from="BallDetector" to="." method="_on_BallDetector_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
