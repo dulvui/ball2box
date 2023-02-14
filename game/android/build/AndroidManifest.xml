@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.godot.game"
-    android:versionCode="1"
-    android:versionName="1.0"
+    package="com.simondalvai.ball2box"
+    android:versionCode="32"
+    android:versionName="2.2.2"
     android:installLocation="auto" >
 
     <!-- Adding custom text to the manifest is fine, but do it outside the custom USER and APPLICATION BEGIN/END comments, -->
@@ -69,7 +69,7 @@
             android:launchMode="singleTask"
             android:excludeFromRecents="false"
             android:exported="true"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
             android:resizeableActivity="false"
             tools:ignore="UnusedAttribute" >
