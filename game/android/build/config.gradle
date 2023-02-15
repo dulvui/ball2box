@@ -37,14 +37,14 @@ ext.getExportVersionCode = { ->
     try {
         return Integer.parseInt(versionCode)
     } catch (NumberFormatException ignored) {
-        return 1
+        return 37
     }
 }
 
 ext.getExportVersionName = { ->
     String versionName = project.hasProperty("export_version_name") ? project.property("export_version_name") : ""
     if (versionName == null || versionName.isEmpty()) {
-        versionName = "1.0"
+        versionName = "2.2.2"
     }
     return versionName
 }
