@@ -32,7 +32,7 @@ ext.getExportPackageName = { ->
 ext.getExportVersionCode = { ->
     String versionCode = project.hasProperty("export_version_code") ? project.property("export_version_code") : ""
     if (versionCode == null || versionCode.isEmpty()) {
-        versionCode = "1"
+        versionCode = "37"
     }
     try {
         return Integer.parseInt(versionCode)
