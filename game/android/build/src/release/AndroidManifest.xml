@@ -20,7 +20,7 @@
         <meta-data tools:node="remove" android:name="xr_hand_tracking_version_name" />
         <meta-data tools:node="remove" android:name="xr_hand_tracking_metadata_name" />
         <meta-data tools:node="remove" android:name="com.oculus.supportedDevices" />
-        <activity android:name="com.godot.game.GodotApp" tools:replace="android:screenOrientation,android:excludeFromRecents,android:resizeableActivity" android:excludeFromRecents="false" android:screenOrientation="portrait" android:resizeableActivity="true">
+        <activity android:name="com.simondalvai.ball2box.GodotApp" tools:replace="android:screenOrientation,android:excludeFromRecents,android:resizeableActivity" android:excludeFromRecents="false" android:screenOrientation="portrait" android:resizeableActivity="true">
             <meta-data tools:node="remove" android:name="com.oculus.vr.focusaware" />
         </activity>
     </application>

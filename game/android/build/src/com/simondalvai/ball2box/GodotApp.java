@@ -28,7 +28,7 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                */
 /*************************************************************************/
 
-package com.godot.game;
+package com.simondalvai.ball2box;
 
 import org.godotengine.godot.FullScreenGodotApp;
 
