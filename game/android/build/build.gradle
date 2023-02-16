@@ -114,9 +114,9 @@ android {
         manifestPlaceholders = [godotEditorVersion: getGodotEditorVersion()]
 
         // Feel free to modify the application id to your own.
-        applicationId getExportPackageName()
-        versionCode getExportVersionCode()
-        versionName getExportVersionName()
+        applicationId = "com.simondalvai.ball2box"
+        versionCode = 37
+        versionName = "2.2.2"
         minSdkVersion getExportMinSdkVersion()
         targetSdkVersion getExportTargetSdkVersion()
 
