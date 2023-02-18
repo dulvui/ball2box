@@ -7,9 +7,9 @@ on:
       - ".github/workflows/upload-android.yml"
 
 env:
-  RELEASE_KEY_STORE_BASE64: ${{ secrets.SIGNING_KEY_BASE64 }}
-  SERVICE_ACCOUNT_JSON: ${{ secrets.SERVICE_ACCOUNT_JSON }}
-  DEBUG_KEY_STORE_BASE64: ${{ secrets.DEBUG_SIGNING_KEY_BASE64 }}
+  RELEASE_KEY_STORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+  SERVICE_ACCOUNT_JSON: ${{ secrets.ANDROID_SERVICE_ACCOUNT_JSON }}
+  DEBUG_KEY_STORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_DEBUG_BASE64 }}
   EXPORT_PRESET_CFG: ${{ secrets.GODOT_EXPORTS_PRESET_CFG }}
   WORKING_DIRECTORY: game
 
@@ -45,9 +45,12 @@ jobs:
           sed -i "s|VERSION_CODE|$VERSION_CODE|g" $WORKING_DIRECTORY/export_presets.cfg
           sed -i "s|VERSION_NAME|$VERSION_NAME|g" $WORKING_DIRECTORY/export_presets.cfg
 
+      - name: Delete f-droid's android/build
+        run: rm -rf game/android
+
       - name: Export signed apk and upload to internal testing
-        uses: dulvui/godot-android-upload@v1
+        uses: dulvui/godot-android-upload@v1.0.1
         with:
           working-directory: $WORKING_DIRECTORY
           package-name: com.salvai.ultimatetoss
-          release-file: ./Ball2Box.apk
+          release-file: ./Ball2Box.aab
