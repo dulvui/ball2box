@@ -54,6 +54,9 @@ jobs:
       - name: Set version and short version
         run: echo "VERSION=$(cat version-ios)" >> $GITHUB_ENV
 
+      - name: Change driver to GLES3
+        run: echo 'quality/driver/driver_name="GLES3"' >> game/project.godot
+
       - name: Create and config export_presets.cfg
         run: |
           echo $EXPORT_PRESET_CFG > $WORKING_DIRECTORY/export_presets.cfg
