@@ -48,9 +48,6 @@ jobs:
       - name: Delete iOS icons
         run: rm -rf $WORKING_DIRECTORY/AppIcons
 
-      - name: List game directory
-        run: ls -la game
-
       - name: Export signed aab and upload to internal testing
         uses: dulvui/godot-android-upload@v1.0.1
         with:
