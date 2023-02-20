@@ -11,25 +11,39 @@ content_margin_top = 10.0
 content_margin_bottom = 10.0
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
-[node name="Info" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Info" type="CenterContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -578.0
+margin_right = 300.0
+margin_bottom = 622.0
 theme = ExtResource( 1 )
 script = ExtResource( 3 )
 
-[node name="Panel" type="Panel" parent="."]
-margin_left = 91.0
-margin_top = 78.0
-margin_right = 622.0
-margin_bottom = 675.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 600.0
+margin_bottom = 1200.0
+rect_min_size = Vector2( 600, 1200 )
+rect_pivot_offset = Vector2( 252, 213 )
+custom_constants/separation = 100
+alignment = 1
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+margin_top = 37.0
+margin_right = 600.0
+margin_bottom = 637.0
+rect_min_size = Vector2( 600, 600 )
 rect_pivot_offset = Vector2( 265, 298 )
 custom_styles/panel = ExtResource( 2 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
-margin_left = 28.0
-margin_top = 29.0
-margin_right = 508.0
-margin_bottom = 561.0
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Panel"]
+margin_left = 31.0
+margin_top = 23.0
+margin_right = 581.0
+margin_bottom = 573.0
 rect_pivot_offset = Vector2( 240, 266 )
 custom_styles/normal = SubResource( 1 )
 bbcode_enabled = true
@@ -148,31 +162,30 @@ You can find more information and the complete source code on Github.
 All the best,
 Simon"
 
-[node name="HBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 105.0
-margin_top = 753.0
-margin_right = 610.0
-margin_bottom = 1179.0
-rect_pivot_offset = Vector2( 252, 213 )
+[node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 737.0
+margin_right = 600.0
+margin_bottom = 1163.0
+alignment = 1
 
-[node name="Website" type="Button" parent="HBoxContainer"]
-margin_right = 505.0
+[node name="Website" type="Button" parent="VBoxContainer/Buttons"]
+margin_right = 600.0
 margin_bottom = 126.0
 text = "website"
 
-[node name="Github" type="Button" parent="HBoxContainer"]
+[node name="Github" type="Button" parent="VBoxContainer/Buttons"]
 margin_top = 150.0
-margin_right = 505.0
+margin_right = 600.0
 margin_bottom = 276.0
 text = "github"
 
-[node name="Back" type="Button" parent="HBoxContainer"]
+[node name="Back" type="Button" parent="VBoxContainer/Buttons"]
 margin_top = 300.0
-margin_right = 505.0
+margin_right = 600.0
 margin_bottom = 426.0
 text = "menu"
 
-[connection signal="meta_clicked" from="Panel/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
-[connection signal="pressed" from="HBoxContainer/Website" to="." method="_on_Website_pressed"]
-[connection signal="pressed" from="HBoxContainer/Github" to="." method="_on_Github_pressed"]
-[connection signal="pressed" from="HBoxContainer/Back" to="." method="_on_Back_pressed"]
+[connection signal="meta_clicked" from="VBoxContainer/Panel/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
+[connection signal="pressed" from="VBoxContainer/Buttons/Website" to="." method="_on_Website_pressed"]
+[connection signal="pressed" from="VBoxContainer/Buttons/Github" to="." method="_on_Github_pressed"]
+[connection signal="pressed" from="VBoxContainer/Buttons/Back" to="." method="_on_Back_pressed"]

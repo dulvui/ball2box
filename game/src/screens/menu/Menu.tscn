@@ -406,8 +406,6 @@ __meta__ = {
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -720.0
-margin_right = -720.0
 
 [node name="Level" type="Label" parent="Menu"]
 anchor_left = 0.5
@@ -563,9 +561,10 @@ rect_scale = Vector2( 0.5, 0.5 )
 text = "simondalvai.com"
 
 [node name="Info" parent="." instance=ExtResource( 10 )]
-margin_left = 720.0
-margin_right = 2880.0
-margin_bottom = 3840.0
+margin_left = 360.0
+margin_top = -640.0
+margin_right = 1080.0
+margin_bottom = 640.0
 
 [connection signal="pressed" from="LevelSelect/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="LevelSelect/Next" to="." method="_on_Next_pressed"]
