@@ -46,7 +46,7 @@ jobs:
         run: rm -rf $WORKING_DIRECTORY/android
 
       - name: Delete iOS icons
-        run: rm -rf $WORKING_DIRECTORY/AppIcon
+        run: rm -rf $WORKING_DIRECTORY/AppIcons
 
       - name: Export signed aab and upload to internal testing
         uses: dulvui/godot-android-upload@v1.0.0
