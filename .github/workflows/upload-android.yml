@@ -43,9 +43,12 @@ jobs:
           sed -i "s|VERSION_NAME|$VERSION_NAME|g" $WORKING_DIRECTORY/export_presets.cfg
 
       - name: Delete f-droid's custom android build template
-        run: rm -rf game/android
+        run: rm -rf $WORKING_DIRECTORY/android
 
-      - name: Export signed apk and upload to internal testing
+      - name: Delete iOS icons
+        run: rm -rf $WORKING_DIRECTORY/AppIcon
+
+      - name: Export signed aab and upload to internal testing
         uses: dulvui/godot-android-upload@v1.0.0
         with:
           working-directory: $WORKING_DIRECTORY
