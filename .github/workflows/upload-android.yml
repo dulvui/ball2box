@@ -42,11 +42,11 @@ jobs:
           sed -i "s|VERSION_CODE|$VERSION_CODE|g" $WORKING_DIRECTORY/export_presets.cfg
           sed -i "s|VERSION_NAME|$VERSION_NAME|g" $WORKING_DIRECTORY/export_presets.cfg
 
-      - name: Delete f-droid's android/build
+      - name: Delete f-droid's custom android build template
         run: rm -rf game/android
 
       - name: Export signed apk and upload to internal testing
-        uses: dulvui/godot-android-upload@v1.0.2
+        uses: dulvui/godot-android-upload@v1.0.0
         with:
           working-directory: $WORKING_DIRECTORY
           package-name: com.salvai.ultimatetoss
