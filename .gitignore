@@ -6,7 +6,7 @@ export_presets-ga.cfg
 
 
 # Imported translations (automatically generated from CSV files)
-*.translation
+# *.translation
 *.~lock.translations.csv#
 
 # Mono-specific ignores
