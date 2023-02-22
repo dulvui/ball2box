@@ -48,9 +48,9 @@ jobs:
       - name: Delete iOS icons
         run: rm -rf $WORKING_DIRECTORY/AppIcons
 
-      - name: Export signed aab and upload to internal testing
+      - name: Export signed aab/apk and upload to internal testing
         uses: dulvui/godot-android-upload@v1.0.0
         with:
           working-directory: $WORKING_DIRECTORY
           package-name: com.salvai.ultimatetoss
-          release-file: ./Ball2Box.aab
+          release-file: ./Ball2Box.apk
