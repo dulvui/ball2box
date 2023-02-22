@@ -49,7 +49,7 @@ jobs:
         run: rm -rf $WORKING_DIRECTORY/AppIcons
 
       - name: Export signed aab and upload to internal testing
-        uses: dulvui/godot-android-upload@v1.0.1
+        uses: dulvui/godot-android-upload@v1.0.0
         with:
           working-directory: $WORKING_DIRECTORY
           package-name: com.salvai.ultimatetoss
