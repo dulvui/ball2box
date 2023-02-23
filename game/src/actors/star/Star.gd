@@ -2,21 +2,28 @@ extends Node
 
 signal star_hit
 
-onready var animation_player  = $AnimationPlayer
+onready var animation_player:AnimationPlayer  = $AnimationPlayer
 
-var star_visible = true
+var is_visible:bool = true
+
+# gets enabled if ball has been shooted, to prevent issue
+# https://github.com/dulvui/ball2box/issues/2
+var is_hitable:bool = false
 
 func _ready():
 	$AnimationPlayer.play("Unpop")
 
 func show_star():
-	if not star_visible:
+	if not is_visible:
 		$AnimationPlayer.play("Unpop")
-		star_visible = true
 
 func _on_Area_body_entered(body):
-	if body.is_in_group("ball") and star_visible:
-		star_visible = false
-		print("star hit")
+	if body.is_in_group("ball") and is_visible and is_hitable:
+		is_visible = false
 		emit_signal("star_hit")
 		animation_player.play("Pop")
+
+
+func _on_AnimationPlayer_animation_finished(anim_name) -> void:
+	if anim_name == "Unpop":
+		is_visible = true
