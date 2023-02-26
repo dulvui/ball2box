@@ -115,8 +115,8 @@ android {
 
         // Feel free to modify the application id to your own.
         applicationId = "com.simondalvai.ball2box"
-        versionCode = 37
-        versionName = "2.2.2"
+        versionCode = 41
+        versionName = "2.2.3"
         minSdkVersion getExportMinSdkVersion()
         targetSdkVersion getExportTargetSdkVersion()
 

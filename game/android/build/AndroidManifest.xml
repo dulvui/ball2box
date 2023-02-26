@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.simondalvai.ball2box"
-    android:versionCode="32"
-    android:versionName="2.2.2"
+    android:versionCode="41"
+    android:versionName="2.2.3"
     android:installLocation="auto" >
 
     <!-- Adding custom text to the manifest is fine, but do it outside the custom USER and APPLICATION BEGIN/END comments, -->
