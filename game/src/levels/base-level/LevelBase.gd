@@ -177,8 +177,11 @@ func _on_LevelComplete_menu() -> void:
 func _on_Ball_reset() -> void:
 	$UI/LevelComplete.reset_stars()
 	AudioMachine.reset()
+	
 	$Star1.show_star()
 	$Star2.show_star()
+	$Star1.is_hitable = false
+	$Star2.is_hitable = false
 	
 	fade_in_pop_objects()
 		
@@ -188,6 +191,9 @@ func _on_Ball_reset() -> void:
 
 
 func _on_Ball_shoot() -> void:
+	$Star1.is_hitable = true
+	$Star2.is_hitable = true
+	
 	if has_node("Tutorial"):
 		$Tutorial.ball_shoot()
 
