@@ -1,0 +1,1 @@
+- ball can hit stars again after coming back from the shop
