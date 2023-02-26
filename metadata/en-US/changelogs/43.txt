@@ -1,0 +1,1 @@
+fix stars double fade out
