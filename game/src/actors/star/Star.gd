@@ -20,6 +20,7 @@ func show_star():
 func _on_Area_body_entered(body):
 	if body.is_in_group("ball") and is_hitable:
 		is_visible = false
+		is_hitable = false
 		emit_signal("star_hit")
 		animation_player.play("Pop")
 
