@@ -37,8 +37,7 @@ func _ready() -> void:
 	add_child(ball)
 		
 	
-	ball.connect("reset",self,"_on_Ball_reset")
-	ball.connect("shoot",self,"_on_Ball_shoot")
+	_connect_ball_signals()
 	$Star1.connect("star_hit",self,"on_star1_hit")
 	$Star2.connect("star_hit",self,"on_star2_hit")
 
@@ -92,10 +91,6 @@ func _on_Shop_back() -> void:
 	$UI/Menu.animation_player.play("FadeIn")
 	$Base/Shop3D.menu()
 	$AnimationPlayer.play("GoToMenu")
-	
-	# reset level after coming back from shop
-	_on_Ball_reset()
-	ball.reset()
 
 
 func _on_Shop_select() -> void:
@@ -118,11 +113,10 @@ func _on_Shop_select() -> void:
 		ball.translation = pos
 		add_child(ball)
 			
-		ball.connect("reset_ball",self,"_on_Ball_reset_ball")
-		
 		# reset level after coming back from shop
 		_on_Ball_reset()
 		ball.reset()
+		_connect_ball_signals()
 	
 
 
@@ -207,3 +201,7 @@ func _on_LevelComplete_levels():
 	AudioMachine.reset()
 	$Star1.show_star()
 	$Star2.show_star()
+
+func _connect_ball_signals():
+	ball.connect("reset",self,"_on_Ball_reset")
+	ball.connect("shoot",self,"_on_Ball_shoot")

@@ -18,7 +18,7 @@ func show_star():
 		$AnimationPlayer.play("Unpop")
 
 func _on_Area_body_entered(body):
-	if body.is_in_group("ball") and is_visible and is_hitable:
+	if body.is_in_group("ball") and is_hitable:
 		is_visible = false
 		emit_signal("star_hit")
 		animation_player.play("Pop")
