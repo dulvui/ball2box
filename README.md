@@ -5,7 +5,7 @@
 Snake game made with libGDX with 60 levels.  
 This game is open source, with no ads and no tracking.
 
-**F-Droid version 2.2.3 is currently broken, please install 2.2.2**
+** 🚨 F-Droid 🚨 version 2.2.3 is currently broken, please install 2.2.2**
 
 <a href="https://f-droid.org/en/packages/com.simondalvai.ball2box/" target="_blank"><img src="store-images/get-it-on-en.webp" alt="Get it on F-Droid" height="50px" ></a>
 <a href="https://play.google.com/store/apps/details?id=com.salvai.ultimatetoss" target="_blank"><img src="store-images/PlayStore.svg" alt="Get it on Google Play" height="49px"></a>
