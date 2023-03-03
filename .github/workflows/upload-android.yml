@@ -42,9 +42,6 @@ jobs:
           sed -i "s|VERSION_CODE|$VERSION_CODE|g" $WORKING_DIRECTORY/export_presets.cfg
           sed -i "s|VERSION_NAME|$VERSION_NAME|g" $WORKING_DIRECTORY/export_presets.cfg
 
-      - name: Delete f-droid's custom android build template
-        run: rm -rf $WORKING_DIRECTORY/android
-
       - name: Delete iOS icons
         run: rm -rf $WORKING_DIRECTORY/AppIcons
 
