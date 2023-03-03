@@ -13,6 +13,7 @@ var just_opened:bool = true
 var tutorial_swipe_done:bool = false
 var tutorial_tap_done:bool = false
 
+const FDROID = true
 
 var level_stars:Array = [0]
 

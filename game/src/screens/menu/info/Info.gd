@@ -2,6 +2,10 @@ extends CenterContainer
 
 signal back
 
+func _ready() -> void:
+	$VBoxContainer/Buttons/Donate.visible = Global.FDROID
+	$VBoxContainer/Buttons/Website.visible = not Global.FDROID
+
 func _on_Back_pressed() -> void:
 	emit_signal("back")
 
@@ -19,3 +23,8 @@ func _on_Github_pressed() -> void:
 func _on_RichTextLabel_meta_clicked(meta) -> void:
 	OS.shell_open(meta)
 	AudioMachine.click()
+
+
+func _on_Donate_pressed():
+	AudioMachine.click()
+	OS.shell_open("https://simondalvai.com/donate")

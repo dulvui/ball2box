@@ -179,6 +179,13 @@ margin_right = 600.0
 margin_bottom = 276.0
 text = "github"
 
+[node name="Donate" type="Button" parent="VBoxContainer/Buttons"]
+visible = false
+margin_top = 300.0
+margin_right = 600.0
+margin_bottom = 426.0
+text = "donate"
+
 [node name="Back" type="Button" parent="VBoxContainer/Buttons"]
 margin_top = 300.0
 margin_right = 600.0
@@ -188,4 +195,5 @@ text = "menu"
 [connection signal="meta_clicked" from="VBoxContainer/Panel/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
 [connection signal="pressed" from="VBoxContainer/Buttons/Website" to="." method="_on_Website_pressed"]
 [connection signal="pressed" from="VBoxContainer/Buttons/Github" to="." method="_on_Github_pressed"]
+[connection signal="pressed" from="VBoxContainer/Buttons/Donate" to="." method="_on_Donate_pressed"]
 [connection signal="pressed" from="VBoxContainer/Buttons/Back" to="." method="_on_Back_pressed"]
