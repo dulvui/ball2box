@@ -49,17 +49,7 @@ func _on_Select_pressed():
 	elif ball["price"] is String:
 		$Select.text = "select"
 		if ball["price"] == tr("FOLLOW"):
-			OS.shell_open("https://instagram.com/radical.pixels/")
-		
-		
-		elif ball["price"] == tr("RATE"):
-			if OS.get_name() == "iOS":
-				OS.shell_open("https://itunes.apple.com/app/id1522604143?action=write-review")
-			elif Global.FDROID:
-				OS.shell_open("https://github.com/dulvui/ball2box")
-			else:
-				OS.shell_open("https://play.google.com/store/apps/details?id=com.salvai.ultimatetoss")
-
+			OS.shell_open("https://mastodon.social/@dulvui")
 		
 		elif ball["price"] == tr("MORE_GAMES"):
 			if OS.get_name() == "iOS":
