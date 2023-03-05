@@ -64,11 +64,12 @@ jobs:
           wget -q https://github.com/google/bundletool/releases/download/1.14.0/bundletool-all-1.14.0.jar
           java -jar bundletool-all-1.14.0.jar build-apks --bundle=Ball2Box.aab --output=Ball2Box.apks \
           --ks=keystore.keystore --ks-pass=pass:${{ secrets.ANDROID_STORE_PASSWORD }} --ks-key-alias=${{ secrets.ANDROID_KEYSTORE_ALIAS }} \
-          --key-pass=pass:${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          --key-pass=pass:${{ secrets.ANDROID_KEYSTORE_PASSWORD }} --mode=universal
+          unzip -p Ball2Box.apks universal.apk universal.apk > Ball2Box.apk
 
       - name: find apk
         run: |
-          ls -la
+          ls -lah
           find . -iname "*.apk"
 
       - name: Upload binaries to Github release
@@ -77,6 +78,6 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ./Ball2Box.apk
           asset_name: Ball2Box.apk
-          tag: $VERSION_NAME-$VERSION_CODE
+          tag: ${{ env.VERSION_NAME }}-${{ env.VERSION_CODE }}
           overwrite: true
-          body: "Ball2Box - version: $VERSION_NAME code: $VERSION_CODE"
+          body: "Ball2Box - version: ${{ env.VERSION_NAME }} code: ${{ env.VERSION_CODE }}"
