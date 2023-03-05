@@ -45,17 +45,25 @@ jobs:
       - name: Delete iOS icons
         run: rm -rf $WORKING_DIRECTORY/AppIcons
 
-      - name: Export signed aab and upload to internal testing
-        uses: dulvui/godot-android-upload@v1.0.1
+      - name: Godot Android export
+        uses: dulvui/godot-android-export@v2.0.0
         with:
           working-directory: $WORKING_DIRECTORY
           package-name: com.salvai.ultimatetoss
-          release-file: ./Ball2Box.aab
+
+      - name: Publish to Play Store
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJson: service-account.json
+          packageName: com.salvai.ultimate-toss
+          releaseFiles: Ball2Box.aab
+          track: 'internal'
+          status: completed
 
       - name: Bundle to apk
         run: |
           wget -q https://github.com/google/bundletool/releases/download/1.14.0/bundletool-all-1.14.0.jar
-          java -jar bundletool-all-1.14.0.jar build-apks --bundle=Ball2Box.aab --output=Ball2Box.apk \
+          java -jar bundletool-all-1.14.0.jar build-apks --bundle=Ball2Box.aab --output=Ball2Box.apks \
           --ks=keystore.keystore --ks-pass=pass:${{ secrets.ANDROID_STORE_PASSWORD }} --ks-key-alias=${{ secrets.ANDROID_KEYSTORE_ALIAS }} \
           --key-pass=pass:${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
 
