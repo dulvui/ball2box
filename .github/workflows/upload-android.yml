@@ -67,11 +67,6 @@ jobs:
           --key-pass=pass:${{ secrets.ANDROID_KEYSTORE_PASSWORD }} --mode=universal
           unzip -p Ball2Box.apks universal.apk > Ball2Box.apk
 
-      - name: find apk
-        run: |
-          ls -lah
-          find . -iname "*.apk"
-
       - name: Upload binaries to Github release
         uses: svenstaro/upload-release-action@v2
         with:
