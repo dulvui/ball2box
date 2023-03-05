@@ -50,14 +50,14 @@ jobs:
         with:
           working-directory: $WORKING_DIRECTORY
 
-      # - name: Publish to Play Store
-      #   uses: r0adkll/upload-google-play@v1
-      #   with:
-      #     serviceAccountJson: service-account.json
-      #     packageName: com.salvai.ultimatetoss
-      #     releaseFiles: Ball2Box.aab
-      #     track: 'internal'
-      #     status: completed
+      - name: Publish to Play Store
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJson: service-account.json
+          packageName: com.salvai.ultimatetoss
+          releaseFiles: Ball2Box.aab
+          track: 'internal'
+          status: completed
 
       - name: Bundle aab to apk
         run: |
