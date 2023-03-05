@@ -50,14 +50,14 @@ jobs:
         with:
           working-directory: $WORKING_DIRECTORY
 
-      - name: Publish to Play Store
-        uses: r0adkll/upload-google-play@v1
-        with:
-          serviceAccountJson: service-account.json
-          packageName: com.salvai.ultimatetoss
-          releaseFiles: Ball2Box.aab
-          track: 'internal'
-          status: completed
+      # - name: Publish to Play Store
+      #   uses: r0adkll/upload-google-play@v1
+      #   with:
+      #     serviceAccountJson: service-account.json
+      #     packageName: com.salvai.ultimatetoss
+      #     releaseFiles: Ball2Box.aab
+      #     track: 'internal'
+      #     status: completed
 
       - name: Bundle to apk
         run: |
@@ -65,6 +65,11 @@ jobs:
           java -jar bundletool-all-1.14.0.jar build-apks --bundle=Ball2Box.aab --output=Ball2Box.apks \
           --ks=keystore.keystore --ks-pass=pass:${{ secrets.ANDROID_STORE_PASSWORD }} --ks-key-alias=${{ secrets.ANDROID_KEYSTORE_ALIAS }} \
           --key-pass=pass:${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+
+      - name: find apk
+        run: |
+          ls -la
+          find . -iname "*.apk"
 
       - name: Upload binaries to Github release
         uses: svenstaro/upload-release-action@v2
