@@ -49,13 +49,12 @@ jobs:
         uses: dulvui/godot-android-export@v2.0.0
         with:
           working-directory: $WORKING_DIRECTORY
-          package-name: com.salvai.ultimatetoss
 
       - name: Publish to Play Store
         uses: r0adkll/upload-google-play@v1
         with:
           serviceAccountJson: service-account.json
-          packageName: com.salvai.ultimate-toss
+          packageName: com.salvai.ultimatetoss
           releaseFiles: Ball2Box.aab
           track: 'internal'
           status: completed
