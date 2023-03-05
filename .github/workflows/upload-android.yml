@@ -56,8 +56,8 @@ jobs:
         run: |
           wget -q https://github.com/google/bundletool/releases/download/1.14.0/bundletool-all-1.14.0.jar
           java -jar bundletool-all-1.14.0.jar build-apks --bundle=Ball2Box.aab --output=Ball2Box.apk \
-          --ks=keystore.keystore --ks-pass=${{ secrets.ANDROID_STORE_PASSWORD }} --ks-key-alias=${{ secrets.ANDROID_KEYSTORE_ALIAS }} \
-          --key-pass=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          --ks=keystore.keystore --ks-pass=pass:${{ secrets.ANDROID_STORE_PASSWORD }} --ks-key-alias=${{ secrets.ANDROID_KEYSTORE_ALIAS }} \
+          --key-pass=pass:${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
 
       - name: Upload binaries to Github release
         uses: svenstaro/upload-release-action@v2
