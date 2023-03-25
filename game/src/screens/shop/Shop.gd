@@ -44,10 +44,10 @@ func _on_Select_pressed():
 	AudioMachine.play_click()
 	var ball = BallMachine.get_current_ball_info()
 	if Global.unlocked_balls.has(ball["id"]):
-		$Select.text = "select"
+		$Select.text = "SELECT"
 	
 	elif ball["price"] is String:
-		$Select.text = "select"
+		$Select.text = "SELECT"
 		if ball["price"] == tr("FOLLOW"):
 			OS.shell_open("https://mastodon.social/@dulvui")
 		
@@ -71,7 +71,7 @@ func _on_Select_pressed():
 func _set_select_label():
 	var ball = BallMachine.get_current_ball_info()
 	if Global.unlocked_balls.has(ball["id"]):
-		$Select.text = "select"
+		$Select.text = "SELECT"
 		$Star.hide()
 		
 	else:

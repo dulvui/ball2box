@@ -432,9 +432,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -198.0
-margin_top = -248.0
+margin_top = -232.0
 margin_right = 198.0
-margin_bottom = 327.0
+margin_bottom = 343.0
 rect_pivot_offset = Vector2( 188, 0 )
 
 [node name="Play" type="Button" parent="Menu/Buttons"]
@@ -449,7 +449,7 @@ __meta__ = {
 margin_top = 150.0
 margin_right = 396.0
 margin_bottom = 276.0
-text = "SHOP"
+text = "BALLS"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -555,18 +555,18 @@ anchor_left = 0.5
 anchor_top = 0.926
 anchor_right = 0.5
 anchor_bottom = 0.926
-margin_left = -161.0
-margin_top = -29.28
-margin_right = 491.0
-margin_bottom = 88.72
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = -193.0
+margin_top = -149.28
+margin_right = 459.0
+margin_bottom = -31.28
+rect_scale = Vector2( 0.6, 0.6 )
 text = "simondalvai.com"
 
 [node name="Info" parent="." instance=ExtResource( 10 )]
-margin_left = 720.0
-margin_top = 0.0
-margin_right = 1440.0
-margin_bottom = 1280.0
+margin_left = 360.0
+margin_top = -640.0
+margin_right = 1080.0
+margin_bottom = 640.0
 
 [connection signal="pressed" from="LevelSelect/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="LevelSelect/Next" to="." method="_on_Next_pressed"]

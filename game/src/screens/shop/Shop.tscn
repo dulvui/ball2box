@@ -77,11 +77,11 @@ __meta__ = {
 }
 
 [node name="Back" type="Button" parent="."]
-margin_left = 245.0
+margin_left = 112.0
 margin_top = 1075.0
-margin_right = 475.0
-margin_bottom = 1205.0
-text = "back"
+margin_right = 608.0
+margin_bottom = 1201.0
+text = "BACK"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -91,7 +91,7 @@ margin_left = 112.0
 margin_top = 923.0
 margin_right = 608.0
 margin_bottom = 1049.0
-text = "more games"
+text = "SELECT"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -144,7 +144,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="Bounce"]
 margin_right = 400.0
 margin_bottom = 118.0
-text = "bounce"
+text = "BOUNCE"
 align = 1
 
 [node name="Mass" type="ProgressBar" parent="."]
@@ -161,7 +161,7 @@ percent_visible = false
 [node name="Label" type="Label" parent="Mass"]
 margin_right = 400.0
 margin_bottom = 118.0
-text = "mass"
+text = "MASS"
 align = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
