@@ -1,8 +1,10 @@
-[gd_resource type="Theme" load_steps=12 format=2]
+[gd_resource type="Theme" load_steps=14 format=2]
 
 [ext_resource path="res://styles/button-normal.tres" type="StyleBox" id=1]
+[ext_resource path="res://styles/button-pressed.tres" type="StyleBox" id=2]
 [ext_resource path="res://assets/font/manrope.thin.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://styles/button-disabled.tres" type="StyleBox" id=4]
+[ext_resource path="res://button-transparent.tres" type="StyleBox" id=5]
 
 [sub_resource type="DynamicFont" id=9]
 size = 85
@@ -60,10 +62,10 @@ Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 Button/constants/hseparation = 12
 Button/fonts/font = SubResource( 9 )
 Button/styles/disabled = ExtResource( 4 )
-Button/styles/focus = ExtResource( 1 )
+Button/styles/focus = ExtResource( 5 )
 Button/styles/hover = ExtResource( 1 )
 Button/styles/normal = ExtResource( 1 )
-Button/styles/pressed = null
+Button/styles/pressed = ExtResource( 2 )
 ProgressBar/colors/font_color = Color( 0.94, 0.94, 0.94, 1 )
 ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
 ProgressBar/fonts/font = SubResource( 9 )
