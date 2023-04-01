@@ -1,9 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/flags/mexico.png" type="Texture" id=1]
-
 [sub_resource type="SpatialMaterial" id=1]
-albedo_texture = ExtResource( 1 )
 
 [sub_resource type="SphereMesh" id=2]
 material = SubResource( 1 )

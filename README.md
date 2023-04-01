@@ -77,11 +77,6 @@ game/assets/audioOff.png
 game/assets/arrowDown.png
 ```
 
-"National Flags" by Wikimedia are licensed under Public Domain (https://en.wikipedia.org/wiki/Gallery_of_sovereign_state_flags)
- ```
- game/assets/flags/
- ```
-
 ### 3D assets
 "Star" by Savino (https://opengameart.org/content/star-0) is licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
 ```
