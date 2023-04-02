@@ -2,8 +2,11 @@
 [![Android upload](https://github.com/dulvui/ball2box/actions/workflows/upload-android.yml/badge.svg)](https://github.com/dulvui/ball2box/actions/workflows/upload-android.yml)
 [![iOS upload](https://github.com/dulvui/ball2box/actions/workflows/upload-ios.yml/badge.svg)](https://github.com/dulvui/ball2box/actions/workflows/upload-ios.yml)  
 
-Snake game made with libGDX with 60 levels.  
-This game is open source, with no ads and no tracking.
+Swipe to toss the ball and hit the box in over 100 levels.
+This game is open source, with no ads and no tracking.  
+
+Made with [Godot Engine](https://godotengine.org) version 3.5.2  
+Track the migration to Godot 4.x in [issue #6](https://github.com/dulvui/ball2box/issues/6)  
 
 <a href="https://play.google.com/store/apps/details?id=com.salvai.ultimatetoss" target="_blank"><img src="store-images/PlayStore.svg" alt="Get it on Google Play" height="49px"></a>
 <a href="https://apps.apple.com/us/app/ball2box/id1522604143" target="_blank"><img src="store-images/AppStore.svg" alt="Download on the App Store" height="50px" ></a>
@@ -75,6 +78,8 @@ game/assets/left.png
 game/assets/audioOn.png
 game/assets/audioOff.png
 game/assets/arrowDown.png
+game/assets/information.png
+game/assets/pointer.png
 ```
 
 ### 3D assets
