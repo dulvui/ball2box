@@ -50,8 +50,8 @@ var russiaball = preload("res://src/screens/shop/balls/RussiaBall.tscn")
 var russia_real = preload("res://src/actors/ball/russia-ball/RussiaBall.tscn")
 var ukball = preload("res://src/screens/shop/balls/UKBall.tscn")
 var uk_real = preload("res://src/actors/ball/uk-ball/UKBall.tscn")
-var usball = preload("res://src/screens/shop/balls/USBall.tscn")
-var us_real = preload("res://src/actors/ball/us-ball/USBall.tscn")
+var rainbowball = preload("res://src/screens/shop/balls/RainbowBall.tscn")
+var rainbow_real = preload("res://src/actors/ball/rainbow-ball/RainbowBall.tscn")
 
 
 #TODO add translations for ball buttons 
@@ -61,9 +61,9 @@ onready var balls = [{"id": 1 , "model":starter, "real": starter_real, "price": 
 					{"id": 3 ,"model":green,"real":green_real, "price": tr("MORE_GAMES")},
 					{"id": 4 ,"model":yellow,"real":yellow_real, "price": 24},
 					{"id": 5 ,"model":football,"real":football_real, "price": tr("FOLLOW")},
-					{"id": 6 ,"model":volleyball,"real":volleyball_real, "price": 32},
-					{"id": 8 ,"model":pickball,"real":pickball_real, "price": 64},
-					{"id": 9 ,"model":mathball,"real":mathball_real, "price": 124},
+					{"id": 6 ,"model":volleyball,"real":volleyball_real, "price": 30},
+					{"id": 8 ,"model":pickball,"real":pickball_real, "price": 30},
+					{"id": 9 ,"model":mathball,"real":mathball_real, "price": 30},
 					{"id": 10 ,"model":japanball,"real":japan_real, "price": 30},
 					{"id": 11 ,"model":italyball,"real":italy_real, "price": 30},
 					{"id": 12 ,"model":spainball,"real":spain_real, "price": 30},
@@ -79,7 +79,7 @@ onready var balls = [{"id": 1 , "model":starter, "real": starter_real, "price": 
 					{"id": 22 ,"model":mexicoball,"real":mexico_real, "price": 30},
 					{"id": 23 ,"model":russiaball,"real":russia_real, "price": 30},
 					{"id": 24 ,"model":ukball,"real":uk_real, "price": 30},
-					{"id": 25 ,"model":usball,"real":us_real, "price": 30},
+					{"id": 25 ,"model":rainbowball,"real":rainbow_real, "price": 30},
 				]
 var current_ball = 0
 var selected_ball = 0

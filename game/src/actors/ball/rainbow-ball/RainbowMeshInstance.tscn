@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/actors/ball/rainbow-ball/rainbow.gdshader" type="Shader" id=1]
+
+[sub_resource type="SphereMesh" id=1]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 1 )
+shader_param/density = 0.25
+shader_param/speed = 0.4
+
+[node name="MeshInstance" type="MeshInstance"]
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
