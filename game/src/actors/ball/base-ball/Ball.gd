@@ -84,10 +84,6 @@ func reset_no_signal() -> void:
 	linear_velocity = Vector3.ZERO
 	angular_velocity = Vector3.ZERO
 	rotation = Vector3.ZERO
-
-
-func _on_Ball_body_entered(body) -> void:
-	$Sound.play()
 	
 func draw_indicator_up() -> void:
 	if not shooting and touch_start != Vector2.ZERO and touch_pos != Vector2.ZERO:
