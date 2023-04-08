@@ -1,10 +1,23 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/actors/ball/russia-ball/shine.gdshader" type="Shader" id=1]
 
 [sub_resource type="SpatialMaterial" id=1]
 
 [sub_resource type="SphereMesh" id=2]
 material = SubResource( 1 )
 
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 1 )
+shader_param/shine_color = Color( 1, 1, 1, 1 )
+shader_param/cycle_interval = 2.304
+shader_param/shine_speed = 1.262
+shader_param/shine_width = 22.117
+
+[sub_resource type="SpatialMaterial" id=5]
+next_pass = SubResource( 4 )
+albedo_color = Color( 0.0901961, 0.533333, 0.0862745, 1 )
+
 [node name="MeshInstance" type="MeshInstance"]
 mesh = SubResource( 2 )
-material/0 = null
+material/0 = SubResource( 5 )

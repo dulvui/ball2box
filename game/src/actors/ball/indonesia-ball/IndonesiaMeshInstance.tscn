@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/patterns/pattern_09t.png" type="Texture" id=1]
 
 [sub_resource type="SphereMesh" id=1]
 
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+albedo_color = Color( 0.0196078, 0.0117647, 0.0117647, 1 )
+albedo_texture = ExtResource( 1 )
+
 [sub_resource type="SpatialMaterial" id=2]
+next_pass = SubResource( 3 )
+albedo_color = Color( 0.670588, 0.666667, 1, 1 )
 
 [node name="MeshInstance" type="MeshInstance"]
 mesh = SubResource( 1 )

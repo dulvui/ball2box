@@ -9,17 +9,20 @@
 
 [node name="LevelBase" instance=ExtResource( 3 )]
 
-[node name="Ball" parent="." index="2"]
-transform = Transform( -0.999964, -0.00841238, 0, 0.00841238, -0.999964, 0, 0, 0, 1, -7.01905, 9.68865, -0.00337219 )
+[node name="Ball" parent="." index="3"]
+transform = Transform( -0.999965, -0.00841241, 0, 0.00841241, -0.999965, 0, 0, 0, 1, -7.01905, 9.68865, -0.00337219 )
 can_sleep = false
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
-[node name="Bin" parent="." index="3"]
+[node name="Bin" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17317, 21.965, 0 )
 
-[node name="Star1" parent="." index="6"]
+[node name="Star1" parent="." index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.55969, 26.309, 0.00637817 )
+
+[node name="Star2" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.30018, 25.9345, -0.72722 )
 
 [node name="Rotator" parent="." index="7" instance=ExtResource( 1 )]
 transform = Transform( -0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, -7.12502, 3.60925, -0.610519 )
@@ -68,6 +71,3 @@ transform = Transform( -0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1,
 [node name="ResizingCircle3" parent="." index="21" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 55.2254, 0 )
 delay = 3
-
-[node name="Star2" parent="." index="22"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.30018, 25.9345, -0.72722 )

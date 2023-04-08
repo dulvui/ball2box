@@ -1,11 +1,21 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/patterns/pattern_27.png" type="Texture" id=1]
 
 [sub_resource type="SpatialMaterial" id=1]
 
 [sub_resource type="SphereMesh" id=2]
 material = SubResource( 1 )
 
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+albedo_color = Color( 0.956863, 0.701961, 0.262745, 1 )
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+next_pass = SubResource( 3 )
+albedo_color = Color( 0.0431373, 0.00784314, 0.00784314, 1 )
+
 [node name="MeshInstance" type="MeshInstance"]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 mesh = SubResource( 2 )
-material/0 = null
+material/0 = SubResource( 4 )

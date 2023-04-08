@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [sub_resource type="SphereMesh" id=1]
 
 [sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.317647, 0.537255, 0.952941, 1 )
 
 [node name="MeshInstance" type="MeshInstance"]
 mesh = SubResource( 1 )

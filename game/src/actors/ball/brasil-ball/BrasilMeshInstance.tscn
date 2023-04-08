@@ -3,7 +3,7 @@
 [sub_resource type="SphereMesh" id=1]
 
 [sub_resource type="SpatialMaterial" id=2]
-albedo_color = Color( 0.580392, 0.780392, 0.14902, 1 )
+albedo_color = Color( 0.705882, 0.956863, 0.160784, 1 )
 
 [node name="MeshInstance" type="MeshInstance"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )

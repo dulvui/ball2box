@@ -21,6 +21,9 @@ var franceball = preload("res://src/screens/shop/balls/FranceBall.tscn")
 var indiaball = preload("res://src/screens/shop/balls/IndiaBall.tscn")
 var indonesiaball = preload("res://src/screens/shop/balls/IndonesiaBall.tscn")
 var mexicoball = preload("res://src/screens/shop/balls/MexicoBall.tscn")
+var russiaball = preload("res://src/screens/shop/balls/RussiaBall.tscn")
+var ukball = preload("res://src/screens/shop/balls/UKBall.tscn")
+var rainbowball = preload("res://src/screens/shop/balls/RainbowBall.tscn")
 
 
 var golden_real = preload("res://src/actors/ball/golden-ball/GoldenBall.tscn")
@@ -44,13 +47,8 @@ var france_real = preload("res://src/actors/ball/france-ball/FranceBall.tscn")
 var india_real = preload("res://src/actors/ball/india-ball/IndiaBall.tscn")
 var indonesia_real = preload("res://src/actors/ball/indonesia-ball/IndonesiaBall.tscn")
 var mexico_real = preload("res://src/actors/ball/mexico-ball/MexicoBall.tscn")
-
-
-var russiaball = preload("res://src/screens/shop/balls/RussiaBall.tscn")
 var russia_real = preload("res://src/actors/ball/russia-ball/RussiaBall.tscn")
-var ukball = preload("res://src/screens/shop/balls/UKBall.tscn")
 var uk_real = preload("res://src/actors/ball/uk-ball/UKBall.tscn")
-var rainbowball = preload("res://src/screens/shop/balls/RainbowBall.tscn")
 var rainbow_real = preload("res://src/actors/ball/rainbow-ball/RainbowBall.tscn")
 
 

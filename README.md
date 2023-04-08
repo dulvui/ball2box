@@ -82,6 +82,25 @@ game/assets/information.png
 game/assets/pointer.png
 ```
 
+"Patterns Pack" by kenney.nl (https://www.kenney.nl/assets/pattern-pack) are licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
+```
+game/assets/patterns/pattern_04.png
+game/assets/patterns/pattern_09.png
+game/assets/patterns/pattern_27.png
+```
+
+"Patterns Pack 2" by kenney.nl (https://www.kenney.nl/assets/pattern-pack-2) are licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
+```
+README.md
+game/assets/patterns/pattern_0001.png
+game/assets/patterns/pattern_0003.png
+game/assets/patterns/pattern_0007.png
+game/assets/patterns/pattern_0008.png
+game/assets/patterns/pattern_0021.png
+game/assets/patterns/pattern_0024.png
+game/assets/patterns/pattern_0025.png
+```
+
 ### 3D assets
 "Star" by Savino (https://opengameart.org/content/star-0) is licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
 ```

@@ -37,15 +37,12 @@ func _ready():
 	BallMachine.set_ball_index(config.get_value("ball", "selected", 0))
 	if config.has_section_key("level", "stars"):
 		level_stars = config.get_value("level","stars")
-#		if level_stars.size() < LEVELS:
-#			for i in LEVELS -1 - level_stars.size():
-#				level_stars.append(-1)
+		if level_stars.size() < LEVELS:
+			for i in LEVELS - level_stars.size():
+				level_stars.append(0)
 	else:
 		for i in LEVELS - 1:
-			level_stars.append(-1)
-		print("level stars setup")
-#	for i in LEVELS - level_stars.size():
-#			level_stars.append(-1)
+			level_stars.append(0)
 			
 	print("level amount %s"%level_stars.size())
 	
