@@ -114,8 +114,6 @@ func _on_Shop_select() -> void:
 		add_child(ball)
 			
 		# reset level after coming back from shop
-		_on_Ball_reset()
-		ball.reset()
 		_connect_ball_signals()
 	
 
