@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://src/actors/ball/starter-ball/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/levels/base-level/LevelBase.gd" type="Script" id=2]
@@ -135,23 +135,16 @@ albedo_texture = ExtResource( 4 )
 
 [sub_resource type="BoxShape" id=8]
 
-[sub_resource type="SpatialMaterial" id=9]
-albedo_color = Color( 0.317647, 0.776471, 0.733333, 1 )
+[sub_resource type="SpatialMaterial" id=25]
+vertex_color_use_as_albedo = true
 
-[sub_resource type="SphereMesh" id=10]
-material = SubResource( 9 )
+[sub_resource type="CubeMesh" id=24]
+material = SubResource( 25 )
 
-[sub_resource type="SpatialMaterial" id=11]
-albedo_color = Color( 0.976471, 0.439216, 0.439216, 1 )
-
-[sub_resource type="SphereMesh" id=12]
-material = SubResource( 11 )
-
-[sub_resource type="SpatialMaterial" id=13]
-albedo_color = Color( 0.929412, 0.945098, 0.498039, 1 )
-
-[sub_resource type="SphereMesh" id=14]
-material = SubResource( 13 )
+[sub_resource type="Gradient" id=23]
+interpolation_mode = 2
+offsets = PoolRealArray( 0.149091, 0.516364, 0.821818 )
+colors = PoolColorArray( 0.188235, 0.905882, 0.666667, 1, 0.909804, 0.666667, 0.258824, 1, 0.937255, 0.211765, 0.662745, 1 )
 
 [sub_resource type="PhysicsMaterial" id=15]
 friction = 0.5
@@ -254,13 +247,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 62, 0 )
 pause_mode = 2
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, 26 )
 
-[node name="CPUParticlesBlue" type="CPUParticles" parent="Base"]
+[node name="CPUParticles" type="CPUParticles" parent="Base"]
 pause_mode = 2
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -28.6212, -24 )
-amount = 6
-lifetime = 40.0
-preprocess = 440.0
-mesh = SubResource( 10 )
+amount = 24
+lifetime = 30.96
+preprocess = 104.05
+mesh = SubResource( 24 )
 emission_shape = 2
 emission_box_extents = Vector3( 20, 1, 1 )
 flag_align_y = true
@@ -269,38 +262,7 @@ linear_accel = 2.0
 linear_accel_random = 1.0
 scale_amount = 3.0
 scale_amount_random = 1.0
-
-[node name="CPUParticlesRed" type="CPUParticles" parent="Base"]
-pause_mode = 2
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -28.6212, -24 )
-amount = 6
-lifetime = 40.0
-preprocess = 440.0
-mesh = SubResource( 12 )
-emission_shape = 2
-emission_box_extents = Vector3( 20, 1, 1 )
-flag_align_y = true
-gravity = Vector3( 0, 0.1, 0 )
-linear_accel = 2.0
-linear_accel_random = 1.0
-scale_amount = 3.0
-scale_amount_random = 1.0
-
-[node name="CPUParticleYellow" type="CPUParticles" parent="Base"]
-pause_mode = 2
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -28.6212, -24 )
-amount = 6
-lifetime = 40.0
-preprocess = 440.0
-mesh = SubResource( 14 )
-emission_shape = 2
-emission_box_extents = Vector3( 20, 1, 1 )
-flag_align_y = true
-gravity = Vector3( 0, 0.1, 0 )
-linear_accel = 2.0
-linear_accel_random = 1.0
-scale_amount = 3.0
-scale_amount_random = 1.0
+color_initial_ramp = SubResource( 23 )
 
 [node name="Ball" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.94765, 19.8625, 0 )
