@@ -3,8 +3,8 @@ extends CenterContainer
 signal back
 
 func _ready() -> void:
-	$VBoxContainer/Buttons/Donate.visible = Global.FDROID
-	$VBoxContainer/Buttons/Website.visible = not Global.FDROID
+	$VBoxContainer/Buttons/Donate.visible = Global.FDROID or OS.get_name() == "HTML5"
+	$VBoxContainer/Buttons/Website.visible = not (Global.FDROID or OS.get_name() == "HTML5")
 
 func _on_Back_pressed() -> void:
 	emit_signal("back")
