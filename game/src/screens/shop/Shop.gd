@@ -54,7 +54,7 @@ func _on_Select_pressed():
 		elif ball["price"] == tr("MORE_GAMES"):
 			if OS.get_name() == "iOS":
 				OS.shell_open("https://appstore.com/simondalvai")
-			elif Global.FDROID:
+			elif Global.FDROID or OS.get_name() == "HTML5":
 				OS.shell_open("https://simondalvai.com/games")
 			else:
 				OS.shell_open("https://play.google.com/store/apps/dev?id=7836644900810357474&hl=en")
