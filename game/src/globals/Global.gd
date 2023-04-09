@@ -4,7 +4,10 @@ var config:ConfigFile
 
 var coins:int
 
-onready var LEVELS:int = count_levels()
+#onready var LEVELS:int = count_levels()
+# until new leavels are not ready
+onready var LEVELS:int = 120
+
 
 var current_level:int = 1
 

@@ -13,7 +13,7 @@ albedo_texture = ExtResource( 1 )
 [sub_resource type="SpatialMaterial" id=2]
 next_pass = SubResource( 3 )
 flags_transparent = true
-albedo_color = Color( 0.368627, 0.372549, 0.133333, 1 )
+albedo_color = Color( 0.243137, 0.654902, 0.580392, 1 )
 
 [node name="MeshInstance" type="MeshInstance"]
 mesh = SubResource( 1 )
