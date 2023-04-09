@@ -8,23 +8,20 @@
 
 [node name="LevelBase" instance=ExtResource( 3 )]
 
-[node name="Background" parent="Base" index="1"]
-transform = Transform( 0.32, 0, 0, 0, 0.32, 0, 0, 0, 0.2, -0.035, -5.04859, -6 )
-
-[node name="Star1" parent="." index="2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.66036, 22.503, 0 )
-
-[node name="Star2" parent="." index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.991709, 30.8258, -0.712694 )
-
-[node name="Ball" parent="." index="4"]
-transform = Transform( -0.999964, 0.00846475, 0, -0.00846475, -0.999964, 0, 0, 0, 1, 7.85412, 1.11249, -0.00337219 )
+[node name="Ball" parent="." index="3"]
+transform = Transform( -0.999964, 0.00846486, 0, -0.00846486, -0.999964, 0, 0, 0, 1, 7.85412, 1.11249, -0.00337219 )
 can_sleep = false
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
-[node name="Bin" parent="." index="5"]
+[node name="Bin" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75845, 5.1269, 0 )
+
+[node name="Star1" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.66036, 22.503, 0 )
+
+[node name="Star2" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.991709, 30.8258, -0.712694 )
 
 [node name="Rotator" parent="." index="7" instance=ExtResource( 1 )]
 transform = Transform( -0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, -5.54443, 8.45408, 0.225021 )

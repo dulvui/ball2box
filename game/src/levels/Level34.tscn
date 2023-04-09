@@ -6,17 +6,17 @@
 
 [node name="LevelBase" instance=ExtResource( 1 )]
 
-[node name="Star1" parent="." index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.82914, 6.91025, -0.2 )
-
-[node name="Star2" parent="." index="4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.43277, 30.9635, -1.90735e-06 )
-
-[node name="Ball" parent="." index="5"]
+[node name="Ball" parent="." index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.774, 1, 0 )
 
-[node name="Bin" parent="." index="6"]
+[node name="Bin" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.613, 0, 0 )
+
+[node name="Star1" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.82914, 6.91025, -0.2 )
+
+[node name="Star2" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.43277, 30.9635, -1.90735e-06 )
 
 [node name="RotatingPlaneSquare" parent="." index="7" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 34, 0 )

@@ -8,20 +8,20 @@
 
 [node name="LevelBase" instance=ExtResource( 3 )]
 
-[node name="Star1" parent="." index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.271163, 27.0134, 0 )
-
-[node name="Star2" parent="." index="4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.09917, 10.8709, -1.90735e-06 )
-
-[node name="Ball" parent="." index="5"]
+[node name="Ball" parent="." index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.75171, 6.25191, 0 )
 can_sleep = false
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
-[node name="Bin" parent="." index="6"]
+[node name="Bin" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69911, 0.385176, 0 )
+
+[node name="Star1" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.271163, 27.0134, 0 )
+
+[node name="Star2" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.09917, 10.8709, -1.90735e-06 )
 
 [node name="Separator" parent="." index="7" instance=ExtResource( 2 )]
 transform = Transform( 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 0, 0, 1, -5, 6, 0 )

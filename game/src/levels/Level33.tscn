@@ -5,23 +5,23 @@
 
 [node name="LevelBase" instance=ExtResource( 1 )]
 
-[node name="Star1" parent="." index="2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.17338, 30.9167, -0.2 )
-
-[node name="Star2" parent="." index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.09612, 22.22, -1.90735e-06 )
-
-[node name="Ball" parent="." index="4"]
+[node name="Ball" parent="." index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.57329, 32.2667, -1.90735e-06 )
 
-[node name="Bin" parent="." index="5"]
+[node name="Bin" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.575, 0, 0 )
 
-[node name="BigBox" parent="UI" index="4" instance=ExtResource( 2 )]
+[node name="Star1" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.17338, 30.9167, -0.2 )
+
+[node name="Star2" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.09612, 22.22, -1.90735e-06 )
+
+[node name="BigBox" parent="UI" index="3" instance=ExtResource( 2 )]
 transform = Transform( 0.173648, -0.984808, 0, 0.984808, 0.173648, 0, 0, 0, 1, -4.37083, 28.0741, 0 )
 
-[node name="BigBox2" parent="UI" index="5" instance=ExtResource( 2 )]
+[node name="BigBox2" parent="UI" index="4" instance=ExtResource( 2 )]
 transform = Transform( 0.173648, -0.984808, 0, 0.984808, 0.173648, 0, 0, 0, 1, -4.53893, 11.0952, 0 )
 
-[node name="BigBox3" parent="UI" index="6" instance=ExtResource( 2 )]
+[node name="BigBox3" parent="UI" index="5" instance=ExtResource( 2 )]
 transform = Transform( 0.173648, 0.984808, 0, -0.984808, 0.173648, 0, 0, 0, 1, 6.47218, 18.7441, 0 )

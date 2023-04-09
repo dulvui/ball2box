@@ -5,17 +5,17 @@
 
 [node name="LevelBase" instance=ExtResource( 1 )]
 
-[node name="Ball" parent="." index="2"]
+[node name="Ball" parent="." index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.706, 0 )
 
-[node name="Bin" parent="." index="3"]
+[node name="Bin" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.16, 0 )
 
-[node name="Star1" parent="." index="6"]
+[node name="Star1" parent="." index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.73276, 11.3635, -0.2 )
+
+[node name="Star2" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.396394, 18.0682, -0.2 )
 
 [node name="Box" parent="." index="7" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.27434, 18.5111, 0 )
-
-[node name="Star2" parent="." index="8"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.396394, 18.0682, -0.2 )

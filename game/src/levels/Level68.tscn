@@ -8,20 +8,20 @@
 [node name="DirectionalLight" parent="Base" index="6"]
 transform = Transform( 1, 0, 0, 0, 0.913545, 0.406737, 0, -0.406737, 0.913545, 0, 0, 0 )
 
-[node name="Star1" parent="." index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.45095, 5.69286, 0 )
-
-[node name="Star2" parent="." index="4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75854, 29.8686, -1.36424e-12 )
-
-[node name="Ball" parent="." index="5"]
+[node name="Ball" parent="." index="3"]
 transform = Transform( 0.997298, 0, -0.0734645, 0, 1, 0, 0.0734645, 0, 0.997298, 0, 20, 0 )
 can_sleep = false
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
-[node name="Bin" parent="." index="6"]
+[node name="Bin" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22, 0 )
+
+[node name="Star1" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.45095, 5.69286, 0 )
+
+[node name="Star2" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75854, 29.8686, -1.36424e-12 )
 
 [node name="Rotator" parent="." index="7" instance=ExtResource( 2 )]
 transform = Transform( -0.24193, -0.970294, 0, 0.970294, -0.24193, 0, 0, 0, 1, 2.67418, 8.91392, 0 )

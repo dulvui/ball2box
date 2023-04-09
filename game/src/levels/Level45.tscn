@@ -29,14 +29,17 @@ tracks/0/keys = {
 [node name="AnimationPlayer" parent="." index="0"]
 anims/Idle = SubResource( 1 )
 
-[node name="Ball" parent="." index="2"]
+[node name="Ball" parent="." index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7388, 26.4669, 0 )
 
-[node name="Bin" parent="." index="3"]
+[node name="Bin" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69, 0, 0 )
 
-[node name="Star1" parent="." index="6"]
+[node name="Star1" parent="." index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48568, 31.2998, -0.2 )
+
+[node name="Star2" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8281, 7.96055, -1.90735e-06 )
 
 [node name="Tube" parent="." index="7" instance=ExtResource( 3 )]
 transform = Transform( -0.704931, -0.709275, 0, 0.709275, -0.704931, 0, 0, 0, 1, -1.77699, 24.878, 0 )
@@ -52,6 +55,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.41561, 7.53108, 0 )
 
 [node name="ResizingSquare" parent="." index="11" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.23094, 15.316, 0 )
-
-[node name="Star2" parent="." index="12"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8281, 7.96055, -1.90735e-06 )

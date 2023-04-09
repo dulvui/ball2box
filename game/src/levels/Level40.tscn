@@ -6,21 +6,19 @@
 [ext_resource path="res://src/actors/objects/vbox/VBoxLeft.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/actors/objects/circle/Circle.tscn" type="PackedScene" id=5]
 
-
-
 [node name="LevelBase" instance=ExtResource( 1 )]
 
-[node name="Star1" parent="." index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7626, 30.8746, -0.2 )
-
-[node name="Star2" parent="." index="4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.18485, 19.9317, -1.90735e-06 )
-
-[node name="Ball" parent="." index="5"]
+[node name="Ball" parent="." index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.67921, 30.2975, -1.90735e-06 )
 
-[node name="Bin" parent="." index="6"]
+[node name="Bin" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20735, 0.530153, 0 )
+
+[node name="Star1" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7626, 30.8746, -0.2 )
+
+[node name="Star2" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.18485, 19.9317, -1.90735e-06 )
 
 [node name="Separator" parent="." index="7" instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, -9.38147, 27.38, 1.90735e-06 )
