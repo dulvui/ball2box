@@ -11,8 +11,8 @@ Track the migration to Godot 4.x in [issue #6](https://github.com/dulvui/ball2bo
 <a href="https://play.google.com/store/apps/details?id=com.salvai.ultimatetoss" target="_blank"><img src="store-images/PlayStore.svg" alt="Get it on Google Play" height="49px"></a>
 <a href="https://apps.apple.com/us/app/ball2box/id1522604143" target="_blank"><img src="store-images/AppStore.svg" alt="Download on the App Store" height="50px" ></a>
 <a href="https://f-droid.org/en/packages/com.simondalvai.ball2box/" target="_blank"><img src="store-images/get-it-on-en.webp" alt="Get it on F-Droid" height="50px" ></a>
-<a href="https://simondalvai.itch.io/ball2box" target="_blank"><img src="store-images/itchio.webp" alt="Available on itch.io" height="50px" ></a>
 <a href="https://github.com/dulvui/ball2box/releases/" target="_blank"><img src="store-images/Github.webp" alt="Get it on Github" height="50px" ></a>
+<a href="https://simondalvai.itch.io/ball2box" target="_blank"><img src="store-images/itchio.webp" alt="Available on itch.io" height="50px" ></a>
 
 ## Table of contents
 - [Ball2Box](#ball2box)
