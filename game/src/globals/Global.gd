@@ -42,10 +42,10 @@ func _ready():
 		level_stars = config.get_value("level","stars")
 		if level_stars.size() < LEVELS:
 			for i in LEVELS - level_stars.size():
-				level_stars.append(0)
+				level_stars.append(-1)
 	else:
 		for i in LEVELS - 1:
-			level_stars.append(0)
+			level_stars.append(-1)
 			
 	print("level amount %s"%level_stars.size())
 	
