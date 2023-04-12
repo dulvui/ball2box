@@ -1,0 +1,4 @@
+- easier level 97
+- changed national flag balls to fancy balls
+- renamed menu buttons
+- fixed some translations
