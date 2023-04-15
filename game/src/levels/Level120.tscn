@@ -67,7 +67,3 @@ transform = Transform( -0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1,
 
 [node name="Rotator8" parent="." index="20" instance=ExtResource( 1 )]
 transform = Transform( -0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, 6.76953, 31.7645, 0 )
-
-[node name="ResizingCircle3" parent="." index="21" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 55.2254, 0 )
-delay = 3
