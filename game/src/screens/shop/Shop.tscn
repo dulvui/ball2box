@@ -64,7 +64,6 @@ tracks/1/keys = {
 
 [node name="Shop" type="Control"]
 pause_mode = 2
-visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -78,9 +77,9 @@ __meta__ = {
 
 [node name="Back" type="Button" parent="."]
 margin_left = 112.0
-margin_top = 1075.0
+margin_top = 915.0
 margin_right = 608.0
-margin_bottom = 1201.0
+margin_bottom = 1041.0
 text = "BACK"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -88,13 +87,10 @@ __meta__ = {
 
 [node name="Select" type="Button" parent="."]
 margin_left = 112.0
-margin_top = 923.0
+margin_top = 761.0
 margin_right = 608.0
-margin_bottom = 1049.0
+margin_bottom = 887.0
 text = "SELECT"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_left = 0.5
@@ -102,9 +98,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -416.0
-margin_top = -320.0
+margin_top = -336.0
 margin_right = -86.0
-margin_bottom = -220.0
+margin_bottom = -236.0
 rect_scale = Vector2( 2.5, 2.5 )
 custom_constants/separation = 130
 __meta__ = {
@@ -129,6 +125,7 @@ __meta__ = {
 }
 
 [node name="Bounce" type="ProgressBar" parent="."]
+visible = false
 margin_left = 152.0
 margin_top = 751.0
 margin_right = 552.0
@@ -148,6 +145,7 @@ text = "BOUNCE"
 align = 1
 
 [node name="Mass" type="ProgressBar" parent="."]
+visible = false
 margin_left = 160.0
 margin_top = 614.0
 margin_right = 560.0
