@@ -71,9 +71,6 @@ rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 360, 690 )
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Back" type="Button" parent="."]
 margin_left = 112.0
@@ -169,7 +166,7 @@ anims/FadeOut = SubResource( 2 )
 [node name="Star" type="Sprite" parent="."]
 visible = false
 modulate = Color( 1, 0.968627, 0.188235, 1 )
-position = Vector2( 528, 976 )
+position = Vector2( 541, 819 )
 scale = Vector2( 1.56874, 1.56874 )
 texture = ExtResource( 5 )
 
