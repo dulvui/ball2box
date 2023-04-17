@@ -21,14 +21,30 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
 
-      - name: Create changelog text
+      - name: Read version number and version code
+        run: |
+          echo "VERSION_NAME=$(cat version | cut -f1 -d-)" >> $GITHUB_ENV
+          echo "VERSION_CODE=$(cat version | cut -f2 -d-)" >> $GITHUB_ENV
+
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Check if changelog exists
+        run: test -f "metadata/en-US/changelogs/$VERSION_CODE.txt"
+
+      - name: Create changelog text for Github releases
         id: changelog
         run: |
-          r=$(cat path/to/release.md)                       # <--- Read release.md (Provide correct path as per your repo)
-          r="${r//'%'/'%25'}"                               # Multiline escape sequences for %
-          r="${r//$'\n'/'%0A'}"                             # Multiline escape sequences for '\n'
-          r="${r//$'\r'/'%0D'}"                             # Multiline escape sequences for '\r'
+          r=$(cat metadata/en-US/changelogs/$VERSION_CODE.txt)
+          r="${r//'%'/'%25'}"               # Multiline escape sequences for %
+          r="${r//$'\n'/'%0A'}"             # Multiline escape sequences for '\n'
+          r="${r//$'\r'/'%0D'}"             # Multiline escape sequences for '\r'
           echo "RELEASE_BODY=$r" >> $GITHUB_OUTPUT
+
+      - name: Create changelog text for Google Play Store
+        run: |
+          mkdir -p distribution/whatsnew
+          cp metadata/en-US/changelogs/$VERSION_CODE.txt  distribution/whatsnew/whatsnew-en-US
 
       - name: Create service-account.json
         run: echo $SERVICE_ACCOUNT_JSON > service-account.json
@@ -38,11 +54,6 @@ jobs:
 
       - name: Create debug keystore
         run: echo $DEBUG_KEY_STORE_BASE64 | base64 --decode > debug.keystore
-
-      - name: Set version number and version code
-        run: |
-          echo "VERSION_NAME=$(cat version | cut -f1 -d-)" >> $GITHUB_ENV
-          echo "VERSION_CODE=$(cat version | cut -f2 -d-)" >> $GITHUB_ENV
 
       - name: Create and config export_presets.cfg
         run: |
@@ -65,6 +76,7 @@ jobs:
           serviceAccountJson: service-account.json
           packageName: com.salvai.ultimatetoss
           releaseFiles: Ball2Box.aab
+          whatsNewDirectory: distribution/whatsnew
           track: 'internal'
           status: completed
 
@@ -76,17 +88,12 @@ jobs:
           --key-pass=pass:${{ secrets.ANDROID_KEYSTORE_PASSWORD }} --mode=universal
           unzip -p Ball2Box.apks universal.apk > Ball2Box.apk
 
-      - name: Prepare changelog text
-        run: |
-          echo "Ball2Box - version: ${{ env.VERSION_NAME }} code: ${{ env.VERSION_CODE }}" > changelog.txt
-          cat "" >> changelog.txt
-
       - name: Upload binaries to Github release
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ./Ball2Box.apk
           asset_name: Ball2Box.apk
-          tag: ${{ env.VERSION_NAME }}-${{ env.VERSION_CODE }}
+          tag: v${{ env.VERSION_NAME }}
           overwrite: true
           body:  ${{ steps.read_release.outputs.RELEASE_BODY }}
