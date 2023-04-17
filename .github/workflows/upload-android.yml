@@ -18,6 +18,8 @@ jobs:
     if: github.ref == 'refs/heads/prod'
     runs-on: ubuntu-20.04
     steps:
+
+      # CONFIGURATION
       - name: Checkout source code
         uses: actions/checkout@v3
 
@@ -65,11 +67,13 @@ jobs:
       - name: Delete iOS icons
         run: rm -rf $WORKING_DIRECTORY/AppIcons
 
+      # GODOT EXPORT
       - name: Godot Android export
         uses: dulvui/godot-android-export@v2.0.0
         with:
           working-directory: $WORKING_DIRECTORY
 
+      # GOOGLE PLAY STORE
       - name: Publish to Play Store
         uses: r0adkll/upload-google-play@v1
         with:
@@ -80,6 +84,7 @@ jobs:
           track: 'internal'
           status: completed
 
+      # GITHUB RELEASES
       - name: Bundle aab to apk
         run: |
           wget -q https://github.com/google/bundletool/releases/download/1.14.0/bundletool-all-1.14.0.jar
