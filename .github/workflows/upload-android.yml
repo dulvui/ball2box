@@ -21,6 +21,15 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
 
+      - name: Create changelog text
+        id: changelog
+        run: |
+          r=$(cat path/to/release.md)                       # <--- Read release.md (Provide correct path as per your repo)
+          r="${r//'%'/'%25'}"                               # Multiline escape sequences for %
+          r="${r//$'\n'/'%0A'}"                             # Multiline escape sequences for '\n'
+          r="${r//$'\r'/'%0D'}"                             # Multiline escape sequences for '\r'
+          echo "RELEASE_BODY=$r" >> $GITHUB_OUTPUT
+
       - name: Create service-account.json
         run: echo $SERVICE_ACCOUNT_JSON > service-account.json
 
@@ -67,6 +76,11 @@ jobs:
           --key-pass=pass:${{ secrets.ANDROID_KEYSTORE_PASSWORD }} --mode=universal
           unzip -p Ball2Box.apks universal.apk > Ball2Box.apk
 
+      - name: Prepare changelog text
+        run: |
+          echo "Ball2Box - version: ${{ env.VERSION_NAME }} code: ${{ env.VERSION_CODE }}" > changelog.txt
+          cat "" >> changelog.txt
+
       - name: Upload binaries to Github release
         uses: svenstaro/upload-release-action@v2
         with:
@@ -75,4 +89,4 @@ jobs:
           asset_name: Ball2Box.apk
           tag: ${{ env.VERSION_NAME }}-${{ env.VERSION_CODE }}
           overwrite: true
-          body: "Ball2Box - version: ${{ env.VERSION_NAME }} code: ${{ env.VERSION_CODE }}"
+          body:  ${{ steps.read_release.outputs.RELEASE_BODY }}
