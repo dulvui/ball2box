@@ -1,16 +1,13 @@
-name: Android upload
+name: itch.io upload
 
 on:
   push:
     paths:
-      - "version-android"
-      - ".github/workflows/upload-android.yml"
+      - "version"
+      - ".github/workflows/upload-itchio.yml"
 
 env:
-  RELEASE_KEY_STORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
-  SERVICE_ACCOUNT_JSON: ${{ secrets.ANDROID_SERVICE_ACCOUNT_JSON }}
-  DEBUG_KEY_STORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_DEBUG_BASE64 }}
-  EXPORT_PRESET_CFG: ${{ secrets.GODOT_EXPORTS_PRESET_CFG }}
+  ITCHIO_API_KEY: ${{ secrets.ITCHIO_API_KEY }}
   WORKING_DIRECTORY: game
 
 jobs:
@@ -19,14 +16,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
 
-      # CONFIGURATION
-      - name: Checkout source code
-        uses: actions/checkout@v3
-
       - name: Read version number and version code
         run: |
-          echo "VERSION_NAME=$(cat version-android | cut -f1 -d-)" >> $GITHUB_ENV
-          echo "VERSION_CODE=$(cat version-android | cut -f2 -d-)" >> $GITHUB_ENV
+          echo "VERSION_NAME=$(cat version | cut -f1 -d-)" >> $GITHUB_ENV
+          echo "VERSION_CODE=$(cat version | cut -f2 -d-)" >> $GITHUB_ENV
 
       - name: Checkout source code
         uses: actions/checkout@v3
@@ -67,13 +60,11 @@ jobs:
       - name: Delete iOS icons
         run: rm -rf $WORKING_DIRECTORY/AppIcons
 
-      # GODOT EXPORT
       - name: Godot Android export
         uses: dulvui/godot-android-export@v2.0.0
         with:
           working-directory: $WORKING_DIRECTORY
 
-      # GOOGLE PLAY STORE
       - name: Publish to Play Store
         uses: r0adkll/upload-google-play@v1
         with:
@@ -84,7 +75,6 @@ jobs:
           track: 'internal'
           status: completed
 
-      # GITHUB RELEASES
       - name: Bundle aab to apk
         run: |
           wget -q https://github.com/google/bundletool/releases/download/1.14.0/bundletool-all-1.14.0.jar
@@ -101,4 +91,4 @@ jobs:
           asset_name: Ball2Box.apk
           tag: v${{ env.VERSION_NAME }}
           overwrite: true
-          body:  ${{ steps.changelog.outputs.RELEASE_BODY }}
+          body:  ${{ steps.read_release.outputs.RELEASE_BODY }}
