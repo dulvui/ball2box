@@ -164,8 +164,6 @@ func _on_LevelComplete_menu() -> void:
 	$Star2.show_star()
 
 
-
-
 func _on_Ball_reset() -> void:
 	$UI/LevelComplete.reset_stars()
 	AudioMachine.reset()
@@ -193,8 +191,7 @@ func _on_Ball_shoot() -> void:
 func _on_LevelComplete_levels():
 	$UI/LevelComplete.hide()
 	ball.reset()
-	$UI/Menu.show()
-	$UI/Menu.animation_player.play("LevelFadeIn")
+	$UI/Menu.show_levels()
 	$UI/LevelComplete.reset_stars()
 	AudioMachine.reset()
 	$Star1.show_star()

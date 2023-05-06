@@ -16,6 +16,11 @@ func _ready() -> void:
 
 func _process(delta:float) -> void:
 	$Menu/Level.text = str(Global.current_level)
+	
+func show_levels():
+	AudioMachine.click()
+	_set_up_buttons()
+	animation_player.play("LevelFadeIn")
 
 func _set_up_buttons() -> void:
 	for b in $LevelSelect/Levels.get_children():
@@ -60,9 +65,7 @@ func _on_Info_back() -> void:
 	animation_player.play("InfoFadeOut")
 
 func _on_Levels_pressed() -> void:
-	AudioMachine.click()
-	_set_up_buttons()
-	animation_player.play("LevelFadeIn")
+	show_levels()
 
 func _on_Shop_pressed() -> void:
 	AudioMachine.click()

@@ -245,6 +245,7 @@ margin_bottom = 272.0
 text = "REPLAY"
 
 [node name="Levels" type="Button" parent="Buttons"]
+visible = false
 margin_top = 292.0
 margin_right = 388.0
 margin_bottom = 418.0
