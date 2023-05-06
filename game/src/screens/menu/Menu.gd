@@ -47,12 +47,10 @@ func _on_Play_pressed() -> void:
 
 func _on_Sfx_pressed() -> void:
 	AudioMachine.click()
-	animation_player.play("Sfx")
 	Global.toggle_sfx()
 
 func _on_Music_pressed() -> void:
 	AudioMachine.click()
-	animation_player.play("Music")
 	Global.toggle_music()
 	
 
