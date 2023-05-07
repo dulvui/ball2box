@@ -21,10 +21,14 @@ jobs:
       - name: Delete iOS icons
         run: rm -rf $WORKING_DIRECTORY/AppIcons
 
+      - name: Move export_presets.cfg
+        run: mv export_presets.cfg game/export_presets.cfg
+
       - name: Godot HTML5 export
         uses: dulvui/godot-html-export@v0.0.1
         with:
           working-directory: $WORKING_DIRECTORY
+          create-export-preset-cfg: false
 
       - name: Upload to itch.io
         uses: dulvui/itchio-butler-upload@v0.0.1
