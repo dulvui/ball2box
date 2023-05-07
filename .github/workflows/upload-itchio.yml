@@ -28,14 +28,27 @@ jobs:
         with:
           working-directory: $WORKING_DIRECTORY
 
-      - name: Upload to itch.io
-        uses: dulvui/itchio-butler-upload@v0.0.1
-        with:
-          working-directory: html5
-          api-key: ${{ secrets.ITCHIO_API_KEY }}
-          user: simondalvai
-          game: ball2box
-          channel: "html5"
+      # - name: Upload to itch.io
+      #   uses: dulvui/itchio-butler-upload@v0.0.1
+      #   with:
+      #     working-directory: html5
+      #     api-key: ${{ secrets.ITCHIO_API_KEY }}
+      #     user: simondalvai
+      #     game: ball2box
+      #     channel: "html5"
+
+
+    - name: Download butler https://itch.io/docs/butler/installing.html
+      run: |
+        curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
+        unzip butler.zip
+        chmod +x butler
+        ./butler -V
+
+    - name: Upload to itchio
+      env: 
+        BUTLER_API_KEY: ${{ inputs.api-key }}
+      run: ./butler push ${{ inputs.working-directory }} ${{ inputs.user }}/${{ inputs.game }}:${{ inputs.channel }}
 
 
 
