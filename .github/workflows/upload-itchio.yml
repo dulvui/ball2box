@@ -29,7 +29,7 @@ jobs:
       - name: Upload to itch.io
         uses: dulvui/itchio-butler-upload@v0.0.1
         with:
-          working-directory: $WORKING_DIRECTORY
+          working-directory: $WORKING_DIRECTORY/html5
           api-key: $ITCHIO_API_KEY
           user: simondalvai
           game: ball2box
