@@ -37,6 +37,8 @@ jobs:
       #     game: ball2box
       #     channel: "html5"
 
+      - name: Debug html5
+        run: ls -la html5
 
       - name: Download butler https://itch.io/docs/butler/installing.html
         run: |
