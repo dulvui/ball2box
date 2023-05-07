@@ -11,7 +11,7 @@ env:
 
 jobs:
   deploy:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/prod'
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout source code
@@ -36,19 +36,6 @@ jobs:
           user: simondalvai
           game: ball2box
           channel: html5
-
-      # - name: Download butler https://itch.io/docs/butler/installing.html
-      #   run: |
-      #     curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
-      #     unzip butler.zip
-      #     chmod +x butler
-      #     ./butler -V
-
-      # - name: Upload to itchio
-      #   env: 
-      #     BUTLER_API_KEY: ${{ secrets.ITCHIO_API_KEY }}
-      #   run: |
-      #     ./butler push html5 simondalvai/ball2box:html5
 
 
 
