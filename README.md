@@ -1,6 +1,7 @@
 # Ball2Box
 [![Android upload](https://github.com/dulvui/ball2box/actions/workflows/upload-android.yml/badge.svg)](https://github.com/dulvui/ball2box/actions/workflows/upload-android.yml)
-[![iOS upload](https://github.com/dulvui/ball2box/actions/workflows/upload-ios.yml/badge.svg)](https://github.com/dulvui/ball2box/actions/workflows/upload-ios.yml)  
+[![iOS upload](https://github.com/dulvui/ball2box/actions/workflows/upload-ios.yml/badge.svg)](https://github.com/dulvui/ball2box/actions/workflows/upload-ios.yml)
+[![itch.io upload](https://github.com/dulvui/ball2box/actions/workflows/upload-itchio.yml/badge.svg)](https://github.com/dulvui/ball2box/actions/workflows/upload-itchio.yml)  
 
 Swipe to toss the ball and hit the box in over 100 levels.
 This game is open source, with no ads and no tracking.  
