@@ -24,6 +24,9 @@ jobs:
       - name: Move export_presets.cfg
         run: mv export_presets.cfg game/export_presets.cfg
 
+      - name: Create export directory
+        run: mkdir html5
+
       - name: Godot HTML5 export
         uses: dulvui/godot-html-export@v0.0.1
         with:
@@ -33,7 +36,7 @@ jobs:
       - name: Upload to itch.io
         uses: dulvui/itchio-butler-upload@v0.0.1
         with:
-          working-directory: $WORKING_DIRECTORY/html5
+          working-directory: html5
           api-key: $ITCHIO_API_KEY
           user: simondalvai
           game: ball2box
