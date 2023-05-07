@@ -12,83 +12,29 @@ env:
 
 jobs:
   deploy:
-    if: github.ref == 'refs/heads/prod'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-20.04
     steps:
-
-      - name: Read version number and version code
-        run: |
-          echo "VERSION_NAME=$(cat version | cut -f1 -d-)" >> $GITHUB_ENV
-          echo "VERSION_CODE=$(cat version | cut -f2 -d-)" >> $GITHUB_ENV
-
       - name: Checkout source code
         uses: actions/checkout@v3
-
-      - name: Check if changelog exists
-        run: test -f "metadata/en-US/changelogs/$VERSION_CODE.txt"
-
-      - name: Create changelog text for Github releases
-        id: changelog
-        run: |
-          r=$(cat metadata/en-US/changelogs/$VERSION_CODE.txt)
-          r="${r//'%'/'%25'}"               # Multiline escape sequences for %
-          r="${r//$'\n'/'%0A'}"             # Multiline escape sequences for '\n'
-          r="${r//$'\r'/'%0D'}"             # Multiline escape sequences for '\r'
-          echo "RELEASE_BODY=$r" >> $GITHUB_OUTPUT
-
-      - name: Create changelog text for Google Play Store
-        run: |
-          mkdir -p distribution/whatsnew
-          cp metadata/en-US/changelogs/$VERSION_CODE.txt  distribution/whatsnew/whatsnew-en-US
-
-      - name: Create service-account.json
-        run: echo $SERVICE_ACCOUNT_JSON > service-account.json
-
-      - name: Create release keystore
-        run: echo $RELEASE_KEY_STORE_BASE64 | base64 --decode > keystore.keystore
-
-      - name: Create debug keystore
-        run: echo $DEBUG_KEY_STORE_BASE64 | base64 --decode > debug.keystore
-
-      - name: Create and config export_presets.cfg
-        run: |
-          echo $EXPORT_PRESET_CFG > $WORKING_DIRECTORY/export_presets.cfg
-          sed -i "s|KEYSTORE_PATH|$GITHUB_WORKSPACE/keystore.keystore|g" $WORKING_DIRECTORY/export_presets.cfg
-          sed -i "s|VERSION_CODE|$VERSION_CODE|g" $WORKING_DIRECTORY/export_presets.cfg
-          sed -i "s|VERSION_NAME|$VERSION_NAME|g" $WORKING_DIRECTORY/export_presets.cfg
 
       - name: Delete iOS icons
         run: rm -rf $WORKING_DIRECTORY/AppIcons
 
-      - name: Godot Android export
-        uses: dulvui/godot-android-export@v2.0.0
+      - name: Godot HTML5 export
+        uses: dulvui/godot-html-export@v0.0.1
         with:
           working-directory: $WORKING_DIRECTORY
 
-      - name: Publish to Play Store
-        uses: r0adkll/upload-google-play@v1
+      - name: Upload to itch.io
+        uses: dulvui/itchio-butler-upload@v0.0.1
         with:
-          serviceAccountJson: service-account.json
-          packageName: com.salvai.ultimatetoss
-          releaseFiles: Ball2Box.aab
-          whatsNewDirectory: distribution/whatsnew
-          track: 'internal'
-          status: completed
+          working-directory: $WORKING_DIRECTORY
+          api-key: $ITCHIO_API_KEY
+          user: simondalvai
+          game: ball2box
+          channel: "HTML5 / Playable in browser"
 
-      - name: Bundle aab to apk
-        run: |
-          wget -q https://github.com/google/bundletool/releases/download/1.14.0/bundletool-all-1.14.0.jar
-          java -jar bundletool-all-1.14.0.jar build-apks --bundle=Ball2Box.aab --output=Ball2Box.apks \
-          --ks=keystore.keystore --ks-pass=pass:${{ secrets.ANDROID_STORE_PASSWORD }} --ks-key-alias=${{ secrets.ANDROID_KEYSTORE_ALIAS }} \
-          --key-pass=pass:${{ secrets.ANDROID_KEYSTORE_PASSWORD }} --mode=universal
-          unzip -p Ball2Box.apks universal.apk > Ball2Box.apk
 
-      - name: Upload binaries to Github release
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ./Ball2Box.apk
-          asset_name: Ball2Box.apk
-          tag: v${{ env.VERSION_NAME }}
-          overwrite: true
-          body:  ${{ steps.read_release.outputs.RELEASE_BODY }}
+
+
