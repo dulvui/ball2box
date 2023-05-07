@@ -7,7 +7,6 @@ on:
       - ".github/workflows/upload-itchio.yml"
 
 env:
-  ITCHIO_API_KEY: ${{ secrets.ITCHIO_API_KEY }}
   WORKING_DIRECTORY: game
 
 jobs:
@@ -33,10 +32,10 @@ jobs:
         uses: dulvui/itchio-butler-upload@v0.0.1
         with:
           working-directory: html5
-          api-key: $ITCHIO_API_KEY
+          api-key: ${{ secrets.ITCHIO_API_KEY }}
           user: simondalvai
           game: ball2box
-          channel: "HTML5 / Playable in browser"
+          channel: "Executable"
 
 
 
