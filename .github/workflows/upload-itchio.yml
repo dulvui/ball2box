@@ -36,7 +36,7 @@ jobs:
           api-key: $ITCHIO_API_KEY
           user: simondalvai
           game: ball2box
-          channel: "HTML5"
+          channel: "HTML5 / Playable in browser"
 
 
 
