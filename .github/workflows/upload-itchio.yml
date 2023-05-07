@@ -51,7 +51,7 @@ jobs:
         env: 
           BUTLER_API_KEY: ${{ secrets.ITCHIO_API_KEY }}
         run: |
-          ./butler push html5 simondalvai/ballbox:html5
+          ./butler push html5 simondalvai/ball2box:html5
 
 
 
