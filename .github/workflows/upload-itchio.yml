@@ -35,7 +35,7 @@ jobs:
           api-key: ${{ secrets.ITCHIO_API_KEY }}
           user: simondalvai
           game: ball2box
-          channel: "Executable"
+          channel: "html5"
 
 
 
