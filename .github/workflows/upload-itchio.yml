@@ -47,7 +47,7 @@ jobs:
       - name: Upload to itchio
         env: 
           BUTLER_API_KEY: ${{ inputs.api-key }}
-        run: ./butler push ${{ inputs.working-directory }} ${{ inputs.user }}/${{ inputs.game }}:${{ inputs.channel }}
+        run: ./butler push html5 simondalvai/ballbox:html5
 
 
 
