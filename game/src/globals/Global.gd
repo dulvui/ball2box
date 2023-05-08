@@ -69,16 +69,12 @@ func set_level_stars(stars):
 	if level_stars[current_level - 1] < stars:
 		coins += (stars - level_stars[current_level - 1])
 		level_stars[current_level - 1] = stars
-	save_data()
 
-
-	
-func unlock_next_level():
-	if current_level + 1 < LEVELS:
-		if level_stars[current_level] == -1:
-			level_stars[current_level] = 0
-			config.set_value("level","stars",level_stars)
-			config.save("user://settings.cfg")
+func unlock_next_level() -> bool:
+	if level_stars[current_level] == -1:
+		level_stars[current_level] = 0
+		return true
+	return false
 
 func use_coins(n):
 	if coins - n >= 0:

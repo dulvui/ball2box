@@ -252,9 +252,9 @@ margin_bottom = 418.0
 text = "LEVELS"
 
 [node name="Menu" type="Button" parent="Buttons"]
-margin_top = 438.0
+margin_top = 292.0
 margin_right = 388.0
-margin_bottom = 564.0
+margin_bottom = 418.0
 text = "MENU"
 
 [connection signal="visibility_changed" from="." to="." method="_on_LevelComplete_visibility_changed"]

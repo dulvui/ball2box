@@ -66,9 +66,9 @@ func on_star_hit() -> void:
 func _on_Bin_win() -> void:
 	if has_node("Tutorial"):
 		$Tutorial.fade_out()
-	Global.save_data()
-	AudioMachine.hit(true)
 	$UI/LevelComplete.show()
+	AudioMachine.hit(true)
+	Global.save_data()
 	
 
 func _on_Menu_shop() -> void:

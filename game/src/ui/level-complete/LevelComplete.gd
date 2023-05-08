@@ -4,7 +4,12 @@ signal replay
 signal menu
 signal levels
 
-var stars = 1
+var stars:int = 1
+
+# to unlock next level without clicking on next level
+# so when user closes game after level completes,
+# the next level will appear when opening again
+var first_time_complete:bool = false
 
 onready var animation_player = $AnimationPlayer
 
@@ -24,6 +29,12 @@ func reset_stars():
 
 func _on_Replay_pressed():
 	AudioMachine.play_click()
+	
+	# remove automated level increase on replay
+	if first_time_complete:
+		Global.current_level = Global.current_level - 1
+		first_time_complete = false
+		
 	emit_signal("replay")
 	reset_stars()
 	get_tree().paused = false
@@ -35,16 +46,23 @@ func _on_Replay_pressed():
 
 func _on_NextLevel_pressed():
 	AudioMachine.click()
-	if Global.current_level < Global.LEVELS :
+	if not first_time_complete:
 		Global.current_level = Global.current_level + 1
-		get_tree().change_scene("res://src/levels/Level%s.tscn"%str(Global.current_level))
+	get_tree().change_scene("res://src/levels/Level%s.tscn"%str(Global.current_level))
 
 func _on_LevelComplete_visibility_changed():
 	if visible:
-		Global.unlock_next_level()
-		Global.set_level_stars(stars)
-		get_tree().paused = true
 		$Level.text = str(Global.current_level)
+		Global.set_level_stars(stars)
+		
+		if Global.unlock_next_level():
+			Global.current_level = Global.current_level + 1
+			first_time_complete = true
+		
+		if Global.current_level == Global.LEVELS:
+			$Buttons/NextLevel.hide()
+		
+		get_tree().paused = true
 		animation_player.play("FadeIn")
 
 
