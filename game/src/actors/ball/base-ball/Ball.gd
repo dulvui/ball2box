@@ -107,7 +107,7 @@ func draw_indicator_up() -> void:
 
 		geometry_up.end()
 	
-func draw_indicator_down():
+func draw_indicator_down() -> void:
 	if not shooting and touch_start != Vector2.ZERO and touch_pos != Vector2.ZERO:
 		geometry_down.clear()
 		geometry_down.begin(Mesh.PRIMITIVE_TRIANGLES)

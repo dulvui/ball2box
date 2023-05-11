@@ -79,38 +79,38 @@ onready var balls = [{"id": 1 , "model":starter, "real": starter_real, "price": 
 					{"id": 24 ,"model":ukball,"real":uk_real, "price": 25},
 					{"id": 25 ,"model":rainbowball,"real":rainbow_real, "price": 25},
 				]
-var current_ball = 0
-var selected_ball = 0
+var current_ball:int = 0
+var selected_ball:int = 0
 
-func set_ball_index(index):
+func set_ball_index(index:int) -> void:
 	current_ball = index
 	selected_ball = index
 	
-func get_index():
+func get_index() -> int:
 	return selected_ball
 
-func get_selected():
+func get_selected() -> Node:
 	return balls[selected_ball]["model"].instance()
 	
-func get_current_ball_info():
+func get_current_ball_info() -> Dictionary:
 	return balls[current_ball]
 	
-func get_real():
+func get_real() -> RigidBody:
 	return balls[selected_ball]["real"].instance()
 
-func next():
+func next() -> PackedScene:
 	if current_ball + 1 < balls.size():
 		current_ball += 1
 	else:
 		current_ball = 0
 	return balls[current_ball]["model"].instance()
 	
-func prev():
+func prev() -> PackedScene:
 	if current_ball - 1 >= 0:
 		current_ball -= 1
 	else:
 		current_ball = balls.size() - 1
 	return balls[current_ball]["model"].instance()
 	
-func select():
+func select() -> void:
 	selected_ball = current_ball

@@ -13,21 +13,21 @@ var first_time_complete:bool = false
 
 onready var animation_player = $AnimationPlayer
 
-func add_star():
+func add_star() -> void:
 	stars += 1
 	if stars == 2:
 		$Star2.self_modulate = Color("#fce527")
 	if stars == 3:
 		$Star3.self_modulate = Color("#fce527")
 		
-func reset_stars():
+func reset_stars() -> void:
 	stars = 1
 	$Star2.self_modulate = Color("#fbf4be")
 	$Star3.self_modulate = Color("#fbf4be")
 
 	
 
-func _on_Replay_pressed():
+func _on_Replay_pressed() -> void:
 	AudioMachine.play_click()
 	
 	# remove automated level increase on replay
@@ -44,13 +44,13 @@ func _on_Replay_pressed():
 #	get_tree().change_scene("res://src/levels/Level%s.tscn"%str(Global.current_level))
 
 
-func _on_NextLevel_pressed():
+func _on_NextLevel_pressed() -> void:
 	AudioMachine.click()
 	if not first_time_complete:
 		Global.current_level = Global.current_level + 1
 	get_tree().change_scene("res://src/levels/Level%s.tscn"%str(Global.current_level))
 
-func _on_LevelComplete_visibility_changed():
+func _on_LevelComplete_visibility_changed() -> void:
 	if visible:
 		$Level.text = str(Global.current_level)
 		Global.set_level_stars(stars)
@@ -66,7 +66,7 @@ func _on_LevelComplete_visibility_changed():
 		animation_player.play("FadeIn")
 
 
-func _on_Menu_pressed():
+func _on_Menu_pressed() -> void:
 	AudioMachine.click()
 	emit_signal("menu")
 	animation_player.play("FadeOut")
@@ -74,6 +74,6 @@ func _on_Menu_pressed():
 	hide()
 
 
-func _on_Levels_pressed():
+func _on_Levels_pressed() -> void:
 	AudioMachine.click()
 	emit_signal("levels")

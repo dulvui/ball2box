@@ -3,15 +3,15 @@ extends Spatial
 
 onready var animation_player = $AnimationPlayer
 
-export var delay = 0
+export var delay:float = 0
 
-var hit = false
-var new = true
+var hit:bool = false
+var new:bool = true
 
-func _ready():
+func _ready() -> void:
 	hide()
 	
-func fade_in():
+func fade_in() -> void:
 	if not visible or new:
 		new = false
 		show()
@@ -47,7 +47,7 @@ func fade_in():
 				$Body/Area.set_collision_mask_bit(1,true)
 
 
-func _on_Area_body_entered(body):
+func _on_Area_body_entered(body) -> void:
 	if body.is_in_group("ball"):
 		$Body/MeshInstance/StaticBody.set_collision_layer_bit(0,false)
 		$Body/MeshInstance/StaticBody.set_collision_mask_bit(0,false)

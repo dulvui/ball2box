@@ -34,13 +34,13 @@ func set_values(ball:RigidBody) -> void:
 	bounce_tween.start()
 	
 	
-func _on_Back_pressed():
+func _on_Back_pressed() -> void:
 	AudioMachine.click()
 	emit_signal("back")
 	
 
 
-func _on_Select_pressed():
+func _on_Select_pressed() -> void:
 	AudioMachine.play_click()
 	var ball = BallMachine.get_current_ball_info()
 	if Global.unlocked_balls.has(ball["id"]):
@@ -68,7 +68,7 @@ func _on_Select_pressed():
 	emit_signal("select")
 		
 
-func _set_select_label():
+func _set_select_label() -> void:
 	var ball = BallMachine.get_current_ball_info()
 	if Global.unlocked_balls.has(ball["id"]):
 		$Select.text = "SELECT"

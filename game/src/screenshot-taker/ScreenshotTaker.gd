@@ -1,6 +1,6 @@
 extends Spatial
 
-const resolutions = {
+const resolutions:Dictionary = {
 	 "Android" :Vector2(1080,1920),
 	 "iPhone5.5" :Vector2(1242, 2208),
 	 "iPhone6.5" :Vector2(1284, 2778),
@@ -8,7 +8,7 @@ const resolutions = {
 	 "iPad12.9" : Vector2(2048, 2732)
 }
 	
-const scenes = [
+const scenes:Array = [
 	"res://src/levels/Level1.tscn",
 	"res://src/levels/Level10.tscn",
 	"res://src/levels/Level11.tscn",
@@ -19,11 +19,11 @@ const scenes = [
 	"res://src/levels/Level105.tscn",
 ]
 	
-var scene
+var scene:Node
 
-func _ready():
+func _ready() -> void:
 	
-	var scene_counter = 1
+	var scene_counter:int = 1
 	
 	for scene in scenes:
 		_change_scene(scene)
@@ -44,12 +44,12 @@ func _ready():
 	get_tree().quit()
 	
 	
-func _change_scene(scene_path):
+func _change_scene(scene_path) -> void:
 	if scene != null:
 		remove_child(scene)
 		scene.queue_free()
 
-	var next_scene = load(scene_path)
+	var next_scene:Resource = load(scene_path)
 	scene = next_scene.instance()
 	add_child(scene)
 	

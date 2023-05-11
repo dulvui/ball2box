@@ -25,7 +25,7 @@ var unlocked_balls:Array
 var music:bool
 var sfx:bool
 
-func _ready():
+func _ready() -> void:
 	randomize()
 	config = ConfigFile.new()
 	config.load("user://settings.cfg")
@@ -53,7 +53,7 @@ func _ready():
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"), music)
 	
 		
-func save_data():
+func save_data() -> void:
 	config.set_value("music","mute",music)
 	config.set_value("sfx","mute",sfx)
 	config.set_value("current_level","key",current_level)
@@ -65,7 +65,7 @@ func save_data():
 	config.set_value("tutorial", "tap", tutorial_tap_done)
 	config.save("user://settings.cfg")
 
-func set_level_stars(stars):
+func set_level_stars(stars) -> void:
 	if level_stars[current_level - 1] < stars:
 		coins += (stars - level_stars[current_level - 1])
 		level_stars[current_level - 1] = stars
@@ -76,25 +76,25 @@ func unlock_next_level() -> bool:
 		return true
 	return false
 
-func use_coins(n):
+func use_coins(n) -> bool:
 	if coins - n >= 0:
 		coins -= n
 		return true
 	return false
 	
-func toggle_music():
+func toggle_music() -> void:
 	music = not music
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"), music)
 	config.set_value("music","mute",music)
 	config.save("user://settings.cfg")
 	
-func toggle_sfx():
+func toggle_sfx() -> void:
 	sfx = not sfx
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Sfx"), sfx)
 	config.set_value("sfx","mute",sfx)
 	config.save("user://settings.cfg")
 
-func unlock_ball():
+func unlock_ball() -> bool:
 	var ball = BallMachine.get_current_ball_info()
 	if unlocked_balls.has(ball["id"]):
 		return true
@@ -104,12 +104,12 @@ func unlock_ball():
 	return false
 	
 # to save on close
-func _notification(event):
+func _notification(event) -> void:
 	if event == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST or event == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
 		save_data()
 	
 	
-func count_levels():
+func count_levels() -> int:
 	var count = 0
 	var dir = Directory.new()
 	dir.open("res://src/levels/")

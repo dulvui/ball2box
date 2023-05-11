@@ -1,8 +1,8 @@
 extends Node2D
 
-var hits = 0
+var hits:int = 0
 
-func hit(final):
+func hit(final) -> void:
 	if not final:
 		hits+=1
 		match hits:
@@ -16,11 +16,11 @@ func hit(final):
 		$Hit3.play()
 		
 			
-func reset():
+func reset() -> void:
 	hits = 0
 	
-func click():
+func click() -> void:
 	$Hit1.play()
 
-func play_click():
+func play_click() -> void:
 	$Play.play()
