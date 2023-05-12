@@ -1,0 +1,2 @@
+- better user experience: after completing level, closing the game and reopening it, the next level is active
+- remove level button from level complete screen
