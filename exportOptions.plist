@@ -10,8 +10,6 @@
     <string>export</string>
     <key>uploadSymbols</key>
     <true/>
-    <key>uploadBitcode</key>
-    <true/>
 	<key>provisioningProfiles</key>
     <dict>
         <key>com.salvai.ultimatetoss</key>
