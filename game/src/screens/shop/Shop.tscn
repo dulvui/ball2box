@@ -74,19 +74,16 @@ script = ExtResource( 2 )
 
 [node name="Back" type="Button" parent="."]
 margin_left = 112.0
-margin_top = 915.0
+margin_top = 1091.0
 margin_right = 608.0
-margin_bottom = 1041.0
+margin_bottom = 1217.0
 text = "BACK"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Select" type="Button" parent="."]
 margin_left = 112.0
-margin_top = 761.0
+margin_top = 937.0
 margin_right = 608.0
-margin_bottom = 887.0
+margin_bottom = 1063.0
 text = "SELECT"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -122,7 +119,6 @@ __meta__ = {
 }
 
 [node name="Bounce" type="ProgressBar" parent="."]
-visible = false
 margin_left = 152.0
 margin_top = 751.0
 margin_right = 552.0
@@ -142,7 +138,6 @@ text = "BOUNCE"
 align = 1
 
 [node name="Mass" type="ProgressBar" parent="."]
-visible = false
 margin_left = 160.0
 margin_top = 614.0
 margin_right = 560.0
@@ -166,7 +161,7 @@ anims/FadeOut = SubResource( 2 )
 [node name="Star" type="Sprite" parent="."]
 visible = false
 modulate = Color( 1, 0.968627, 0.188235, 1 )
-position = Vector2( 541, 819 )
+position = Vector2( 541, 995 )
 scale = Vector2( 1.56874, 1.56874 )
 texture = ExtResource( 5 )
 
