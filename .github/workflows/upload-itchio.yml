@@ -3,7 +3,8 @@ name: itch.io upload
 on:
   push:
     paths:
-      - "version"
+      - "version-android"
+      - "version-ios"
       - ".github/workflows/upload-itchio.yml"
 
 env:
