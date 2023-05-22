@@ -72,38 +72,15 @@ CC0-1.0
 CC0-1.0
 [url=https://www.kenney.nl/assets/game-icons]kenney.nl/assets/game-icons[/url]
 
-\"National Flags\" by Wikimedia
-Public Domain
-[url=https://en.wikipedia.org/wiki/Gallery_of_sovereign_state_flags]wikipedia.org/wiki/Gallery_of_sovereign_state_flags[/url]
-
-[b]3D[/b]
-\"Star\" by Savino
+\"Patterns Pack\" by kenney.nl
 CC0-1.0
-[url=https://opengameart.org/content/star-0]https://opengameart.org/content/star-0[/url]
+[url=https://www.kenney.nl/assets/pattern-pack]https://www.kenney.nl/assets/pattern-pack[/url]
 
-\"Volleyball\" by PatelDev
-CC-BY-4.0
-[url=https://skfb.ly/6VWCM]skfb.ly/6VWCM[/url]
+\"Patterns Pack 2\" by kenney.nl
+CC0-1.0
+[url=https://www.kenney.nl/assets/pattern-pack-2]https://www.kenney.nl/assets/pattern-pack-2[/url]
 
-\"Football\" by siixarn
-CC-BY-4.0
-[url=https://skfb.ly/KqJH]skfb.ly/KqJH[/url]
-
-\"Octoball\" by EZduzziteh
-CC-BY-3.0
-[url=https://opengameart.org/content/some-more-wire-balls]opengameart.org/content/some-more-wire-balls[/url]
-
-[b]Font[/b]
-\"manrope.thin.otf\" by sharanda
-SIL Open Font License
-[url=https://github.com/sharanda/manrope]github.com/sharanda/manrope[/url]
-
-All other assets made by me are licensed under the CC-BY-SA-4.0 license.
-You can find more information and the complete source code on Github.
-
-
-All the best,
-Simon"
+"
 text = "This game is open source under the AGPL-3.0-or-later license.
 Its created with Godot Engine and lots of love <3
 
@@ -129,38 +106,15 @@ github.com/LMMS/assets
 CC0-1.0
 kenney.nl/assets/game-icons
 
-\"National Flags\" by Wikimedia
-Public Domain
-wikipedia.org/wiki/Gallery_of_sovereign_state_flags
-
-3D
-\"Star\" by Savino
+\"Patterns Pack\" by kenney.nl
 CC0-1.0
-https://opengameart.org/content/star-0
+https://www.kenney.nl/assets/pattern-pack
 
-\"Volleyball\" by PatelDev
-CC-BY-4.0
-skfb.ly/6VWCM
+\"Patterns Pack 2\" by kenney.nl
+CC0-1.0
+https://www.kenney.nl/assets/pattern-pack-2
 
-\"Football\" by siixarn
-CC-BY-4.0
-skfb.ly/KqJH
-
-\"Octoball\" by EZduzziteh
-CC-BY-3.0
-opengameart.org/content/some-more-wire-balls
-
-Font
-\"manrope.thin.otf\" by sharanda
-SIL Open Font License
-github.com/sharanda/manrope
-
-All other assets made by me are licensed under the CC-BY-SA-4.0 license.
-You can find more information and the complete source code on Github.
-
-
-All the best,
-Simon"
+"
 
 [node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 737.0

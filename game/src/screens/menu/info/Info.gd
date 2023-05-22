@@ -4,7 +4,7 @@ signal back
 
 func _ready() -> void:
 	$VBoxContainer/Buttons/Donate.visible = Global.FDROID or OS.get_name() == "HTML5"
-	$VBoxContainer/Buttons/Website.visible = not (Global.FDROID or OS.get_name() == "HTML5")
+	$VBoxContainer/Buttons/Website.visible = not $VBoxContainer/Buttons/Donate.visible
 
 func _on_Back_pressed() -> void:
 	emit_signal("back")

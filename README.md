@@ -52,16 +52,34 @@ The game itself is licensed under the [GNU AGPL v3.0](LICENSE) license and all
 assets made by myself are licensed under the [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/) license.
 
 
-## Third party assets
+
+
+### Code
+
+"Ball2Box"
+Copyright: 2020 Simon Dalvai
+License: [GNU AGPL v3.0](LICENSE)
+```
+game/src/**.tscn
+game/src/**.gd
+```
+
+"Godot Engine"
+Copyright: Juan Linietsky, Ariel Manzur and contributors
+License: [MIT](godotengine.org/license)
 
 ### Audio
 
-"The heist" Royalty-Free Music by https://audiohub.com is licensed under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)
+"The heist" Royalty-Free Music
+Copyright: https://audiohub.com  
+License: [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)
 ```
 game/assets/audio/heist.ogg
 ```
 
-"Snares and Crash" by LMMS (https://github.com/LMMS/assets) are licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
+"Snares and Crash"
+Copyright: LMMS (https://github.com/LMMS/assets)  
+License: [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
 ```
 game/assets/audio/snare05.ogg
 game/assets/audio/snare02.ogg
@@ -69,8 +87,19 @@ game/assets/audio/crash02.ogg
 ```
 ### 2D assets
 
+"2D Assets"
+Copyright: 2020 Simon Dalvai
+License: [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+```
+icon.png
+game/assets/target.jpg
+game/assets/background-2.png
+game/assets/pause.png
+```
 
-"Game Icons" by kenney.nl (https://www.kenney.nl/assets/game-icons) are licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
+"Game Icons"
+Copyright: kenney.nl (https://www.kenney.nl/assets/game-icons)  
+License: [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
 ```
 game/assets/star.png
 game/assets/right.png
@@ -84,16 +113,19 @@ game/assets/information.png
 game/assets/pointer.png
 ```
 
-"Patterns Pack" by kenney.nl (https://www.kenney.nl/assets/pattern-pack) are licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
+"Patterns Pack"
+Copyright: kenney.nl (https://www.kenney.nl/assets/pattern-pack)  
+License: [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
 ```
 game/assets/patterns/pattern_04.png
 game/assets/patterns/pattern_09.png
 game/assets/patterns/pattern_27.png
 ```
 
-"Patterns Pack 2" by kenney.nl (https://www.kenney.nl/assets/pattern-pack-2) are licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
+"Patterns Pack 2"
+Copyright: kenney.nl (https://www.kenney.nl/assets/pattern-pack-2)  
+License: [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
 ```
-README.md
 game/assets/patterns/pattern_0001.png
 game/assets/patterns/pattern_0003.png
 game/assets/patterns/pattern_0007.png
@@ -104,28 +136,48 @@ game/assets/patterns/pattern_0025.png
 ```
 
 ### 3D assets
-"Star" by Savino (https://opengameart.org/content/star-0) is licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
+
+"Torus ball"
+Copyright: 2020 Simon Dalvai
+License: [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+```
+game/assets/obj/torus-ball.obj
+```
+
+
+"Star"
+Copyright: Savino (https://opengameart.org/content/star-0)  
+License: [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
 ```
 game/assets/obj/star.obj
 ```
 
-"Volleyball" by PatelDev (https://skfb.ly/6VWCM) is licensed under [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/).
+"Volleyball"
+Copyright: PatelDev (https://skfb.ly/6VWCM)  
+License: [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)
 ```
 game/assets/obj/Volleyball.obj
 ```
 
-"Football" by siixarn (https://skfb.ly/KqJH) is licensed under [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/).
+"Football"
+Copyright: siixarn (https://skfb.ly/KqJH)  
+License: [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)
 ```
 game/assets/obj/Football.blend.obj
 ``` 
 
-"Octoball" by EZduzziteh (https://opengameart.org/content/some-more-wire-balls) is licensed under [CC-BY-3.0](https://creativecommons.org/licenses/by/3.0/)
+License: "Octoball"
+Copyright: EZduzziteh (https://opengameart.org/content/some-more-wire-balls)  
+[CC-BY-3.0](https://creativecommons.org/licenses/by/3.0/)
 ```
 game/assets/obj/Octoball.obj
 ```
 
 ### Font
-"manrope.thin.otf" by sharanda (https://github.com/sharanda/manrope) is licensed under [SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+
+"manrope.thin.otf"
+Copyright: sharanda (https://github.com/sharanda/manrope)  
+License: [SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 ```
 game/assets/font/manrope.thin.otf
 ```
