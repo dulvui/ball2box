@@ -15,7 +15,6 @@ Track the migration to Godot 4.x in [issue #6](https://github.com/dulvui/ball2bo
 <a href="https://github.com/dulvui/ball2box/releases/" target="_blank"><img src="store-images/Github.webp" alt="Get it on Github" height="50px" ></a>
 <a href="https://simondalvai.itch.io/ball2box" target="_blank"><img src="store-images/itchio.webp" alt="Available on itch.io" height="50px" ></a>
 
-## Screenshots
 <div>
   <img src="metadata/en-US/images/phoneScreenshots/Android-1.png" alt="Level 1" width="200"/>
   <img src="metadata/en-US/images/phoneScreenshots/Android-2.png" alt="Level 2" width="200"/>
@@ -25,7 +24,6 @@ Track the migration to Godot 4.x in [issue #6](https://github.com/dulvui/ball2bo
 
 ## Table of contents
 - [Ball2Box](#ball2box)
-  - [Screenshots](#screenshots)
   - [Table of contents](#table-of-contents)
   - [Setup](#setup)
   - [Contributions](#contributions)
