@@ -15,19 +15,6 @@ Track the migration to Godot 4.x in [issue #6](https://github.com/dulvui/ball2bo
 <a href="https://github.com/dulvui/ball2box/releases/" target="_blank"><img src="store-images/Github.webp" alt="Get it on Github" height="50px" ></a>
 <a href="https://simondalvai.itch.io/ball2box" target="_blank"><img src="store-images/itchio.webp" alt="Available on itch.io" height="50px" ></a>
 
-## Table of contents
-- [Ball2Box](#ball2box)
-  - [Table of contents](#table-of-contents)
-  - [Screenshots](#screenshots)
-  - [Setup](#setup)
-  - [Contributions](#contributions)
-  - [Licenses](#licenses)
-  - [Third party assets](#third-party-assets)
-    - [Audio](#audio)
-    - [2D assets](#2d-assets)
-    - [3D assets](#3d-assets)
-    - [Font](#font)
-
 ## Screenshots
 <div>
   <img src="metadata/en-US/images/phoneScreenshots/Android-1.png" alt="Level 1" width="200"/>
@@ -35,6 +22,19 @@ Track the migration to Godot 4.x in [issue #6](https://github.com/dulvui/ball2bo
   <img src="metadata/en-US/images/phoneScreenshots/Android-3.png" alt="Level 3" width="200"/>
   <img src="metadata/en-US/images/phoneScreenshots/Android-4.png" alt="Level 4" width="200"/>
 </div>
+
+## Table of contents
+- [Ball2Box](#ball2box)
+  - [Screenshots](#screenshots)
+  - [Table of contents](#table-of-contents)
+  - [Setup](#setup)
+  - [Contributions](#contributions)
+  - [Licenses](#licenses)
+    - [Code](#code)
+    - [Audio](#audio)
+    - [2D assets](#2d-assets)
+    - [3D assets](#3d-assets)
+    - [Font](#font)
 
 ## Setup
 Get the latest version of the Godot Engine editor and check out the  
