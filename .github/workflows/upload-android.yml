@@ -31,8 +31,13 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
 
-      - name: Check if changelog exists
+      - name: F-Droid check if changelog exists
         run: test -f "metadata/en-US/changelogs/$VERSION_CODE.txt"
+
+      - name: F-Droid check if versions are correct in fdroid/export_presets.cfg
+        run: |
+            grep -Fxq "version/code=$VERSION_CODE" fdroid/export_presets.cfg
+            grep -Fxq "version/name=\"$VERSION_NAME\"" fdroid/export_presets.cfg
 
       - name: Create changelog text for Github releases
         id: changelog

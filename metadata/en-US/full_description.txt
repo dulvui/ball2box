@@ -1,8 +1,16 @@
-Can you get all three stars in all levels?
+Swipe to shoot the ball into the box in over 100 levels with only one finger.
+Can you get all three stars on all levels?
 
-Swipe to shoot the ball into the box in over 100 levels. Only one finger needed so it's the perfect game for school or other boring tasks during your day.
-Like basketball but you need only one finger to swipe.
-Over 100 colorful and increasing challenging levels and over 20 different balls are waiting to be unlocked by you.
-Are you ready to collect the 3 stars in every level?
+🕹️ 100+ levels and more coming soon...
+🌈 20+ different styled balls to collect
+📡 Offline game
+📺 No ads
+💸 No In-App purchases
+🕵️‍♀️ No user tracking
+🛑 No permissions needed
+📖 Open Source on https://github.com/dulvui/ball2box
+👨‍💻 Created with Godot Engine 3
 
-Created with ❤️ using Godot Engine v3.5.1
+Made with love by Simon Dalvai
+https://simondalvai.com
+info@simondalvai.com
