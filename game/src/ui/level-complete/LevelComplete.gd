@@ -59,7 +59,7 @@ func _on_LevelComplete_visibility_changed() -> void:
 			Global.current_level = Global.current_level + 1
 			first_time_complete = true
 		
-		if Global.current_level == Global.LEVELS:
+		if Global.current_level > Global.LEVELS:
 			$Buttons/NextLevel.hide()
 		
 		get_tree().paused = true
