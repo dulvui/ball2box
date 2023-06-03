@@ -56,9 +56,11 @@ tracks/0/keys = {
 collision_layer = 2
 mass = 6.28
 continuous_cd = true
-contacts_reported = 1
+contacts_reported = 10
 contact_monitor = true
 axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
 script = ExtResource( 1 )
 
 [node name="ImmediateGeometryUp" type="ImmediateGeometry" parent="."]
