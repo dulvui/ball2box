@@ -51,9 +51,6 @@ var russia_real = preload("res://src/actors/ball/russia-ball/RussiaBall.tscn")
 var uk_real = preload("res://src/actors/ball/uk-ball/UKBall.tscn")
 var rainbow_real = preload("res://src/actors/ball/rainbow-ball/RainbowBall.tscn")
 
-
-#TODO add translations for ball buttons 
-
 onready var balls = [{"id": 1 , "model":starter, "real": starter_real, "price": 0},
 					{"id": 2 ,"model":golden,"real":golden_real, "price": 5},
 					{"id": 3 ,"model":green,"real":green_real, "price": tr("MORE_GAMES")},

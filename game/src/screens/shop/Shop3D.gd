@@ -20,10 +20,6 @@ func prev() -> void:
 	new_ball.fade_in()
 	ball = new_ball
 	
-
-func select() -> void:
-	BallMachine.select()
-	
 func shop() -> void:
 	ball.fade_in()
 	

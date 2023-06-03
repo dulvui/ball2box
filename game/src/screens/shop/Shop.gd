@@ -43,9 +43,10 @@ func _on_Back_pressed() -> void:
 func _on_Select_pressed() -> void:
 	AudioMachine.play_click()
 	var ball = BallMachine.get_current_ball_info()
-	if Global.unlocked_balls.has(ball["id"]):
-		$Select.text = "SELECT"
-	
+	if Global.unlock_ball():
+		BallMachine.select()
+		_set_select_label()
+	# special cases like follow, more games etc...
 	elif ball["price"] is String:
 		$Select.text = "SELECT"
 		if ball["price"] == tr("FOLLOW"):
@@ -58,20 +59,19 @@ func _on_Select_pressed() -> void:
 				OS.shell_open("https://simondalvai.com/games")
 			else:
 				OS.shell_open("https://play.google.com/store/apps/dev?id=7836644900810357474&hl=en")
-	
-	
 	else:
-		if ball["price"] is String:
-			$Select.text = str(ball["price"])
-		else:
-			$Select.text = str(ball["price"])
+		$Select.text = str(ball["price"])
+	
 	emit_signal("select")
 		
 
 func _set_select_label() -> void:
 	var ball = BallMachine.get_current_ball_info()
 	if Global.unlocked_balls.has(ball["id"]):
-		$Select.text = "SELECT"
+		if ball["id"] == BallMachine.selected_ball + 1:
+			$Select.text = "SELECTED"
+		else:
+			$Select.text = "SELECT"
 		$Star.hide()
 		
 	else:

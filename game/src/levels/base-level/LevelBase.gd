@@ -94,27 +94,26 @@ func _on_Shop_back() -> void:
 
 
 func _on_Shop_select() -> void:
-	if Global.unlock_ball():
-		$Base/Shop3D.select()
+
+	# don't go to menu directly https://github.com/dulvui/ball2box/issues/9#issuecomment-1572743713
+#	$UI/Shop.animation_player.play("FadeOut")
+#	yield($UI/Shop.animation_player,"animation_finished")
+#	$UI/Shop.hide()
+#
+#	$UI/Menu.show()
+#	$UI/Menu.animation_player.play("FadeIn")
+#	$Base/Shop3D.menu()
+#	$AnimationPlayer.play("GoToMenu")
+	
+	var pos = ball.initial_position
+	ball.queue_free()
+	ball = BallMachine.get_real()
+	ball.initial_position = pos
+	ball.translation = pos
+	add_child(ball)
 		
-		$UI/Shop.animation_player.play("FadeOut")
-		yield($UI/Shop.animation_player,"animation_finished")
-		$UI/Shop.hide()
-		
-		$UI/Menu.show()
-		$UI/Menu.animation_player.play("FadeIn")
-		$Base/Shop3D.menu()
-		$AnimationPlayer.play("GoToMenu")
-		
-		var pos = ball.initial_position
-		ball.queue_free()
-		ball = BallMachine.get_real()
-		ball.initial_position = pos
-		ball.translation = pos
-		add_child(ball)
-			
-		# reset level after coming back from shop
-		_connect_ball_signals()
+	# reset level after coming back from shop
+	_connect_ball_signals()
 	
 
 

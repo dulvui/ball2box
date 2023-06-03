@@ -4,6 +4,7 @@ BALLS,ball,ball,pallina,pelota
 LEVELS,level,level,livello,nivel
 BACK,back,zurück,ritorna,regresa
 SELECT,select,auswählen,seleziona,seleciona
+SELECTED,selected,ausgewählt,selezionato,seleccionado
 BOUNCE,bounce,aufprall,rimbalzo,rebote
 MASS,weight,gewicht,peso,peso
 NEXT_LEVEL,level {amount},level {amount},level {amount},level {amount}
