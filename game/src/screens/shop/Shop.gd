@@ -68,7 +68,7 @@ func _on_Select_pressed() -> void:
 func _set_select_label() -> void:
 	var ball = BallMachine.get_current_ball_info()
 	if Global.unlocked_balls.has(ball["id"]):
-		if ball["id"] == BallMachine.selected_ball + 1:
+		if BallMachine.current_ball_is_selected():
 			$Select.text = "SELECTED"
 		else:
 			$Select.text = "SELECT"

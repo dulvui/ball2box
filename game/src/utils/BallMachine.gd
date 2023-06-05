@@ -88,6 +88,9 @@ func get_index() -> int:
 
 func get_selected() -> Node:
 	return balls[selected_ball]["model"].instance()
+
+func current_ball_is_selected() -> bool:
+	return balls[selected_ball]["id"] == balls[current_ball]["id"]
 	
 func get_current_ball_info() -> Dictionary:
 	return balls[current_ball]
