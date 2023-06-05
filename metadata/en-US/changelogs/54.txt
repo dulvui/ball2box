@@ -1,0 +1,3 @@
+- fix shop issues
+- better ball bounce
+- next level button visible again in level 119
