@@ -12,8 +12,8 @@
     <true/>
 	<key>provisioningProfiles</key>
     <dict>
-        <key>com.simondalvai.ball2box</key>
-        <string>com.simondalvai.ball2box</string>
+        <key>com.salvai.ultimatetoss</key>
+        <string>com.salvai.ultimatetoss</string>
     </dict>
     <key>signingCertificate</key>
     <string>Apple Distribution</string>
