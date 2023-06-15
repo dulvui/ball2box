@@ -35,7 +35,6 @@ points = PoolVector3Array( -0.982432, -0.982623, -0.184098, -0.982432, -0.982623
 [sub_resource type="SpatialMaterial" id=12]
 albedo_color = Color( 0.960784, 0.188235, 0.0588235, 1 )
 albedo_texture = ExtResource( 3 )
-metallic = 0.72
 metallic_specular = 0.0
 roughness = 0.39
 
