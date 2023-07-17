@@ -284,7 +284,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.06394, 9.04416, 0.575264 )
 [node name="UI" type="Node" parent="."]
 
 [node name="Shop" parent="UI" instance=ExtResource( 7 )]
-visible = true
 
 [node name="Menu" parent="UI" instance=ExtResource( 10 )]
 

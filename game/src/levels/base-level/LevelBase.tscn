@@ -1,17 +1,14 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://src/levels/base-level/LevelBase.gd" type="Script" id=1]
-[ext_resource path="res://src/screens/shop/Shop3D.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/levels/base-level/base-3d/Base3D.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/screens/menu/Menu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/actors/bin/Bin.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/actors/ball/starter-ball/Ball.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/ui/level-complete/LevelComplete.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/actors/star/Star.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/background-2.png" type="Texture" id=8]
 [ext_resource path="res://src/ui/coins/Coins.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/screens/shop/Shop.tscn" type="PackedScene" id=10]
-[ext_resource path="res://materials/wall-material.tres" type="Material" id=11]
-[ext_resource path="res://materials/wall-physics-material.tres" type="PhysicsMaterial" id=12]
 [ext_resource path="res://src/ui/tutorial/Tutorial.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/pause.png" type="Texture" id=14]
 [ext_resource path="res://src/levels/base-level/Pause.gd" type="Script" id=15]
@@ -121,32 +118,6 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="BoxShape" id=5]
-
-[sub_resource type="CubeMesh" id=6]
-
-[sub_resource type="PlaneMesh" id=16]
-
-[sub_resource type="SpatialMaterial" id=17]
-flags_transparent = true
-albedo_color = Color( 0.0705882, 0.266667, 0.45098, 1 )
-albedo_texture = ExtResource( 8 )
-
-[sub_resource type="CubeMesh" id=7]
-
-[sub_resource type="BoxShape" id=8]
-
-[sub_resource type="SpatialMaterial" id=9]
-vertex_color_use_as_albedo = true
-
-[sub_resource type="SphereMesh" id=10]
-material = SubResource( 9 )
-
-[sub_resource type="Gradient" id=21]
-interpolation_mode = 2
-offsets = PoolRealArray( 0.105455, 0.392727, 0.64, 0.916364 )
-colors = PoolColorArray( 0.984314, 0.980392, 0.396078, 1, 0.443137, 0.917647, 0.937255, 1, 0.92549, 0.368627, 0.368627, 1, 0.384314, 0.952941, 0.505882, 1 )
-
 [sub_resource type="PhysicsMaterial" id=15]
 friction = 0.5
 bounce = 0.9
@@ -165,100 +136,7 @@ anims/TopbarFadeIn = SubResource( 19 )
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="Base" type="Spatial" parent="."]
-
-[node name="Floor" type="StaticBody" parent="Base"]
-transform = Transform( 11, 0, 0, 0, 4, 0, 0, 0, 1, 0, -4, 0 )
-physics_material_override = ExtResource( 12 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Base/Floor"]
-shape = SubResource( 5 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Base/Floor"]
-cast_shadow = 0
-use_in_baked_light = true
-mesh = SubResource( 6 )
-material/0 = ExtResource( 11 )
-
-[node name="Backgorund" type="MeshInstance" parent="Base"]
-transform = Transform( 15, 0, 0, 0, -4.37114e-08, -60, 0, 1, -2.62268e-06, 0, 37.6553, -6.80032 )
-mesh = SubResource( 16 )
-material/0 = SubResource( 17 )
-
-[node name="WallLeft" type="StaticBody" parent="Base"]
-transform = Transform( 1, 0, 0, 0, 100, 0, 0, 0, 1, -10, 100, 0 )
-physics_material_override = ExtResource( 12 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Base/WallLeft"]
-use_in_baked_light = true
-mesh = SubResource( 7 )
-material/0 = ExtResource( 11 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Base/WallLeft"]
-shape = SubResource( 8 )
-
-[node name="WallRight" type="StaticBody" parent="Base"]
-transform = Transform( 1, 0, 0, 0, 100, 0, 0, 0, 1, 10, 100, 0 )
-physics_material_override = ExtResource( 12 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Base/WallRight"]
-use_in_baked_light = true
-mesh = SubResource( 7 )
-material/0 = ExtResource( 11 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Base/WallRight"]
-shape = SubResource( 8 )
-
-[node name="Roof" type="StaticBody" parent="Base"]
-transform = Transform( 9, 0, 0, 0, 2, 0, 0, 0, 1, 0, 37, 0 )
-physics_material_override = ExtResource( 12 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Base/Roof"]
-use_in_baked_light = true
-mesh = SubResource( 7 )
-material/0 = ExtResource( 11 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Base/Roof"]
-shape = SubResource( 8 )
-
-[node name="ShopRoof" type="StaticBody" parent="Base"]
-transform = Transform( 9, 0, 0, 0, 2, 0, 0, 0, 1, 0, 75, 0 )
-physics_material_override = ExtResource( 12 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Base/ShopRoof"]
-use_in_baked_light = true
-mesh = SubResource( 7 )
-material/0 = ExtResource( 11 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Base/ShopRoof"]
-shape = SubResource( 8 )
-
-[node name="DirectionalLight" type="DirectionalLight" parent="Base"]
-light_energy = 0.45
-
-[node name="Shop3D" parent="Base" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 62, 0 )
-
-[node name="Camera" type="Camera" parent="Base"]
-pause_mode = 2
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, 26 )
-
-[node name="CPUParticles" type="CPUParticles" parent="Base"]
-pause_mode = 2
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -28.6212, -24 )
-amount = 24
-lifetime = 40.0
-preprocess = 440.0
-mesh = SubResource( 10 )
-emission_shape = 2
-emission_box_extents = Vector3( 20, 1, 1 )
-flag_align_y = true
-gravity = Vector3( 0, 0.1, 0 )
-linear_accel = 2.0
-linear_accel_random = 1.0
-scale_amount = 3.0
-scale_amount_random = 1.0
-color_initial_ramp = SubResource( 21 )
+[node name="Base" parent="." instance=ExtResource( 2 )]
 
 [node name="Ball" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.94765, 19.8625, 0 )
