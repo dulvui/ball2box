@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://src/levels/base-level/LevelBase.gd" type="Script" id=1]
 [ext_resource path="res://src/levels/base-level/base-3d/Base3D.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://src/actors/ball/starter-ball/Ball.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/ui/level-complete/LevelComplete.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/actors/star/Star.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/levels/base-level/background/Background1.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/ui/coins/Coins.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/screens/shop/Shop.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/ui/tutorial/Tutorial.tscn" type="PackedScene" id=13]
@@ -186,6 +187,8 @@ rect_scale = Vector2( 0.9, 0.9 )
 icon = ExtResource( 14 )
 icon_align = 1
 script = ExtResource( 15 )
+
+[node name="Background" parent="." instance=ExtResource( 8 )]
 
 [connection signal="reset" from="Ball" to="." method="_on_Ball_reset"]
 [connection signal="shoot" from="Ball" to="." method="_on_Ball_shoot"]

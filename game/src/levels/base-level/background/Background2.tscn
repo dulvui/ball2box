@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/patterns/pattern_0007.png" type="Texture" id=1]
+
+[sub_resource type="PlaneMesh" id=16]
+
+[sub_resource type="SpatialMaterial" id=17]
+flags_transparent = true
+albedo_color = Color( 0, 0.239216, 0.160784, 1 )
+albedo_texture = ExtResource( 1 )
+
+[node name="Background" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 25, 0, 0, 0, -1.09278e-06, -25, 0, 25, -1.09278e-06, 0, 7.22761, -6.80032 )
+mesh = SubResource( 16 )
+skeleton = NodePath("../../Base")
+material/0 = SubResource( 17 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 25, 0, 0, 0, -1.09278e-06, -25, 0, 25, -1.09278e-06, 0, 56.2159, -6.80032 )
+mesh = SubResource( 16 )
+skeleton = NodePath("../../Base")
+material/0 = SubResource( 17 )
