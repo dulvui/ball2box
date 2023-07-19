@@ -76,8 +76,6 @@ anims/TopbarFadeIn = SubResource( 19 )
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="Base" parent="." instance=ExtResource( 4 )]
-
 [node name="Ball" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.94765, 19.8625, 0 )
 physics_material_override = SubResource( 15 )
@@ -94,8 +92,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.18212, 19.6921, -1.21101 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.06394, 9.04416, 0.575264 )
 
 [node name="Tutorial" parent="." instance=ExtResource( 8 )]
-
-[node name="Background" parent="Tutorial" instance=ExtResource( 6 )]
 
 [node name="UI" type="Node" parent="."]
 
@@ -127,6 +123,10 @@ margin_bottom = 158.087
 rect_scale = Vector2( 0.9, 0.9 )
 icon = ExtResource( 15 )
 icon_align = 1
+
+[node name="Base" parent="." instance=ExtResource( 4 )]
+
+[node name="Background" parent="." instance=ExtResource( 6 )]
 
 [connection signal="reset" from="Ball" to="." method="_on_Ball_reset"]
 [connection signal="shoot" from="Ball" to="." method="_on_Ball_shoot"]
