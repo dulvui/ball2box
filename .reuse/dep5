@@ -15,14 +15,14 @@ License: AGPL-3.0-or-later
 # Assets
 Files: |
     game/AppIcons/* *icon.png game/assets/background.png game/splash.png game/assets/obj/torus-ball.obj
-    game/assets/pause.png game/assets/target.jpg metadata/* game/assets/background-2.png /metadata/en-US/images/*
+    game/assets/pause.png game/assets/target.jpg game/assets/background-2.png /metadata/en-US/images/*
 Copyright: 2022 Simon Dalvai <info@simondalvai.com>
 License: CC-BY-SA-4.0
 
 # Config files
 Files: |
-    *.mtl *.yml *.import version* exportOptions.plist .gitignore
-    game/project.godot *.csv *.material *.tres *.translation version-android version-ios
+    *.mtl *.import exportOptions.plist .gitignore metadata/* 
+     *.csv *.material *.tres *.translation version-android version-ios
     fdroid/*
 Copyright: 2022 Simon Dalvai <info@simondalvai.com>
 License: CC0-1.0
