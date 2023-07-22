@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.com>
+
+SPDX-License-Identifier: CC0-1.0
+-->
 # Ball2Box
 [![Android upload](https://github.com/dulvui/ball2box/actions/workflows/upload-android.yml/badge.svg)](https://github.com/dulvui/ball2box/actions/workflows/upload-android.yml)
 [![iOS upload](https://github.com/dulvui/ball2box/actions/workflows/upload-ios.yml/badge.svg)](https://github.com/dulvui/ball2box/actions/workflows/upload-ios.yml)
@@ -48,9 +53,6 @@ of the changes you made.
 ## Licenses
 The game itself is licensed under the [GNU AGPL v3.0](LICENSE) license and all  
 assets made by myself are licensed under the [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/) license.
-
-
-
 
 ### Code
 

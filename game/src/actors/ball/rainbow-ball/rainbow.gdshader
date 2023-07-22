@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: turtle
+
+// SPDX-License-Identifier: CC0-1.0
+
 // https://godotshaders.com/shader/rainbow/
 shader_type spatial;
 render_mode unshaded;

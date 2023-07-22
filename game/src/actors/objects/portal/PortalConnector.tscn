@@ -7,5 +7,14 @@
 script = ExtResource( 1 )
 
 [node name="Portal1" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.54995, 0, 0 )
 
 [node name="Portal2" parent="." instance=ExtResource( 2 )]
+
+[node name="Portal" type="Portal" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.724874, 0, 0 )
+linked_room = NodePath("../Portal1")
+
+[node name="Portal3" type="Portal" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.40403, 0, 0 )
+linked_room = NodePath("../Portal1")

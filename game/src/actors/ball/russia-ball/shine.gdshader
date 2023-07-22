@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: ozmaister
+
+// SPDX-License-Identifier: MIT
+
 // https://godotshaders.com/shader/collectable-item-shining-highlight/
 shader_type spatial;
 render_mode unshaded, depth_draw_never;
