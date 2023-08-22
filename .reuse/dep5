@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Ball2Box
-Upstream-Contact: Simon Dalvai <info@simondalvai.com>
+Upstream-Contact: Simon Dalvai <info@simondalvai.org>
 Source: https://github.com/dulvui/ball2box
 
 ####################################
@@ -9,14 +9,14 @@ Source: https://github.com/dulvui/ball2box
 
 # Godot files
 Files: game/src/**.tscn game/project.godot game/**.import
-Copyright: 2022 Simon Dalvai <info@simondalvai.com>
+Copyright: 2022 Simon Dalvai <info@simondalvai.org>
 License: AGPL-3.0-or-later
 
 # Assets
 Files: |
     game/AppIcons/* *icon.png game/assets/background.png game/splash.png game/assets/obj/torus-ball.obj
     game/assets/pause.png game/assets/target.jpg game/assets/background-2.png /metadata/en-US/images/*
-Copyright: 2022 Simon Dalvai <info@simondalvai.com>
+Copyright: 2022 Simon Dalvai <info@simondalvai.org>
 License: CC-BY-SA-4.0
 
 # Config files
@@ -24,12 +24,12 @@ Files: |
     *.mtl *.import exportOptions.plist .gitignore metadata/* 
      *.csv *.material *.tres *.translation version-android version-ios
     fdroid/*
-Copyright: 2022 Simon Dalvai <info@simondalvai.com>
+Copyright: 2022 Simon Dalvai <info@simondalvai.org>
 License: CC0-1.0
 
 # Store badges
 Files: store-images/*
-Copyright: 2022 Simon Dalvai <info@simondalvai.com>
+Copyright: 2022 Simon Dalvai <info@simondalvai.org>
 License: CC0-1.0
 
 ####################################

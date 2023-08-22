@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.com>
+# SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.org>
 
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -60,7 +60,7 @@ func _on_Select_pressed() -> void:
 			if OS.get_name() == "iOS":
 				OS.shell_open("https://appstore.com/simondalvai")
 			elif Global.FDROID or OS.get_name() == "HTML5":
-				OS.shell_open("https://simondalvai.com/games")
+				OS.shell_open("https://simondalvai.org/games")
 			else:
 				OS.shell_open("https://play.google.com/store/apps/dev?id=7836644900810357474&hl=en")
 	else:

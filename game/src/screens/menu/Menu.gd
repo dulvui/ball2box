@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.com>
+# SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.org>
 
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -102,4 +102,4 @@ func _on_Next_pressed() -> void:
 
 func _on_SimonDalvai_pressed() -> void:
 	AudioMachine.click()
-	OS.shell_open("https://simondalvai.com")
+	OS.shell_open("https://simondalvai.org")

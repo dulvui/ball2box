@@ -515,7 +515,7 @@ margin_top = -149.28
 margin_right = 459.0
 margin_bottom = -31.28
 rect_scale = Vector2( 0.6, 0.6 )
-text = "simondalvai.com"
+text = "simondalvai.org"
 
 [node name="Info" parent="." instance=ExtResource( 10 )]
 margin_left = 720.0

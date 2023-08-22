@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.com>
+SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.org>
 
 SPDX-License-Identifier: CC0-1.0
 -->

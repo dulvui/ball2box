@@ -12,5 +12,5 @@ Can you get all three stars on all levels?
 👨‍💻 Created with Godot Engine 3
 
 Made with love by Simon Dalvai
-https://simondalvai.com
-info@simondalvai.com
+https://simondalvai.org
+info@simondalvai.org
