@@ -86,23 +86,23 @@ jobs:
           working-directory: $WORKING_DIRECTORY
 
       # GOOGLE PLAY STORE
-      - name: Publish to Play Store
-        uses: r0adkll/upload-google-play@v1
-        with:
-          serviceAccountJson: service-account.json
-          packageName: com.salvai.ultimatetoss
-          releaseFiles: Ball2Box.aab
-          whatsNewDirectory: distribution/whatsnew
-          track: 'internal'
-          status: completed
+      # - name: Publish to Play Store
+      #   uses: r0adkll/upload-google-play@v1
+      #   with:
+      #     serviceAccountJson: service-account.json
+      #     packageName: com.salvai.ultimatetoss
+      #     releaseFiles: Ball2Box.aab
+      #     whatsNewDirectory: distribution/whatsnew
+      #     track: 'internal'
+      #     status: completed
 
       # GITHUB RELEASES
       - name: Bundle aab to apk
         run: |
           wget -q https://github.com/google/bundletool/releases/download/1.14.0/bundletool-all-1.14.0.jar
           java -jar bundletool-all-1.14.0.jar build-apks --bundle=Ball2Box.aab --output=Ball2Box.apks \
-          --ks=keystore.keystore --ks-pass=pass:$RELEASE_STORE_USER --ks-key-alias=$ANDROID_KEYSTORE_ALIAS \
-          --key-pass=pass:$RELEASE_KEYSTORE_USER --mode=universal
+          --ks=keystore.keystore --ks-pass=pass:$ANDROID_STORE_PASSWORD --ks-key-alias=$ANDROID_KEYSTORE_ALIAS \
+          --key-pass=pass:$ANDROID_KEYSTORE_PASSWORD --mode=universal
           unzip -p Ball2Box.apks universal.apk > Ball2Box.apk
 
       - name: Upload binaries to Github release
