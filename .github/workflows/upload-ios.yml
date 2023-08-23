@@ -10,6 +10,7 @@ on:
       - "version-ios"
       - ".github/workflows/upload-ios.yml"
       - "exportOptions.plist"
+      - "export_presets.ios.example"
 
 env:
   PROJECT_NAME: Ball2Box

@@ -10,6 +10,7 @@ on:
       - "version-android"
       - "version-ios"
       - ".github/workflows/upload-itchio.yml"
+      - "export_presets.html.example"
 
 env:
   WORKING_DIRECTORY: game

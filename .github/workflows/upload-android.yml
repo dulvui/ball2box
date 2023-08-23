@@ -9,6 +9,7 @@ on:
     paths:
       - "version-android"
       - ".github/workflows/upload-android.yml"
+      - "export_presets.android.example"
 
 env:
   WORKING_DIRECTORY: game
