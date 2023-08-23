@@ -67,7 +67,7 @@ jobs:
 
       - name: Create export_presets.cfg and inject values
         run: |
-          cp game/export_presets.example game/export_presets.cfg
+          cp game/export_presets.android.example game/export_presets.cfg
           sed -i "s|VERSION_CODE|$VERSION_CODE|g" $WORKING_DIRECTORY/export_presets.cfg
           sed -i "s|VERSION_NAME|$VERSION_NAME|g" $WORKING_DIRECTORY/export_presets.cfg
           sed -i "s|KEYSTORE_RELEASE_PATH|$GITHUB_WORKSPACE/keystore.keystore|g" $WORKING_DIRECTORY/export_presets.cfg

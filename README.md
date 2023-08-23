@@ -49,9 +49,11 @@ For further instructions, like exporting to mobile, please read the official [Go
 
 ### export_presets.cfg
 
-To be able to export for Android or iOS, copy the `export_presets.exmaple` file and fill in your values.
+To be able to export for Android or iOS, copy the `export_presets.[platform].exmaple` file and fill in your values.
+
+Example for Android
 ```sh
-cp game/export_presets.example game/export_presets.cfg
+cp game/export_presets.android.example game/export_presets.cfg
 ```
 
 ## Contributions

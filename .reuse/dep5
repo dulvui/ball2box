@@ -8,7 +8,7 @@ Source: https://github.com/dulvui/ball2box
 ####################################
 
 # Godot files
-Files: game/src/**.tscn game/project.godot game/**.import game/export_presets.example
+Files: game/src/**.tscn game/project.godot game/**.import game/export_presets.*
 Copyright: 2022 Simon Dalvai <info@simondalvai.org>
 License: AGPL-3.0-or-later
 

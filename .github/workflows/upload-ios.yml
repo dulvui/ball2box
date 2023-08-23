@@ -63,7 +63,7 @@ jobs:
 
       - name: Create and config export_presets.cfg
         run: |
-          cp game/export_presets.example game/export_presets.cfg
+          cp game/export_presets.ios.example game/export_presets.cfg
           sed -i -e "s|VERSION_CODE|$VERSION|g" $WORKING_DIRECTORY/export_presets.cfg
           sed -i -e "s|VERSION_NAME|$VERSION|g" $WORKING_DIRECTORY/export_presets.cfg
           sed -i -e "s|IOS_SHORT_VERSION|$VERSION|g" $WORKING_DIRECTORY/export_presets.cfg
