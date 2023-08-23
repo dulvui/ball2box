@@ -73,7 +73,7 @@ jobs:
           sed -i "s|KEYSTORE_RELEASE_PATH|$GITHUB_WORKSPACE/keystore.keystore|g" $WORKING_DIRECTORY/export_presets.cfg
           sed -i "s|KEYSTORE_DEBUG_PATH|$GITHUB_WORKSPACE/debug.keystore|g" $WORKING_DIRECTORY/export_presets.cfg
           sed -i "s|ANDROID_KEYSTORE_ALIAS|$ANDROID_KEYSTORE_ALIAS|g" $WORKING_DIRECTORY/export_presets.cfg
-          sed -i "s|KEYSTORE_RELEASE_PASSWORD|$ANDROID_KEYSTORE_PASSWORD|g" $WORKING_DIRECTORY/export_presets.cfg
+          sed -i "s|ANDROID_KEYSTORE_PASSWORD|$ANDROID_KEYSTORE_PASSWORD|g" $WORKING_DIRECTORY/export_presets.cfg
 
       - name: Delete iOS icons
         run: rm -rf $WORKING_DIRECTORY/AppIcons
