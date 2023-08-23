@@ -86,15 +86,15 @@ jobs:
           working-directory: $WORKING_DIRECTORY
 
       # GOOGLE PLAY STORE
-      # - name: Publish to Play Store
-      #   uses: r0adkll/upload-google-play@v1
-      #   with:
-      #     serviceAccountJson: service-account.json
-      #     packageName: com.salvai.ultimatetoss
-      #     releaseFiles: Ball2Box.aab
-      #     whatsNewDirectory: distribution/whatsnew
-      #     track: 'internal'
-      #     status: completed
+      - name: Publish to Play Store
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJson: service-account.json
+          packageName: com.salvai.ultimatetoss
+          releaseFiles: Ball2Box.aab
+          whatsNewDirectory: distribution/whatsnew
+          track: 'internal'
+          status: completed
 
       # GITHUB RELEASES
       - name: Bundle aab to apk
