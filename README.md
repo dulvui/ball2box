@@ -32,6 +32,7 @@ Track the migration to Godot 4.x in [issue #6](https://github.com/dulvui/ball2bo
 - [Ball2Box](#ball2box)
   - [Table of contents](#table-of-contents)
   - [Setup](#setup)
+    - [export\_presets.cfg](#export_presetscfg)
   - [Contributions](#contributions)
   - [Licenses](#licenses)
     - [Code](#code)
@@ -45,6 +46,13 @@ Get the latest version of the Godot Engine editor and check out the
 repo. Then open the `game/project.godot` file with the editor.
 
 For further instructions, like exporting to mobile, please read the official [Godot Docs](https://docs.godotengine.org/en/stable/).
+
+### export_presets.cfg
+
+To be able to export for Android or iOS, copy the `export_presets.exmaple` file and fill in your values.
+```sh
+cp game/export_presets.example game/export_presets.cfg
+```
 
 ## Contributions
 If you want to contribute to the project, please fork the repo,    

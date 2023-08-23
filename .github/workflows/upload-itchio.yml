@@ -13,11 +13,12 @@ on:
 
 env:
   WORKING_DIRECTORY: game
+  ITCHIO_API_KEY: ${{ secrets.ITCHIO_API_KEY }}
 
 jobs:
   deploy:
     if: github.ref == 'refs/heads/prod'
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
         uses: actions/checkout@v3
@@ -32,12 +33,13 @@ jobs:
         uses: dulvui/godot-html-export@v0.0.2
         with:
           working-directory: $WORKING_DIRECTORY
+          create-export-preset-cfg: false
 
       - name: Upload to itch.io
         uses: dulvui/itchio-butler-upload@v0.0.1
         with:
           working-directory: html5
-          api-key: ${{ secrets.ITCHIO_API_KEY }}
+          api-key: $ITCHIO_API_KEY
           user: simondalvai
           game: ball2box
           channel: html5
