@@ -9,11 +9,12 @@ on:
     paths:
       - "version-android"
       - ".github/workflows/upload-android.yml"
+      - "fdroid/*"
       - "export_presets.android.example"
 
 env:
   WORKING_DIRECTORY: game
-  SERVICE_ACCOUNT_JSON: ${{ secrets.ANDROID_SERVICE_ACCOUNT_JSON }}
+  ANDROID_SERVICE_ACCOUNT_JSON: ${{ secrets.ANDROID_SERVICE_ACCOUNT_JSON }}
   ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
   ANDROID_KEYSTORE_ALIAS: ${{ secrets.ANDROID_KEYSTORE_ALIAS }}
   ANDROID_STORE_PASSWORD: ${{ secrets.ANDROID_STORE_PASSWORD }}
@@ -59,7 +60,7 @@ jobs:
           cp metadata/en-US/changelogs/$VERSION_CODE.txt  distribution/whatsnew/whatsnew-en-US
 
       - name: Create service-account.json
-        run: echo $SERVICE_ACCOUNT_JSON > service-account.json
+        run: echo $ANDROID_SERVICE_ACCOUNT_JSON > service-account.json
 
       - name: Create keystores
         run: |
@@ -101,8 +102,8 @@ jobs:
         run: |
           wget -q https://github.com/google/bundletool/releases/download/1.14.0/bundletool-all-1.14.0.jar
           java -jar bundletool-all-1.14.0.jar build-apks --bundle=Ball2Box.aab --output=Ball2Box.apks \
-          --ks=keystore.keystore --ks-pass=pass:$ANDROID_STORE_PASSWORD --ks-key-alias=$ANDROID_KEYSTORE_ALIAS \
-          --key-pass=pass:$ANDROID_KEYSTORE_PASSWORD --mode=universal
+          --ks=keystore.keystore --ks-pass=pass:"$ANDROID_STORE_PASSWORD" --ks-key-alias="$ANDROID_KEYSTORE_ALIAS" \
+          --key-pass=pass:"$ANDROID_KEYSTORE_PASSWORD" --mode=universal
           unzip -p Ball2Box.apks universal.apk > Ball2Box.apk
 
       - name: Upload binaries to Github release

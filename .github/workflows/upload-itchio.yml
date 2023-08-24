@@ -32,7 +32,6 @@ jobs:
       - name: Create export_presets.cfg
         run: cp game/export_presets.html.example game/export_presets.cfg
 
-
       - name: Godot HTML5 export
         uses: dulvui/godot-html-export@v0.0.2
         with:
