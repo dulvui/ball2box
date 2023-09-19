@@ -2,10 +2,10 @@
 
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-extends Spatial
+extends Node3D
 
-onready var hand:Spatial = $Hand
-onready var arrow:Spatial = $Arrow
+@onready var hand:Node3D = $Hand
+@onready var arrow:Node3D = $Arrow
 
 
 func init() -> void:

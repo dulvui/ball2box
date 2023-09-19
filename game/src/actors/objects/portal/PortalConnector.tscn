@@ -3,18 +3,18 @@
 [ext_resource path="res://src/actors/objects/portal/PortalConnector.gd" type="Script" id=1]
 [ext_resource path="res://src/actors/objects/portal/Portal.tscn" type="PackedScene" id=2]
 
-[node name="PortalConnector" type="Spatial"]
+[node name="PortalConnector" type="Node3D"]
 script = ExtResource( 1 )
 
 [node name="Portal1" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.54995, 0, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.54995, 0, 0 )
 
 [node name="Portal2" parent="." instance=ExtResource( 2 )]
 
 [node name="Portal" type="Portal" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.724874, 0, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.724874, 0, 0 )
 linked_room = NodePath("../Portal1")
 
 [node name="Portal3" type="Portal" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.40403, 0, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.40403, 0, 0 )
 linked_room = NodePath("../Portal1")

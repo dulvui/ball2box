@@ -3,6 +3,7 @@ game/.import/
 game/export.cfg
 game/export_presets.cfg
 export_presets-ga.cfg
+game/.godot/
 
 
 # Imported translations (automatically generated from CSV files)

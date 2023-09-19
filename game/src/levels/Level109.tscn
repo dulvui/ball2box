@@ -7,34 +7,34 @@
 [node name="LevelBase" instance=ExtResource( 3 )]
 
 [node name="Ball" parent="." index="3"]
-transform = Transform( -0.999964, 0.00846486, 0, -0.00846486, -0.999964, 0, 0, 0, 1, -0.944828, 1.11249, -0.00337219 )
+transform = Transform3D( -0.999964, 0.00846486, 0, -0.00846486, -0.999964, 0, 0, 0, 1, -0.944828, 1.11249, -0.00337219 )
 can_sleep = false
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="Bin" parent="." index="4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.52096, 21.2846, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.52096, 21.2846, 0 )
 
 [node name="Star1" parent="." index="5"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.15255, 30.4511, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.15255, 30.4511, 0 )
 
 [node name="Star2" parent="." index="6"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.57623, 24.6814, -1.90735e-06 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.57623, 24.6814, -1.90735e-06 )
 
 [node name="RotatingPlaneSquare" parent="." index="7" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.21344, 7.5623, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.21344, 7.5623, 0 )
 
 [node name="RotatingSquare" parent="." index="8" instance=ExtResource( 2 )]
-transform = Transform( -0.594334, 0, 0, 0, 0.590568, 0, 0, 0, 0.683956, 0.103592, 8.4677, 0 )
+transform = Transform3D( -0.594334, 0, 0, 0, 0.590568, 0, 0, 0, 0.683956, 0.103592, 8.4677, 0 )
 
 [node name="RotatingSquare4" parent="." index="9" instance=ExtResource( 2 )]
-transform = Transform( -0.594334, 0, 0, 0, 0.590568, 0, 0, 0, 0.683956, -5.49072, 13.497, 0 )
+transform = Transform3D( -0.594334, 0, 0, 0, 0.590568, 0, 0, 0, 0.683956, -5.49072, 13.497, 0 )
 
 [node name="RotatingSquare6" parent="." index="10" instance=ExtResource( 2 )]
-transform = Transform( -0.594334, 0, 0, 0, 0.590568, 0, 0, 0, 0.683956, 0.164814, 13.497, 0 )
+transform = Transform3D( -0.594334, 0, 0, 0, 0.590568, 0, 0, 0, 0.683956, 0.164814, 13.497, 0 )
 
 [node name="RotatingSquare5" parent="." index="11" instance=ExtResource( 2 )]
-transform = Transform( -0.594334, 0, 0, 0, 0.590568, 0, 0, 0, 0.683956, 5.64923, 13.497, 0 )
+transform = Transform3D( -0.594334, 0, 0, 0, 0.590568, 0, 0, 0, 0.683956, 5.64923, 13.497, 0 )
 
 [node name="RotatingPlaneSquare2" parent="." index="12" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.99744, 5.66152, -0.419632 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.99744, 5.66152, -0.419632 )

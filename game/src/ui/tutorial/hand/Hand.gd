@@ -2,10 +2,10 @@
 
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-extends Spatial
+extends Node3D
 
-onready var timer:Timer = $Timer
-onready var animation_player:AnimationPlayer = $AnimationPlayer
+@onready var timer:Timer = $Timer
+@onready var animation_player:AnimationPlayer = $AnimationPlayer
 
 func swipe() -> void:
 	visible = true

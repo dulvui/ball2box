@@ -2,7 +2,7 @@
 
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-extends StaticBody
+extends StaticBody3D
 
 signal win
 
@@ -22,7 +22,7 @@ func fade_in() -> void:
 	# to match arrow animation
 	if Global.current_level > 1:
 		$AnimationPlayer.play("FadeIn")
-		yield($AnimationPlayer,"animation_finished")
+		await $AnimationPlayer.animation_finished
 	$AnimationPlayer.play("Size")
 	
 func hide() -> void:

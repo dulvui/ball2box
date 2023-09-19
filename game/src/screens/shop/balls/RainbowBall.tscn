@@ -11,5 +11,5 @@ shader_param/speed = 0.4
 
 [node name="BaseBall" instance=ExtResource( 1 )]
 
-[node name="MeshInstance" parent="." index="1" instance=ExtResource( 3 )]
+[node name="MeshInstance3D" parent="." index="1" instance=ExtResource( 3 )]
 material/0 = SubResource( 1 )

@@ -2,7 +2,7 @@
 
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-extends Spatial
+extends Node3D
 
 const resolutions:Dictionary = {
 	 "Android" :Vector2(1080,1920),
@@ -32,9 +32,9 @@ func _ready() -> void:
 	for scene in scenes:
 		_change_scene(scene)
 		for resolution in resolutions.keys():
-			OS.set_window_size(resolutions.get(resolution))
+			get_window().set_size(resolutions.get(resolution))
 
-			yield(get_tree().create_timer(2), "timeout")
+			await get_tree().create_timer(2).timeout
 			
 			# calculate x/y offset for bigger screens like iPads to center the screenshot
 			var x = (resolutions.get(resolution).x - get_viewport().get_texture().get_size().x) / 2
@@ -54,7 +54,7 @@ func _change_scene(scene_path) -> void:
 		scene.queue_free()
 
 	var next_scene:Resource = load(scene_path)
-	scene = next_scene.instance()
+	scene = next_scene.instantiate()
 	add_child(scene)
 	
 	# hide menu

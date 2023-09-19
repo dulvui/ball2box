@@ -11,21 +11,21 @@
 [ext_resource path="res://src/ui/coins/Coins.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/screens/shop/Shop.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/ui/tutorial/Tutorial.tscn" type="PackedScene" id=13]
-[ext_resource path="res://assets/pause.png" type="Texture" id=14]
+[ext_resource path="res://assets/pause.png" type="Texture2D" id=14]
 [ext_resource path="res://src/levels/base-level/Pause.gd" type="Script" id=15]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeIn"
 length = 0.8
 tracks/0/type = "value"
-tracks/0/path = NodePath("Base/Camera:translation")
+tracks/0/path = NodePath("Base/Camera3D:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array( 0, 0.5, 0.8 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector3( -14, 17, 26 ), Vector3( -4, 17, 26 ), Vector3( 0, 17, 26 ) ]
 }
@@ -33,14 +33,14 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=2]
 length = 0.4
 tracks/0/type = "value"
-tracks/0/path = NodePath("Base/Camera:translation")
+tracks/0/path = NodePath("Base/Camera3D:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 0.4 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ Vector3( 0, 55, 26 ), Vector3( 0, 17, 26 ) ]
 }
@@ -48,14 +48,14 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=3]
 length = 0.4
 tracks/0/type = "value"
-tracks/0/path = NodePath("Base/Camera:translation")
+tracks/0/path = NodePath("Base/Camera3D:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 0.4 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ Vector3( 0, 17, 26 ), Vector3( 0, 55, 26 ) ]
 }
@@ -64,14 +64,14 @@ tracks/0/keys = {
 resource_name = "Idle"
 length = 0.8
 tracks/0/type = "value"
-tracks/0/path = NodePath("Base/Camera:translation")
+tracks/0/path = NodePath("Base/Camera3D:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 0.8 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ Vector3( 0, 17, 26 ), Vector3( 0, 17, 26 ) ]
 }
@@ -79,14 +79,14 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=18]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Base/Camera:translation")
+tracks/0/path = NodePath("Base/Camera3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 0,
 "values": [ Vector3( 0, 17, 26 ) ]
 }
@@ -97,8 +97,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
@@ -113,8 +113,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array( 0, 0.5, 1.2 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
@@ -123,11 +123,11 @@ tracks/0/keys = {
 friction = 0.5
 bounce = 0.9
 
-[node name="LevelBase" type="Spatial"]
+[node name="LevelBase" type="Node3D"]
 script = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-pause_mode = 2
+process_mode = 3
 anims/FadeIn = SubResource( 1 )
 anims/GoToMenu = SubResource( 2 )
 anims/GoToShop = SubResource( 3 )
@@ -140,19 +140,19 @@ anims/TopbarFadeIn = SubResource( 19 )
 [node name="Base" parent="." instance=ExtResource( 2 )]
 
 [node name="Ball" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.94765, 19.8625, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.94765, 19.8625, 0 )
 physics_material_override = SubResource( 15 )
-contacts_reported = 0
+max_contacts_reported = 0
 contact_monitor = false
 
 [node name="Bin" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90741, 0, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90741, 0, 0 )
 
 [node name="Star1" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.18212, 19.6921, -1.21101 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.18212, 19.6921, -1.21101 )
 
 [node name="Star2" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.06394, 9.04416, 0.575264 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.06394, 9.04416, 0.575264 )
 
 [node name="Tutorial" parent="." instance=ExtResource( 13 )]
 
@@ -165,27 +165,27 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.06394, 9.04416, 0.575264 )
 [node name="LevelComplete" parent="UI" instance=ExtResource( 6 )]
 
 [node name="Topbar" type="Control" parent="."]
-margin_left = 108.702
-margin_top = -4.0869
-margin_right = 148.702
-margin_bottom = 35.9131
+offset_left = 108.702
+offset_top = -4.0869
+offset_right = 148.702
+offset_bottom = 35.9131
 
 [node name="Coins" parent="Topbar" instance=ExtResource( 9 )]
-margin_left = -165.03
-margin_top = -6.74166
-margin_right = 118.97
-margin_bottom = 71.2583
+offset_left = -165.03
+offset_top = -6.74166
+offset_right = 118.97
+offset_bottom = 71.2583
 
 [node name="Pause" type="Button" parent="Topbar"]
-pause_mode = 2
+process_mode = 3
 modulate = Color( 1, 1, 1, 0.705882 )
-margin_left = 490.298
-margin_top = 32.0869
-margin_right = 594.298
-margin_bottom = 158.087
-rect_scale = Vector2( 0.9, 0.9 )
+offset_left = 490.298
+offset_top = 32.0869
+offset_right = 594.298
+offset_bottom = 158.087
+scale = Vector2( 0.9, 0.9 )
 icon = ExtResource( 14 )
-icon_align = 1
+icon_alignment = 1
 script = ExtResource( 15 )
 
 [node name="Background" parent="." instance=ExtResource( 8 )]

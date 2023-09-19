@@ -2,10 +2,10 @@
 
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-extends Spatial
+extends Node3D
 
 
-onready var animation_player:AnimationPlayer = $AnimationPlayer
+@onready var animation_player:AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	if animation_player.has_animation("Rotate"):
@@ -19,10 +19,10 @@ func fade_out() -> void:
 
 func next() -> void:
 	animation_player.play("FadeOut")
-	yield(animation_player,"animation_finished")
+	await animation_player.animation_finished
 	queue_free()
 	
 func prev() -> void:
 	animation_player.play("FadeOut")
-	yield(animation_player,"animation_finished")
+	await animation_player.animation_finished
 	queue_free()

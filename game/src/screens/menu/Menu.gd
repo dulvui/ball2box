@@ -6,14 +6,14 @@ extends Control
 
 signal shop
 
-onready var animation_player:AnimationPlayer = $AnimationPlayer
+@onready var animation_player:AnimationPlayer = $AnimationPlayer
 var level_button:PackedScene = preload("res://src/screens/menu/level-button/LevelButton.tscn")
 
 var current_page:int = 0
 
 func _ready() -> void:
-	$Menu/Buttons/Settings/Music/MusicButton.pressed = Global.music
-	$Menu/Buttons/Settings/Sfx/SfxButton.pressed = Global.sfx
+	$Menu/Buttons/Settings/Music/MusicButton.button_pressed = Global.music
+	$Menu/Buttons/Settings/Sfx/SfxButton.button_pressed = Global.sfx
 	current_page = Global.current_level/15
 	_set_up_buttons()
 
@@ -32,14 +32,14 @@ func _set_up_buttons() -> void:
 	
 	if current_page == 0:
 		for i in range(1,16):
-			var button:Control = level_button.instance()
+			var button:Control = level_button.instantiate()
 			button.set_level(i)
 			$LevelSelect/Levels.add_child(button)
 	else:
 		if current_page == (Global.LEVELS/15):
 			current_page -= 1
 		for i in range(current_page * 15 + 1,(current_page + 1) * 15 + 1):
-			var button:Control = level_button.instance()
+			var button:Control = level_button.instantiate()
 			button.set_level(i)
 			$LevelSelect/Levels.add_child(button)
 	
@@ -83,7 +83,7 @@ func _on_Prev_pressed() -> void:
 	if current_page < 0:
 		current_page = (Global.LEVELS/15) -1
 	animation_player.play("LevelOnlyFadeOut")
-	yield(animation_player,"animation_finished")
+	await animation_player.animation_finished
 	_set_up_buttons()
 	animation_player.play("LevelOnlyFadeIn")
 
@@ -94,7 +94,7 @@ func _on_Next_pressed() -> void:
 	if current_page > (Global.LEVELS/15) -1:
 		current_page = 0
 	animation_player.play("LevelOnlyFadeOut")
-	yield(animation_player,"animation_finished")
+	await animation_player.animation_finished
 	_set_up_buttons()
 	animation_player.play("LevelOnlyFadeIn")
 

@@ -55,7 +55,7 @@ var russia_real = preload("res://src/actors/ball/russia-ball/RussiaBall.tscn")
 var uk_real = preload("res://src/actors/ball/uk-ball/UKBall.tscn")
 var rainbow_real = preload("res://src/actors/ball/rainbow-ball/RainbowBall.tscn")
 
-onready var balls = [{"id": 1 , "model":starter, "real": starter_real, "price": 0},
+@onready var balls = [{"id": 1 , "model":starter, "real": starter_real, "price": 0},
 					{"id": 2 ,"model":golden,"real":golden_real, "price": 5},
 					{"id": 3 ,"model":green,"real":green_real, "price": tr("MORE_GAMES")},
 					{"id": 4 ,"model":yellow,"real":yellow_real, "price": 10},
@@ -91,7 +91,7 @@ func get_index() -> int:
 	return selected_ball
 
 func get_selected() -> Node:
-	return balls[selected_ball]["model"].instance()
+	return balls[selected_ball]["model"].instantiate()
 
 func current_ball_is_selected() -> bool:
 	return balls[selected_ball]["id"] == balls[current_ball]["id"]
@@ -99,22 +99,22 @@ func current_ball_is_selected() -> bool:
 func get_current_ball_info() -> Dictionary:
 	return balls[current_ball]
 	
-func get_real() -> RigidBody:
-	return balls[selected_ball]["real"].instance()
+func get_real() -> RigidBody3D:
+	return balls[selected_ball]["real"].instantiate()
 
 func next() -> PackedScene:
 	if current_ball + 1 < balls.size():
 		current_ball += 1
 	else:
 		current_ball = 0
-	return balls[current_ball]["model"].instance()
+	return balls[current_ball]["model"].instantiate()
 	
 func prev() -> PackedScene:
 	if current_ball - 1 >= 0:
 		current_ball -= 1
 	else:
 		current_ball = balls.size() - 1
-	return balls[current_ball]["model"].instance()
+	return balls[current_ball]["model"].instantiate()
 	
 func select() -> void:
 	selected_ball = current_ball

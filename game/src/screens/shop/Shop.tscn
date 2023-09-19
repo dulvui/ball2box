@@ -2,9 +2,9 @@
 
 [ext_resource path="res://theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/screens/shop/Shop.gd" type="Script" id=2]
-[ext_resource path="res://assets/right.png" type="Texture" id=3]
-[ext_resource path="res://assets/left.png" type="Texture" id=4]
-[ext_resource path="res://assets/star.png" type="Texture" id=5]
+[ext_resource path="res://assets/right.png" type="Texture2D" id=3]
+[ext_resource path="res://assets/left.png" type="Texture2D" id=4]
+[ext_resource path="res://assets/star.png" type="Texture2D" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeIn"
@@ -16,20 +16,20 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 0.2 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:rect_scale")
+tracks/1/path = NodePath(".:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 0.2 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0.5, 0.5 ), Vector2( 1, 1 ) ]
 }
@@ -44,31 +44,31 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 0.2 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:rect_scale")
+tracks/1/path = NodePath(".:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 0.2 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 0.5, 0.5 ) ]
 }
 
 [node name="Shop" type="Control"]
-pause_mode = 2
+process_mode = 3
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_scale = Vector2( 0.5, 0.5 )
-rect_pivot_offset = Vector2( 360, 690 )
+scale = Vector2( 0.5, 0.5 )
+pivot_offset = Vector2( 360, 690 )
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
 __meta__ = {
@@ -80,10 +80,10 @@ anchor_left = 0.5
 anchor_top = 0.88275
 anchor_right = 0.5
 anchor_bottom = 0.88275
-margin_left = -248.0
-margin_top = -62.92
-margin_right = 248.0
-margin_bottom = 63.08
+offset_left = -248.0
+offset_top = -62.92
+offset_right = 248.0
+offset_bottom = 63.08
 text = "BACK"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -94,10 +94,10 @@ anchor_left = 0.5
 anchor_top = 0.76275
 anchor_right = 0.5
 anchor_bottom = 0.76275
-margin_left = -248.0
-margin_top = -63.3201
-margin_right = 248.0
-margin_bottom = 62.6799
+offset_left = -248.0
+offset_top = -63.3201
+offset_right = 248.0
+offset_bottom = 62.6799
 text = "SELECT"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -108,26 +108,26 @@ anchor_left = -0.0777778
 anchor_top = 0.2125
 anchor_right = 1.06806
 anchor_bottom = 0.407813
-margin_right = -495.0
-margin_bottom = -150.0
-rect_scale = Vector2( 2.5, 2.5 )
-custom_constants/separation = 130
+offset_right = -495.0
+offset_bottom = -150.0
+scale = Vector2( 2.5, 2.5 )
+theme_override_constants/separation = 130
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="Prev" type="TextureButton" parent="HBoxContainer"]
 modulate = Color( 0.529412, 0.917647, 0.807843, 1 )
-margin_right = 100.0
-margin_bottom = 100.0
-rect_pivot_offset = Vector2( 50, 50 )
+offset_right = 100.0
+offset_bottom = 100.0
+pivot_offset = Vector2( 50, 50 )
 texture_normal = ExtResource( 4 )
 
 [node name="Next" type="TextureButton" parent="HBoxContainer"]
 modulate = Color( 0.529412, 0.917647, 0.807843, 1 )
-margin_left = 230.0
-margin_right = 330.0
-margin_bottom = 100.0
+offset_left = 230.0
+offset_right = 330.0
+offset_bottom = 100.0
 texture_normal = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -138,10 +138,10 @@ anchor_left = 0.5
 anchor_top = 0.61375
 anchor_right = 0.5
 anchor_bottom = 0.61375
-margin_left = -208.0
-margin_top = -58.6
-margin_right = 192.0
-margin_bottom = 59.4
+offset_left = -208.0
+offset_top = -58.6
+offset_right = 192.0
+offset_bottom = 59.4
 min_value = 0.6
 max_value = 1.0
 value = 0.6
@@ -151,8 +151,8 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Bounce"]
-margin_right = 400.0
-margin_bottom = 118.0
+offset_right = 400.0
+offset_bottom = 118.0
 text = "BOUNCE"
 align = 1
 
@@ -161,10 +161,10 @@ anchor_left = 0.5
 anchor_top = 0.50675
 anchor_right = 0.5
 anchor_bottom = 0.50675
-margin_left = -200.0
-margin_top = -58.64
-margin_right = 200.0
-margin_bottom = 59.36
+offset_left = -200.0
+offset_top = -58.64
+offset_right = 200.0
+offset_bottom = 59.36
 min_value = 4.0
 max_value = 10.0
 step = 0.1
@@ -175,8 +175,8 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Mass"]
-margin_right = 400.0
-margin_bottom = 118.0
+offset_right = 400.0
+offset_bottom = 118.0
 text = "MASS"
 align = 1
 
@@ -191,10 +191,10 @@ anchor_left = 0.766222
 anchor_top = 0.756563
 anchor_right = 0.767
 anchor_bottom = 0.757
-margin_left = -49.6801
-margin_top = -49.4001
-margin_right = 49.76
-margin_bottom = 50.04
+offset_left = -49.6801
+offset_top = -49.4001
+offset_right = 49.76
+offset_bottom = 50.04
 texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": true

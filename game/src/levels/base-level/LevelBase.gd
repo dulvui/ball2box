@@ -2,15 +2,15 @@
 
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-extends Spatial
+extends Node3D
 
 const moveTrans:int = Tween.TRANS_LINEAR
 const moveEase:int = Tween.EASE_OUT
 
-onready var camera:Camera = $Base/Camera
-onready var tween:Tween = $Tween
+@onready var camera:Camera3D = $Base/Camera3D
+@onready var tween:Tween = $Tween
 
-var ball:RigidBody
+var ball:RigidBody3D
 
 func _ready() -> void:
 	AudioMachine.reset()
@@ -37,13 +37,13 @@ func _ready() -> void:
 	ball.queue_free()
 	ball = BallMachine.get_real()
 	ball.initial_position = pos
-	ball.translation = pos
+	ball.position = pos
 	add_child(ball)
 		
 	
 	_connect_ball_signals()
-	$Star1.connect("star_hit",self,"on_star1_hit")
-	$Star2.connect("star_hit",self,"on_star2_hit")
+	$Star1.connect("star_hit", Callable(self, "on_star1_hit"))
+	$Star2.connect("star_hit", Callable(self, "on_star2_hit"))
 
 func fade_in_objects() -> void:
 	for object in get_tree().get_nodes_in_group("objects"):
@@ -78,7 +78,7 @@ func _on_Bin_win() -> void:
 func _on_Menu_shop() -> void:
 	$UI/Menu.animation_player.play("FadeOut")
 	$AnimationPlayer.play("GoToShop")
-	yield($UI/Menu.animation_player,"animation_finished")
+	await $UI/Menu.animation_player.animation_finished
 	$UI/Menu.hide()
 	$UI/Shop.show()
 	$UI/Shop.animation_player.play("FadeIn")
@@ -88,7 +88,7 @@ func _on_Menu_shop() -> void:
 
 func _on_Shop_back() -> void:
 	$UI/Shop.animation_player.play("FadeOut")
-	yield($UI/Shop.animation_player,"animation_finished")
+	await $UI/Shop.animation_player.animation_finished
 	$UI/Shop.hide()
 	
 	$UI/Menu.show()
@@ -113,7 +113,7 @@ func _on_Shop_select() -> void:
 	ball.queue_free()
 	ball = BallMachine.get_real()
 	ball.initial_position = pos
-	ball.translation = pos
+	ball.position = pos
 	add_child(ball)
 		
 	# reset level after coming back from shop
@@ -138,16 +138,16 @@ func _on_LevelComplete_replay() -> void:
 	$Star2.show_star()
 
 func _camera_shake() -> void:
-	var start_position:Vector3 = camera.translation
+	var start_position:Vector3 = camera.position
 	
 	var shakes:int = (randi()%3) + 1
 	for i in shakes:
-		var random_vector:Vector3 = camera.translation - Vector3(rand_range(-1,1),rand_range(-1,1), rand_range(-1,1))
-		tween.interpolate_property(camera, "translation",camera.translation, random_vector, 0.1, moveTrans, moveEase)
+		var random_vector:Vector3 = camera.position - Vector3(randf_range(-1,1),randf_range(-1,1), randf_range(-1,1))
+		tween.interpolate_property(camera, "position",camera.position, random_vector, 0.1, moveTrans, moveEase)
 		tween.start()
-		yield(tween, "tween_all_completed")
+		await tween.tween_all_completed
 	
-	tween.interpolate_property(camera, "translation", camera.translation, start_position, 0.2, moveTrans, moveEase)
+	tween.interpolate_property(camera, "position", camera.position, start_position, 0.2, moveTrans, moveEase)
 	tween.start()
 
 
@@ -201,5 +201,5 @@ func _on_LevelComplete_levels():
 	$Star2.show_star()
 
 func _connect_ball_signals():
-	ball.connect("reset",self,"_on_Ball_reset")
-	ball.connect("shoot",self,"_on_Ball_shoot")
+	ball.connect("reset", Callable(self, "_on_Ball_reset"))
+	ball.connect("shoot", Callable(self, "_on_Ball_shoot"))

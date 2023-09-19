@@ -2,7 +2,7 @@
 
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-extends RigidBody
+extends RigidBody3D
 
 class_name Ball
 
@@ -11,8 +11,8 @@ signal shoot
 
 
 
-onready var geometry_up:GeometryInstance = $ImmediateGeometryUp
-onready var geometry_down:GeometryInstance = $ImmediateGeometryDown
+@onready var geometry_up:GeometryInstance3D = $ImmediateGeometryUp
+@onready var geometry_down:GeometryInstance3D = $ImmediateGeometryDown
 
 const SPEED:int = 1
 
@@ -25,7 +25,7 @@ var touch_start:Vector2
 
 func _ready() -> void:
 	initial_position = transform.origin
-	mode = RigidBody.MODE_STATIC
+	mode = RigidBody3D.FREEZE_MODE_STATIC
 
 
 
@@ -65,26 +65,26 @@ func _shoot() -> void:
 		emit_signal("shoot")
 		print("distance %s"%touch_pos.distance_to(touch_start))
 		shooting = true
-		mode = RigidBody.MODE_RIGID
+		mode = RigidBody3D.MODE_RIGID
 		var direction = (touch_start - touch_pos)
 		apply_central_impulse(Vector3(- direction.x, direction.y , 0) * SPEED)
 	
 func reset() -> void:
 	emit_signal("reset")
-	mode = RigidBody.MODE_STATIC
+	mode = RigidBody3D.FREEZE_MODE_STATIC
 	$AnimationPlayer.play("FadeOut")
-	yield($AnimationPlayer, "animation_finished")
+	await $AnimationPlayer.animation_finished
 	shooting = false
-	translation = initial_position
+	position = initial_position
 	linear_velocity = Vector3.ZERO
 	angular_velocity = Vector3.ZERO
 	rotation = Vector3.ZERO
 	$AnimationPlayer.play("FadeIn")
 	
 func reset_no_signal() -> void:
-	mode = RigidBody.MODE_STATIC
+	mode = RigidBody3D.FREEZE_MODE_STATIC
 	shooting = false
-	translation = initial_position
+	position = initial_position
 	linear_velocity = Vector3.ZERO
 	angular_velocity = Vector3.ZERO
 	rotation = Vector3.ZERO

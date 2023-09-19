@@ -10,7 +10,7 @@ var coins:int
 
 #onready var LEVELS:int = count_levels()
 # until new leavels are not ready
-onready var LEVELS:int = 120
+@onready var LEVELS:int = 120
 
 
 var current_level:int = 1
@@ -115,9 +115,9 @@ func _notification(event) -> void:
 	
 func count_levels() -> int:
 	var count = 0
-	var dir = Directory.new()
+	var dir = DirAccess.new()
 	dir.open("res://src/levels/")
-	dir.list_dir_begin(true)
+	dir.list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547
 	
 	var file_name = dir.get_next()
 	while file_name != "":

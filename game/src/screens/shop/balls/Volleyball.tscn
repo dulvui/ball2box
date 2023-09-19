@@ -4,7 +4,7 @@
 [ext_resource path="res://src/actors/ball/volleyball/VolleyballMeshInstance.tscn" type="PackedScene" id=2]
 
 [node name="VolleyBall" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
-[node name="MeshInstance" parent="." index="1" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+[node name="MeshInstance3D" parent="." index="1" instance=ExtResource( 2 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )

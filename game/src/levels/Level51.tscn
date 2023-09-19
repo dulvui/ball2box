@@ -8,25 +8,25 @@
 [node name="LevelBase" instance=ExtResource( 1 )]
 
 [node name="Ball" parent="." index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 0 )
 
 [node name="Bin" parent="." index="4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 0 )
 
 [node name="Star1" parent="." index="5"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.480896, 27.1235, -0.199996 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.480896, 27.1235, -0.199996 )
 
 [node name="Star2" parent="." index="6"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.82889, 31.2236, -1.90735e-06 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.82889, 31.2236, -1.90735e-06 )
 
 [node name="Tube" parent="." index="7" instance=ExtResource( 2 )]
-transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, -6, 14, 0 )
+transform = Transform3D( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, -6, 14, 0 )
 
 [node name="Tube2" parent="." index="8" instance=ExtResource( 2 )]
-transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 6, 14, 0 )
+transform = Transform3D( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 6, 14, 0 )
 
 [node name="Separator" parent="." index="9" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0 )
 
 [node name="RotatingPlaneSquare" parent="Separator" index="2" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.98959, 22.1087, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.98959, 22.1087, 0 )

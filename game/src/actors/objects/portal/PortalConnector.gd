@@ -2,7 +2,7 @@
 
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-extends Spatial
+extends Node3D
 
-onready var portal1:Spatial = $Portal1
-onready var portal2:Spatial = $Portal2
+@onready var portal1:Node3D = $Portal1
+@onready var portal2:Node3D = $Portal2

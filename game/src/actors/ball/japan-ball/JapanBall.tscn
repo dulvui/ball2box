@@ -6,13 +6,13 @@
 [sub_resource type="PhysicsMaterial" id=1]
 bounce = 0.94
 
-[sub_resource type="SphereShape" id=4]
+[sub_resource type="SphereShape3D" id=4]
 
 [node name="JapanBall" instance=ExtResource( 1 )]
 mass = 5.0
 physics_material_override = SubResource( 1 )
 
-[node name="MeshInstance" parent="." index="3" instance=ExtResource( 2 )]
+[node name="MeshInstance3D" parent="." index="3" instance=ExtResource( 2 )]
 
-[node name="CollisionShape" type="CollisionShape" parent="." index="4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="4"]
 shape = SubResource( 4 )

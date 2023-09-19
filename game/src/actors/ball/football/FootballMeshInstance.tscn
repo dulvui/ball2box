@@ -2,12 +2,12 @@
 
 [ext_resource path="res://assets/obj/Football.blend.obj" type="ArrayMesh" id=1]
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="StandardMaterial3D" id=1]
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="StandardMaterial3D" id=2]
 albedo_color = Color( 0, 0, 0, 1 )
 
-[node name="MeshInstance" type="MeshInstance"]
+[node name="MeshInstance3D" type="MeshInstance3D"]
 mesh = ExtResource( 1 )
 material/0 = SubResource( 1 )
 material/1 = SubResource( 2 )
