@@ -27,15 +27,12 @@ func _on_Prev_pressed() -> void:
 
 
 func set_values(ball:RigidBody3D) -> void:
-	var mass_tween:Tween = Tween.new()
-	add_child(mass_tween)
-	mass_tween.interpolate_property($Mass, "value", $Mass.value, ball.mass, 0.4, Tween.EASE_IN, Tween.EASE_OUT)
-	mass_tween.start()
+	# TODO add  Tween.EASE_IN, Tween.EASE_OUT
+	var mass_tween:Tween = create_tween()
+	mass_tween.tween_property($Mass, "value", ball.mass, 0.4)
 	
-	var bounce_tween:Tween = Tween.new()
-	add_child(bounce_tween)
-	bounce_tween.interpolate_property($Bounce, "value", $Bounce.value, ball.bounce, 0.4, Tween.EASE_IN, Tween.EASE_OUT)
-	bounce_tween.start()
+	var bounce_tween:Tween = create_tween()
+	bounce_tween.tween_property($Bounce, "value", ball.physics_material_override.bounce, 0.4)
 	
 	
 func _on_Back_pressed() -> void:
@@ -86,5 +83,5 @@ func _set_select_label() -> void:
 			$Select.text = str(ball["price"])
 			$Star.show()
 			
-	var ball_instance = ball["real"].instance()
+	var ball_instance = ball["real"].instantiate()
 	set_values(ball_instance)

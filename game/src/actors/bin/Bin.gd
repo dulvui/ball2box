@@ -25,13 +25,13 @@ func fade_in() -> void:
 		await $AnimationPlayer.animation_finished
 	$AnimationPlayer.play("Size")
 	
-func hide() -> void:
+func hide_bin() -> void:
 	visible = false
 	collision_layer = 0
 	collision_mask = 0
 	$BallDetector.monitoring = false
 	
-func show() -> void:
+func show_bin() -> void:
 	visible = true
 	collision_layer = 1
 	collision_mask = 1

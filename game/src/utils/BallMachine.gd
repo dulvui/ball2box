@@ -87,7 +87,7 @@ func set_ball_index(index:int) -> void:
 	current_ball = index
 	selected_ball = index
 	
-func get_index() -> int:
+func get_ball_index() -> int:
 	return selected_ball
 
 func get_selected() -> Node:

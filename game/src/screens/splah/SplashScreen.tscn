@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bpg3o62my76hh"]
 
-[ext_resource type="Theme" path="res://theme.tres" id="1"]
+[ext_resource type="Theme" uid="uid://q7k4eutdbqwi" path="res://theme.tres" id="1"]
 [ext_resource type="Script" path="res://src/screens/splah/SplashScreen.gd" id="2"]
 
 [node name="SplashScreen" type="Control"]

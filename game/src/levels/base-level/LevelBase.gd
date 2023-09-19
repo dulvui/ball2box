@@ -8,7 +8,6 @@ const moveTrans:int = Tween.TRANS_LINEAR
 const moveEase:int = Tween.EASE_OUT
 
 @onready var camera:Camera3D = $Base/Camera3D
-@onready var tween:Tween = $Tween
 
 var ball:RigidBody3D
 
@@ -32,11 +31,13 @@ func _ready() -> void:
 	fade_in_objects()
 		
 	ball = $Ball
-
-	var pos:Vector3 = ball.initial_position
+	
+	# inital position non existent on godot 4
+#	var pos:Vector3 = ball.initial_position
+	var pos:Vector3 = ball.position
 	ball.queue_free()
 	ball = BallMachine.get_real()
-	ball.initial_position = pos
+#	ball.initial_position = pos
 	ball.position = pos
 	add_child(ball)
 		
@@ -139,6 +140,7 @@ func _on_LevelComplete_replay() -> void:
 
 func _camera_shake() -> void:
 	var start_position:Vector3 = camera.position
+	var tween:Tween = create_tween()
 	
 	var shakes:int = (randi()%3) + 1
 	for i in shakes:
