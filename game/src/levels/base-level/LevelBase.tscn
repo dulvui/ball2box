@@ -166,14 +166,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.06394, 9.04416, 0.575264)
 [node name="Shop" parent="UI" instance=ExtResource("10")]
 layout_mode = 3
 anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Menu" parent="UI" instance=ExtResource("3")]
 layout_mode = 3
 anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="LevelComplete" parent="UI" instance=ExtResource("6")]
 layout_mode = 3
 anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Topbar" type="Control" parent="."]
 layout_mode = 3
@@ -185,6 +191,8 @@ offset_bottom = 35.9131
 
 [node name="Coins" parent="Topbar" instance=ExtResource("9")]
 layout_mode = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = -165.03
 offset_top = -6.74166
 offset_right = 118.97
