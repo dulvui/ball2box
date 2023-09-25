@@ -22,7 +22,7 @@ License: CC-BY-SA-4.0
 # Config files
 Files: |
     *.mtl *.import exportOptions.plist .gitignore metadata/* 
-     *.csv *.material *.tres *.translation version-android version-ios
+     *.csv *.material *.tres *.translation version
     fdroid/*
 Copyright: 2022 Simon Dalvai <info@simondalvai.org>
 License: CC0-1.0
