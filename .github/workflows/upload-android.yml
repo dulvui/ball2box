@@ -31,8 +31,8 @@ jobs:
 
       - name: Read version number and version code
         run: |
-          echo "VERSION_NAME=$(cat version-android | cut -f1 -d-)" >> $GITHUB_ENV
-          echo "VERSION_CODE=$(cat version-android | cut -f2 -d-)" >> $GITHUB_ENV
+          echo "VERSION_NAME=$(cat version | cut -f1 -d-)" >> $GITHUB_ENV
+          echo "VERSION_CODE=$(cat version | cut -f2 -d-)" >> $GITHUB_ENV
 
       - name: Checkout source code
         uses: actions/checkout@v3
