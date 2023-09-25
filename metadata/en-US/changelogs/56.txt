@@ -1,0 +1,2 @@
+- upgrade to Godot 3.5.3
+- new major release 4.0.0 to align version name with iOS build

@@ -7,8 +7,7 @@ name: itch.io upload
 on:
   push:
     paths:
-      - "version-android"
-      - "version-ios"
+      - "version"
       - ".github/workflows/upload-itchio.yml"
       - "export_presets.html.example"
 

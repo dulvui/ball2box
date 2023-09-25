@@ -7,7 +7,7 @@ name: Android upload
 on:
   push:
     paths:
-      - "version-android"
+      - "version"
       - ".github/workflows/upload-android.yml"
       - "fdroid/*"
       - "export_presets.android.example"
@@ -82,7 +82,7 @@ jobs:
 
       # GODOT EXPORT
       - name: Godot Android export
-        uses: dulvui/godot-android-export@v2.0.1
+        uses: dulvui/godot-android-export@v2.0.2
         with:
           working-directory: $WORKING_DIRECTORY
 
