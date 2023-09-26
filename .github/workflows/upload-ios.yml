@@ -57,7 +57,7 @@ jobs:
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
 
       - name: Set version and short version
-        run: echo "VERSION=$(cat version)" >> $GITHUB_ENV
+        run: echo "VERSION=$(cat version | cut -f1 -d-)" >> $GITHUB_ENV
 
       - name: Change driver to GLES3
         run: echo 'quality/driver/driver_name="GLES3"' >> game/project.godot
