@@ -12,7 +12,7 @@ SPDX-License-Identifier: CC0-1.0
 Swipe to toss the ball and hit the box in over 100 levels.
 This game is open source, with no ads and no tracking.  
 
-Made with [Godot Engine](https://godotengine.org) version 3.5.2  
+Made with [Godot Engine](https://godotengine.org) version 3.x
 Track the migration to Godot 4.x in [issue #6](https://github.com/dulvui/ball2box/issues/6)  
 
 <a href="https://play.google.com/store/apps/details?id=com.salvai.ultimatetoss" target="_blank"><img src="store-images/PlayStore.svg" alt="Get it on Google Play" height="49px"></a>
