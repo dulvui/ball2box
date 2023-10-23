@@ -119,6 +119,13 @@ func _on_Shop_select() -> void:
 	# reset level after coming back from shop
 	_connect_ball_signals()
 	
+	
+	$UI/Shop.animation_player.play("FadeOut")
+	yield($UI/Shop.animation_player,"animation_finished")
+	$UI/Shop.hide()
+	$AnimationPlayer.play("GoToMenu")
+	$UI/Menu.play()
+	
 
 
 func _on_Shop_prev() -> void:

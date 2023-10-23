@@ -44,10 +44,12 @@ func _set_up_buttons() -> void:
 			$LevelSelect/Levels.add_child(button)
 	
 func _on_Play_pressed() -> void:
-	AudioMachine.play_click()
+	AudioMachine.click()
+	emit_signal("shop")
+
+func play() -> void:
 	get_tree().paused = false
 	animation_player.play("FadeOut")
-
 
 func _on_Sfx_pressed() -> void:
 	AudioMachine.click()

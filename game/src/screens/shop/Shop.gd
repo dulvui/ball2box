@@ -55,7 +55,7 @@ func _on_Select_pressed() -> void:
 	# special cases like follow, more games etc...
 	if result == 1:
 		if ball["price"] is String:
-			$Select.text = "SELECTED"
+			$Select.text = "PLAY"
 			if ball["price"] == tr("FOLLOW"):
 				OS.shell_open("https://mastodon.social/@dulvui")
 			
@@ -75,10 +75,7 @@ func _on_Select_pressed() -> void:
 func _set_select_label() -> void:
 	var ball = BallMachine.get_current_ball_info()
 	if Global.unlocked_balls.has(ball["id"]):
-		if BallMachine.current_ball_is_selected():
-			$Select.text = "SELECTED"
-		else:
-			$Select.text = "SELECT"
+		$Select.text = "PLAY"
 		$Star.hide()
 		
 	else:
