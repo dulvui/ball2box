@@ -52,10 +52,10 @@ func _on_Select_pressed() -> void:
 	if result > 0:
 		BallMachine.select()
 		_set_select_label()
-	# special cases like follow, more games etc...
 	if result == 1:
+		$Select.text = "PLAY"
+		# special cases like follow, more games etc...
 		if ball["price"] is String:
-			$Select.text = "PLAY"
 			if ball["price"] == tr("FOLLOW"):
 				OS.shell_open("https://mastodon.social/@dulvui")
 			
@@ -66,8 +66,6 @@ func _on_Select_pressed() -> void:
 					OS.shell_open("https://simondalvai.org/games")
 				else:
 					OS.shell_open("https://play.google.com/store/apps/dev?id=7836644900810357474&hl=en")
-		else:
-			$Select.text = str(ball["price"])
 	
 	emit_signal("select")
 		

@@ -91,14 +91,14 @@ __meta__ = {
 }
 
 [node name="Select" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 0.76275
-anchor_right = 0.5
-anchor_bottom = 0.76275
-margin_left = -248.0
-margin_top = -63.3201
-margin_right = 248.0
-margin_bottom = 62.6799
+anchor_left = 0.156
+anchor_top = 0.751
+anchor_right = 0.844
+anchor_bottom = 0.849
+margin_left = -0.32
+margin_top = -0.280029
+margin_right = 0.319946
+margin_bottom = 0.279907
 text = "SELECT"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -136,9 +136,9 @@ __meta__ = {
 
 [node name="Bounce" type="ProgressBar" parent="."]
 anchor_left = 0.5
-anchor_top = 0.61375
+anchor_top = 0.65125
 anchor_right = 0.5
-anchor_bottom = 0.61375
+anchor_bottom = 0.65125
 margin_left = -208.0
 margin_top = -58.6
 margin_right = 192.0
@@ -152,16 +152,19 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Bounce"]
-margin_right = 400.0
-margin_bottom = 118.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 text = "BOUNCE"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Mass" type="ProgressBar" parent="."]
 anchor_left = 0.5
-anchor_top = 0.50675
+anchor_top = 0.54425
 anchor_right = 0.5
-anchor_bottom = 0.50675
+anchor_bottom = 0.54425
 margin_left = -200.0
 margin_top = -58.64
 margin_right = 200.0
@@ -176,8 +179,8 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Mass"]
-margin_right = 400.0
-margin_bottom = 118.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 text = "MASS"
 align = 1
 
@@ -188,14 +191,14 @@ anims/FadeOut = SubResource( 2 )
 [node name="Star" type="TextureRect" parent="."]
 visible = false
 modulate = Color( 1, 0.968627, 0.227451, 1 )
-anchor_left = 0.766222
-anchor_top = 0.756563
-anchor_right = 0.767
-anchor_bottom = 0.757
-margin_left = -49.6801
-margin_top = -49.4001
-margin_right = 49.76
-margin_bottom = 50.04
+anchor_left = 0.697
+anchor_top = 0.7555
+anchor_right = 0.836
+anchor_bottom = 0.833501
+margin_left = 0.159668
+margin_top = -0.0394897
+margin_right = 0.0799561
+margin_bottom = 0.119934
 texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": true
