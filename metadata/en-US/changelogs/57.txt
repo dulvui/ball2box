@@ -1,0 +1,3 @@
+- Always show ball selection
+- Rainbow ball ball has more bounce
+- Fix 'Other games' and 'Follow me' buttons in shop
