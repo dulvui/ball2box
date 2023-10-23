@@ -98,14 +98,17 @@ func toggle_sfx() -> void:
 	config.set_value("sfx","mute",sfx)
 	config.save("user://settings.cfg")
 
-func unlock_ball() -> bool:
+# 2 already unlocked
+# 1 just unlocked now
+# 0 not enough stars
+func unlock_ball() -> int:
 	var ball = BallMachine.get_current_ball_info()
 	if unlocked_balls.has(ball["id"]):
-		return true
+		return 2
 	if ball["price"] is String or use_coins(ball["price"]):
 		unlocked_balls.append(ball["id"])
-		return true
-	return false
+		return 1
+	return 0
 	
 # to save on close
 func _notification(event) -> void:

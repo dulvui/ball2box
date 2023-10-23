@@ -47,24 +47,27 @@ func _on_Back_pressed() -> void:
 func _on_Select_pressed() -> void:
 	AudioMachine.play_click()
 	var ball = BallMachine.get_current_ball_info()
-	if Global.unlock_ball():
+	
+	var result:int = Global.unlock_ball()
+	if result > 0:
 		BallMachine.select()
 		_set_select_label()
 	# special cases like follow, more games etc...
-	if ball["price"] is String:
-		$Select.text = "SELECT"
-		if ball["price"] == tr("FOLLOW"):
-			OS.shell_open("https://mastodon.social/@dulvui")
-		
-		elif ball["price"] == tr("MORE_GAMES"):
-			if OS.get_name() == "iOS":
-				OS.shell_open("https://appstore.com/simondalvai")
-			elif Global.FDROID or not OS.get_name() == "Android":
-				OS.shell_open("https://simondalvai.org/games")
-			else:
-				OS.shell_open("https://play.google.com/store/apps/dev?id=7836644900810357474&hl=en")
-	else:
-		$Select.text = str(ball["price"])
+	if result == 1:
+		if ball["price"] is String:
+			$Select.text = "SELECTED"
+			if ball["price"] == tr("FOLLOW"):
+				OS.shell_open("https://mastodon.social/@dulvui")
+			
+			elif ball["price"] == tr("MORE_GAMES"):
+				if OS.get_name() == "iOS":
+					OS.shell_open("https://appstore.com/simondalvai")
+				elif Global.FDROID or not OS.get_name() == "Android":
+					OS.shell_open("https://simondalvai.org/games")
+				else:
+					OS.shell_open("https://play.google.com/store/apps/dev?id=7836644900810357474&hl=en")
+		else:
+			$Select.text = str(ball["price"])
 	
 	emit_signal("select")
 		
