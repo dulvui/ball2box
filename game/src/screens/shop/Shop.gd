@@ -51,7 +51,7 @@ func _on_Select_pressed() -> void:
 		BallMachine.select()
 		_set_select_label()
 	# special cases like follow, more games etc...
-	elif ball["price"] is String:
+	if ball["price"] is String:
 		$Select.text = "SELECT"
 		if ball["price"] == tr("FOLLOW"):
 			OS.shell_open("https://mastodon.social/@dulvui")
@@ -59,7 +59,7 @@ func _on_Select_pressed() -> void:
 		elif ball["price"] == tr("MORE_GAMES"):
 			if OS.get_name() == "iOS":
 				OS.shell_open("https://appstore.com/simondalvai")
-			elif Global.FDROID or OS.get_name() == "HTML5":
+			elif Global.FDROID or not OS.get_name() == "Android":
 				OS.shell_open("https://simondalvai.org/games")
 			else:
 				OS.shell_open("https://play.google.com/store/apps/dev?id=7836644900810357474&hl=en")
