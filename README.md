@@ -33,6 +33,7 @@ Track the migration to Godot 4.x in [issue #6](https://github.com/dulvui/ball2bo
   - [Table of contents](#table-of-contents)
   - [Setup](#setup)
     - [export\_presets.cfg](#export_presetscfg)
+  - [Translations](#translations)
   - [Contributions](#contributions)
   - [Licenses](#licenses)
     - [Code](#code)
@@ -56,10 +57,20 @@ Example for Android
 cp game/export_presets.android.example game/export_presets.cfg
 ```
 
+## Translations
+If you found typos or want to add a language to the game, please open a pull request.
+
+All words in the game with all it's languages are located in this file  
+`game/assets/i18n/UltimateTossi18n.csv`
+
+The store descriptions are located here  
+`store-pages/`
+
 ## Contributions
-If you want to contribute to the project, please fork the repo,    
-make your changes and make a pull request with a short description  
-of the changes you made.
+If you want to contribute to the project, please fork the repo, make your changes and make a pull request with a short description of the changes you made.
+
+To be sure that your changes will be merged, you can open an issue first with the details of the changes.
+Then we will see together, if and how the change could be implemented.
 
 ## Licenses
 The game itself is licensed under the [GNU AGPL v3.0](LICENSE) license and all  
