@@ -54,20 +54,19 @@ func _on_NextLevel_pressed() -> void:
 		Global.current_level = Global.current_level + 1
 	get_tree().change_scene("res://src/levels/Level%s.tscn"%str(Global.current_level))
 
-func _on_LevelComplete_visibility_changed() -> void:
-	if visible:
-		$Level.text = str(Global.current_level)
-		Global.set_level_stars(stars)
-		
-		if Global.unlock_next_level():
-			Global.current_level = Global.current_level + 1
-			first_time_complete = true
-		
-		if Global.current_level > Global.LEVELS:
-			$Buttons/NextLevel.hide()
-		
-		get_tree().paused = true
-		animation_player.play("FadeIn")
+func game_over() -> void:
+	$Level.text = str(Global.current_level)
+	Global.set_level_stars(stars)
+	
+	if Global.unlock_next_level():
+		Global.current_level = Global.current_level + 1
+		first_time_complete = true
+	
+	if Global.current_level > Global.LEVELS:
+		$Buttons/NextLevel.hide()
+	
+	get_tree().paused = true
+	animation_player.play("FadeIn")
 
 
 func _on_Menu_pressed() -> void:

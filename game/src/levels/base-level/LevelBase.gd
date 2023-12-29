@@ -9,6 +9,8 @@ const moveEase:int = Tween.EASE_OUT
 
 onready var camera:Camera = $Base/Camera
 onready var tween:Tween = $Tween
+onready var level_complete:Control = $UI/LevelComplete
+
 
 var ball:RigidBody
 
@@ -54,23 +56,24 @@ func fade_in_pop_objects() -> void:
 		object.fade_in()
 	
 func on_star1_hit() -> void:
-	$UI/LevelComplete.add_star()
+	level_complete.add_star()
 	AudioMachine.hit(false)
 #	_camera_shake()
 	
 func on_star2_hit() -> void:
-	$UI/LevelComplete.add_star()
+	level_complete.add_star()
 	AudioMachine.hit(false)
 #	_camera_shake()
 
 func on_star_hit() -> void:
-	$UI/LevelComplete.add_star()
+	level_complete.add_star()
 
 
 func _on_Bin_win() -> void:
 	if has_node("Tutorial"):
 		$Tutorial.fade_out()
-	$UI/LevelComplete.show()
+	level_complete.game_over()
+	level_complete.show()
 	AudioMachine.hit(true)
 	Global.save_data()
 	
@@ -138,7 +141,7 @@ func _on_Shop_next() -> void:
 
 func _on_LevelComplete_replay() -> void:
 	ball.reset_no_signal()
-	$UI/LevelComplete.reset_stars()
+	level_complete.reset_stars()
 	AudioMachine.reset()
 	fade_in_pop_objects()
 	$Star1.show_star()
@@ -169,14 +172,14 @@ func _on_LevelComplete_menu() -> void:
 	ball.reset()
 	$UI/Menu.show()
 	$UI/Menu.animation_player.play("FadeIn")
-	$UI/LevelComplete.reset_stars()
+	level_complete.reset_stars()
 	AudioMachine.reset()
 	$Star1.show_star()
 	$Star2.show_star()
 
 
 func _on_Ball_reset() -> void:
-	$UI/LevelComplete.reset_stars()
+	level_complete.reset_stars()
 	AudioMachine.reset()
 	
 	$Star1.show_star()
@@ -200,10 +203,10 @@ func _on_Ball_shoot() -> void:
 
 
 func _on_LevelComplete_levels():
-	$UI/LevelComplete.hide()
+	level_complete.hide()
 	ball.reset()
 	$UI/Menu.show_levels()
-	$UI/LevelComplete.reset_stars()
+	level_complete.reset_stars()
 	AudioMachine.reset()
 	$Star1.show_star()
 	$Star2.show_star()

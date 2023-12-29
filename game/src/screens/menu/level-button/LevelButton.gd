@@ -10,7 +10,7 @@ var stars:int
 func set_level(l:int) -> void:
 	level = l
 	$MarginContainer/Info/Label.text = str(level)
-	stars = Global.level_stars[level- 1]
+	stars = Global.level_stars[level - 1]
 	
 	if stars == -1:
 		$MarginContainer/Info/Stars/Star1.modulate = Color("#000000")
