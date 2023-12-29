@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.org>
+
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
+
 # App name
 Ball2Box
 
