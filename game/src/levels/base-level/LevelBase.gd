@@ -167,6 +167,7 @@ func _on_Pause_pressed() -> void:
 
 func _on_LevelComplete_menu() -> void:
 	ball.reset()
+	$UI/Menu.show()
 	$UI/Menu.animation_player.play("FadeIn")
 	$UI/LevelComplete.reset_stars()
 	AudioMachine.reset()
