@@ -65,9 +65,6 @@ func on_star2_hit() -> void:
 	AudioMachine.hit(false)
 #	_camera_shake()
 
-func on_star_hit() -> void:
-	level_complete.add_star()
-
 
 func _on_Bin_win() -> void:
 	if has_node("Tutorial"):
