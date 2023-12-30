@@ -1,0 +1,1 @@
+- show correct star amount in levels picker screen
