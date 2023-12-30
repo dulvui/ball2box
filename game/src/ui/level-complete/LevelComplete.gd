@@ -40,7 +40,6 @@ func _on_Replay_pressed() -> void:
 		first_time_complete = false
 		
 	emit_signal("replay")
-	reset_stars()
 	get_tree().paused = false
 	animation_player.play("FadeOut")
 	yield(animation_player,"animation_finished")

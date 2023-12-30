@@ -22,7 +22,7 @@ func set_level(l:int) -> void:
 		$MarginContainer/Info/Stars/Star1.modulate = Color("#fce527")
 	if stars >= 2:
 		$MarginContainer/Info/Stars/Star2.modulate = Color("#fce527")
-	if stars == 3:
+	if stars >= 3: # on some devices wh old versions, > 3 stars could happen
 		$MarginContainer/Info/Stars/Star3.modulate = Color("#fce527")
 	
 
