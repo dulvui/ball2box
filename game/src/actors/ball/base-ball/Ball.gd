@@ -23,10 +23,13 @@ var initial_position:Vector3
 var touch_pos:Vector2
 var touch_start:Vector2
 
+var teletransport:bool = false
+var next_transform:Transform
+
+
 func _ready() -> void:
 	initial_position = transform.origin
 	mode = RigidBody.MODE_STATIC
-
 
 
 func _process(delta:float) -> void:
@@ -132,3 +135,12 @@ func draw_indicator_down():
 		geometry_down.add_vertex(Vector3((touch_pos.x - touch_start.x)/60, -(touch_pos.y - touch_start.y)/60, 0))
 
 		geometry_down.end()
+
+func teletransport(p_transform:Transform) -> void:
+	next_transform = p_transform
+	teletransport = true
+
+func _integrate_forces(state:PhysicsDirectBodyState) -> void:
+	if teletransport:
+		state.transform = next_transform
+		teletransport = false

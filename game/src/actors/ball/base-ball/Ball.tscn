@@ -54,6 +54,7 @@ tracks/0/keys = {
 
 [node name="Ball" type="RigidBody" groups=["ball"]]
 collision_layer = 2
+collision_mask = 3
 mass = 6.28
 continuous_cd = true
 contacts_reported = 10

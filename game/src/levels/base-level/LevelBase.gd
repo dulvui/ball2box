@@ -10,6 +10,7 @@ const moveEase:int = Tween.EASE_OUT
 onready var camera:Camera = $Base/Camera
 onready var tween:Tween = $Tween
 onready var level_complete:Control = $UI/LevelComplete
+onready var portals:Spatial = $Portals/PortalConnector
 
 
 var ball:RigidBody
@@ -173,9 +174,13 @@ func _on_LevelComplete_menu() -> void:
 	AudioMachine.reset()
 	$Star1.show_star()
 	$Star2.show_star()
+	portals.reset()
+
 
 
 func _on_Ball_reset() -> void:
+	portals.reset()
+	
 	level_complete.reset_stars()
 	AudioMachine.reset()
 	
