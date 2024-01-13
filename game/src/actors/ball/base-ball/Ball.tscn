@@ -49,11 +49,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector3( 0.01, 0.01, 0.01 ) ]
+"values": [ Vector3( 1, 1, 1 ) ]
 }
 
 [node name="Ball" type="RigidBody" groups=["ball"]]
-visible = false
 collision_layer = 2
 collision_mask = 3
 mass = 6.28
