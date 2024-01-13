@@ -26,9 +26,12 @@ func _on_Portal1_ball_entered(ball) -> void:
 	if not hit:
 		hit = true
 		ball.teletransport(portal2.transform)
+		print("portal 1 teletrasnport")
 
 
 func _on_Portal2_ball_entered(ball:RigidBody) -> void:
 	if not hit:
 		hit = true
 		ball.teletransport(portal1.transform)
+		print("portal 2 teletrasnport")
+

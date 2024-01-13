@@ -10,10 +10,10 @@ const moveEase:int = Tween.EASE_OUT
 onready var camera:Camera = $Base/Camera
 onready var tween:Tween = $Tween
 onready var level_complete:Control = $UI/LevelComplete
-onready var portals:Spatial = $Portals/PortalConnector
+var portals:Spatial
 
 
-var ball:RigidBody
+var ball:Ball
 
 func _ready() -> void:
 	AudioMachine.reset()
@@ -35,18 +35,14 @@ func _ready() -> void:
 	fade_in_objects()
 		
 	ball = $Ball
-
-	var pos:Vector3 = ball.initial_position
-	ball.queue_free()
-	ball = BallMachine.get_real()
-	ball.initial_position = pos
-	ball.translation = pos
-	add_child(ball)
-		
 	
 	_connect_ball_signals()
 	$Star1.connect("star_hit",self,"on_star1_hit")
 	$Star2.connect("star_hit",self,"on_star2_hit")
+	
+	# portals only exist in some levels
+	portals = get_node_or_null("Portals/PortalConnector")
+
 
 func fade_in_objects() -> void:
 	for object in get_tree().get_nodes_in_group("objects"):
@@ -99,33 +95,27 @@ func _on_Shop_back() -> void:
 
 
 func _on_Shop_select() -> void:
-
-	# don't go to menu directly https://github.com/dulvui/ball2box/issues/9#issuecomment-1572743713
-#	$UI/Shop.animation_player.play("FadeOut")
-#	yield($UI/Shop.animation_player,"animation_finished")
-#	$UI/Shop.hide()
-#
-#	$UI/Menu.show()
-#	$UI/Menu.animation_player.play("FadeIn")
-#	$Base/Shop3D.menu()
-#	$AnimationPlayer.play("GoToMenu")
-	
-	var pos = ball.initial_position
-	ball.queue_free()
-	ball = BallMachine.get_real()
-	ball.initial_position = pos
-	ball.translation = pos
-	add_child(ball)
-		
-	# reset level after coming back from shop
-	_connect_ball_signals()
-	
-	
+	# menu animations
 	$UI/Shop.animation_player.play("FadeOut")
 	yield($UI/Shop.animation_player,"animation_finished")
 	$UI/Shop.hide()
 	$AnimationPlayer.play("GoToMenu")
 	$UI/Menu.play()
+	
+	# ball setup
+	var pos:Transform = ball.initial_position
+	print("shop transform " + str(pos))
+	ball.queue_free()
+	
+	ball = BallMachine.get_real()
+	add_child(ball)
+	# assign initial_position after adding to node
+	# otherwhise initial_position gets overwritten
+	ball.initial_position = pos
+	ball.teletransport_to_inital()
+	_connect_ball_signals()
+	
+
 	
 
 
@@ -138,7 +128,7 @@ func _on_Shop_next() -> void:
 
 
 func _on_LevelComplete_replay() -> void:
-	ball.reset_no_signal()
+	ball.reset_position_no_signal()
 	level_complete.reset_stars()
 	AudioMachine.reset()
 	fade_in_pop_objects()
@@ -167,19 +157,22 @@ func _on_Pause_pressed() -> void:
 		get_tree().paused = true
 
 func _on_LevelComplete_menu() -> void:
-	ball.reset()
+	ball.reset_position()
 	$UI/Menu.show()
 	$UI/Menu.animation_player.play("FadeIn")
 	level_complete.reset_stars()
 	AudioMachine.reset()
 	$Star1.show_star()
 	$Star2.show_star()
-	portals.reset()
+	
+	if portals:
+		portals.reset()
 
 
 
 func _on_Ball_reset() -> void:
-	portals.reset()
+	if portals:
+		portals.reset()
 	
 	level_complete.reset_stars()
 	AudioMachine.reset()
@@ -206,7 +199,7 @@ func _on_Ball_shoot() -> void:
 
 func _on_LevelComplete_levels():
 	level_complete.hide()
-	ball.reset()
+	ball.reset_position()
 	$UI/Menu.show_levels()
 	level_complete.reset_stars()
 	AudioMachine.reset()
@@ -214,5 +207,10 @@ func _on_LevelComplete_levels():
 	$Star2.show_star()
 
 func _connect_ball_signals():
+	if ball.is_connected("reset", self, "_on_Ball_reset"):
+		ball.disconnect("reset",self,"_on_Ball_reset")
+	if ball.is_connected("shoot",self,"_on_Ball_shoot"):
+		ball.disconnect("shoot",self,"_on_Ball_shoot")
+	
 	ball.connect("reset",self,"_on_Ball_reset")
 	ball.connect("shoot",self,"_on_Ball_shoot")

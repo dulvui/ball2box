@@ -140,7 +140,8 @@ anims/TopbarFadeIn = SubResource( 19 )
 [node name="Base" parent="." instance=ExtResource( 2 )]
 
 [node name="Ball" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.94765, 19.8625, 0 )
+transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 7.94765, 19.8625, 0 )
+visible = true
 physics_material_override = SubResource( 15 )
 contacts_reported = 0
 contact_monitor = false

@@ -18,19 +18,22 @@ const SPEED:int = 1
 
 var shooting:bool = false
 
-var initial_position:Vector3
+var initial_position:Transform
 
 var touch_pos:Vector2
 var touch_start:Vector2
 
-var teletransport:bool = false
+var do_teletransport:bool = false
+var do_reset:bool = false
+var do_static:bool = false
+
+
 var next_transform:Transform
 
 
 func _ready() -> void:
-	initial_position = transform.origin
-	mode = RigidBody.MODE_STATIC
-
+	initial_position = transform
+	teletransport_to_inital()
 
 func _process(delta:float) -> void:
 	if touch_start != Vector2.ZERO and touch_pos != Vector2.ZERO:
@@ -50,7 +53,7 @@ func _input(event:InputEvent) -> void:
 		if event.pressed:
 #			if event.position.y > 140: # to prevent reset on pause
 			if shooting:
-				reset()
+				reset_position()
 			# Down
 			if touch_start == Vector2.ZERO:
 				touch_start = event.position
@@ -72,25 +75,20 @@ func _shoot() -> void:
 		var direction = (touch_start - touch_pos)
 		apply_central_impulse(Vector3(- direction.x, direction.y , 0) * SPEED)
 	
-func reset() -> void:
+func reset_position() -> void:
+	print("reset")
 	emit_signal("reset")
-	mode = RigidBody.MODE_STATIC
 	$AnimationPlayer.play("FadeOut")
 	yield($AnimationPlayer, "animation_finished")
-	shooting = false
-	translation = initial_position
-	linear_velocity = Vector3.ZERO
-	angular_velocity = Vector3.ZERO
-	rotation = Vector3.ZERO
 	$AnimationPlayer.play("FadeIn")
-	
-func reset_no_signal() -> void:
-	mode = RigidBody.MODE_STATIC
 	shooting = false
-	translation = initial_position
-	linear_velocity = Vector3.ZERO
-	angular_velocity = Vector3.ZERO
-	rotation = Vector3.ZERO
+	
+	teletransport_to_inital()
+	
+func reset_position_no_signal() -> void:
+	print("reset no signal")
+	shooting = false
+	teletransport_to_inital()
 	
 func draw_indicator_up() -> void:
 	if not shooting and touch_start != Vector2.ZERO and touch_pos != Vector2.ZERO:
@@ -138,9 +136,32 @@ func draw_indicator_down():
 
 func teletransport(p_transform:Transform) -> void:
 	next_transform = p_transform
-	teletransport = true
+	do_teletransport = true
+	print("teletransport " + str(next_transform))
+	
+func teletransport_to_inital() -> void:
+	print("teletransport to inital")
+	do_reset = true
 
 func _integrate_forces(state:PhysicsDirectBodyState) -> void:
-	if teletransport:
+	# to change the mode to staric on the next iteration
+	# otherwhise ball doesn't move to new position
+	if do_static:
+		print("STATIC")
+		do_static = false
+		mode = RigidBody.MODE_STATIC
+	
+	if do_teletransport:
+#		mode = RigidBody.MODE_RIGID
 		state.transform = next_transform
-		teletransport = false
+		do_teletransport = false
+		
+	if do_reset:
+		state.transform = initial_position
+		state.angular_velocity = Vector3.ZERO
+		state.linear_velocity = Vector3.ZERO
+		rotation = Vector3.ZERO
+		do_reset = false
+		print("real reset " + str(initial_position))
+		do_static = true
+
