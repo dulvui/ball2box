@@ -4,7 +4,7 @@
 
 extends Control
 
-signal shop
+signal play
 
 onready var animation_player:AnimationPlayer = $AnimationPlayer
 
@@ -17,7 +17,7 @@ func _ready() -> void:
 	
 func _on_Play_pressed() -> void:
 	AudioMachine.click()
-	emit_signal("shop")
+	emit_signal("play")
 
 func play() -> void:
 	get_tree().paused = false
@@ -41,16 +41,6 @@ func _on_Info_back() -> void:
 	animation_player.play("InfoFadeOut")
 
 
-func _on_Shop_pressed() -> void:
-	AudioMachine.click()
-	emit_signal("shop")
-	
-	
-func _on_Back_pressed() -> void:
-	animation_player.play("LevelFadeOut")
-
-
-
 func _on_SimonDalvai_pressed() -> void:
 	AudioMachine.click()
 	OS.shell_open("https://simondalvai.org")
@@ -59,6 +49,7 @@ func _on_SimonDalvai_pressed() -> void:
 func _on_GithubButton_pressed() -> void:
 	AudioMachine.click()
 	OS.shell_open("https://github.com/dulvui/ball2box")
+
 
 func _on_PrevLevel_pressed() -> void:
 	AudioMachine.click()

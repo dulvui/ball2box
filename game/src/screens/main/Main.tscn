@@ -264,3 +264,5 @@ focus_mode = 2
 size_flags_horizontal = 4
 custom_fonts/font = SubResource( 13 )
 text = "simondalvai.org"
+
+[connection signal="pressed" from="Buttons/Play" to="." method="_on_Play_pressed"]

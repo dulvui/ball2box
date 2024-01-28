@@ -73,17 +73,6 @@ func _on_Bin_win() -> void:
 	Global.save_data()
 	
 
-func _on_Menu_shop() -> void:
-	$UI/Menu.animation_player.play("FadeOut")
-	$AnimationPlayer.play("GoToShop")
-	yield($UI/Menu.animation_player,"animation_finished")
-	$UI/Menu.hide()
-	$UI/Shop.show()
-	$UI/Shop.animation_player.play("FadeIn")
-	$Base/Shop3D.shop()
-	
-
-
 func _on_Shop_back() -> void:
 	$UI/Shop.animation_player.play("FadeOut")
 	yield($UI/Shop.animation_player,"animation_finished")
@@ -212,3 +201,9 @@ func _connect_ball_signals():
 	
 	ball.connect("reset",self,"_on_Ball_reset")
 	ball.connect("shoot",self,"_on_Ball_shoot")
+
+
+func _on_Main_play():
+	AudioMachine.click()
+	$UI/Main.hide()
+	get_tree().paused = false
