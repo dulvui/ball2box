@@ -101,11 +101,25 @@ func _on_SimonDalvai_pressed() -> void:
 	OS.shell_open("https://simondalvai.org")
 
 
-func _on_GithubButton_pressed():
+func _on_GithubButton_pressed() -> void:
 	AudioMachine.click()
 	OS.shell_open("https://github.com/dulvui/ball2box")
 
 
-func _on_Level_pressed():
+func _on_Level_pressed() -> void:
 	AudioMachine.click()
 	show_levels()
+
+
+func _on_PrevLevel_pressed() -> void:
+	AudioMachine.click()
+	if Global.current_level > 1:
+		Global.current_level -= 1
+		get_tree().change_scene("res://src/levels/Level%s.tscn"%(Global.current_level - 1))
+
+
+func _on_NextLevel_pressed() -> void:
+	AudioMachine.click()
+	if Global.current_level + 1 < Global.LEVELS and Global.level_stars[Global.current_level + 1] >= 0:
+		Global.current_level += 1
+		get_tree().change_scene("res://src/levels/Level%s.tscn"%(Global.current_level - 1))
