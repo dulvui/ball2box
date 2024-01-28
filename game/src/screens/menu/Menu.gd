@@ -120,6 +120,6 @@ func _on_PrevLevel_pressed() -> void:
 
 func _on_NextLevel_pressed() -> void:
 	AudioMachine.click()
-	if Global.current_level + 1 < Global.LEVELS and Global.level_stars[Global.current_level + 1] >= 0:
+	if Global.current_level + 1 < Global.LEVELS and Global.level_stars[Global.current_level] >= 0:
 		Global.current_level += 1
 		get_tree().change_scene("res://src/levels/Level%s.tscn"%(Global.current_level - 1))

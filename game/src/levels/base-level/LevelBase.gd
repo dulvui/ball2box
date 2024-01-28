@@ -22,7 +22,7 @@ func _ready() -> void:
 	
 	if Global.just_opened:
 		Global.just_opened = false
-		
+
 		if Global.tutorial_swipe_done:
 			get_tree().paused = true
 			$UI/Menu.animation_player.play("FirstFadeIn")
@@ -32,6 +32,7 @@ func _ready() -> void:
 			get_tree().paused = false
 	else:
 		get_tree().paused = false
+
 	fade_in_objects()
 		
 	ball = $Ball
