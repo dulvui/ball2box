@@ -15,12 +15,9 @@ func _ready() -> void:
 	$Menu/Buttons/Settings/Music/MusicButton.pressed = Global.music
 	$Menu/Buttons/Settings/Sfx/SfxButton.pressed = Global.sfx
 	current_page = Global.current_level/15
+	$Menu/Buttons/Level/Level.text = "  level " + str(Global.current_level) + "  "
 	_set_up_buttons()
 
-
-func _process(delta:float) -> void:
-	$Menu/Level.text = str(Global.current_level)
-	
 func show_levels():
 	AudioMachine.click()
 	_set_up_buttons()
@@ -68,8 +65,6 @@ func _on_Info_back() -> void:
 	AudioMachine.click()
 	animation_player.play("InfoFadeOut")
 
-func _on_Levels_pressed() -> void:
-	show_levels()
 
 func _on_Shop_pressed() -> void:
 	AudioMachine.click()
@@ -101,7 +96,16 @@ func _on_Next_pressed() -> void:
 	animation_player.play("LevelOnlyFadeIn")
 
 
-
 func _on_SimonDalvai_pressed() -> void:
 	AudioMachine.click()
 	OS.shell_open("https://simondalvai.org")
+
+
+func _on_GithubButton_pressed():
+	AudioMachine.click()
+	OS.shell_open("https://github.com/dulvui/ball2box")
+
+
+func _on_Level_pressed():
+	AudioMachine.click()
+	show_levels()
