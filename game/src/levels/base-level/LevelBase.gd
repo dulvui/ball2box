@@ -25,7 +25,7 @@ func _ready() -> void:
 
 		if Global.tutorial_swipe_done:
 			get_tree().paused = true
-			$UI/Menu.animation_player.play("FirstFadeIn")
+			$UI/Main.animation_player.play("FirstFadeIn")
 			$AnimationPlayer.play("FadeIn")
 			$AnimationPlayer.play("TopbarFadeIn")
 		else:
@@ -115,9 +115,6 @@ func _on_Shop_select() -> void:
 	ball.initial_position = pos
 	ball.teletransport_to_inital()
 	_connect_ball_signals()
-	
-
-	
 
 
 func _on_Shop_prev() -> void:

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://theme.tres" type="Theme" id=1]
 [ext_resource path="res://panel.tres" type="StyleBox" id=2]
-[ext_resource path="res://src/screens/menu/info/Info.gd" type="Script" id=3]
+[ext_resource path="res://src/screens/info/Info.gd" type="Script" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 10.0
@@ -11,39 +11,41 @@ content_margin_top = 10.0
 content_margin_bottom = 10.0
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
-[node name="Info" type="CenterContainer"]
+[node name="Info" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -300.0
-margin_top = -578.0
+margin_top = -600.0
 margin_right = 300.0
-margin_bottom = 622.0
-theme = ExtResource( 1 )
-script = ExtResource( 3 )
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 600.0
-margin_bottom = 1200.0
+margin_bottom = 600.0
 rect_min_size = Vector2( 600, 1200 )
-rect_pivot_offset = Vector2( 252, 213 )
 custom_constants/separation = 100
 alignment = 1
 
 [node name="Panel" type="Panel" parent="VBoxContainer"]
-margin_top = 37.0
 margin_right = 600.0
-margin_bottom = 637.0
+margin_bottom = 824.0
 rect_min_size = Vector2( 600, 600 )
 rect_pivot_offset = Vector2( 265, 298 )
+size_flags_vertical = 3
 custom_styles/panel = ExtResource( 2 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Panel"]
-margin_left = 31.0
-margin_top = 23.0
-margin_right = 581.0
-margin_bottom = 573.0
+anchor_left = 0.052
+anchor_top = 0.038
+anchor_right = 0.968
+anchor_bottom = 0.955
+margin_left = -0.200001
+margin_top = 0.199999
+margin_right = 0.199951
 rect_pivot_offset = Vector2( 240, 266 )
 custom_styles/normal = SubResource( 1 )
 bbcode_enabled = true
@@ -117,9 +119,9 @@ https://www.kenney.nl/assets/pattern-pack-2
 "
 
 [node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 737.0
+margin_top = 924.0
 margin_right = 600.0
-margin_bottom = 1163.0
+margin_bottom = 1200.0
 alignment = 1
 
 [node name="Website" type="Button" parent="VBoxContainer/Buttons"]
@@ -128,6 +130,7 @@ margin_bottom = 126.0
 text = "website"
 
 [node name="Github" type="Button" parent="VBoxContainer/Buttons"]
+visible = false
 margin_top = 150.0
 margin_right = 600.0
 margin_bottom = 276.0
@@ -141,9 +144,9 @@ margin_bottom = 426.0
 text = "donate"
 
 [node name="Back" type="Button" parent="VBoxContainer/Buttons"]
-margin_top = 300.0
+margin_top = 150.0
 margin_right = 600.0
-margin_bottom = 426.0
+margin_bottom = 276.0
 text = "menu"
 
 [connection signal="meta_clicked" from="VBoxContainer/Panel/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]

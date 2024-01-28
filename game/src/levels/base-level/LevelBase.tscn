@@ -1,8 +1,8 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://src/levels/base-level/LevelBase.gd" type="Script" id=1]
 [ext_resource path="res://src/levels/base-level/base-3d/Base3D.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/screens/menu/Menu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/screens/main/Main.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/actors/bin/Bin.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/actors/ball/starter-ball/Ball.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/ui/level-complete/LevelComplete.tscn" type="PackedScene" id=6]
@@ -10,6 +10,8 @@
 [ext_resource path="res://src/levels/base-level/background/Background1.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/ui/coins/Coins.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/screens/shop/Shop.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/screens/info/Info.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/screens/level-select/LevelSelect.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/ui/tutorial/Tutorial.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/pause.png" type="Texture" id=14]
 [ext_resource path="res://src/levels/base-level/Pause.gd" type="Script" id=15]
@@ -91,7 +93,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 17, 26 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Topbar:modulate")
+tracks/1/path = NodePath("UI/Topbar:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -107,7 +109,7 @@ tracks/1/keys = {
 resource_name = "TopbarFadeIn"
 length = 1.2
 tracks/0/type = "value"
-tracks/0/path = NodePath("Topbar:modulate")
+tracks/0/path = NodePath("UI/Topbar:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -156,34 +158,51 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.06394, 9.04416, 0.575264 )
 
 [node name="Tutorial" parent="." instance=ExtResource( 13 )]
 
-[node name="UI" type="Node" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Main" parent="UI" instance=ExtResource( 3 )]
 
 [node name="Shop" parent="UI" instance=ExtResource( 10 )]
-
-[node name="Menu" parent="UI" instance=ExtResource( 3 )]
+visible = false
 
 [node name="LevelComplete" parent="UI" instance=ExtResource( 6 )]
 
-[node name="Topbar" type="Control" parent="."]
-margin_left = 108.702
-margin_top = -4.0869
-margin_right = 148.702
-margin_bottom = 35.9131
+[node name="Info" parent="UI" instance=ExtResource( 11 )]
+visible = false
 
-[node name="Coins" parent="Topbar" instance=ExtResource( 9 )]
-margin_left = -165.03
-margin_top = -6.74166
-margin_right = 118.97
-margin_bottom = 71.2583
+[node name="LevelSelect" parent="UI" instance=ExtResource( 12 )]
+visible = false
 
-[node name="Pause" type="Button" parent="Topbar"]
+[node name="Topbar" type="HBoxContainer" parent="UI"]
+anchor_left = 0.05
+anchor_top = 0.016
+anchor_right = 0.961
+anchor_bottom = 0.115
+margin_top = 0.519999
+margin_right = 0.0799561
+margin_bottom = -0.199997
+
+[node name="Coins" parent="UI/Topbar" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 0.0
+margin_right = 104.0
+margin_bottom = 126.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="VSeparator" type="VSeparator" parent="UI/Topbar"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 108.0
+margin_right = 588.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+
+[node name="Pause" type="Button" parent="UI/Topbar"]
 pause_mode = 2
 modulate = Color( 1, 1, 1, 0.705882 )
-margin_left = 490.298
-margin_top = 32.0869
-margin_right = 594.298
-margin_bottom = 158.087
-rect_scale = Vector2( 0.9, 0.9 )
+margin_left = 592.0
+margin_right = 656.0
+margin_bottom = 126.0
 icon = ExtResource( 14 )
 icon_align = 1
 script = ExtResource( 15 )
@@ -193,12 +212,12 @@ script = ExtResource( 15 )
 [connection signal="reset" from="Ball" to="." method="_on_Ball_reset"]
 [connection signal="shoot" from="Ball" to="." method="_on_Ball_shoot"]
 [connection signal="win" from="Bin" to="." method="_on_Bin_win"]
+[connection signal="shop" from="UI/Main" to="." method="_on_Menu_shop"]
 [connection signal="back" from="UI/Shop" to="." method="_on_Shop_back"]
 [connection signal="next" from="UI/Shop" to="." method="_on_Shop_next"]
 [connection signal="prev" from="UI/Shop" to="." method="_on_Shop_prev"]
 [connection signal="select" from="UI/Shop" to="." method="_on_Shop_select"]
-[connection signal="shop" from="UI/Menu" to="." method="_on_Menu_shop"]
 [connection signal="levels" from="UI/LevelComplete" to="." method="_on_LevelComplete_levels"]
 [connection signal="menu" from="UI/LevelComplete" to="." method="_on_LevelComplete_menu"]
 [connection signal="replay" from="UI/LevelComplete" to="." method="_on_LevelComplete_replay"]
-[connection signal="pressed" from="Topbar/Pause" to="." method="_on_Pause_pressed"]
+[connection signal="pressed" from="UI/Topbar/Pause" to="." method="_on_Pause_pressed"]

@@ -1,0 +1,266 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/font/manrope.thin.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://theme.tres" type="Theme" id=2]
+[ext_resource path="res://assets/musicOff.png" type="Texture" id=3]
+[ext_resource path="res://src/screens/main/Main.gd" type="Script" id=4]
+[ext_resource path="res://panel.tres" type="StyleBox" id=5]
+[ext_resource path="res://assets/github.svg" type="Texture" id=6]
+[ext_resource path="res://assets/musicOn.png" type="Texture" id=8]
+[ext_resource path="res://assets/audioOn.png" type="Texture" id=11]
+[ext_resource path="res://assets/audioOff.png" type="Texture" id=12]
+[ext_resource path="res://assets/information.png" type="Texture" id=13]
+
+[sub_resource type="Animation" id=3]
+resource_name = "FirstFadeIn"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=13]
+size = 53
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[node name="Main" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 360, 640 )
+theme = ExtResource( 2 )
+script = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FirstFadeIn = SubResource( 3 )
+anims/RESET = SubResource( 12 )
+
+[node name="Fade" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.105882, 0.105882, 0.231373, 1 )
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -286.0
+margin_top = -425.0
+margin_right = 286.0
+margin_bottom = 587.0
+rect_pivot_offset = Vector2( 188, 0 )
+alignment = 1
+
+[node name="Level" type="HBoxContainer" parent="Buttons"]
+margin_right = 572.0
+margin_bottom = 126.0
+alignment = 1
+
+[node name="PrevLevel" type="Button" parent="Buttons/Level"]
+visible = false
+margin_right = 89.0
+margin_bottom = 126.0
+text = " < "
+
+[node name="VSeparator" type="VSeparator" parent="Buttons/Level"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 126.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+
+[node name="Level" type="Button" parent="Buttons/Level"]
+margin_left = 130.0
+margin_right = 441.0
+margin_bottom = 126.0
+text = " level 12 "
+
+[node name="VSeparator2" type="VSeparator" parent="Buttons/Level"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 315.0
+margin_right = 572.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+
+[node name="NextLevel" type="Button" parent="Buttons/Level"]
+visible = false
+margin_left = 483.0
+margin_right = 572.0
+margin_bottom = 126.0
+text = " > "
+
+[node name="HSeparator" type="HSeparator" parent="Buttons"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 150.0
+margin_right = 572.0
+margin_bottom = 516.0
+size_flags_vertical = 3
+
+[node name="Play" type="Button" parent="Buttons"]
+margin_top = 540.0
+margin_right = 572.0
+margin_bottom = 666.0
+text = "PLAY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator2" type="HSeparator" parent="Buttons"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 690.0
+margin_right = 572.0
+margin_bottom = 770.0
+rect_min_size = Vector2( 0, 80 )
+
+[node name="Settings" type="HBoxContainer" parent="Buttons"]
+margin_top = 794.0
+margin_right = 572.0
+margin_bottom = 914.0
+custom_constants/separation = 18
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sfx" type="Panel" parent="Buttons/Settings"]
+margin_left = 19.0
+margin_right = 139.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 120 )
+rect_pivot_offset = Vector2( 60, 60 )
+custom_styles/panel = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SfxButton" type="TextureButton" parent="Buttons/Settings/Sfx"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -50.0
+margin_right = 50.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( 50, 50 )
+toggle_mode = true
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
+
+[node name="Music" type="Panel" parent="Buttons/Settings"]
+show_behind_parent = true
+margin_left = 157.0
+margin_right = 277.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 120 )
+rect_pivot_offset = Vector2( 60, 60 )
+custom_styles/panel = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicButton" type="TextureButton" parent="Buttons/Settings/Music"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -50.0
+margin_right = 50.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( 50, 50 )
+toggle_mode = true
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 3 )
+
+[node name="Info" type="Panel" parent="Buttons/Settings"]
+show_behind_parent = true
+margin_left = 295.0
+margin_right = 415.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 120 )
+rect_pivot_offset = Vector2( 60, 60 )
+custom_styles/panel = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoButton" type="TextureButton" parent="Buttons/Settings/Info"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -50.0
+margin_right = 50.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( 50, 50 )
+texture_normal = ExtResource( 13 )
+
+[node name="Github" type="Panel" parent="Buttons/Settings"]
+show_behind_parent = true
+margin_left = 433.0
+margin_right = 553.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 120 )
+rect_pivot_offset = Vector2( 60, 60 )
+custom_styles/panel = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GithubButton" type="TextureButton" parent="Buttons/Settings/Github"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -36.0
+margin_top = -36.0
+margin_right = 36.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 50, 50 )
+texture_normal = ExtResource( 6 )
+
+[node name="SimonDalvai" type="LinkButton" parent="Buttons"]
+margin_left = 93.0
+margin_top = 938.0
+margin_right = 479.0
+margin_bottom = 1012.0
+focus_mode = 2
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 13 )
+text = "simondalvai.org"

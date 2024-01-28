@@ -9,8 +9,6 @@ signal prev
 signal back
 signal select
 
-onready var animation_player:AnimationPlayer = $AnimationPlayer
-
 func _ready() -> void:
 	_set_select_label()
 
