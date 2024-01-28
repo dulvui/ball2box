@@ -78,3 +78,8 @@ License: CC-BY-3.0
 Files: game/assets/font/manrope.thin.otf
 Copyright: 2020 EZduzziteh
 License: OFL-1.1
+
+# Github icon
+Files: game/assets/github.svg
+Copyright: simple-icons https://github.com/simple-icons/simple-icons
+License: CC0-1.0
