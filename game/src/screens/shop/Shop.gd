@@ -29,12 +29,12 @@ func _on_Prev_pressed() -> void:
 func set_values(ball:RigidBody) -> void:
 	var mass_tween:Tween = Tween.new()
 	add_child(mass_tween)
-	mass_tween.interpolate_property($Mass, "value", $Mass.value, ball.mass, 0.4, Tween.EASE_IN, Tween.EASE_OUT)
+	mass_tween.interpolate_property($VBoxContainer/Mass, "value", $VBoxContainer/Mass.value, ball.mass, 0.4, Tween.EASE_IN, Tween.EASE_OUT)
 	mass_tween.start()
 	
 	var bounce_tween:Tween = Tween.new()
 	add_child(bounce_tween)
-	bounce_tween.interpolate_property($Bounce, "value", $Bounce.value, ball.bounce, 0.4, Tween.EASE_IN, Tween.EASE_OUT)
+	bounce_tween.interpolate_property($VBoxContainer/Bounce, "value", $VBoxContainer/Bounce.value, ball.bounce, 0.4, Tween.EASE_IN, Tween.EASE_OUT)
 	bounce_tween.start()
 	
 	
@@ -73,16 +73,16 @@ func _on_Select_pressed() -> void:
 func _set_select_label() -> void:
 	var ball = BallMachine.get_current_ball_info()
 	if Global.unlocked_balls.has(ball["id"]):
-		$Select.text = "PLAY"
-		$Star.hide()
+		$VBoxContainer/Select.text = "PLAY"
+		$VBoxContainer/Select/Star.hide()
 		
 	else:
 		if ball["price"] is String:
-			$Select.text = str(ball["price"])
-			$Star.hide()
+			$VBoxContainer/Select.text = str(ball["price"])
+			$VBoxContainer/Select/Star.hide()
 		else:
-			$Select.text = str(ball["price"])
-			$Star.show()
+			$VBoxContainer/Select.text = str(ball["price"])
+			$VBoxContainer/Select/Star.show()
 			
 	var ball_instance = ball["real"].instance()
 	set_values(ball_instance)
