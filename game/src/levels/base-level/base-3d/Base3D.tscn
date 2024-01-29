@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://materials/wall-material.tres" type="Material" id=1]
 [ext_resource path="res://materials/wall-physics-material.tres" type="PhysicsMaterial" id=2]
-[ext_resource path="res://src/screens/shop/Shop3D.tscn" type="PackedScene" id=4]
 
 [sub_resource type="BoxShape" id=5]
 
@@ -88,9 +87,6 @@ shape = SubResource( 8 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 light_energy = 0.45
-
-[node name="Shop3D" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 62, 0 )
 
 [node name="Camera" type="Camera" parent="."]
 pause_mode = 2

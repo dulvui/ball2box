@@ -24,7 +24,7 @@ func prev() -> void:
 	new_ball.fade_in()
 	ball = new_ball
 	
-func shop() -> void:
+func fade_in() -> void:
 	ball.fade_in()
 	
 func menu() -> void:

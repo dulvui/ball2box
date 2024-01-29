@@ -12,11 +12,12 @@ onready var tween:Tween = $Tween
 onready var level_complete:Control = $UI/LevelComplete
 onready var main:Control = $UI/Main
 onready var shop:Control = $UI/Shop
-onready var shop3D:Spatial = $Base/Shop3D
+onready var shop3D:Spatial = $Shop3D
 onready var ball:Ball = $Ball
 onready var star1:Spatial = $Star1
 onready var star2:Spatial = $Star2
 onready var tutorial:Spatial = $Tutorial
+onready var animation_player:AnimationPlayer = $AnimationPlayer
 
 var portals:Spatial
 
@@ -31,8 +32,8 @@ func _ready() -> void:
 		if Global.tutorial_swipe_done:
 			get_tree().paused = true
 			main.animation_player.play("FirstFadeIn")
-			$AnimationPlayer.play("FadeIn")
-			$AnimationPlayer.play("TopbarFadeIn")
+			animation_player.play("FadeIn")
+			animation_player.play("TopbarFadeIn")
 		else:
 			get_tree().paused = false
 	else:
@@ -84,15 +85,13 @@ func _on_Shop_back() -> void:
 	main.show()
 	main.animation_player.play("FadeIn")
 	shop3D.menu()
-	$AnimationPlayer.play("GoToMenu")
+	animation_player.play("GoToMenu")
 
 
 func _on_Shop_select() -> void:
 	# menu animations
-	shop.animation_player.play("FadeOut")
-	yield(shop.animation_player,"animation_finished")
 	shop.hide()
-	$AnimationPlayer.play("GoToMenu")
+	animation_player.play("GoToMenu")
 	main.play()
 	
 	# ball setup
@@ -208,5 +207,9 @@ func _connect_ball_signals():
 
 func _on_Main_play():
 	AudioMachine.click()
+#	get_tree().paused = false
+
 	main.hide()
-	get_tree().paused = false
+	animation_player.play("GoToShop")
+	shop3D.fade_in()
+	shop.show()
