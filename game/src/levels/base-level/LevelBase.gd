@@ -10,22 +10,27 @@ const moveEase:int = Tween.EASE_OUT
 onready var camera:Camera = $Base/Camera
 onready var tween:Tween = $Tween
 onready var level_complete:Control = $UI/LevelComplete
+onready var main:Control = $UI/Main
+onready var shop:Control = $UI/Shop
+onready var shop3D:Spatial = $Base/Shop3D
+onready var ball:Ball = $Ball
+onready var star1:Spatial = $Star1
+onready var star2:Spatial = $Star2
+onready var tutorial:Spatial = $Tutorial
+
 var portals:Spatial
-
-
-var ball:Ball
 
 func _ready() -> void:
 	AudioMachine.reset()
 	
-	$Tutorial.init()
+	tutorial.init()
 	
 	if Global.just_opened:
 		Global.just_opened = false
 
 		if Global.tutorial_swipe_done:
 			get_tree().paused = true
-			$UI/Main.animation_player.play("FirstFadeIn")
+			main.animation_player.play("FirstFadeIn")
 			$AnimationPlayer.play("FadeIn")
 			$AnimationPlayer.play("TopbarFadeIn")
 		else:
@@ -34,12 +39,10 @@ func _ready() -> void:
 		get_tree().paused = false
 
 	fade_in_objects()
-		
-	ball = $Ball
 	
 	_connect_ball_signals()
-	$Star1.connect("star_hit",self,"on_star1_hit")
-	$Star2.connect("star_hit",self,"on_star2_hit")
+	star1.connect("star_hit",self,"on_star1_hit")
+	star2.connect("star_hit",self,"on_star2_hit")
 	
 	# portals only exist in some levels
 	portals = get_node_or_null("Portals/PortalConnector")
@@ -66,7 +69,7 @@ func on_star2_hit() -> void:
 
 func _on_Bin_win() -> void:
 	if has_node("Tutorial"):
-		$Tutorial.fade_out()
+		tutorial.fade_out()
 	level_complete.game_over()
 	level_complete.show()
 	AudioMachine.hit(true)
@@ -74,23 +77,23 @@ func _on_Bin_win() -> void:
 	
 
 func _on_Shop_back() -> void:
-	$UI/Shop.animation_player.play("FadeOut")
-	yield($UI/Shop.animation_player,"animation_finished")
-	$UI/Shop.hide()
+	shop.animation_player.play("FadeOut")
+	yield(shop.animation_player,"animation_finished")
+	shop.hide()
 	
-	$UI/Menu.show()
-	$UI/Menu.animation_player.play("FadeIn")
-	$Base/Shop3D.menu()
+	main.show()
+	main.animation_player.play("FadeIn")
+	shop3D.menu()
 	$AnimationPlayer.play("GoToMenu")
 
 
 func _on_Shop_select() -> void:
 	# menu animations
-	$UI/Shop.animation_player.play("FadeOut")
-	yield($UI/Shop.animation_player,"animation_finished")
-	$UI/Shop.hide()
+	shop.animation_player.play("FadeOut")
+	yield(shop.animation_player,"animation_finished")
+	shop.hide()
 	$AnimationPlayer.play("GoToMenu")
-	$UI/Menu.play()
+	main.play()
 	
 	# ball setup
 	var pos:Transform = ball.initial_position
@@ -107,11 +110,11 @@ func _on_Shop_select() -> void:
 
 
 func _on_Shop_prev() -> void:
-	$Base/Shop3D.prev()
+	shop3D.prev()
 
 
 func _on_Shop_next() -> void:
-	$Base/Shop3D.next()
+	shop3D.next()
 
 
 func _on_LevelComplete_replay() -> void:
@@ -119,8 +122,8 @@ func _on_LevelComplete_replay() -> void:
 	level_complete.reset_stars()
 	AudioMachine.reset()
 	fade_in_pop_objects()
-	$Star1.show_star()
-	$Star2.show_star()
+	star1.show_star()
+	star2.show_star()
 
 func _camera_shake() -> void:
 	var start_position:Vector3 = camera.translation
@@ -139,18 +142,18 @@ func _camera_shake() -> void:
 func _on_Pause_pressed() -> void:
 	AudioMachine.click()
 	if not get_tree().paused:
-		$UI/Menu.show()
-		$UI/Menu.animation_player.play("FadeIn")
+		main.show()
+		main.animation_player.play("FadeIn")
 		get_tree().paused = true
 
 func _on_LevelComplete_menu() -> void:
 	ball.reset_position()
-	$UI/Menu.show()
-	$UI/Menu.animation_player.play("FadeIn")
+	main.show()
+	main.animation_player.play("FadeIn")
 	level_complete.reset_stars()
 	AudioMachine.reset()
-	$Star1.show_star()
-	$Star2.show_star()
+	star1.show_star()
+	star2.show_star()
 	
 	if portals:
 		portals.reset()
@@ -164,34 +167,34 @@ func _on_Ball_reset() -> void:
 	level_complete.reset_stars()
 	AudioMachine.reset()
 	
-	$Star1.show_star()
-	$Star2.show_star()
-	$Star1.is_hitable = false
-	$Star2.is_hitable = false
+	star1.show_star()
+	star2.show_star()
+	star1.is_hitable = false
+	star2.is_hitable = false
 	
 	fade_in_pop_objects()
 		
 	Global.save_data()
 	if has_node("Tutorial"):
-		$Tutorial.ball_reset()
+		tutorial.ball_reset()
 
 
 func _on_Ball_shoot() -> void:
-	$Star1.is_hitable = true
-	$Star2.is_hitable = true
+	star1.is_hitable = true
+	star2.is_hitable = true
 	
 	if has_node("Tutorial"):
-		$Tutorial.ball_shoot()
+		tutorial.ball_shoot()
 
 
 func _on_LevelComplete_levels():
 	level_complete.hide()
 	ball.reset_position()
-	$UI/Menu.show_levels()
+	main.show_levels()
 	level_complete.reset_stars()
 	AudioMachine.reset()
-	$Star1.show_star()
-	$Star2.show_star()
+	star1.show_star()
+	star2.show_star()
 
 func _connect_ball_signals():
 	if ball.is_connected("reset", self, "_on_Ball_reset"):
@@ -205,5 +208,5 @@ func _connect_ball_signals():
 
 func _on_Main_play():
 	AudioMachine.click()
-	$UI/Main.hide()
+	main.hide()
 	get_tree().paused = false
