@@ -147,12 +147,11 @@ func _integrate_forces(state:PhysicsDirectBodyState) -> void:
 	# to change the mode to staric on the next iteration
 	# otherwhise ball doesn't move to new position
 	if do_static:
-		print("STATIC")
 		do_static = false
 		mode = RigidBody.MODE_STATIC
 	
 	if do_teletransport:
-#		mode = RigidBody.MODE_RIGID
+		mode = RigidBody.MODE_RIGID
 		state.transform = next_transform
 		do_teletransport = false
 		
@@ -162,6 +161,5 @@ func _integrate_forces(state:PhysicsDirectBodyState) -> void:
 		state.linear_velocity = Vector3.ZERO
 		rotation = Vector3.ZERO
 		do_reset = false
-		print("real reset " + str(initial_position))
 		do_static = true
 

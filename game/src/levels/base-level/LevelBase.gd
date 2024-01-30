@@ -35,12 +35,14 @@ func _ready() -> void:
 
 		if Global.tutorial_swipe_done:
 			get_tree().paused = true
-			main.animation_player.play("FirstFadeIn")
-			animation_player.play("FadeIn")
+			main.show()
 		else:
 			get_tree().paused = false
+			main.hide()
 	else:
 		get_tree().paused = false
+		main.hide()
+		
 
 	fade_in_objects()
 	
