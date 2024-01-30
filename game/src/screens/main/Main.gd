@@ -19,10 +19,6 @@ func _on_Play_pressed() -> void:
 	AudioMachine.click()
 	emit_signal("play")
 
-func play() -> void:
-	get_tree().paused = false
-	animation_player.play("FadeOut")
-
 func _on_Sfx_pressed() -> void:
 	AudioMachine.click()
 	Global.toggle_sfx()

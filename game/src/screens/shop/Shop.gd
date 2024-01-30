@@ -9,6 +9,10 @@ signal prev
 signal back
 signal select
 
+onready var select_button:Button = $VBoxContainer/Buttons/Select
+onready var star:TextureRect = $VBoxContainer/Buttons/Select/Star
+
+
 func _ready() -> void:
 	_set_select_label()
 
@@ -51,7 +55,7 @@ func _on_Select_pressed() -> void:
 		BallMachine.select()
 		_set_select_label()
 	if result == 1:
-		$Select.text = "PLAY"
+		select_button.text = "PLAY"
 		# special cases like follow, more games etc...
 		if ball["price"] is String:
 			if ball["price"] == tr("FOLLOW"):
@@ -65,22 +69,22 @@ func _on_Select_pressed() -> void:
 				else:
 					OS.shell_open("https://play.google.com/store/apps/dev?id=7836644900810357474&hl=en")
 	
-	emit_signal("select")
+		emit_signal("select")
 		
 
 func _set_select_label() -> void:
 	var ball = BallMachine.get_current_ball_info()
 	if Global.unlocked_balls.has(ball["id"]):
-		$VBoxContainer/Select.text = "PLAY"
-		$VBoxContainer/Select/Star.hide()
+		select_button.text = "PLAY"
+		star.hide()
 		
 	else:
 		if ball["price"] is String:
-			$VBoxContainer/Select.text = str(ball["price"])
-			$VBoxContainer/Select/Star.hide()
+			select_button.text = str(ball["price"])
+			star.hide()
 		else:
-			$VBoxContainer/Select.text = str(ball["price"])
-			$VBoxContainer/Select/Star.show()
+			select_button.text = str(ball["price"])
+			star.show()
 			
 	var ball_instance = ball["real"].instance()
 	set_values(ball_instance)

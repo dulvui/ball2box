@@ -66,6 +66,10 @@ anims/RESET = SubResource( 12 )
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = 19.0
+margin_right = 11.0
+margin_bottom = 19.0
 color = Color( 0.105882, 0.105882, 0.231373, 1 )
 
 [node name="Buttons" type="VBoxContainer" parent="."]
@@ -74,10 +78,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -286.0
-margin_top = -425.0
+margin_top = -500.5
 margin_right = 286.0
-margin_bottom = 587.0
-rect_pivot_offset = Vector2( 188, 0 )
+margin_bottom = 500.5
 alignment = 1
 
 [node name="Level" type="HBoxContainer" parent="Buttons"]
@@ -123,13 +126,15 @@ text = " > "
 modulate = Color( 1, 1, 1, 0 )
 margin_top = 150.0
 margin_right = 572.0
-margin_bottom = 516.0
+margin_bottom = 337.0
 size_flags_vertical = 3
 
 [node name="Play" type="Button" parent="Buttons"]
-margin_top = 540.0
+margin_top = 361.0
 margin_right = 572.0
-margin_bottom = 666.0
+margin_bottom = 548.0
+size_flags_horizontal = 5
+size_flags_vertical = 7
 text = "PLAY"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -137,15 +142,16 @@ __meta__ = {
 
 [node name="HSeparator2" type="HSeparator" parent="Buttons"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 690.0
+margin_top = 572.0
 margin_right = 572.0
-margin_bottom = 770.0
+margin_bottom = 759.0
 rect_min_size = Vector2( 0, 80 )
+size_flags_vertical = 3
 
 [node name="Settings" type="HBoxContainer" parent="Buttons"]
-margin_top = 794.0
+margin_top = 783.0
 margin_right = 572.0
-margin_bottom = 914.0
+margin_bottom = 903.0
 custom_constants/separation = 18
 alignment = 1
 __meta__ = {
@@ -257,9 +263,9 @@ texture_normal = ExtResource( 6 )
 
 [node name="SimonDalvai" type="LinkButton" parent="Buttons"]
 margin_left = 93.0
-margin_top = 938.0
+margin_top = 927.0
 margin_right = 479.0
-margin_bottom = 1012.0
+margin_bottom = 1001.0
 focus_mode = 2
 size_flags_horizontal = 4
 custom_fonts/font = SubResource( 13 )

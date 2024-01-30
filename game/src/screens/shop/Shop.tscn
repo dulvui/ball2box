@@ -21,9 +21,9 @@ anchor_top = 0.568
 anchor_right = 0.5
 anchor_bottom = 0.568
 margin_left = -321.0
-margin_top = -471.54
+margin_top = -365.04
 margin_right = 321.0
-margin_bottom = 441.46
+margin_bottom = 390.96
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 642.0
@@ -57,13 +57,13 @@ text = " > "
 modulate = Color( 1, 1, 1, 0 )
 margin_top = 150.0
 margin_right = 642.0
-margin_bottom = 325.0
+margin_bottom = 318.0
 size_flags_vertical = 3
 
 [node name="Bounce" type="ProgressBar" parent="VBoxContainer"]
-margin_top = 349.0
+margin_top = 342.0
 margin_right = 642.0
-margin_bottom = 469.0
+margin_bottom = 462.0
 rect_min_size = Vector2( 0, 120 )
 size_flags_vertical = 1
 min_value = 0.6
@@ -85,9 +85,9 @@ __meta__ = {
 }
 
 [node name="Mass" type="ProgressBar" parent="VBoxContainer"]
-margin_top = 493.0
+margin_top = 486.0
 margin_right = 642.0
-margin_bottom = 613.0
+margin_bottom = 606.0
 rect_min_size = Vector2( 0, 120 )
 size_flags_vertical = 1
 min_value = 4.0
@@ -106,21 +106,37 @@ text = "MASS"
 align = 1
 valign = 1
 
-[node name="Select" type="Button" parent="VBoxContainer"]
-margin_top = 637.0
+[node name="Buttons" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 630.0
 margin_right = 642.0
-margin_bottom = 763.0
+margin_bottom = 756.0
+custom_constants/separation = 40
+
+[node name="Back" type="Button" parent="VBoxContainer/Buttons"]
+margin_right = 289.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+text = "BACK"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Select" type="Button" parent="VBoxContainer/Buttons"]
+margin_left = 329.0
+margin_right = 642.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
 text = "SELECT"
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Star" type="TextureRect" parent="VBoxContainer/Select"]
+[node name="Star" type="TextureRect" parent="VBoxContainer/Buttons/Select"]
 visible = false
 modulate = Color( 1, 0.968627, 0.227451, 1 )
-anchor_left = 0.768
+anchor_left = 0.690275
 anchor_top = 0.048
-anchor_right = 0.924
+anchor_right = 1.01025
 anchor_bottom = 0.841
 margin_left = -0.0559998
 margin_top = -0.0479999
@@ -131,16 +147,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Back" type="Button" parent="VBoxContainer"]
-margin_top = 787.0
-margin_right = 642.0
-margin_bottom = 913.0
-text = "BACK"
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Prev" to="." method="_on_Prev_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Next" to="." method="_on_Next_pressed"]
-[connection signal="pressed" from="VBoxContainer/Select" to="." method="_on_Select_pressed"]
-[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="VBoxContainer/Buttons/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="VBoxContainer/Buttons/Select" to="." method="_on_Select_pressed"]

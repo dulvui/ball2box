@@ -11,6 +11,6 @@ NEXT_LEVEL,level {amount},level {amount},level {amount},level {amount}
 REPLAY,replay,nochmal,rigioca,repetir
 MENU,menu,menü,menu,menu
 BUY,buy,kaufen,compra,compra
-FOLLOW,follow me,folge mir,seguimi,sigame
-MORE_GAMES,other games,andere spiele,altri giochi,otros juegos
+FOLLOW,follow,folge,seguimi,sigame
+MORE_GAMES,games,spiele,giochi,juegos
 NEXT,next,nächstes,prossimo,próximo

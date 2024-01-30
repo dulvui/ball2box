@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://src/levels/base-level/LevelBase.gd" type="Script" id=1]
 [ext_resource path="res://src/levels/base-level/base-3d/Base3D.tscn" type="PackedScene" id=2]
@@ -106,22 +106,6 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=19]
-resource_name = "TopbarFadeIn"
-length = 1.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("UI/Topbar:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-
 [sub_resource type="PhysicsMaterial" id=15]
 friction = 0.5
 bounce = 0.9
@@ -136,7 +120,6 @@ anims/GoToMenu = SubResource( 2 )
 anims/GoToShop = SubResource( 3 )
 anims/Idle = SubResource( 20 )
 anims/RESET = SubResource( 18 )
-anims/TopbarFadeIn = SubResource( 19 )
 
 [node name="Tween" type="Tween" parent="."]
 
@@ -160,7 +143,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.06394, 9.04416, 0.575264 )
 [node name="Tutorial" parent="." instance=ExtResource( 13 )]
 
 [node name="Shop3D" parent="." instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 58.6909, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 61.1004, 0 )
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -197,16 +180,17 @@ rect_scale = Vector2( 1, 1 )
 [node name="VSeparator" type="VSeparator" parent="UI/Topbar"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 108.0
-margin_right = 588.0
+margin_right = 552.0
 margin_bottom = 126.0
 size_flags_horizontal = 3
 
 [node name="Pause" type="Button" parent="UI/Topbar"]
 pause_mode = 2
 modulate = Color( 1, 1, 1, 0.705882 )
-margin_left = 592.0
+margin_left = 556.0
 margin_right = 656.0
 margin_bottom = 126.0
+rect_min_size = Vector2( 100, 0 )
 icon = ExtResource( 14 )
 icon_align = 1
 script = ExtResource( 15 )

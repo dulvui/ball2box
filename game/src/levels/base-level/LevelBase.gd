@@ -33,7 +33,6 @@ func _ready() -> void:
 			get_tree().paused = true
 			main.animation_player.play("FirstFadeIn")
 			animation_player.play("FadeIn")
-			animation_player.play("TopbarFadeIn")
 		else:
 			get_tree().paused = false
 	else:
@@ -78,8 +77,6 @@ func _on_Bin_win() -> void:
 	
 
 func _on_Shop_back() -> void:
-	shop.animation_player.play("FadeOut")
-	yield(shop.animation_player,"animation_finished")
 	shop.hide()
 	
 	main.show()
@@ -92,7 +89,6 @@ func _on_Shop_select() -> void:
 	# menu animations
 	shop.hide()
 	animation_player.play("GoToMenu")
-	main.play()
 	
 	# ball setup
 	var pos:Transform = ball.initial_position
@@ -106,6 +102,8 @@ func _on_Shop_select() -> void:
 	ball.initial_position = pos
 	ball.teletransport_to_inital()
 	_connect_ball_signals()
+	
+	get_tree().paused = false
 
 
 func _on_Shop_prev() -> void:

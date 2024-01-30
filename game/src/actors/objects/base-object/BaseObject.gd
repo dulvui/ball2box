@@ -23,6 +23,7 @@ func fade_in() -> void:
 		yield(animation_player,"animation_finished")
 		if delay > 0:
 			yield(get_tree().create_timer(delay/10.0), "timeout")
+			
 		if animation_player.has_animation("Act"):
 			animation_player.play("Act")
 			
