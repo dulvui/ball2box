@@ -20,6 +20,8 @@ onready var animation_player:AnimationPlayer = $AnimationPlayer
 onready var main:Control = $UI/Main
 onready var levels:Control = $UI/LevelSelect
 onready var shop:Control = $UI/Shop
+onready var info:Control = $UI/Info
+
 
 var portals:Spatial
 
@@ -221,5 +223,15 @@ func _on_Main_levels():
 
 
 func _on_LevelSelect_back():
-	main.show()
 	levels.hide()
+	main.show()
+
+
+func _on_Main_info():
+	main.hide()
+	info.show()
+
+
+func _on_Info_back():
+	info.hide()
+	main.show()

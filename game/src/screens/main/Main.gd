@@ -6,6 +6,7 @@ extends Control
 
 signal play
 signal levels
+signal info
 
 onready var animation_player:AnimationPlayer = $AnimationPlayer
 onready var star1:TextureRect = $Buttons/Level/Stars/Star1
@@ -31,18 +32,10 @@ func _on_Play_pressed() -> void:
 	AudioMachine.click()
 	emit_signal("play")
 
-func _on_Sfx_pressed() -> void:
-	AudioMachine.click()
-	Global.toggle_sfx()
-
-func _on_Music_pressed() -> void:
-	AudioMachine.click()
-	Global.toggle_music()
 	
-
 func _on_InfoButton_pressed() -> void:
 	AudioMachine.click()
-	animation_player.play("InfoFadeIn")
+	emit_signal("info")
 
 func _on_Info_back() -> void:
 	AudioMachine.click()
@@ -72,5 +65,16 @@ func _on_NextLevel_pressed() -> void:
 		get_tree().change_scene("res://src/levels/Level%s.tscn"%(Global.current_level))
 
 
-func _on_LevelButton_pressed():
+func _on_LevelButton_pressed() -> void:
 	emit_signal("levels")
+
+
+func _on_SfxButton_pressed() -> void:
+	AudioMachine.click()
+	Global.toggle_sfx()
+
+
+func _on_MusicButton_pressed() -> void:
+	AudioMachine.click()
+	Global.toggle_music()
+	

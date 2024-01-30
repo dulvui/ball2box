@@ -312,3 +312,8 @@ text = "simondalvai.org"
 [connection signal="pressed" from="Buttons/Level/LevelControl/LevelButton" to="." method="_on_LevelButton_pressed"]
 [connection signal="pressed" from="Buttons/Level/LevelControl/NextLevel" to="." method="_on_NextLevel_pressed"]
 [connection signal="pressed" from="Buttons/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Buttons/Settings/Sfx/SfxButton" to="." method="_on_SfxButton_pressed"]
+[connection signal="pressed" from="Buttons/Settings/Music/MusicButton" to="." method="_on_MusicButton_pressed"]
+[connection signal="pressed" from="Buttons/Settings/Info/InfoButton" to="." method="_on_InfoButton_pressed"]
+[connection signal="pressed" from="Buttons/Settings/Github/GithubButton" to="." method="_on_GithubButton_pressed"]
+[connection signal="pressed" from="Buttons/SimonDalvai" to="." method="_on_SimonDalvai_pressed"]
