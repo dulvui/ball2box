@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/font/manrope.thin.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://theme.tres" type="Theme" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/screens/main/Main.gd" type="Script" id=4]
 [ext_resource path="res://panel.tres" type="StyleBox" id=5]
 [ext_resource path="res://assets/github.svg" type="Texture" id=6]
+[ext_resource path="res://assets/star.png" type="Texture" id=7]
 [ext_resource path="res://assets/musicOn.png" type="Texture" id=8]
 [ext_resource path="res://assets/audioOn.png" type="Texture" id=11]
 [ext_resource path="res://assets/audioOff.png" type="Texture" id=12]
@@ -83,47 +84,85 @@ margin_right = 267.0
 margin_bottom = 500.5
 alignment = 1
 
-[node name="Level" type="HBoxContainer" parent="Buttons"]
-margin_top = 241.0
+[node name="Level" type="VBoxContainer" parent="Buttons"]
+margin_top = 129.0
 margin_right = 534.0
-margin_bottom = 367.0
+margin_bottom = 479.0
+
+[node name="Stars" type="HBoxContainer" parent="Buttons/Level"]
+margin_right = 534.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 0, 200 )
+rect_pivot_offset = Vector2( -1820, 104.5 )
 alignment = 1
 
-[node name="PrevLevel" type="Button" parent="Buttons/Level"]
+[node name="Star1" type="TextureRect" parent="Buttons/Level/Stars"]
+margin_right = 175.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 7 )
+stretch_mode = 6
+
+[node name="Star2" type="TextureRect" parent="Buttons/Level/Stars"]
+margin_left = 179.0
+margin_right = 354.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 7 )
+stretch_mode = 6
+
+[node name="Star3" type="TextureRect" parent="Buttons/Level/Stars"]
+margin_left = 358.0
+margin_right = 534.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 7 )
+stretch_mode = 6
+
+[node name="LevelControl" type="HBoxContainer" parent="Buttons/Level"]
+margin_top = 224.0
+margin_right = 534.0
+margin_bottom = 350.0
+alignment = 1
+
+[node name="PrevLevel" type="Button" parent="Buttons/Level/LevelControl"]
 margin_right = 93.0
 margin_bottom = 126.0
 text = "<"
 
-[node name="VSeparator" type="VSeparator" parent="Buttons/Level"]
+[node name="VSeparator" type="VSeparator" parent="Buttons/Level/LevelControl"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 97.0
 margin_right = 105.0
 margin_bottom = 126.0
 size_flags_horizontal = 3
 
-[node name="LevelButton" type="Button" parent="Buttons/Level"]
+[node name="LevelButton" type="Button" parent="Buttons/Level/LevelControl"]
 margin_left = 109.0
 margin_right = 424.0
 margin_bottom = 126.0
 text = "level 12"
 
-[node name="VSeparator2" type="VSeparator" parent="Buttons/Level"]
+[node name="VSeparator2" type="VSeparator" parent="Buttons/Level/LevelControl"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 428.0
 margin_right = 437.0
 margin_bottom = 126.0
 size_flags_horizontal = 3
 
-[node name="NextLevel" type="Button" parent="Buttons/Level"]
+[node name="NextLevel" type="Button" parent="Buttons/Level/LevelControl"]
 margin_left = 441.0
 margin_right = 534.0
 margin_bottom = 126.0
 text = ">"
 
 [node name="Play" type="Button" parent="Buttons"]
-margin_top = 391.0
+margin_top = 503.0
 margin_right = 534.0
-margin_bottom = 517.0
+margin_bottom = 629.0
 size_flags_horizontal = 5
 text = "PLAY"
 __meta__ = {
@@ -148,9 +187,9 @@ rect_min_size = Vector2( 0, 80 )
 size_flags_vertical = 3
 
 [node name="Settings" type="HBoxContainer" parent="Buttons"]
-margin_top = 541.0
+margin_top = 653.0
 margin_right = 534.0
-margin_bottom = 661.0
+margin_bottom = 773.0
 custom_constants/separation = 18
 alignment = 1
 __meta__ = {
@@ -261,15 +300,15 @@ texture_normal = ExtResource( 6 )
 
 [node name="SimonDalvai" type="LinkButton" parent="Buttons"]
 margin_left = 74.0
-margin_top = 685.0
+margin_top = 797.0
 margin_right = 460.0
-margin_bottom = 759.0
+margin_bottom = 871.0
 focus_mode = 2
 size_flags_horizontal = 4
 custom_fonts/font = SubResource( 13 )
 text = "simondalvai.org"
 
-[connection signal="pressed" from="Buttons/Level/PrevLevel" to="." method="_on_PrevLevel_pressed"]
-[connection signal="pressed" from="Buttons/Level/LevelButton" to="." method="_on_LevelButton_pressed"]
-[connection signal="pressed" from="Buttons/Level/NextLevel" to="." method="_on_NextLevel_pressed"]
+[connection signal="pressed" from="Buttons/Level/LevelControl/PrevLevel" to="." method="_on_PrevLevel_pressed"]
+[connection signal="pressed" from="Buttons/Level/LevelControl/LevelButton" to="." method="_on_LevelButton_pressed"]
+[connection signal="pressed" from="Buttons/Level/LevelControl/NextLevel" to="." method="_on_NextLevel_pressed"]
 [connection signal="pressed" from="Buttons/Play" to="." method="_on_Play_pressed"]

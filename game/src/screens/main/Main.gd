@@ -8,13 +8,24 @@ signal play
 signal levels
 
 onready var animation_player:AnimationPlayer = $AnimationPlayer
+onready var star1:TextureRect = $Buttons/Level/Stars/Star1
+onready var star2:TextureRect = $Buttons/Level/Stars/Star2
+onready var star3:TextureRect = $Buttons/Level/Stars/Star3
 
 
 func _ready() -> void:
 	$Buttons/Settings/Music/MusicButton.pressed = Global.music
 	$Buttons/Settings/Sfx/SfxButton.pressed = Global.sfx
-	$Buttons/Level/LevelButton.text = "level " + str(Global.current_level)
-
+	$Buttons/Level/LevelControl/LevelButton.text = "level " + str(Global.current_level)
+	
+	var stars:int = Global.level_stars[Global.current_level - 1]
+	
+	if stars >= 1:
+		star1.modulate = Color("#fce527")
+	if stars >= 2:
+		star2.modulate = Color("#fce527")
+	if stars >= 3: # on some devices wh old versions, > 3 stars could happen
+		star2.modulate = Color("#fce527")
 	
 func _on_Play_pressed() -> void:
 	AudioMachine.click()
