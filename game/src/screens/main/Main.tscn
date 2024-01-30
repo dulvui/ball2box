@@ -89,38 +89,35 @@ margin_bottom = 126.0
 alignment = 1
 
 [node name="PrevLevel" type="Button" parent="Buttons/Level"]
-visible = false
-margin_right = 89.0
+margin_right = 93.0
 margin_bottom = 126.0
-text = " < "
+text = "<"
 
 [node name="VSeparator" type="VSeparator" parent="Buttons/Level"]
-visible = false
 modulate = Color( 1, 1, 1, 0 )
-margin_right = 126.0
+margin_left = 97.0
+margin_right = 105.0
 margin_bottom = 126.0
 size_flags_horizontal = 3
 
 [node name="LevelButton" type="Button" parent="Buttons/Level"]
-margin_left = 129.0
-margin_right = 404.0
+margin_left = 109.0
+margin_right = 424.0
 margin_bottom = 126.0
 text = "level 12"
 
 [node name="VSeparator2" type="VSeparator" parent="Buttons/Level"]
-visible = false
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 315.0
-margin_right = 572.0
+margin_left = 428.0
+margin_right = 437.0
 margin_bottom = 126.0
 size_flags_horizontal = 3
 
 [node name="NextLevel" type="Button" parent="Buttons/Level"]
-visible = false
-margin_left = 483.0
-margin_right = 572.0
+margin_left = 441.0
+margin_right = 534.0
 margin_bottom = 126.0
-text = " > "
+text = ">"
 
 [node name="HSeparator" type="HSeparator" parent="Buttons"]
 modulate = Color( 1, 1, 1, 0 )
@@ -269,5 +266,7 @@ size_flags_horizontal = 4
 custom_fonts/font = SubResource( 13 )
 text = "simondalvai.org"
 
+[connection signal="pressed" from="Buttons/Level/PrevLevel" to="." method="_on_PrevLevel_pressed"]
 [connection signal="pressed" from="Buttons/Level/LevelButton" to="." method="_on_LevelButton_pressed"]
+[connection signal="pressed" from="Buttons/Level/NextLevel" to="." method="_on_NextLevel_pressed"]
 [connection signal="pressed" from="Buttons/Play" to="." method="_on_Play_pressed"]
