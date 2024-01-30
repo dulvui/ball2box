@@ -32,7 +32,7 @@ var next_transform:Transform
 
 
 func _ready() -> void:
-	initial_position = transform
+	initial_position = Transform(transform)
 	teletransport_to_inital()
 
 func _process(delta:float) -> void:
