@@ -84,8 +84,9 @@ margin_bottom = 500.5
 alignment = 1
 
 [node name="Level" type="HBoxContainer" parent="Buttons"]
+margin_top = 241.0
 margin_right = 534.0
-margin_bottom = 126.0
+margin_bottom = 367.0
 alignment = 1
 
 [node name="PrevLevel" type="Button" parent="Buttons/Level"]
@@ -119,13 +120,6 @@ margin_right = 534.0
 margin_bottom = 126.0
 text = ">"
 
-[node name="HSeparator" type="HSeparator" parent="Buttons"]
-modulate = Color( 1, 1, 1, 0 )
-margin_top = 150.0
-margin_right = 534.0
-margin_bottom = 367.0
-size_flags_vertical = 3
-
 [node name="Play" type="Button" parent="Buttons"]
 margin_top = 391.0
 margin_right = 534.0
@@ -136,18 +130,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HSeparator2" type="HSeparator" parent="Buttons"]
+[node name="HSeparator" type="HSeparator" parent="Buttons"]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 541.0
+margin_top = 300.0
+margin_right = 534.0
+margin_bottom = 759.0
+size_flags_vertical = 3
+
+[node name="HSeparator2" type="HSeparator" parent="Buttons"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 300.0
 margin_right = 534.0
 margin_bottom = 759.0
 rect_min_size = Vector2( 0, 80 )
 size_flags_vertical = 3
 
 [node name="Settings" type="HBoxContainer" parent="Buttons"]
-margin_top = 783.0
+margin_top = 541.0
 margin_right = 534.0
-margin_bottom = 903.0
+margin_bottom = 661.0
 custom_constants/separation = 18
 alignment = 1
 __meta__ = {
@@ -258,9 +261,9 @@ texture_normal = ExtResource( 6 )
 
 [node name="SimonDalvai" type="LinkButton" parent="Buttons"]
 margin_left = 74.0
-margin_top = 927.0
+margin_top = 685.0
 margin_right = 460.0
-margin_bottom = 1001.0
+margin_bottom = 759.0
 focus_mode = 2
 size_flags_horizontal = 4
 custom_fonts/font = SubResource( 13 )
