@@ -66,7 +66,7 @@ translations=PoolStringArray( "res://assets/i18n/UltimateTossi18n.de.translation
 
 [physics]
 
-common/physics_fps=120
+common/physics_fps=240
 2d/default_gravity_vector=Vector2( 0, 9.8 )
 3d/default_gravity_vector=Vector3( 0, -9.8, 0 )
 
