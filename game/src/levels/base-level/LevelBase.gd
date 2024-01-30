@@ -218,3 +218,8 @@ func _on_Main_play():
 func _on_Main_levels():
 	main.hide()
 	levels.show()
+
+
+func _on_LevelSelect_back():
+	main.show()
+	levels.hide()

@@ -180,14 +180,14 @@ rect_scale = Vector2( 1, 1 )
 [node name="VSeparator" type="VSeparator" parent="UI/Topbar"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 108.0
-margin_right = 552.0
+margin_right = 548.0
 margin_bottom = 126.0
 size_flags_horizontal = 3
 
 [node name="Pause" type="Button" parent="UI/Topbar"]
 pause_mode = 2
 modulate = Color( 1, 1, 1, 0.705882 )
-margin_left = 556.0
+margin_left = 552.0
 margin_right = 656.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 100, 0 )
@@ -209,4 +209,5 @@ script = ExtResource( 15 )
 [connection signal="levels" from="UI/LevelComplete" to="." method="_on_LevelComplete_levels"]
 [connection signal="menu" from="UI/LevelComplete" to="." method="_on_LevelComplete_menu"]
 [connection signal="replay" from="UI/LevelComplete" to="." method="_on_LevelComplete_replay"]
+[connection signal="back" from="UI/LevelSelect" to="." method="_on_LevelSelect_back"]
 [connection signal="pressed" from="UI/Topbar/Pause" to="." method="_on_Pause_pressed"]
