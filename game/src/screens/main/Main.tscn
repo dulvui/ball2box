@@ -79,15 +79,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -267.0
-margin_top = -500.5
+margin_top = -502.0
 margin_right = 267.0
-margin_bottom = 500.5
+margin_bottom = 501.0
 alignment = 1
 
 [node name="Level" type="VBoxContainer" parent="Buttons"]
-margin_top = 129.0
 margin_right = 534.0
-margin_bottom = 479.0
+margin_bottom = 350.0
 
 [node name="Stars" type="HBoxContainer" parent="Buttons/Level"]
 margin_right = 534.0
@@ -159,10 +158,17 @@ margin_right = 534.0
 margin_bottom = 126.0
 text = ">"
 
-[node name="Play" type="Button" parent="Buttons"]
-margin_top = 503.0
+[node name="HSeparator2" type="HSeparator" parent="Buttons"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 374.0
 margin_right = 534.0
-margin_bottom = 629.0
+margin_bottom = 379.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="Play" type="Button" parent="Buttons"]
+margin_top = 403.0
+margin_right = 534.0
+margin_bottom = 529.0
 size_flags_horizontal = 5
 text = "PLAY"
 __meta__ = {
@@ -170,26 +176,16 @@ __meta__ = {
 }
 
 [node name="HSeparator" type="HSeparator" parent="Buttons"]
-visible = false
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 300.0
+margin_top = 553.0
 margin_right = 534.0
-margin_bottom = 759.0
-size_flags_vertical = 3
-
-[node name="HSeparator2" type="HSeparator" parent="Buttons"]
-visible = false
-modulate = Color( 1, 1, 1, 0 )
-margin_top = 300.0
-margin_right = 534.0
-margin_bottom = 759.0
-rect_min_size = Vector2( 0, 80 )
+margin_bottom = 761.0
 size_flags_vertical = 3
 
 [node name="Settings" type="HBoxContainer" parent="Buttons"]
-margin_top = 653.0
+margin_top = 785.0
 margin_right = 534.0
-margin_bottom = 773.0
+margin_bottom = 905.0
 custom_constants/separation = 18
 alignment = 1
 __meta__ = {
@@ -300,9 +296,9 @@ texture_normal = ExtResource( 6 )
 
 [node name="SimonDalvai" type="LinkButton" parent="Buttons"]
 margin_left = 74.0
-margin_top = 797.0
+margin_top = 929.0
 margin_right = 460.0
-margin_bottom = 871.0
+margin_bottom = 1003.0
 focus_mode = 2
 size_flags_horizontal = 4
 custom_fonts/font = SubResource( 13 )
