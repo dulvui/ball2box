@@ -30,8 +30,8 @@ func _ready() -> void:
 	
 	tutorial.init()
 	
-	if Global.just_opened:
-		Global.just_opened = false
+	if Global.show_main:
+		Global.show_main = false
 
 		if Global.tutorial_swipe_done:
 			get_tree().paused = true

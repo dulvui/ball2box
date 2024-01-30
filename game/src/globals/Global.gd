@@ -15,7 +15,7 @@ onready var LEVELS:int = 135
 
 var current_level:int = 1
 
-var just_opened:bool = true
+var show_main:bool = true
 
 var tutorial_swipe_done:bool = false
 var tutorial_tap_done:bool = false
