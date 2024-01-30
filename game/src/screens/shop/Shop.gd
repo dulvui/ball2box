@@ -51,9 +51,6 @@ func _on_Select_pressed() -> void:
 	var ball = BallMachine.get_current_ball_info()
 	
 	var result:int = Global.unlock_ball()
-	if result > 0:
-		BallMachine.select()
-		_set_select_label()
 	if result == 1:
 		select_button.text = "PLAY"
 		# special cases like follow, more games etc...
@@ -69,8 +66,10 @@ func _on_Select_pressed() -> void:
 				else:
 					OS.shell_open("https://play.google.com/store/apps/dev?id=7836644900810357474&hl=en")
 	
+	if result > 0:
+		BallMachine.select()
+		_set_select_label()
 		emit_signal("select")
-		
 
 func _set_select_label() -> void:
 	var ball = BallMachine.get_current_ball_info()
