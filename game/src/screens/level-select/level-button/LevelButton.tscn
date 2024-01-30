@@ -17,39 +17,38 @@ corner_radius_bottom_left = 20
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -720.0
-margin_bottom = -1280.0
-rect_scale = Vector2( 0.6, 0.6 )
+rect_scale = Vector2( 0.4, 0.4 )
 size_flags_horizontal = 3
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-margin_right = 321.0
-margin_bottom = 310.0
+anchor_right = 0.257
+anchor_bottom = 0.131
+margin_right = 122.96
+margin_bottom = 111.32
 rect_scale = Vector2( 0.6, 0.6 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="Panel" type="Panel" parent="MarginContainer"]
-margin_right = 321.0
-margin_bottom = 310.0
+margin_right = 308.0
+margin_bottom = 279.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="Info" type="VBoxContainer" parent="MarginContainer"]
-margin_right = 321.0
-margin_bottom = 310.0
-custom_constants/separation = -24
+margin_right = 308.0
+margin_bottom = 279.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="MarginContainer/Info"]
-margin_top = 58.0
-margin_right = 321.0
-margin_bottom = 176.0
+margin_top = 18.0
+margin_right = 308.0
+margin_bottom = 136.0
 rect_pivot_offset = Vector2( 160, 59 )
 text = "2022"
 align = 1
@@ -58,37 +57,36 @@ __meta__ = {
 }
 
 [node name="Stars" type="HBoxContainer" parent="MarginContainer/Info"]
-margin_top = 152.0
-margin_right = 321.0
-margin_bottom = 252.0
+margin_top = 160.0
+margin_right = 308.0
+margin_bottom = 260.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Star1" type="TextureRect" parent="MarginContainer/Info/Stars"]
-margin_left = 6.0
-margin_right = 106.0
+margin_right = 100.0
 margin_bottom = 100.0
 texture = ExtResource( 3 )
 
 [node name="Star2" type="TextureRect" parent="MarginContainer/Info/Stars"]
-margin_left = 110.0
-margin_right = 210.0
+margin_left = 104.0
+margin_right = 204.0
 margin_bottom = 100.0
 texture = ExtResource( 3 )
 
 [node name="Star3" type="TextureRect" parent="MarginContainer/Info/Stars"]
-margin_left = 214.0
-margin_right = 314.0
+margin_left = 208.0
+margin_right = 308.0
 margin_bottom = 100.0
 texture = ExtResource( 3 )
 
 [node name="Button" type="Button" parent="MarginContainer"]
 pause_mode = 2
 self_modulate = Color( 1, 1, 1, 0 )
-margin_right = 321.0
-margin_bottom = 310.0
+margin_right = 308.0
+margin_bottom = 279.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

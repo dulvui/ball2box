@@ -10,14 +10,16 @@ const moveEase:int = Tween.EASE_OUT
 onready var camera:Camera = $Base/Camera
 onready var tween:Tween = $Tween
 onready var level_complete:Control = $UI/LevelComplete
-onready var main:Control = $UI/Main
-onready var shop:Control = $UI/Shop
 onready var shop3D:Spatial = $Shop3D
 onready var ball:Ball = $Ball
 onready var star1:Spatial = $Star1
 onready var star2:Spatial = $Star2
 onready var tutorial:Spatial = $Tutorial
 onready var animation_player:AnimationPlayer = $AnimationPlayer
+
+onready var main:Control = $UI/Main
+onready var levels:Control = $UI/LevelSelect
+onready var shop:Control = $UI/Shop
 
 var portals:Spatial
 
@@ -187,11 +189,11 @@ func _on_Ball_shoot() -> void:
 func _on_LevelComplete_levels():
 	level_complete.hide()
 	ball.reset_position()
-	main.show_levels()
 	level_complete.reset_stars()
 	AudioMachine.reset()
 	star1.show_star()
 	star2.show_star()
+	levels.show()
 
 func _connect_ball_signals():
 	if ball.is_connected("reset", self, "_on_Ball_reset"):
@@ -211,3 +213,8 @@ func _on_Main_play():
 	animation_player.play("GoToShop")
 	shop3D.fade_in()
 	shop.show()
+
+
+func _on_Main_levels():
+	main.hide()
+	levels.show()

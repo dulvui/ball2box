@@ -5,6 +5,7 @@
 extends Control
 
 signal play
+signal levels
 
 onready var animation_player:AnimationPlayer = $AnimationPlayer
 
@@ -12,7 +13,7 @@ onready var animation_player:AnimationPlayer = $AnimationPlayer
 func _ready() -> void:
 	$Buttons/Settings/Music/MusicButton.pressed = Global.music
 	$Buttons/Settings/Sfx/SfxButton.pressed = Global.sfx
-	$Buttons/Level/Level.text = "  level " + str(Global.current_level) + "  "
+	$Buttons/Level/LevelButton.text = "level " + str(Global.current_level)
 
 	
 func _on_Play_pressed() -> void:
@@ -58,3 +59,7 @@ func _on_NextLevel_pressed() -> void:
 	if Global.current_level + 1 < Global.LEVELS and Global.level_stars[Global.current_level] >= 0:
 		Global.current_level += 1
 		get_tree().change_scene("res://src/levels/Level%s.tscn"%(Global.current_level - 1))
+
+
+func _on_LevelButton_pressed():
+	emit_signal("levels")

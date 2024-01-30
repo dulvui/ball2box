@@ -1,8 +1,10 @@
 extends Control
 
+signal back
+
 const level_button:PackedScene = preload("res://src/screens/level-select/level-button/LevelButton.tscn")
 
-onready var level_grid:GridContainer = $Levels 
+onready var level_grid:GridContainer = $VBoxContainer/Levels
 
 var current_page:int = 0
 
@@ -29,6 +31,7 @@ func _set_up_buttons() -> void:
 			level_grid.add_child(button)
 
 func _on_Prev_pressed() -> void:
+	AudioMachine.click()
 	current_page -= 1
 	if current_page < 0:
 		current_page = (Global.LEVELS/15) -1
@@ -36,7 +39,13 @@ func _on_Prev_pressed() -> void:
 
 
 func _on_Next_pressed() -> void:
+	AudioMachine.click()
 	current_page += 1
 	if current_page > (Global.LEVELS/15) -1:
 		current_page = 0
 	_set_up_buttons()
+
+
+func _on_Back_pressed():
+	AudioMachine.click()
+	emit_signal("back")

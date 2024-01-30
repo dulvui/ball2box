@@ -200,6 +200,7 @@ script = ExtResource( 15 )
 [connection signal="reset" from="Ball" to="." method="_on_Ball_reset"]
 [connection signal="shoot" from="Ball" to="." method="_on_Ball_shoot"]
 [connection signal="win" from="Bin" to="." method="_on_Bin_win"]
+[connection signal="levels" from="UI/Main" to="." method="_on_Main_levels"]
 [connection signal="play" from="UI/Main" to="." method="_on_Main_play"]
 [connection signal="back" from="UI/Shop" to="." method="_on_Shop_back"]
 [connection signal="next" from="UI/Shop" to="." method="_on_Shop_next"]

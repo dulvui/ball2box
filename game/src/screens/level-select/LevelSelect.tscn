@@ -1,8 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://theme.tres" type="Theme" id=1]
-[ext_resource path="res://assets/right.png" type="Texture" id=2]
-[ext_resource path="res://assets/left.png" type="Texture" id=3]
 [ext_resource path="res://src/screens/level-select/LevelSelect.gd" type="Script" id=4]
 
 [node name="LevelSelect" type="Control"]
@@ -12,71 +10,74 @@ anchor_bottom = 1.0
 theme = ExtResource( 1 )
 script = ExtResource( 4 )
 
-[node name="Levels" type="GridContainer" parent="."]
-pause_mode = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
-anchor_top = 0.407031
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.407031
-margin_left = -310.0
-margin_top = -440.0
-margin_right = 310.0
-margin_bottom = 440.0
-rect_scale = Vector2( 0.9, 0.9 )
+anchor_bottom = 0.5
+margin_left = -315.0
+margin_top = -505.0
+margin_right = 316.0
+margin_bottom = 569.0
+
+[node name="Levels" type="GridContainer" parent="VBoxContainer"]
+pause_mode = 2
+margin_right = 631.0
+margin_bottom = 924.0
 rect_pivot_offset = Vector2( 310, 440 )
-custom_constants/vseparation = 206
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 180
 custom_constants/hseparation = 21
 columns = 3
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Back" type="Button" parent="."]
-anchor_left = 0.506
-anchor_top = 0.896
-anchor_right = 0.506
-anchor_bottom = 0.896
-margin_left = -130.32
-margin_top = -62.88
-margin_right = 130.68
-margin_bottom = 63.12
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 948.0
+margin_right = 631.0
+margin_bottom = 1074.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Prev" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_right = 93.0
+margin_bottom = 126.0
+text = "<"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 97.0
+margin_right = 196.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+
+[node name="Back" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 200.0
+margin_right = 430.0
+margin_bottom = 126.0
 rect_min_size = Vector2( 115, 0 )
-text = " menu "
+text = "back"
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Next" type="TextureButton" parent="."]
-modulate = Color( 0.529412, 0.917647, 0.807843, 1 )
-anchor_left = 0.833
-anchor_top = 0.895
-anchor_right = 0.833
-anchor_bottom = 0.895
-margin_left = -99.7601
-margin_top = -99.6001
-margin_right = 0.239929
-margin_bottom = 0.399902
-rect_scale = Vector2( 2, 2 )
-texture_normal = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 434.0
+margin_right = 534.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
 
-[node name="Prev" type="TextureButton" parent="."]
-modulate = Color( 0.529412, 0.917647, 0.807843, 1 )
-anchor_left = 0.167
-anchor_top = 0.895
-anchor_right = 0.167
-anchor_bottom = 0.895
-margin_left = -100.24
-margin_top = -99.6001
-margin_right = -0.240005
-margin_bottom = 0.399902
-rect_scale = Vector2( 2, 2 )
-texture_normal = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+[node name="Next" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 538.0
+margin_right = 631.0
+margin_bottom = 126.0
+text = ">"
 
-[connection signal="pressed" from="Next" to="." method="_on_Next_pressed"]
-[connection signal="pressed" from="Prev" to="." method="_on_Prev_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Prev" to="." method="_on_Prev_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Next" to="." method="_on_Next_pressed"]

@@ -26,7 +26,7 @@ margin_right = 321.0
 margin_bottom = 390.96
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 642.0
+margin_right = 696.0
 margin_bottom = 126.0
 custom_constants/separation = 130
 alignment = 1
@@ -35,34 +35,34 @@ __meta__ = {
 }
 
 [node name="Prev" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_right = 89.0
+margin_right = 93.0
 margin_bottom = 126.0
 rect_pivot_offset = Vector2( 50, 50 )
-text = " < "
+text = "<"
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 219.0
-margin_right = 423.0
+margin_left = 223.0
+margin_right = 473.0
 margin_bottom = 126.0
 size_flags_horizontal = 3
 
 [node name="Next" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 553.0
-margin_right = 642.0
+margin_left = 603.0
+margin_right = 696.0
 margin_bottom = 126.0
-text = " > "
+text = ">"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_top = 150.0
-margin_right = 642.0
+margin_right = 696.0
 margin_bottom = 318.0
 size_flags_vertical = 3
 
 [node name="Bounce" type="ProgressBar" parent="VBoxContainer"]
 margin_top = 342.0
-margin_right = 642.0
+margin_right = 696.0
 margin_bottom = 462.0
 rect_min_size = Vector2( 0, 120 )
 size_flags_vertical = 1
@@ -86,7 +86,7 @@ __meta__ = {
 
 [node name="Mass" type="ProgressBar" parent="VBoxContainer"]
 margin_top = 486.0
-margin_right = 642.0
+margin_right = 696.0
 margin_bottom = 606.0
 rect_min_size = Vector2( 0, 120 )
 size_flags_vertical = 1
@@ -108,12 +108,12 @@ valign = 1
 
 [node name="Buttons" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 630.0
-margin_right = 642.0
+margin_right = 696.0
 margin_bottom = 756.0
-custom_constants/separation = 40
+custom_constants/separation = 80
 
 [node name="Back" type="Button" parent="VBoxContainer/Buttons"]
-margin_right = 289.0
+margin_right = 263.0
 margin_bottom = 126.0
 size_flags_horizontal = 3
 text = "BACK"
@@ -122,8 +122,8 @@ __meta__ = {
 }
 
 [node name="Select" type="Button" parent="VBoxContainer/Buttons"]
-margin_left = 329.0
-margin_right = 642.0
+margin_left = 343.0
+margin_right = 696.0
 margin_bottom = 126.0
 size_flags_horizontal = 3
 text = "SELECT"
