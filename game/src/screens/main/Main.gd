@@ -26,7 +26,7 @@ func _ready() -> void:
 	if stars >= 2:
 		star2.modulate = Color("#fce527")
 	if stars >= 3: # on some devices wh old versions, > 3 stars could happen
-		star2.modulate = Color("#fce527")
+		star3.modulate = Color("#fce527")
 	
 func _on_Play_pressed() -> void:
 	AudioMachine.click()

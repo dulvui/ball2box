@@ -84,9 +84,7 @@ func _on_Bin_win() -> void:
 
 func _on_Shop_back() -> void:
 	shop.hide()
-	
 	main.show()
-	main.animation_player.play("FadeIn")
 	shop3D.menu()
 	animation_player.play("GoToMenu")
 
@@ -146,13 +144,11 @@ func _on_Pause_pressed() -> void:
 	AudioMachine.click()
 	if not get_tree().paused:
 		main.show()
-		main.animation_player.play("FadeIn")
 		get_tree().paused = true
 
 func _on_LevelComplete_menu() -> void:
 	ball.reset_position()
 	main.show()
-	main.animation_player.play("FadeIn")
 	level_complete.reset_stars()
 	AudioMachine.reset()
 	star1.show_star()
