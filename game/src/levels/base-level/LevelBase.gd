@@ -126,6 +126,19 @@ func _on_LevelComplete_replay() -> void:
 	star1.show_star()
 	star2.show_star()
 
+func _on_LevelComplete_menu() -> void:
+	level_complete.reset_stars()
+	ball.reset_position()
+	main.set_level()
+	main.show()
+	AudioMachine.reset()
+	star1.show_star()
+	star2.show_star()
+	
+	if portals:
+		portals.reset()
+
+
 func _camera_shake() -> void:
 	var start_position:Vector3 = camera.translation
 	
@@ -145,18 +158,6 @@ func _on_Pause_pressed() -> void:
 	if not get_tree().paused:
 		main.show()
 		get_tree().paused = true
-
-func _on_LevelComplete_menu() -> void:
-	ball.reset_position()
-	main.show()
-	level_complete.reset_stars()
-	AudioMachine.reset()
-	star1.show_star()
-	star2.show_star()
-	
-	if portals:
-		portals.reset()
-
 
 
 func _on_Ball_reset() -> void:

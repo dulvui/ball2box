@@ -165,10 +165,15 @@ margin_right = 534.0
 margin_bottom = 379.0
 rect_min_size = Vector2( 0, 5 )
 
-[node name="Play" type="Button" parent="Buttons"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Buttons"]
 margin_top = 403.0
 margin_right = 534.0
-margin_bottom = 529.0
+margin_bottom = 403.0
+
+[node name="Play" type="Button" parent="Buttons"]
+margin_top = 427.0
+margin_right = 534.0
+margin_bottom = 553.0
 size_flags_horizontal = 5
 text = "PLAY"
 __meta__ = {
@@ -177,7 +182,7 @@ __meta__ = {
 
 [node name="HSeparator" type="HSeparator" parent="Buttons"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 553.0
+margin_top = 577.0
 margin_right = 534.0
 margin_bottom = 761.0
 size_flags_vertical = 3

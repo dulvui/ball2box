@@ -17,6 +17,10 @@ onready var star3:TextureRect = $Buttons/Level/Stars/Star3
 func _ready() -> void:
 	$Buttons/Settings/Music/MusicButton.pressed = Global.music
 	$Buttons/Settings/Sfx/SfxButton.pressed = Global.sfx
+	set_level()
+
+
+func set_level() -> void:
 	$Buttons/Level/LevelControl/LevelButton.text = "level " + str(Global.current_level)
 	
 	var stars:int = Global.level_stars[Global.current_level - 1]
@@ -61,7 +65,7 @@ func _on_PrevLevel_pressed() -> void:
 
 func _on_NextLevel_pressed() -> void:
 	AudioMachine.click()
-	if Global.current_level + 1 < Global.LEVELS and Global.level_stars[Global.current_level] >= 0:
+	if Global.current_level < Global.LEVELS and Global.level_stars[Global.current_level] >= 0:
 		Global.current_level += 1
 		Global.show_main = true
 		get_tree().change_scene("res://src/levels/Level%s.tscn"%(Global.current_level))

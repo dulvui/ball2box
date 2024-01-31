@@ -36,7 +36,7 @@ func _on_Replay_pressed() -> void:
 	
 	# remove automated level increase on replay
 	if first_time_complete:
-		Global.current_level = Global.current_level - 1
+		Global.current_level -= 1
 		first_time_complete = false
 		
 	emit_signal("replay")
@@ -50,7 +50,7 @@ func _on_Replay_pressed() -> void:
 func _on_NextLevel_pressed() -> void:
 	AudioMachine.click()
 	if not first_time_complete:
-		Global.current_level = Global.current_level + 1
+		Global.current_level += 1
 	get_tree().change_scene("res://src/levels/Level%s.tscn"%str(Global.current_level))
 
 func game_over() -> void:
@@ -58,7 +58,7 @@ func game_over() -> void:
 	Global.set_level_stars(stars)
 	
 	if Global.unlock_next_level():
-		Global.current_level = Global.current_level + 1
+		Global.current_level += 1
 		first_time_complete = true
 	
 	if Global.current_level > Global.LEVELS:
@@ -70,6 +70,9 @@ func game_over() -> void:
 
 func _on_Menu_pressed() -> void:
 	AudioMachine.click()
+	if first_time_complete:
+		Global.current_level -= 1
+	
 	emit_signal("menu")
 	animation_player.play("FadeOut")
 	yield(animation_player,"animation_finished")
