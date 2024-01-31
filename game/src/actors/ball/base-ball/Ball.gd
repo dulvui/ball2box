@@ -9,8 +9,6 @@ class_name Ball
 signal reset
 signal shoot
 
-
-
 onready var geometry_up:GeometryInstance = $ImmediateGeometryUp
 onready var geometry_down:GeometryInstance = $ImmediateGeometryDown
 
@@ -69,7 +67,6 @@ func _input(event:InputEvent) -> void:
 func _shoot() -> void:
 	if not shooting and touch_pos != Vector2.ZERO and touch_start != Vector2.ZERO and touch_pos.distance_to(touch_start) > 100:
 		emit_signal("shoot")
-		print("distance %s"%touch_pos.distance_to(touch_start))
 		shooting = true
 		mode = RigidBody.MODE_RIGID
 		var direction = (touch_start - touch_pos)
@@ -146,10 +143,10 @@ func teletransport_to_inital() -> void:
 func _integrate_forces(state:PhysicsDirectBodyState) -> void:
 	# to change the mode to staric on the next iteration
 	# otherwhise ball doesn't move to new position
-	if do_static:
+	if do_static and state.transform == initial_position:
 		do_static = false
 		mode = RigidBody.MODE_STATIC
-	
+
 	if do_teletransport:
 		mode = RigidBody.MODE_RIGID
 		state.transform = next_transform
