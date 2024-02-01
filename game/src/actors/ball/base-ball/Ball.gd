@@ -12,6 +12,9 @@ signal shoot
 onready var geometry_up:GeometryInstance = $ImmediateGeometryUp
 onready var geometry_down:GeometryInstance = $ImmediateGeometryDown
 
+onready var animation_player:AnimationPlayer = $AnimationPlayer
+
+
 const SPEED:int = 1
 
 var shooting:bool = false
@@ -21,12 +24,8 @@ var initial_position:Transform
 var touch_pos:Vector2
 var touch_start:Vector2
 
-var do_teletransport:bool = false
-var do_reset:bool = false
-var do_static:bool = false
-
-
 var next_transform:Transform
+var is_teletransporting:bool = false
 
 
 func _ready() -> void:
@@ -75,11 +74,10 @@ func _shoot() -> void:
 func reset_position() -> void:
 	print("reset")
 	emit_signal("reset")
-	$AnimationPlayer.play("FadeOut")
-	yield($AnimationPlayer, "animation_finished")
-	$AnimationPlayer.play("FadeIn")
+	animation_player.play("FadeOut")
 	shooting = false
-	
+	yield(animation_player, "animation_finished")
+	animation_player.play("FadeIn")
 	teletransport_to_inital()
 	
 func reset_position_no_signal() -> void:
@@ -133,30 +131,18 @@ func draw_indicator_down():
 
 func teletransport(p_transform:Transform) -> void:
 	next_transform = p_transform
-	do_teletransport = true
-	print("teletransport " + str(next_transform))
+	is_teletransporting = true
 	
 func teletransport_to_inital() -> void:
-	print("teletransport to inital")
-	do_reset = true
+	mode = RigidBody.MODE_STATIC
+	transform.origin = initial_position.origin
+	angular_velocity = Vector3.ZERO
+	linear_velocity = Vector3.ZERO
+	rotation = Vector3.ZERO
 
 func _integrate_forces(state:PhysicsDirectBodyState) -> void:
-	# to change the mode to staric on the next iteration
-	# otherwhise ball doesn't move to new position
-	if do_static and state.transform == initial_position:
-		do_static = false
-		mode = RigidBody.MODE_STATIC
-
-	if do_teletransport:
-		mode = RigidBody.MODE_RIGID
+	if is_teletransporting:
 		state.transform = next_transform
-		do_teletransport = false
-		
-	if do_reset:
-		state.transform = initial_position
-		state.angular_velocity = Vector3.ZERO
-		state.linear_velocity = Vector3.ZERO
-		rotation = Vector3.ZERO
-		do_reset = false
-		do_static = true
+		is_teletransporting = false
+
 
