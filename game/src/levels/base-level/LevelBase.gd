@@ -9,7 +9,6 @@ const moveEase:int = Tween.EASE_OUT
 
 onready var camera:Camera = $Base/Camera
 onready var tween:Tween = $Tween
-onready var level_complete:Control = $UI/LevelComplete
 onready var shop3D:Spatial = $Shop3D
 onready var ball:Ball = $Ball
 onready var star1:Spatial = $Star1
@@ -18,6 +17,8 @@ onready var tutorial:Spatial = $Tutorial
 onready var animation_player:AnimationPlayer = $AnimationPlayer
 
 onready var main:Control = $UI/Main
+onready var level_complete:Control = $UI/LevelComplete
+onready var help:Control = $UI/Help
 onready var levels:Control = $UI/LevelSelect
 onready var shop:Control = $UI/Shop
 onready var info:Control = $UI/Info
@@ -217,20 +218,41 @@ func _on_Main_play():
 
 
 func _on_Main_levels():
+	AudioMachine.click()
 	main.hide()
 	levels.show()
 
 
 func _on_LevelSelect_back():
+	AudioMachine.click()
 	levels.hide()
 	main.show()
 
 
 func _on_Main_info():
+	AudioMachine.click()
 	main.hide()
 	info.show()
 
 
 func _on_Info_back():
+	AudioMachine.click()
 	info.hide()
 	main.show()
+
+func _on_LevelComplete_help() -> void:
+	AudioMachine.click()
+	level_complete.hide()
+	help.show()
+
+
+func _on_Help_back() -> void:
+	AudioMachine.click()
+	help.hide()
+	main.show()
+
+
+func _on_Main_help() -> void:
+	AudioMachine.click()
+	main.hide()
+	help.show()

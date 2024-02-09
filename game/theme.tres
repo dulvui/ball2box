@@ -1,10 +1,11 @@
-[gd_resource type="Theme" load_steps=14 format=2]
+[gd_resource type="Theme" load_steps=15 format=2]
 
 [ext_resource path="res://styles/button-normal.tres" type="StyleBox" id=1]
 [ext_resource path="res://styles/button-pressed.tres" type="StyleBox" id=2]
 [ext_resource path="res://assets/font/manrope.thin.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://styles/button-disabled.tres" type="StyleBox" id=4]
 [ext_resource path="res://button-transparent.tres" type="StyleBox" id=5]
+[ext_resource path="res://panel.tres" type="StyleBox" id=6]
 
 [sub_resource type="DynamicFont" id=9]
 size = 85
@@ -29,7 +30,7 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [sub_resource type="DynamicFont" id=10]
-size = 42
+size = 34
 outline_size = 5
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
@@ -37,7 +38,7 @@ use_filter = true
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=11]
-size = 28
+size = 34
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
@@ -66,14 +67,39 @@ Button/styles/focus = ExtResource( 5 )
 Button/styles/hover = ExtResource( 1 )
 Button/styles/normal = ExtResource( 1 )
 Button/styles/pressed = ExtResource( 2 )
-PanelContainer/styles/panel = null
+LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+LineEdit/colors/cursor_color = Color( 0.94, 0.94, 0.94, 1 )
+LineEdit/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
+LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color_uneditable = Color( 0.878431, 0.878431, 0.878431, 1 )
+LineEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+LineEdit/constants/minimum_spaces = 12
+LineEdit/icons/clear = null
+LineEdit/styles/focus = null
+LineEdit/styles/normal = null
+LineEdit/styles/read_only = null
+Panel/styles/panel = ExtResource( 6 )
+PanelContainer/styles/panel = ExtResource( 6 )
 ProgressBar/colors/font_color = Color( 0.94, 0.94, 0.94, 1 )
 ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
 ProgressBar/fonts/font = SubResource( 9 )
 ProgressBar/styles/bg = SubResource( 4 )
 ProgressBar/styles/fg = SubResource( 5 )
+RichTextLabel/colors/default_color = Color( 1, 1, 1, 1 )
+RichTextLabel/colors/font_color_selected = Color( 0.49, 0.49, 0.49, 1 )
+RichTextLabel/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+RichTextLabel/colors/selection_color = Color( 0.1, 0.1, 1, 0.8 )
+RichTextLabel/constants/line_separation = 1
+RichTextLabel/constants/shadow_as_outline = 0
+RichTextLabel/constants/shadow_offset_x = 1
+RichTextLabel/constants/shadow_offset_y = 1
+RichTextLabel/constants/table_hseparation = 3
+RichTextLabel/constants/table_vseparation = 3
 RichTextLabel/fonts/bold_font = SubResource( 10 )
 RichTextLabel/fonts/normal_font = SubResource( 11 )
+RichTextLabel/styles/focus = null
+RichTextLabel/styles/normal = null
 VBoxContainer/constants/separation = 24
 VScrollBar/icons/decrement = null
 VScrollBar/icons/decrement_highlight = null

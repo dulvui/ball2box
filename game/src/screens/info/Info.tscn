@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://theme.tres" type="Theme" id=1]
-[ext_resource path="res://panel.tres" type="StyleBox" id=2]
 [ext_resource path="res://src/screens/info/Info.gd" type="Script" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -35,22 +34,18 @@ rect_min_size = Vector2( 600, 1000 )
 custom_constants/separation = 100
 alignment = 1
 
-[node name="Panel" type="Panel" parent="VBoxContainer"]
+[node name="Panel" type="PanelContainer" parent="VBoxContainer"]
 margin_right = 600.0
 margin_bottom = 664.0
 rect_min_size = Vector2( 600, 600 )
 rect_pivot_offset = Vector2( 265, 298 )
 size_flags_vertical = 3
-custom_styles/panel = ExtResource( 2 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Panel"]
-anchor_left = 0.052
-anchor_top = 0.038
-anchor_right = 0.968
-anchor_bottom = 0.955
-margin_left = -0.200001
-margin_top = 0.199999
-margin_right = 0.199951
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 580.0
+margin_bottom = 644.0
 rect_pivot_offset = Vector2( 240, 266 )
 custom_styles/normal = SubResource( 1 )
 bbcode_enabled = true

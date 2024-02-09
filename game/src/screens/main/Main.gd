@@ -7,6 +7,7 @@ extends Control
 signal play
 signal levels
 signal info
+signal help
 
 onready var animation_player:AnimationPlayer = $AnimationPlayer
 onready var star1:TextureRect = $Buttons/Level/Stars/Star1
@@ -72,6 +73,7 @@ func _on_NextLevel_pressed() -> void:
 
 
 func _on_LevelButton_pressed() -> void:
+	AudioMachine.click()
 	emit_signal("levels")
 
 
@@ -83,4 +85,8 @@ func _on_SfxButton_pressed() -> void:
 func _on_MusicButton_pressed() -> void:
 	AudioMachine.click()
 	Global.toggle_music()
-	
+
+
+func _on_Help_pressed() -> void:
+	AudioMachine.click()
+	emit_signal("help")

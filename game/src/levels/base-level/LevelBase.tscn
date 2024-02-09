@@ -1,11 +1,11 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://src/levels/base-level/LevelBase.gd" type="Script" id=1]
 [ext_resource path="res://src/levels/base-level/base-3d/Base3D.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/screens/main/Main.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/actors/bin/Bin.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/actors/ball/starter-ball/Ball.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/ui/level-complete/LevelComplete.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/screens/level-complete/LevelComplete.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/actors/star/Star.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/levels/base-level/background/Background1.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/ui/coins/Coins.tscn" type="PackedScene" id=9]
@@ -16,6 +16,7 @@
 [ext_resource path="res://assets/pause.png" type="Texture" id=14]
 [ext_resource path="res://src/levels/base-level/Pause.gd" type="Script" id=15]
 [ext_resource path="res://src/screens/shop/Shop3D.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/screens/help/Help.tscn" type="PackedScene" id=17]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeIn"
@@ -153,11 +154,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 61.1004, 0 )
 visible = false
 
 [node name="LevelComplete" parent="UI" instance=ExtResource( 6 )]
+visible = false
 
 [node name="Info" parent="UI" instance=ExtResource( 11 )]
 visible = false
 
 [node name="LevelSelect" parent="UI" instance=ExtResource( 12 )]
+visible = false
+
+[node name="Help" parent="UI" instance=ExtResource( 17 )]
 visible = false
 
 [node name="Topbar" type="HBoxContainer" parent="UI"]
@@ -200,6 +205,7 @@ script = ExtResource( 15 )
 [connection signal="reset" from="Ball" to="." method="_on_Ball_reset"]
 [connection signal="shoot" from="Ball" to="." method="_on_Ball_shoot"]
 [connection signal="win" from="Bin" to="." method="_on_Bin_win"]
+[connection signal="help" from="UI/Main" to="." method="_on_Main_help"]
 [connection signal="info" from="UI/Main" to="." method="_on_Main_info"]
 [connection signal="levels" from="UI/Main" to="." method="_on_Main_levels"]
 [connection signal="play" from="UI/Main" to="." method="_on_Main_play"]
@@ -207,9 +213,11 @@ script = ExtResource( 15 )
 [connection signal="next" from="UI/Shop" to="." method="_on_Shop_next"]
 [connection signal="prev" from="UI/Shop" to="." method="_on_Shop_prev"]
 [connection signal="select" from="UI/Shop" to="." method="_on_Shop_select"]
+[connection signal="help" from="UI/LevelComplete" to="." method="_on_LevelComplete_help"]
 [connection signal="levels" from="UI/LevelComplete" to="." method="_on_LevelComplete_levels"]
 [connection signal="menu" from="UI/LevelComplete" to="." method="_on_LevelComplete_menu"]
 [connection signal="replay" from="UI/LevelComplete" to="." method="_on_LevelComplete_replay"]
 [connection signal="back" from="UI/Info" to="." method="_on_Info_back"]
 [connection signal="back" from="UI/LevelSelect" to="." method="_on_LevelSelect_back"]
+[connection signal="back" from="UI/Help" to="." method="_on_Help_back"]
 [connection signal="pressed" from="UI/Topbar/Pause" to="." method="_on_Pause_pressed"]
