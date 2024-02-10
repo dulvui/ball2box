@@ -4,15 +4,17 @@
 
 extends Node
 
-var config:ConfigFile
+const FDROID = false
 
-var coins:int
+
 
 #onready var LEVELS:int = count_levels()
 # until new leavels are not ready
-onready var LEVELS:int = 135
+onready var LEVELS:int = 120
 
+var config:ConfigFile
 
+var coins:int
 var current_level:int = 1
 
 var show_main:bool = true
@@ -20,7 +22,6 @@ var show_main:bool = true
 var tutorial_swipe_done:bool = false
 var tutorial_tap_done:bool = false
 
-const FDROID = false
 
 var level_stars:Array = [0]
 
