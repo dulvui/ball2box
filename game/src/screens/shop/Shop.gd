@@ -52,7 +52,7 @@ func _on_Select_pressed() -> void:
 	
 	var result:int = Global.unlock_ball()
 	if result == 1:
-		select_button.text = "PLAY"
+		select_button.text = "GO"
 		# special cases like follow, more games etc...
 		if ball["price"] is String:
 			if ball["price"] == tr("FOLLOW"):
@@ -74,7 +74,7 @@ func _on_Select_pressed() -> void:
 func _set_select_label() -> void:
 	var ball = BallMachine.get_current_ball_info()
 	if Global.unlocked_balls.has(ball["id"]):
-		select_button.text = "PLAY"
+		select_button.text = "GO"
 		star.hide()
 		
 	else:

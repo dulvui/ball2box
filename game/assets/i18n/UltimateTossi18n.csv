@@ -2,16 +2,15 @@ keys,en,de,it,es
 PLAY,play,spielen,gioca,juega
 BALLS,ball,ball,pallina,pelota
 LEVELS,levels,levels,livelli,niveles
-BACK,back,zurück,ritorna,regresa
+GO,go,los,vai,vale
 SELECT,select,auswählen,seleziona,seleciona
-SELECTED,selected,ausgewählt,selezionato,seleccionado
 BOUNCE,bounce,aufprall,rimbalzo,rebote
 MASS,weight,gewicht,peso,peso
 NEXT_LEVEL,level {amount},level {amount},level {amount},level {amount}
 REPLAY,replay,nochmal,rigioca,repetir
 MENU,menu,menü,menu,menu
 BUY,buy,kaufen,compra,compra
-FOLLOW,follow,folge,seguimi,sigame
+FOLLOW,follow,folge,segui,sigue
 MORE_GAMES,games,spiele,giochi,juegos
 NEXT,next,nächstes,prossimo,próximo
 HELP,skip level,level übers.,salta livello,saltar nivel

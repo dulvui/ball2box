@@ -51,23 +51,23 @@ text = "<"
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 97.0
-margin_right = 196.0
+margin_right = 169.0
 margin_bottom = 126.0
 size_flags_horizontal = 3
 
 [node name="Back" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 200.0
-margin_right = 430.0
+margin_left = 173.0
+margin_right = 458.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 115, 0 )
-text = "back"
+text = "MENU"
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 434.0
+margin_left = 462.0
 margin_right = 534.0
 margin_bottom = 126.0
 size_flags_horizontal = 3

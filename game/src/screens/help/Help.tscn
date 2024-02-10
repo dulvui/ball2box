@@ -116,7 +116,7 @@ size_flags_vertical = 3
 margin_top = 905.0
 margin_right = 566.0
 margin_bottom = 1031.0
-text = "BACK"
+text = "MENU"
 
 [connection signal="pressed" from="VBoxContainer/CopyContainer/Copy" to="." method="_on_Copy_pressed"]
 [connection signal="text_changed" from="VBoxContainer/PasteContainer/EnterCode" to="." method="_on_EnterCode_text_changed"]
