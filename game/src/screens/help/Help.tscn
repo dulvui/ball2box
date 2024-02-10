@@ -29,9 +29,8 @@ custom_constants/separation = 40
 alignment = 1
 
 [node name="CopyContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 18.0
 margin_right = 566.0
-margin_bottom = 146.0
+margin_bottom = 128.0
 custom_constants/separation = 15
 
 [node name="Code" type="LineEdit" parent="VBoxContainer/CopyContainer"]
@@ -53,9 +52,9 @@ margin_bottom = 128.0
 icon = ExtResource( 3 )
 
 [node name="PasteContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 186.0
+margin_top = 168.0
 margin_right = 566.0
-margin_bottom = 312.0
+margin_bottom = 294.0
 custom_constants/separation = 15
 
 [node name="EnterCode" type="LineEdit" parent="VBoxContainer/PasteContainer"]
@@ -78,18 +77,17 @@ icon = ExtResource( 2 )
 icon_align = 1
 
 [node name="InstructionsContainer" type="PanelContainer" parent="VBoxContainer"]
-margin_top = 352.0
+margin_top = 334.0
 margin_right = 566.0
-margin_bottom = 637.0
+margin_bottom = 570.0
 
 [node name="Instructions" type="RichTextLabel" parent="VBoxContainer/InstructionsContainer"]
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 546.0
-margin_bottom = 265.0
+margin_bottom = 216.0
 text = "1. Get a friend's yellow code
-2. Paste into red box
-3. Next level is unlocked!
+2. Paste into red text box
 
 Codes regenerate at midnight"
 fit_content_height = true
@@ -102,21 +100,22 @@ margin_bottom = 854.0
 text = "VERIFY"
 
 [node name="Video" type="Button" parent="VBoxContainer"]
-margin_top = 677.0
+margin_top = 610.0
 margin_right = 566.0
-margin_bottom = 803.0
+margin_bottom = 736.0
 text = "how to video"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 843.0
+margin_top = 776.0
 margin_right = 566.0
-margin_bottom = 847.0
+margin_bottom = 865.0
+size_flags_vertical = 3
 
 [node name="Back" type="Button" parent="VBoxContainer"]
-margin_top = 887.0
+margin_top = 905.0
 margin_right = 566.0
-margin_bottom = 1013.0
+margin_bottom = 1031.0
 text = "BACK"
 
 [connection signal="pressed" from="VBoxContainer/CopyContainer/Copy" to="." method="_on_Copy_pressed"]
