@@ -220,5 +220,4 @@ script = ExtResource( 15 )
 [connection signal="back" from="UI/Info" to="." method="_on_Info_back"]
 [connection signal="back" from="UI/LevelSelect" to="." method="_on_LevelSelect_back"]
 [connection signal="back" from="UI/Help" to="." method="_on_Help_back"]
-[connection signal="success" from="UI/Help" to="." method="_on_Help_success"]
 [connection signal="pressed" from="UI/Topbar/Pause" to="." method="_on_Pause_pressed"]
