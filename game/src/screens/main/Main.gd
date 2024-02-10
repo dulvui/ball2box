@@ -16,8 +16,8 @@ onready var star3:TextureRect = $Buttons/Level/Stars/Star3
 
 
 func _ready() -> void:
-	$Buttons/Settings/Music/MusicButton.pressed = Global.music
-	$Buttons/Settings/Sfx/SfxButton.pressed = Global.sfx
+	$Buttons/Settings/MusicButton.pressed = Global.music
+	$Buttons/Settings/SfxButton.pressed = Global.sfx
 	set_level()
 
 
@@ -90,3 +90,4 @@ func _on_MusicButton_pressed() -> void:
 func _on_Help_pressed() -> void:
 	AudioMachine.click()
 	emit_signal("help")
+

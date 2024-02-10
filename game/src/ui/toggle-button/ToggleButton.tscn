@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/ui/toggle-button/ToggleButton.gd" type="Script" id=1]
+
+[node name="ToggleButton" type="Button"]
+anchor_right = 0.191667
+anchor_bottom = 0.0984375
+rect_min_size = Vector2( 140, 0 )
+toggle_mode = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="toggled" from="." to="." method="_on_ToggleButton_toggled"]

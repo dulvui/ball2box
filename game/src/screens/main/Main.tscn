@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/font/manrope.thin.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://theme.tres" type="Theme" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/github.svg" type="Texture" id=6]
 [ext_resource path="res://assets/star.png" type="Texture" id=7]
 [ext_resource path="res://assets/musicOn.png" type="Texture" id=8]
+[ext_resource path="res://src/ui/toggle-button/ToggleButton.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/audioOn.png" type="Texture" id=11]
 [ext_resource path="res://assets/audioOff.png" type="Texture" id=12]
 [ext_resource path="res://assets/information.png" type="Texture" id=13]
@@ -194,11 +195,11 @@ __meta__ = {
 modulate = Color( 1, 1, 1, 0 )
 margin_top = 727.0
 margin_right = 534.0
-margin_bottom = 761.0
+margin_bottom = 755.0
 size_flags_vertical = 3
 
 [node name="Settings" type="HBoxContainer" parent="Buttons"]
-margin_top = 785.0
+margin_top = 779.0
 margin_right = 534.0
 margin_bottom = 905.0
 custom_constants/separation = 18
@@ -207,59 +208,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sfx" type="Panel" parent="Buttons/Settings"]
-margin_right = 120.0
-margin_bottom = 120.0
-rect_min_size = Vector2( 120, 120 )
-rect_pivot_offset = Vector2( 60, 60 )
-custom_styles/panel = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SfxButton" type="TextureButton" parent="Buttons/Settings/Sfx"]
-self_modulate = Color( 0, 0, 0, 1 )
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -50.0
-margin_top = -50.0
-margin_right = 50.0
-margin_bottom = 50.0
-rect_pivot_offset = Vector2( 50, 50 )
-toggle_mode = true
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 12 )
-
-[node name="Music" type="Panel" parent="Buttons/Settings"]
-show_behind_parent = true
-margin_left = 138.0
-margin_right = 258.0
-margin_bottom = 120.0
-rect_min_size = Vector2( 120, 120 )
-rect_pivot_offset = Vector2( 60, 60 )
-custom_styles/panel = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MusicButton" type="TextureButton" parent="Buttons/Settings/Music"]
-self_modulate = Color( 0, 0, 0, 1 )
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -50.0
-margin_top = -50.0
-margin_right = 50.0
-margin_bottom = 50.0
-rect_pivot_offset = Vector2( 50, 50 )
-toggle_mode = true
-texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 3 )
-
 [node name="Info" type="Panel" parent="Buttons/Settings"]
+visible = false
 show_behind_parent = true
 margin_left = 276.0
 margin_right = 396.0
@@ -284,30 +234,33 @@ margin_bottom = 50.0
 rect_pivot_offset = Vector2( 50, 50 )
 texture_normal = ExtResource( 13 )
 
-[node name="Github" type="Panel" parent="Buttons/Settings"]
-show_behind_parent = true
-margin_left = 414.0
-margin_right = 534.0
-margin_bottom = 120.0
-rect_min_size = Vector2( 120, 120 )
-rect_pivot_offset = Vector2( 60, 60 )
-custom_styles/panel = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="SfxButton" parent="Buttons/Settings" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 39.0
+margin_right = 179.0
+margin_bottom = 126.0
+icon = ExtResource( 11 )
+normal_texture = ExtResource( 11 )
+pressed_texture = ExtResource( 12 )
 
-[node name="GithubButton" type="TextureButton" parent="Buttons/Settings/Github"]
-self_modulate = Color( 0, 0, 0, 1 )
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -36.0
-margin_top = -36.0
-margin_right = 36.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 50, 50 )
-texture_normal = ExtResource( 6 )
+[node name="MusicButton" parent="Buttons/Settings" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 197.0
+margin_right = 337.0
+margin_bottom = 126.0
+icon = ExtResource( 8 )
+normal_texture = ExtResource( 8 )
+pressed_texture = ExtResource( 3 )
+
+[node name="GithubButton" type="Button" parent="Buttons/Settings"]
+margin_left = 355.0
+margin_right = 495.0
+margin_bottom = 126.0
+rect_min_size = Vector2( 140, 0 )
+icon = ExtResource( 6 )
+icon_align = 1
 
 [node name="SimonDalvai" type="LinkButton" parent="Buttons"]
 margin_left = 74.0
@@ -324,8 +277,8 @@ text = "simondalvai.org"
 [connection signal="pressed" from="Buttons/Level/LevelControl/NextLevel" to="." method="_on_NextLevel_pressed"]
 [connection signal="pressed" from="Buttons/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Buttons/Help" to="." method="_on_Help_pressed"]
-[connection signal="pressed" from="Buttons/Settings/Sfx/SfxButton" to="." method="_on_SfxButton_pressed"]
-[connection signal="pressed" from="Buttons/Settings/Music/MusicButton" to="." method="_on_MusicButton_pressed"]
 [connection signal="pressed" from="Buttons/Settings/Info/InfoButton" to="." method="_on_InfoButton_pressed"]
-[connection signal="pressed" from="Buttons/Settings/Github/GithubButton" to="." method="_on_GithubButton_pressed"]
+[connection signal="pressed" from="Buttons/Settings/SfxButton" to="." method="_on_SfxButton_pressed"]
+[connection signal="pressed" from="Buttons/Settings/MusicButton" to="." method="_on_MusicButton_pressed"]
+[connection signal="pressed" from="Buttons/Settings/GithubButton" to="." method="_on_GithubButton_pressed"]
 [connection signal="pressed" from="Buttons/SimonDalvai" to="." method="_on_SimonDalvai_pressed"]
