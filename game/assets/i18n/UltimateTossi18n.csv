@@ -15,5 +15,5 @@ FOLLOW,follow,folge,seguimi,sigame
 MORE_GAMES,games,spiele,giochi,juegos
 NEXT,next,nächstes,prossimo,próximo
 HELP,skip level,level übers.,salta livello,saltar nivel
-HELP_INSTRUCTIONS,You can skip levels by entering a code of a friend! Codes are valid for 24 hours.\nBelow is your code you can share,yay,yay,yay
-PASTE_HERE,paste,einfügen,incolla,pegar
+HELP_INSTRUCTIONS,1. Get a friend's yellow code\n2. Paste into red box\n3. Next level is unlocked!\n\nCodes regenerate at midnight,yay,yay,yay
+PASTE,code,Kode,codice,codigo

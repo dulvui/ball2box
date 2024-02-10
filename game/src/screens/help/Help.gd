@@ -17,7 +17,7 @@ const DAY:int = 86400
 onready var paste_button:Button = $VBoxContainer/PasteContainer/Paste
 onready var code_line:LineEdit = $VBoxContainer/CopyContainer/Code
 onready var enter_code_line:LineEdit = $VBoxContainer/PasteContainer/EnterCode
-onready var instructions:RichTextLabel = $VBoxContainer/PanelContainer/Instructions
+onready var instructions:RichTextLabel = $VBoxContainer/InstructionsContainer/Instructions
 
 var codes:Dictionary = {}
 var code:String = "921 901"
@@ -36,7 +36,6 @@ func _ready() -> void:
 	
 	instructions.text = tr("HELP_INSTRUCTIONS")
 	
-
 
 func _on_Copy_pressed() -> void:
 	AudioMachine.click()
@@ -84,3 +83,7 @@ func _on_EnterCode_text_changed(new_text:String) -> void:
 func _on_Paste_pressed() -> void:
 	AudioMachine.click()
 	enter_code_line.text = OS.clipboard
+
+func _on_Video_pressed() -> void:
+	AudioMachine.click()
+	OS.shell_open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
