@@ -6,8 +6,6 @@ extends Node
 
 const FDROID = false
 
-
-
 #onready var LEVELS:int = count_levels()
 # until new leavels are not ready
 onready var LEVELS:int = 120
@@ -22,13 +20,17 @@ var show_main:bool = true
 var tutorial_swipe_done:bool = false
 var tutorial_tap_done:bool = false
 
-
 var level_stars:Array = [0]
 
 var unlocked_balls:Array
 
 var music:bool
 var sfx:bool
+
+var generator_seed:int
+var codes:Dictionary
+var own_code:String
+
 
 func _ready() -> void:
 	randomize()
@@ -42,6 +44,10 @@ func _ready() -> void:
 	current_level = config.get_value("current_level", "key", 1)
 	unlocked_balls = config.get_value("balls", "unlocked", [1])
 	coins = config.get_value("coins", "amount", 0)
+	generator_seed = config.get_value("generator", "seed", 0)
+	codes = config.get_value("generator", "codes", {})
+	own_code = config.get_value("generator", "own_code", "")
+	
 	BallMachine.set_ball_index(config.get_value("ball", "selected", 0))
 	if config.has_section_key("level", "stars"):
 		level_stars = config.get_value("level","stars")
@@ -67,6 +73,9 @@ func save_data() -> void:
 	config.set_value("level","stars",level_stars)
 	config.set_value("tutorial", "swipe", tutorial_swipe_done)
 	config.set_value("tutorial", "tap", tutorial_tap_done)
+	config.set_value("generator", "seed", generator_seed)
+	config.set_value("generator", "codes", codes)
+	config.set_value("generator", "own_code", own_code)
 	config.save("user://settings.cfg")
 
 func set_level_stars(stars) -> void:

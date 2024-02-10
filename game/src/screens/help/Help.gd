@@ -8,7 +8,7 @@ signal back
 
 const MIN:int = 100000
 const MAX:int = 999999
-const FACTOR:int = 1000
+const FACTOR:int = 10000 # MAX + 1 / FACTOR = aproximation amount of codes
 const DIGITS:int = 6
 
 const DAY:int = 86400
@@ -19,28 +19,22 @@ onready var enter_code_line:LineEdit = $VBoxContainer/PasteContainer/EnterCode
 onready var instructions:RichTextLabel = $VBoxContainer/InstructionsContainer/Instructions
 
 
-var codes:Dictionary = {}
-var code:String
 var random_seed:String = "such4secret9seed"
 
 func _ready() -> void:
 	generate_codes()
 	
-	var random_index:int = randi() % codes.keys().size()
-	# disable own code
-	codes[codes.keys()[random_index]] = false
-	
-	code = codes.keys()[random_index].insert(3, " ")
-	print(codes.keys()[-1])
-	
-	code_line.text = code
+	code_line.text = Global.own_code
 	
 	instructions.text = tr("HELP_INSTRUCTIONS")
+	
+	print(Global.codes.keys()[-1])
+	
 	
 
 func _on_Copy_pressed() -> void:
 	AudioMachine.click()
-	OS.clipboard = code
+	OS.clipboard = Global.own_code
 
 
 func _on_Verify_pressed() -> void:
@@ -52,10 +46,11 @@ func verify() -> void:
 	var verify_code:String = enter_code_line.text
 	verify_code = verify_code.replace(" ", "")
 	# check if valid
-	if verify_code.length() == DIGITS and verify_code.is_valid_integer() and verify_code in codes and codes[verify_code]:
+	if verify_code.length() == DIGITS and verify_code.is_valid_integer() and verify_code in Global.codes and Global.codes[verify_code]:
 		# unlock next locked level, if possible
 		if unlock_last_level():
-			codes[verify_code] = false
+			Global.codes[verify_code] = false
+			Global.save_data()
 			get_tree().change_scene("res://src/levels/Level%s.tscn"%str(Global.current_level))
 		else:
 			print("NO LEVEL TO UNLOCK")
@@ -73,17 +68,24 @@ func unlock_last_level() -> bool:
 
 
 func generate_codes() -> void:
-	var generator:RandomNumberGenerator = RandomNumberGenerator.new()
+	var current_seed:int = hash(random_seed) + OS.get_unix_time() / DAY
+	if Global.generator_seed != current_seed:
+		# generate new seed
+		Global.generator_seed = current_seed
+		var generator:RandomNumberGenerator = RandomNumberGenerator.new()
+		generator.seed = Global.generator_seed
+		# generate new codes
+		Global.codes = {}
+		for i in range(MIN, MAX):
+			if generator.randi() % FACTOR == 0:
+				Global.codes[str(i)] = true
+		# assign own code
+		var random_index:int = randi() % Global.codes.keys().size()
+		Global.own_code = Global.codes.keys()[random_index].insert(3, " ")
+		# disable own code
+		Global.codes[Global.codes.keys()[random_index]] = false
 	
-	var time_stamp:int = OS.get_unix_time() / DAY
-	generator.seed = hash(random_seed) + OS.get_unix_time() / DAY
-	
-	print("seed: " + str(generator.seed))
-	
-	for i in range(MIN, MAX):
-		if generator.randi() % FACTOR == 0:
-			codes[str(i)] = true
-	print(codes.keys().size())
+		Global.save_data()
 
 
 func _on_EnterCode_text_changed(new_text:String) -> void:
