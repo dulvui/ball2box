@@ -56,8 +56,7 @@ func _ready() -> void:
 	
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Sfx"), sfx)
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"), music)
-	
-		
+
 func save_data() -> void:
 	config.set_value("music","mute",music)
 	config.set_value("sfx","mute",sfx)
