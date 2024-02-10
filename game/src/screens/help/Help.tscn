@@ -4,11 +4,11 @@
 [ext_resource path="res://assets/paste.svg" type="Texture" id=2]
 [ext_resource path="res://assets/copy.svg" type="Texture" id=3]
 
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 1, 0.290196, 0.290196, 1 )
-
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.960784, 0.94902, 0.301961, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 0.290196, 0.290196, 1 )
 
 [node name="Help" type="Control"]
 pause_mode = 2
@@ -28,10 +28,34 @@ margin_bottom = 545.0
 custom_constants/separation = 40
 alignment = 1
 
-[node name="PasteContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="CopyContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 18.0
 margin_right = 566.0
-margin_bottom = 144.0
+margin_bottom = 146.0
+custom_constants/separation = 15
+
+[node name="Code" type="LineEdit" parent="VBoxContainer/CopyContainer"]
+margin_right = 439.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+custom_styles/read_only = SubResource( 1 )
+text = "880829"
+align = 1
+max_length = 6
+editable = false
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+
+[node name="Copy" type="Button" parent="VBoxContainer/CopyContainer"]
+margin_left = 454.0
+margin_right = 566.0
+margin_bottom = 128.0
+icon = ExtResource( 3 )
+
+[node name="PasteContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 186.0
+margin_right = 566.0
+margin_bottom = 312.0
 custom_constants/separation = 15
 
 [node name="EnterCode" type="LineEdit" parent="VBoxContainer/PasteContainer"]
@@ -54,45 +78,21 @@ icon = ExtResource( 2 )
 icon_align = 1
 
 [node name="InstructionsContainer" type="PanelContainer" parent="VBoxContainer"]
-margin_top = 184.0
+margin_top = 352.0
 margin_right = 566.0
-margin_bottom = 469.0
+margin_bottom = 637.0
 
 [node name="Instructions" type="RichTextLabel" parent="VBoxContainer/InstructionsContainer"]
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 546.0
 margin_bottom = 265.0
-text = "Skip levels with a code of a friend!
-1. Get yellow code from a friend
+text = "1. Get a friend's yellow code
 2. Paste into red box
 3. Next level is unlocked!
+
 Codes regenerate at midnight"
 fit_content_height = true
-
-[node name="CopyContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 509.0
-margin_right = 566.0
-margin_bottom = 637.0
-custom_constants/separation = 15
-
-[node name="Code" type="LineEdit" parent="VBoxContainer/CopyContainer"]
-margin_right = 439.0
-margin_bottom = 128.0
-size_flags_horizontal = 3
-custom_styles/read_only = SubResource( 1 )
-text = "880829"
-align = 1
-max_length = 6
-editable = false
-context_menu_enabled = false
-virtual_keyboard_enabled = false
-
-[node name="Copy" type="Button" parent="VBoxContainer/CopyContainer"]
-margin_left = 454.0
-margin_right = 566.0
-margin_bottom = 128.0
-icon = ExtResource( 3 )
 
 [node name="Verify" type="Button" parent="VBoxContainer"]
 visible = false
@@ -119,9 +119,9 @@ margin_right = 566.0
 margin_bottom = 1013.0
 text = "BACK"
 
+[connection signal="pressed" from="VBoxContainer/CopyContainer/Copy" to="." method="_on_Copy_pressed"]
 [connection signal="text_changed" from="VBoxContainer/PasteContainer/EnterCode" to="." method="_on_EnterCode_text_changed"]
 [connection signal="pressed" from="VBoxContainer/PasteContainer/Paste" to="." method="_on_Paste_pressed"]
-[connection signal="pressed" from="VBoxContainer/CopyContainer/Copy" to="." method="_on_Copy_pressed"]
 [connection signal="pressed" from="VBoxContainer/Verify" to="." method="_on_Verify_pressed"]
 [connection signal="pressed" from="VBoxContainer/Video" to="." method="_on_Video_pressed"]
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_Back_pressed"]
