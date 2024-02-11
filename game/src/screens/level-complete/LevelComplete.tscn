@@ -17,23 +17,24 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -237.5
-margin_top = -559.0
+margin_top = -497.5
 margin_right = 237.5
-margin_bottom = 559.0
-__meta__ = {
-"_edit_use_anchors_": true
-}
+margin_bottom = 417.5
+alignment = 1
 
 [node name="Level" type="Label" parent="VBoxContainer"]
+margin_top = 65.0
 margin_right = 475.0
-margin_bottom = 118.0
+margin_bottom = 183.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 237, 59 )
 text = "12"
 align = 1
 
 [node name="Stars" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 142.0
+margin_top = 207.0
 margin_right = 475.0
-margin_bottom = 342.0
+margin_bottom = 407.0
 rect_min_size = Vector2( 0, 200 )
 alignment = 1
 
@@ -79,9 +80,9 @@ __meta__ = {
 }
 
 [node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 366.0
+margin_top = 431.0
 margin_right = 475.0
-margin_bottom = 784.0
+margin_bottom = 849.0
 rect_pivot_offset = Vector2( 194, 215 )
 custom_constants/separation = 20
 
