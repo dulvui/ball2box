@@ -1,17 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/screens/level-select/level-button/LevelButton.gd" type="Script" id=2]
 [ext_resource path="res://assets/star.png" type="Texture" id=3]
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.529412, 0.917647, 0.807843, 1 )
-border_width_bottom = 12
-border_color = Color( 0.376471, 0.701961, 0.611765, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
 
 [node name="LevelButton" type="Control"]
 pause_mode = 2
@@ -32,14 +23,18 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Panel" type="Panel" parent="MarginContainer"]
+[node name="Button" type="Button" parent="MarginContainer"]
+pause_mode = 2
 margin_right = 308.0
 margin_bottom = 279.0
-custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Info" type="VBoxContainer" parent="MarginContainer"]
 margin_right = 308.0
 margin_bottom = 279.0
+mouse_filter = 2
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -81,14 +76,5 @@ margin_left = 208.0
 margin_right = 308.0
 margin_bottom = 100.0
 texture = ExtResource( 3 )
-
-[node name="Button" type="Button" parent="MarginContainer"]
-pause_mode = 2
-self_modulate = Color( 1, 1, 1, 0 )
-margin_right = 308.0
-margin_bottom = 279.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="pressed" from="MarginContainer/Button" to="." method="_on_Button_pressed"]
