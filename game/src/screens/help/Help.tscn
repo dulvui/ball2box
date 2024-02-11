@@ -100,6 +100,7 @@ margin_bottom = 854.0
 text = "VERIFY"
 
 [node name="Video" type="Button" parent="VBoxContainer"]
+visible = false
 margin_top = 610.0
 margin_right = 566.0
 margin_bottom = 736.0
@@ -107,7 +108,7 @@ text = "how to video"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 776.0
+margin_top = 610.0
 margin_right = 566.0
 margin_bottom = 865.0
 size_flags_vertical = 3
