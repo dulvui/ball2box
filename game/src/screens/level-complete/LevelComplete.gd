@@ -9,7 +9,6 @@ signal menu
 signal levels
 signal help
 
-
 var stars:int = 1
 
 # to unlock next level without clicking on next level
@@ -29,27 +28,6 @@ func reset_stars() -> void:
 	$VBoxContainer/Stars/Star2.self_modulate = Color("#fbf4be")
 	$VBoxContainer/Stars/Star3.self_modulate = Color("#fbf4be")
 
-	
-
-func _on_Replay_pressed() -> void:
-	AudioMachine.play_click()
-	
-	# remove automated level increase on replay
-	if first_time_complete:
-		Global.current_level -= 1
-		first_time_complete = false
-		
-	emit_signal("replay")
-	get_tree().paused = false
-	hide()
-#	get_tree().change_scene("res://src/levels/Level%s.tscn"%str(Global.current_level))
-
-
-func _on_NextLevel_pressed() -> void:
-	AudioMachine.click()
-	if not first_time_complete:
-		Global.current_level += 1
-	get_tree().change_scene("res://src/levels/Level%s.tscn"%str(Global.current_level))
 
 func game_over() -> void:
 	$VBoxContainer/Level.text = str(Global.current_level)
@@ -69,8 +47,8 @@ func _on_Menu_pressed() -> void:
 	AudioMachine.click()
 	if first_time_complete:
 		Global.current_level -= 1
-	emit_signal("menu")
 	hide()
+	emit_signal("menu")
 
 
 func _on_Levels_pressed() -> void:
@@ -82,3 +60,19 @@ func _on_Help_pressed() -> void:
 	AudioMachine.click()
 	emit_signal("help")
 
+func _on_Replay_pressed() -> void:
+	AudioMachine.play_click()
+	# remove automated level increase on replay
+	if first_time_complete:
+		Global.current_level -= 1
+		first_time_complete = false
+	emit_signal("replay")
+	get_tree().paused = false
+	hide()
+
+
+func _on_NextLevel_pressed() -> void:
+	AudioMachine.click()
+	if not first_time_complete:
+		Global.current_level += 1
+	get_tree().change_scene("res://src/levels/Level%s.tscn"%str(Global.current_level))

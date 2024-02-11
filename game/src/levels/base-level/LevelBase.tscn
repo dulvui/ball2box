@@ -167,12 +167,12 @@ visible = false
 
 [node name="Topbar" type="HBoxContainer" parent="UI"]
 anchor_left = 0.05
-anchor_top = 0.016
+anchor_top = 0.011
 anchor_right = 0.961
-anchor_bottom = 0.115
-margin_top = 0.519999
+anchor_bottom = 0.109
+margin_top = -0.0800009
 margin_right = 0.0799561
-margin_bottom = -0.199997
+margin_bottom = 0.479996
 
 [node name="Coins" parent="UI/Topbar" instance=ExtResource( 9 )]
 anchor_right = 0.0
@@ -181,6 +181,7 @@ margin_top = 0.0
 margin_right = 104.0
 margin_bottom = 126.0
 rect_scale = Vector2( 1, 1 )
+alignment = 1
 
 [node name="VSeparator" type="VSeparator" parent="UI/Topbar"]
 modulate = Color( 1, 1, 1, 0 )
@@ -213,8 +214,6 @@ script = ExtResource( 15 )
 [connection signal="next" from="UI/Shop" to="." method="_on_Shop_next"]
 [connection signal="prev" from="UI/Shop" to="." method="_on_Shop_prev"]
 [connection signal="select" from="UI/Shop" to="." method="_on_Shop_select"]
-[connection signal="help" from="UI/LevelComplete" to="." method="_on_LevelComplete_help"]
-[connection signal="levels" from="UI/LevelComplete" to="." method="_on_LevelComplete_levels"]
 [connection signal="menu" from="UI/LevelComplete" to="." method="_on_LevelComplete_menu"]
 [connection signal="replay" from="UI/LevelComplete" to="." method="_on_LevelComplete_replay"]
 [connection signal="back" from="UI/Info" to="." method="_on_Info_back"]
