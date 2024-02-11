@@ -6,7 +6,7 @@
 [ext_resource path="res://src/screens/main/Main.gd" type="Script" id=4]
 [ext_resource path="res://panel.tres" type="StyleBox" id=5]
 [ext_resource path="res://assets/github.svg" type="Texture" id=6]
-[ext_resource path="res://assets/star.png" type="Texture" id=7]
+[ext_resource path="res://src/ui/level-control/LevelControl.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/musicOn.png" type="Texture" id=8]
 [ext_resource path="res://src/ui/toggle-button/ToggleButton.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/audioOn.png" type="Texture" id=11]
@@ -85,79 +85,11 @@ margin_right = 267.0
 margin_bottom = 501.0
 alignment = 1
 
-[node name="Level" type="VBoxContainer" parent="Buttons"]
+[node name="LevelControl" parent="Buttons" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_right = 534.0
 margin_bottom = 350.0
-
-[node name="Stars" type="HBoxContainer" parent="Buttons/Level"]
-margin_right = 534.0
-margin_bottom = 200.0
-rect_min_size = Vector2( 0, 200 )
-rect_pivot_offset = Vector2( -1820, 104.5 )
-alignment = 1
-
-[node name="Star1" type="TextureRect" parent="Buttons/Level/Stars"]
-margin_right = 175.0
-margin_bottom = 200.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource( 7 )
-stretch_mode = 6
-
-[node name="Star2" type="TextureRect" parent="Buttons/Level/Stars"]
-margin_left = 179.0
-margin_right = 354.0
-margin_bottom = 200.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource( 7 )
-stretch_mode = 6
-
-[node name="Star3" type="TextureRect" parent="Buttons/Level/Stars"]
-margin_left = 358.0
-margin_right = 534.0
-margin_bottom = 200.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource( 7 )
-stretch_mode = 6
-
-[node name="LevelControl" type="HBoxContainer" parent="Buttons/Level"]
-margin_top = 224.0
-margin_right = 534.0
-margin_bottom = 350.0
-alignment = 1
-
-[node name="PrevLevel" type="Button" parent="Buttons/Level/LevelControl"]
-margin_right = 93.0
-margin_bottom = 126.0
-text = "<"
-
-[node name="VSeparator" type="VSeparator" parent="Buttons/Level/LevelControl"]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 97.0
-margin_right = 105.0
-margin_bottom = 126.0
-size_flags_horizontal = 3
-
-[node name="LevelButton" type="Button" parent="Buttons/Level/LevelControl"]
-margin_left = 109.0
-margin_right = 424.0
-margin_bottom = 126.0
-text = "level 12"
-
-[node name="VSeparator2" type="VSeparator" parent="Buttons/Level/LevelControl"]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 428.0
-margin_right = 437.0
-margin_bottom = 126.0
-size_flags_horizontal = 3
-
-[node name="NextLevel" type="Button" parent="Buttons/Level/LevelControl"]
-margin_left = 441.0
-margin_right = 534.0
-margin_bottom = 126.0
-text = ">"
 
 [node name="HSeparator2" type="HSeparator" parent="Buttons"]
 modulate = Color( 1, 1, 1, 0 )
@@ -272,9 +204,7 @@ size_flags_horizontal = 4
 custom_fonts/font = SubResource( 13 )
 text = "simondalvai.org"
 
-[connection signal="pressed" from="Buttons/Level/LevelControl/PrevLevel" to="." method="_on_PrevLevel_pressed"]
-[connection signal="pressed" from="Buttons/Level/LevelControl/LevelButton" to="." method="_on_LevelButton_pressed"]
-[connection signal="pressed" from="Buttons/Level/LevelControl/NextLevel" to="." method="_on_NextLevel_pressed"]
+[connection signal="levels" from="Buttons/LevelControl" to="." method="_on_LevelControl_levels"]
 [connection signal="pressed" from="Buttons/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Buttons/Help" to="." method="_on_Help_pressed"]
 [connection signal="pressed" from="Buttons/Settings/Info/InfoButton" to="." method="_on_InfoButton_pressed"]

@@ -283,46 +283,58 @@ align = 1
 [node name="Stars" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 142.0
 margin_right = 475.0
-margin_bottom = 242.0
+margin_bottom = 342.0
+rect_min_size = Vector2( 0, 200 )
 alignment = 1
 
 [node name="Star1" type="TextureRect" parent="VBoxContainer/Stars"]
 self_modulate = Color( 0.988235, 0.898039, 0.152941, 1 )
-margin_left = 83.0
-margin_right = 183.0
-margin_bottom = 100.0
+margin_right = 155.0
+margin_bottom = 200.0
+rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 50, 50 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 3 )
+stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Star2" type="TextureRect" parent="VBoxContainer/Stars"]
 self_modulate = Color( 0.984314, 0.956863, 0.745098, 1 )
-margin_left = 187.0
-margin_right = 287.0
-margin_bottom = 100.0
+margin_left = 159.0
+margin_right = 315.0
+margin_bottom = 200.0
+rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 50, 50 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 3 )
+stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Star3" type="TextureRect" parent="VBoxContainer/Stars"]
 self_modulate = Color( 0.984314, 0.956863, 0.745098, 1 )
-margin_left = 291.0
-margin_right = 391.0
-margin_bottom = 100.0
+margin_left = 319.0
+margin_right = 475.0
+margin_bottom = 200.0
+rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 50, 50 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 3 )
+stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 266.0
+margin_top = 366.0
 margin_right = 475.0
-margin_bottom = 684.0
+margin_bottom = 784.0
 rect_pivot_offset = Vector2( 194, 215 )
 custom_constants/separation = 20
 

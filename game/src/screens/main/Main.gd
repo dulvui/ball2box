@@ -10,28 +10,11 @@ signal info
 signal help
 
 onready var animation_player:AnimationPlayer = $AnimationPlayer
-onready var star1:TextureRect = $Buttons/Level/Stars/Star1
-onready var star2:TextureRect = $Buttons/Level/Stars/Star2
-onready var star3:TextureRect = $Buttons/Level/Stars/Star3
-
 
 func _ready() -> void:
 	$Buttons/Settings/MusicButton.pressed = Global.music
 	$Buttons/Settings/SfxButton.pressed = Global.sfx
-	set_level()
 
-
-func set_level() -> void:
-	$Buttons/Level/LevelControl/LevelButton.text = "level " + str(Global.current_level)
-	
-	var stars:int = Global.level_stars[Global.current_level - 1]
-	
-	if stars >= 1:
-		star1.modulate = Color("#fce527")
-	if stars >= 2:
-		star2.modulate = Color("#fce527")
-	if stars >= 3: # on some devices wh old versions, > 3 stars could happen
-		star3.modulate = Color("#fce527")
 	
 func _on_Play_pressed() -> void:
 	AudioMachine.click()
@@ -57,26 +40,6 @@ func _on_GithubButton_pressed() -> void:
 	OS.shell_open("https://github.com/dulvui/ball2box")
 
 
-func _on_PrevLevel_pressed() -> void:
-	AudioMachine.click()
-	if Global.current_level > 1:
-		Global.current_level -= 1
-		Global.show_main = true
-		get_tree().change_scene("res://src/levels/Level%s.tscn"%(Global.current_level))
-
-func _on_NextLevel_pressed() -> void:
-	AudioMachine.click()
-	if Global.current_level < Global.LEVELS and Global.level_stars[Global.current_level] >= 0:
-		Global.current_level += 1
-		Global.show_main = true
-		get_tree().change_scene("res://src/levels/Level%s.tscn"%(Global.current_level))
-
-
-func _on_LevelButton_pressed() -> void:
-	AudioMachine.click()
-	emit_signal("levels")
-
-
 func _on_SfxButton_pressed() -> void:
 	AudioMachine.click()
 	Global.toggle_sfx()
@@ -91,3 +54,7 @@ func _on_Help_pressed() -> void:
 	AudioMachine.click()
 	emit_signal("help")
 
+
+
+func _on_LevelControl_levels() -> void:
+	emit_signal("levels")
