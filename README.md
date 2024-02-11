@@ -157,6 +157,23 @@ game/assets/patterns/pattern_0024.png
 game/assets/patterns/pattern_0025.png
 ```
 
+"Github icon"
+Copyright: simple-icons https://github.com/simple-icons/simple-icons
+License: [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
+```
+game/assets/github.svg
+```
+
+
+"Copy/Paste icons"
+Copyright: Google material-design-icons https://github.com/google/material-design-icons
+License: [Apache-2.0](https://github.com/google/material-design-icons/blob/master/LICENSE)
+```
+game/assets/copy.svg
+game/assets/paste.svg
+```
+
+
 ### 3D assets
 
 "Torus ball"

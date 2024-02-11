@@ -83,3 +83,8 @@ License: OFL-1.1
 Files: game/assets/github.svg
 Copyright: simple-icons https://github.com/simple-icons/simple-icons
 License: CC0-1.0
+
+# copy/paste material icons
+Files: game/assets/copy.svg game/assets/paste.svg
+Copyright: Google material-design-icons https://github.com/google/material-design-icons
+License: Apache-2.0

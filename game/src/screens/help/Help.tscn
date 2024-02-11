@@ -22,7 +22,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -283.0
-margin_top = -486.0
+margin_top = -408.0
 margin_right = 283.0
 margin_bottom = 545.0
 custom_constants/separation = 40
@@ -110,13 +110,13 @@ text = "how to video"
 modulate = Color( 1, 1, 1, 0 )
 margin_top = 610.0
 margin_right = 566.0
-margin_bottom = 865.0
+margin_bottom = 787.0
 size_flags_vertical = 3
 
 [node name="Back" type="Button" parent="VBoxContainer"]
-margin_top = 905.0
+margin_top = 827.0
 margin_right = 566.0
-margin_bottom = 1031.0
+margin_bottom = 953.0
 text = "MENU"
 
 [connection signal="pressed" from="VBoxContainer/CopyContainer/Copy" to="." method="_on_Copy_pressed"]
