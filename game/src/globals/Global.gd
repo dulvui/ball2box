@@ -28,7 +28,7 @@ var music:bool
 var sfx:bool
 
 var generator_seed:int
-var codes:Dictionary
+var codes:Array
 var own_code:String
 
 
@@ -45,7 +45,7 @@ func _ready() -> void:
 	unlocked_balls = config.get_value("balls", "unlocked", [1])
 	coins = config.get_value("coins", "amount", 0)
 	generator_seed = config.get_value("generator", "seed", 0)
-	codes = config.get_value("generator", "codes", {})
+	codes = config.get_value("generator", "codes", [])
 	own_code = config.get_value("generator", "own_code", "")
 	
 	BallMachine.set_ball_index(config.get_value("ball", "selected", 0))

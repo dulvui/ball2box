@@ -28,7 +28,7 @@ func _ready() -> void:
 	
 	instructions.text = tr("HELP_INSTRUCTIONS")
 	
-	print(Global.codes.keys()[-1])
+	print(Global.codes[-1])
 	
 	
 
@@ -46,10 +46,10 @@ func verify() -> void:
 	var verify_code:String = enter_code_line.text
 	verify_code = verify_code.replace(" ", "")
 	# check if valid
-	if verify_code.length() == DIGITS and verify_code.is_valid_integer() and verify_code in Global.codes and Global.codes[verify_code]:
+	if verify_code.length() == DIGITS and verify_code.is_valid_integer() and int(verify_code) in Global.codes:
 		# unlock next locked level, if possible
 		if unlock_last_level():
-			Global.codes[verify_code] = false
+			Global.codes.erase(int(verify_code))
 			Global.save_data()
 			get_tree().change_scene("res://src/levels/Level%s.tscn"%str(Global.current_level))
 		else:
@@ -75,15 +75,16 @@ func generate_codes() -> void:
 		var generator:RandomNumberGenerator = RandomNumberGenerator.new()
 		generator.seed = Global.generator_seed
 		# generate new codes
-		Global.codes = {}
-		for i in range(MIN, MAX):
+		Global.codes = []
+		for code in range(MIN, MAX):
 			if generator.randi() % FACTOR == 0:
-				Global.codes[str(i)] = true
+				Global.codes.append(code)
 		# assign own code
-		var random_index:int = randi() % Global.codes.keys().size()
-		Global.own_code = Global.codes.keys()[random_index].insert(3, " ")
+		var random_index:int = randi() % Global.codes.size()
+		var own_code:int = Global.codes[random_index]
+		Global.own_code = str(own_code).insert(3, " ")
 		# disable own code
-		Global.codes[Global.codes.keys()[random_index]] = false
+		Global.codes.erase(own_code)
 	
 		Global.save_data()
 
