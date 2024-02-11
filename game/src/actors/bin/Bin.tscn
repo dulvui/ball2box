@@ -172,5 +172,4 @@ anims/FadeIn = SubResource( 14 )
 anims/Size = SubResource( 15 )
 
 [connection signal="body_entered" from="BallDetector" to="." method="_on_BallDetector_body_entered"]
-[connection signal="body_exited" from="BallDetector" to="." method="_on_BallDetector_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
