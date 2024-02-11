@@ -17,8 +17,6 @@ var stars:int = 1
 # the next level will appear when opening again
 var first_time_complete:bool = false
 
-onready var animation_player = $AnimationPlayer
-
 func add_star() -> void:
 	stars += 1
 	if stars == 2:
@@ -43,8 +41,6 @@ func _on_Replay_pressed() -> void:
 		
 	emit_signal("replay")
 	get_tree().paused = false
-	animation_player.play("FadeOut")
-	yield(animation_player,"animation_finished")
 	hide()
 #	get_tree().change_scene("res://src/levels/Level%s.tscn"%str(Global.current_level))
 
@@ -67,17 +63,13 @@ func game_over() -> void:
 		$VBoxContainer/Buttons/NextLevel.hide()
 	
 	get_tree().paused = true
-	animation_player.play("FadeIn")
 
 
 func _on_Menu_pressed() -> void:
 	AudioMachine.click()
 	if first_time_complete:
 		Global.current_level -= 1
-	
 	emit_signal("menu")
-	animation_player.play("FadeOut")
-	yield(animation_player,"animation_finished")
 	hide()
 
 
@@ -89,3 +81,4 @@ func _on_Levels_pressed() -> void:
 func _on_Help_pressed() -> void:
 	AudioMachine.click()
 	emit_signal("help")
+

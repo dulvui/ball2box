@@ -1,258 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/screens/level-complete/LevelComplete.gd" type="Script" id=2]
 [ext_resource path="res://assets/star.png" type="Texture" id=3]
-
-[sub_resource type="Animation" id=1]
-resource_name = "FadeIn"
-tracks/0/type = "value"
-tracks/0/path = NodePath("VBoxContainer/Buttons:rect_scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.8, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ), Vector2( 1, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("VBoxContainer/Stars/Star1:rect_scale")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0.01, 0.01 ), Vector2( 0.01, 0.01 ), Vector2( 3, 3 ), Vector2( 2, 2 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("VBoxContainer/Stars/Star2:rect_scale")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.2, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0.1, 0.1 ), Vector2( 0.1, 0.1 ), Vector2( 3, 3 ), Vector2( 2, 2 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("VBoxContainer/Stars/Star3:rect_scale")
-tracks/3/interp = 2
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.2, 0.8, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0.1, 0.1 ), Vector2( 0.1, 0.1 ), Vector2( 3, 3 ), Vector2( 2, 2 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("VBoxContainer/Buttons:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 0.8, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("VBoxContainer/Stars/Star1:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("VBoxContainer/Stars/Star2:modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("VBoxContainer/Stars/Star3:modulate")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "FadeOut"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("VBoxContainer/Buttons:rect_scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 0.01, 0.01 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("VBoxContainer/Stars/Star1:rect_scale")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 2, 2 ), Vector2( 0.1, 0.1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("VBoxContainer/Stars/Star2:rect_scale")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 2, 2 ), Vector2( 0.1, 0.1 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("VBoxContainer/Stars/Star3:rect_scale")
-tracks/3/interp = 2
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 2, 2 ), Vector2( 0.1, 0.1 ) ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "RESET"
-tracks/0/type = "value"
-tracks/0/path = NodePath("VBoxContainer/Buttons:rect_scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("VBoxContainer/Stars/Star1:rect_scale")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 2, 2 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("VBoxContainer/Stars/Star2:rect_scale")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 2, 2 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("VBoxContainer/Stars/Star3:rect_scale")
-tracks/3/interp = 2
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 2, 2 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("VBoxContainer/Buttons:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("VBoxContainer/Stars/Star1:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("VBoxContainer/Stars/Star2:modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("VBoxContainer/Stars/Star3:modulate")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
 
 [node name="LevelComplete" type="Control"]
 pause_mode = 2
@@ -291,7 +41,6 @@ alignment = 1
 self_modulate = Color( 0.988235, 0.898039, 0.152941, 1 )
 margin_right = 155.0
 margin_bottom = 200.0
-rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 50, 50 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -306,7 +55,6 @@ self_modulate = Color( 0.984314, 0.956863, 0.745098, 1 )
 margin_left = 159.0
 margin_right = 315.0
 margin_bottom = 200.0
-rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 50, 50 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -321,7 +69,6 @@ self_modulate = Color( 0.984314, 0.956863, 0.745098, 1 )
 margin_left = 319.0
 margin_right = 475.0
 margin_bottom = 200.0
-rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 50, 50 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -369,12 +116,6 @@ margin_right = 475.0
 margin_bottom = 418.0
 text = "MENU"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/FadeIn = SubResource( 1 )
-anims/FadeOut = SubResource( 2 )
-anims/RESET = SubResource( 3 )
-
-[connection signal="visibility_changed" from="." to="." method="_on_LevelComplete_visibility_changed"]
 [connection signal="pressed" from="VBoxContainer/Buttons/NextLevel" to="." method="_on_NextLevel_pressed"]
 [connection signal="pressed" from="VBoxContainer/Buttons/Replay" to="." method="_on_Replay_pressed"]
 [connection signal="pressed" from="VBoxContainer/Buttons/Levels" to="." method="_on_Levels_pressed"]

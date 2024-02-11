@@ -80,6 +80,7 @@ margin_right = 533.0
 margin_bottom = 126.0
 text = ">"
 
+[connection signal="visibility_changed" from="." to="." method="_on_LevelControl_visibility_changed"]
 [connection signal="pressed" from="LevelControl/PrevLevel" to="." method="_on_PrevLevel_pressed"]
 [connection signal="pressed" from="LevelControl/LevelButton" to="." method="_on_LevelButton_pressed"]
 [connection signal="pressed" from="LevelControl/NextLevel" to="." method="_on_NextLevel_pressed"]

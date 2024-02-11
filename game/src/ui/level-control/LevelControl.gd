@@ -7,8 +7,10 @@ onready var star2:TextureRect = $Stars/Star2
 onready var star3:TextureRect = $Stars/Star3
 
 func _ready() -> void:
+	update_level()
+
+func update_level() -> void:
 	$LevelControl/LevelButton.text = "level " + str(Global.current_level)
-	
 	var stars:int = Global.level_stars[Global.current_level - 1]
 	
 	if stars >= 1:
@@ -37,3 +39,7 @@ func _on_NextLevel_pressed() -> void:
 func _on_LevelButton_pressed() -> void:
 	AudioMachine.click()
 	emit_signal("levels")
+
+
+func _on_LevelControl_visibility_changed() -> void:
+	update_level()

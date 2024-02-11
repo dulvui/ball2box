@@ -130,7 +130,6 @@ func _on_LevelComplete_replay() -> void:
 func _on_LevelComplete_menu() -> void:
 	level_complete.reset_stars()
 	ball.reset_position()
-	main.set_level()
 	main.show()
 	AudioMachine.reset()
 	star1.show_star()
