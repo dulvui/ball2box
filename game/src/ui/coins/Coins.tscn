@@ -22,8 +22,10 @@ modulate = Color( 0.988235, 0.898039, 0.152941, 1 )
 margin_right = 100.0
 margin_bottom = 118.0
 texture = ExtResource( 3 )
+stretch_mode = 6
 
 [node name="Label" type="Label" parent="."]
 margin_left = 104.0
-margin_right = 104.0
+margin_right = 400.0
 margin_bottom = 118.0
+size_flags_horizontal = 3
