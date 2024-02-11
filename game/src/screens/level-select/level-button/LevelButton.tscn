@@ -55,6 +55,7 @@ __meta__ = {
 margin_top = 160.0
 margin_right = 308.0
 margin_bottom = 260.0
+mouse_filter = 2
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -63,18 +64,21 @@ __meta__ = {
 [node name="Star1" type="TextureRect" parent="MarginContainer/Info/Stars"]
 margin_right = 100.0
 margin_bottom = 100.0
+mouse_filter = 2
 texture = ExtResource( 3 )
 
 [node name="Star2" type="TextureRect" parent="MarginContainer/Info/Stars"]
 margin_left = 104.0
 margin_right = 204.0
 margin_bottom = 100.0
+mouse_filter = 2
 texture = ExtResource( 3 )
 
 [node name="Star3" type="TextureRect" parent="MarginContainer/Info/Stars"]
 margin_left = 208.0
 margin_right = 308.0
 margin_bottom = 100.0
+mouse_filter = 2
 texture = ExtResource( 3 )
 
 [connection signal="pressed" from="MarginContainer/Button" to="." method="_on_Button_pressed"]
