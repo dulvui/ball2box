@@ -1,31 +1,10 @@
-# SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.org>
-
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
-extends RigidBody
+extends StaticBody
 
 signal win
 
-const scale_min:float = 1.01
-const scale_max:float = 1.08
-const scale_factor:float = 0.001
+func _ready():
+	$AnimationPlayer.play("Size")
 
-var scale_up:bool = true
-
-func _integrate_forces(state:PhysicsDirectBodyState) -> void:
-	if state.transform.basis.x.x < scale_max and scale_up:
-		state.transform.basis.x.x += scale_factor
-		state.transform.basis.y.y += scale_factor
-		state.transform.basis.z.z += scale_factor
-	elif state.transform.basis.x.x > scale_min:
-		scale_up = false
-		state.transform.basis.x.x -= scale_factor
-		state.transform.basis.y.y -= scale_factor
-		state.transform.basis.z.z -= scale_factor
-	else:
-		scale_up = true
-	
-	
 func _on_BallDetector_body_entered(body) -> void:
 	if body.is_in_group("ball"):
 		$Timer.start()
@@ -38,8 +17,9 @@ func _on_Timer_timeout() -> void:
 func fade_in() -> void:
 	# to match arrow animation
 	if Global.current_level > 1:
-		# TODO use integrate forces
-		pass
+		$AnimationPlayer.play("FadeIn")
+		yield($AnimationPlayer,"animation_finished")
+	$AnimationPlayer.play("Size")
 	
 func hide() -> void:
 	visible = false
