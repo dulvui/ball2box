@@ -84,6 +84,8 @@ func set_level_stars(stars) -> void:
 		level_stars[current_level - 1] = stars
 
 func unlock_next_level() -> bool:
+	if Global.current_level >= Global.LEVELS:
+		return false
 	if level_stars[current_level] == -1:
 		level_stars[current_level] = 0
 		return true

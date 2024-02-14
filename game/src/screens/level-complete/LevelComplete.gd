@@ -37,7 +37,7 @@ func game_over() -> void:
 		Global.current_level += 1
 		first_time_complete = true
 	
-	if Global.current_level > Global.LEVELS:
+	if Global.current_level >= Global.LEVELS:
 		$VBoxContainer/Buttons/NextLevel.hide()
 	
 	get_tree().paused = true
