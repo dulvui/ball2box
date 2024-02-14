@@ -42,6 +42,10 @@ window/handheld/orientation="portrait"
 window/stretch/mode="2d"
 window/stretch/aspect="keep_width"
 
+[global]
+
+locale=false
+
 [gui]
 
 theme/custom="res://theme.tres"
@@ -57,7 +61,6 @@ pointing/emulate_touch_from_mouse=true
 
 [locale]
 
-test="de"
 translations=PoolStringArray( "res://assets/i18n/UltimateTossi18n.de.translation", "res://assets/i18n/UltimateTossi18n.en.translation", "res://assets/i18n/UltimateTossi18n.es.translation", "res://assets/i18n/UltimateTossi18n.it.translation" )
 
 [physics]
