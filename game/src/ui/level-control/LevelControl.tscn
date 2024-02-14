@@ -11,14 +11,14 @@ margin_bottom = 0.559998
 script = ExtResource( 2 )
 
 [node name="Stars" type="HBoxContainer" parent="."]
-margin_right = 533.0
+margin_right = 590.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 0, 200 )
 rect_pivot_offset = Vector2( -1820, 104.5 )
 alignment = 1
 
 [node name="Star1" type="TextureRect" parent="Stars"]
-margin_right = 175.0
+margin_right = 194.0
 margin_bottom = 200.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -26,8 +26,8 @@ texture = ExtResource( 1 )
 stretch_mode = 6
 
 [node name="Star2" type="TextureRect" parent="Stars"]
-margin_left = 179.0
-margin_right = 354.0
+margin_left = 198.0
+margin_right = 392.0
 margin_bottom = 200.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -35,8 +35,8 @@ texture = ExtResource( 1 )
 stretch_mode = 6
 
 [node name="Star3" type="TextureRect" parent="Stars"]
-margin_left = 358.0
-margin_right = 533.0
+margin_left = 396.0
+margin_right = 590.0
 margin_bottom = 200.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -45,7 +45,7 @@ stretch_mode = 6
 
 [node name="LevelControl" type="HBoxContainer" parent="."]
 margin_top = 224.0
-margin_right = 533.0
+margin_right = 590.0
 margin_bottom = 350.0
 alignment = 1
 
@@ -57,26 +57,27 @@ text = "<"
 [node name="VSeparator" type="VSeparator" parent="LevelControl"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 97.0
-margin_right = 105.0
+margin_right = 101.0
 margin_bottom = 126.0
 size_flags_horizontal = 3
 
 [node name="LevelButton" type="Button" parent="LevelControl"]
-margin_left = 109.0
-margin_right = 424.0
+margin_left = 105.0
+margin_right = 485.0
 margin_bottom = 126.0
+rect_min_size = Vector2( 380, 0 )
 text = "level 12"
 
 [node name="VSeparator2" type="VSeparator" parent="LevelControl"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 428.0
-margin_right = 436.0
+margin_left = 489.0
+margin_right = 493.0
 margin_bottom = 126.0
 size_flags_horizontal = 3
 
 [node name="NextLevel" type="Button" parent="LevelControl"]
-margin_left = 440.0
-margin_right = 533.0
+margin_left = 497.0
+margin_right = 590.0
 margin_bottom = 126.0
 text = ">"
 

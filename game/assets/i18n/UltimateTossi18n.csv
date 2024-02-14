@@ -6,7 +6,7 @@ GO,go,los,vai,vale
 SELECT,select,auswählen,seleziona,seleciona
 BOUNCE,bounce,aufprall,rimbalzo,rebote
 MASS,weight,gewicht,peso,peso
-NEXT_LEVEL,level {amount},level {amount},level {amount},level {amount}
+LEVEL,level,level,livello,nivel
 REPLAY,replay,nochmal,rigioca,repetir
 MENU,menu,menü,menu,menu
 BUY,buy,kaufen,compra,compra

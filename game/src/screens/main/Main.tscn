@@ -35,33 +35,33 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -267.0
-margin_top = -502.0
-margin_right = 267.0
-margin_bottom = 501.0
+margin_left = -295.0
+margin_top = -501.5
+margin_right = 295.0
+margin_bottom = 501.5
 alignment = 1
 
 [node name="LevelControl" parent="Buttons" instance=ExtResource( 7 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 534.0
+margin_right = 590.0
 margin_bottom = 350.0
 
 [node name="HSeparator2" type="HSeparator" parent="Buttons"]
 modulate = Color( 1, 1, 1, 0 )
 margin_top = 374.0
-margin_right = 534.0
+margin_right = 590.0
 margin_bottom = 379.0
 rect_min_size = Vector2( 0, 5 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Buttons"]
 margin_top = 403.0
-margin_right = 534.0
+margin_right = 590.0
 margin_bottom = 403.0
 
 [node name="Play" type="Button" parent="Buttons"]
 margin_top = 427.0
-margin_right = 534.0
+margin_right = 590.0
 margin_bottom = 553.0
 size_flags_horizontal = 5
 text = "PLAY"
@@ -71,7 +71,7 @@ __meta__ = {
 
 [node name="Help" type="Button" parent="Buttons"]
 margin_top = 577.0
-margin_right = 534.0
+margin_right = 590.0
 margin_bottom = 703.0
 size_flags_horizontal = 5
 text = "HELP"
@@ -82,13 +82,13 @@ __meta__ = {
 [node name="HSeparator" type="HSeparator" parent="Buttons"]
 modulate = Color( 1, 1, 1, 0 )
 margin_top = 727.0
-margin_right = 534.0
+margin_right = 590.0
 margin_bottom = 755.0
 size_flags_vertical = 3
 
 [node name="Settings" type="HBoxContainer" parent="Buttons"]
 margin_top = 779.0
-margin_right = 534.0
+margin_right = 590.0
 margin_bottom = 905.0
 custom_constants/separation = 18
 alignment = 1
@@ -125,8 +125,8 @@ texture_normal = ExtResource( 13 )
 [node name="SfxButton" parent="Buttons/Settings" instance=ExtResource( 9 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 39.0
-margin_right = 179.0
+margin_left = 67.0
+margin_right = 207.0
 margin_bottom = 126.0
 icon = ExtResource( 11 )
 normal_texture = ExtResource( 11 )
@@ -135,25 +135,25 @@ pressed_texture = ExtResource( 12 )
 [node name="MusicButton" parent="Buttons/Settings" instance=ExtResource( 9 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 197.0
-margin_right = 337.0
+margin_left = 225.0
+margin_right = 365.0
 margin_bottom = 126.0
 icon = ExtResource( 8 )
 normal_texture = ExtResource( 8 )
 pressed_texture = ExtResource( 3 )
 
 [node name="GithubButton" type="Button" parent="Buttons/Settings"]
-margin_left = 355.0
-margin_right = 495.0
+margin_left = 383.0
+margin_right = 523.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 140, 0 )
 icon = ExtResource( 6 )
 icon_align = 1
 
 [node name="SimonDalvai" type="LinkButton" parent="Buttons"]
-margin_left = 74.0
+margin_left = 102.0
 margin_top = 929.0
-margin_right = 460.0
+margin_right = 488.0
 margin_bottom = 1003.0
 focus_mode = 2
 size_flags_horizontal = 4
