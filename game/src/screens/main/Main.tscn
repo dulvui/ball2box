@@ -1,48 +1,18 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/font/manrope.thin.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://theme.tres" type="Theme" id=2]
 [ext_resource path="res://assets/musicOff.png" type="Texture" id=3]
 [ext_resource path="res://src/screens/main/Main.gd" type="Script" id=4]
-[ext_resource path="res://panel.tres" type="StyleBox" id=5]
+[ext_resource path="res://styles/panel.tres" type="StyleBox" id=5]
 [ext_resource path="res://assets/github.svg" type="Texture" id=6]
 [ext_resource path="res://src/ui/level-control/LevelControl.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/musicOn.png" type="Texture" id=8]
 [ext_resource path="res://src/ui/toggle-button/ToggleButton.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/fade-effect/FadeEffect.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/audioOn.png" type="Texture" id=11]
 [ext_resource path="res://assets/audioOff.png" type="Texture" id=12]
 [ext_resource path="res://assets/information.png" type="Texture" id=13]
-
-[sub_resource type="Animation" id=3]
-resource_name = "FirstFadeIn"
-length = 1.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("Fade:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4, 0.7, 1.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
-}
-
-[sub_resource type="Animation" id=12]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Fade:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
-}
 
 [sub_resource type="DynamicFont" id=13]
 size = 53
@@ -59,20 +29,6 @@ anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 360, 640 )
 theme = ExtResource( 2 )
 script = ExtResource( 4 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/FirstFadeIn = SubResource( 3 )
-anims/RESET = SubResource( 12 )
-
-[node name="Fade" type="ColorRect" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 11.0
-margin_top = 19.0
-margin_right = 11.0
-margin_bottom = 19.0
-color = Color( 0.105882, 0.105882, 0.231373, 1 )
 
 [node name="Buttons" type="VBoxContainer" parent="."]
 anchor_left = 0.5
@@ -203,6 +159,9 @@ focus_mode = 2
 size_flags_horizontal = 4
 custom_fonts/font = SubResource( 13 )
 text = "simondalvai.org"
+
+[node name="FadeEffect" parent="." instance=ExtResource( 10 )]
+node_path = NodePath("..")
 
 [connection signal="levels" from="Buttons/LevelControl" to="." method="_on_LevelControl_levels"]
 [connection signal="pressed" from="Buttons/Play" to="." method="_on_Play_pressed"]

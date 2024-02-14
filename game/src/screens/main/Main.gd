@@ -9,8 +9,6 @@ signal levels
 signal info
 signal help
 
-onready var animation_player:AnimationPlayer = $AnimationPlayer
-
 func _ready() -> void:
 	$Buttons/Settings/MusicButton.pressed = Global.music
 	$Buttons/Settings/SfxButton.pressed = Global.sfx
@@ -27,7 +25,6 @@ func _on_InfoButton_pressed() -> void:
 
 func _on_Info_back() -> void:
 	AudioMachine.click()
-	animation_player.play("InfoFadeOut")
 
 
 func _on_SimonDalvai_pressed() -> void:
@@ -55,6 +52,6 @@ func _on_Help_pressed() -> void:
 	emit_signal("help")
 
 
-
 func _on_LevelControl_levels() -> void:
 	emit_signal("levels")
+

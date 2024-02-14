@@ -4,8 +4,8 @@
 [ext_resource path="res://styles/button-pressed.tres" type="StyleBox" id=2]
 [ext_resource path="res://assets/font/manrope.thin.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://styles/button-disabled.tres" type="StyleBox" id=4]
-[ext_resource path="res://button-transparent.tres" type="StyleBox" id=5]
-[ext_resource path="res://panel.tres" type="StyleBox" id=6]
+[ext_resource path="res://styles/button-transparent.tres" type="StyleBox" id=5]
+[ext_resource path="res://styles/panel.tres" type="StyleBox" id=6]
 
 [sub_resource type="DynamicFont" id=9]
 size = 85
