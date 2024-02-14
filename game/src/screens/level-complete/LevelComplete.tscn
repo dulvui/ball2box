@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/screens/level-complete/LevelComplete.gd" type="Script" id=2]
 [ext_resource path="res://assets/star.png" type="Texture" id=3]
 [ext_resource path="res://src/fade-effect/FadeEffect.tscn" type="PackedScene" id=4]
+[ext_resource path="res://styles/big-font.tres" type="DynamicFont" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeIn"
@@ -119,17 +120,18 @@ margin_bottom = 409.0
 alignment = 1
 
 [node name="Level" type="Label" parent="VBoxContainer"]
-margin_top = 73.0
+margin_top = 34.0
 margin_right = 574.0
-margin_bottom = 191.0
-rect_pivot_offset = Vector2( 237, 59 )
+margin_bottom = 230.0
+rect_pivot_offset = Vector2( 287, 98 )
+custom_fonts/font = ExtResource( 5 )
 text = "12"
 align = 1
 
 [node name="Stars" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 215.0
+margin_top = 254.0
 margin_right = 574.0
-margin_bottom = 415.0
+margin_bottom = 454.0
 rect_min_size = Vector2( 0, 200 )
 alignment = 1
 
@@ -175,9 +177,9 @@ __meta__ = {
 }
 
 [node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 439.0
+margin_top = 478.0
 margin_right = 574.0
-margin_bottom = 857.0
+margin_bottom = 896.0
 rect_pivot_offset = Vector2( 194, 215 )
 custom_constants/separation = 20
 

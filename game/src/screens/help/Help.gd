@@ -28,8 +28,6 @@ func _ready() -> void:
 	
 	instructions.text = tr("HELP_INSTRUCTIONS")
 	
-	print(Global.codes[-1])
-	
 	
 
 func _on_Copy_pressed() -> void:
