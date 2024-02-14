@@ -4,7 +4,7 @@
 
 extends Tween
 
-const DURATON:float = 0.2
+const DURATON:float = 0.3
 
 export var node_path:NodePath
 export var node_path2:NodePath
@@ -32,11 +32,13 @@ func _ready() -> void:
 
 func fade_in() -> void:
 	if node:
+		node.modulate = Color(1, 1, 1, 0)
 		interpolate_property(node, "modulate", 
 		Color(1, 1, 1, 0), Color(1, 1, 1, 1), DURATON, 
 		Tween.TRANS_LINEAR, Tween.EASE_IN)
 		start()
 	if node2:
+		node2.modulate = Color(1, 1, 1, 0)
 		interpolate_property(node2, "modulate", 
 		Color(1, 1, 1, 0), Color(1, 1, 1, 1), DURATON, 
 		Tween.TRANS_LINEAR, Tween.EASE_IN)

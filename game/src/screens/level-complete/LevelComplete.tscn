@@ -1,12 +1,104 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/screens/level-complete/LevelComplete.gd" type="Script" id=2]
 [ext_resource path="res://assets/star.png" type="Texture" id=3]
 [ext_resource path="res://src/fade-effect/FadeEffect.tscn" type="PackedScene" id=4]
 
+[sub_resource type="Animation" id=1]
+resource_name = "FadeIn"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBoxContainer/Stars/Star3:rect_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1.1, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.01, 0.01 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("VBoxContainer/Stars/Star2:rect_scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6, 1.1, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.01, 0.01 ), Vector2( 1.41, 1.4 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("VBoxContainer/Stars/Star1:rect_scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 1.1, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.01, 0.01 ), Vector2( 1.6, 1.6 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("VBoxContainer/Stars/Star1:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("VBoxContainer/Stars/Star2:rect_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("VBoxContainer/Stars/Star3:rect_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
 [node name="LevelComplete" type="Control"]
 pause_mode = 2
+process_priority = 3
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
@@ -20,32 +112,32 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -237.5
-margin_top = -497.5
-margin_right = 237.5
-margin_bottom = 417.5
+margin_left = -287.0
+margin_top = -521.0
+margin_right = 287.0
+margin_bottom = 409.0
 alignment = 1
 
 [node name="Level" type="Label" parent="VBoxContainer"]
-margin_top = 65.0
-margin_right = 475.0
-margin_bottom = 183.0
+margin_top = 73.0
+margin_right = 574.0
+margin_bottom = 191.0
 rect_pivot_offset = Vector2( 237, 59 )
 text = "12"
 align = 1
 
 [node name="Stars" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 207.0
-margin_right = 475.0
-margin_bottom = 407.0
+margin_top = 215.0
+margin_right = 574.0
+margin_bottom = 415.0
 rect_min_size = Vector2( 0, 200 )
 alignment = 1
 
 [node name="Star1" type="TextureRect" parent="VBoxContainer/Stars"]
 self_modulate = Color( 0.988235, 0.898039, 0.152941, 1 )
-margin_right = 155.0
+margin_right = 188.0
 margin_bottom = 200.0
-rect_pivot_offset = Vector2( 50, 50 )
+rect_pivot_offset = Vector2( 77, 100 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 3 )
@@ -56,10 +148,10 @@ __meta__ = {
 
 [node name="Star2" type="TextureRect" parent="VBoxContainer/Stars"]
 self_modulate = Color( 0.984314, 0.956863, 0.745098, 1 )
-margin_left = 159.0
-margin_right = 315.0
+margin_left = 192.0
+margin_right = 381.0
 margin_bottom = 200.0
-rect_pivot_offset = Vector2( 50, 50 )
+rect_pivot_offset = Vector2( 78, 100 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 3 )
@@ -70,10 +162,10 @@ __meta__ = {
 
 [node name="Star3" type="TextureRect" parent="VBoxContainer/Stars"]
 self_modulate = Color( 0.984314, 0.956863, 0.745098, 1 )
-margin_left = 319.0
-margin_right = 475.0
+margin_left = 385.0
+margin_right = 574.0
 margin_bottom = 200.0
-rect_pivot_offset = Vector2( 50, 50 )
+rect_pivot_offset = Vector2( 78, 100 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 3 )
@@ -83,20 +175,20 @@ __meta__ = {
 }
 
 [node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 431.0
-margin_right = 475.0
-margin_bottom = 849.0
+margin_top = 439.0
+margin_right = 574.0
+margin_bottom = 857.0
 rect_pivot_offset = Vector2( 194, 215 )
 custom_constants/separation = 20
 
 [node name="NextLevel" type="Button" parent="VBoxContainer/Buttons"]
-margin_right = 475.0
+margin_right = 574.0
 margin_bottom = 126.0
 text = "NEXT"
 
 [node name="Replay" type="Button" parent="VBoxContainer/Buttons"]
 margin_top = 146.0
-margin_right = 475.0
+margin_right = 574.0
 margin_bottom = 272.0
 text = "REPLAY"
 
@@ -110,15 +202,19 @@ text = "LEVELS"
 [node name="Help" type="Button" parent="VBoxContainer/Buttons"]
 visible = false
 margin_top = 292.0
-margin_right = 475.0
+margin_right = 574.0
 margin_bottom = 418.0
 text = "HELP"
 
 [node name="Menu" type="Button" parent="VBoxContainer/Buttons"]
 margin_top = 292.0
-margin_right = 475.0
+margin_right = 574.0
 margin_bottom = 418.0
 text = "MENU"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FadeIn = SubResource( 1 )
+anims/RESET = SubResource( 2 )
 
 [connection signal="pressed" from="VBoxContainer/Buttons/NextLevel" to="." method="_on_NextLevel_pressed"]
 [connection signal="pressed" from="VBoxContainer/Buttons/Replay" to="." method="_on_Replay_pressed"]

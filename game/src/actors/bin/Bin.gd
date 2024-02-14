@@ -2,8 +2,9 @@ extends StaticBody
 
 signal win
 
+onready var animation_player:AnimationPlayer = $AnimationPlayer
 func _ready():
-	$AnimationPlayer.play("Size")
+	animation_player.play("Size")
 
 func _on_BallDetector_body_entered(body) -> void:
 	if body.is_in_group("ball"):
@@ -17,9 +18,9 @@ func _on_Timer_timeout() -> void:
 func fade_in() -> void:
 	# to match arrow animation
 	if Global.current_level > 1:
-		$AnimationPlayer.play("FadeIn")
-		yield($AnimationPlayer,"animation_finished")
-	$AnimationPlayer.play("Size")
+		animation_player.play("FadeIn")
+		yield(animation_player,"animation_finished")
+	animation_player.play("Size")
 	
 func hide() -> void:
 	visible = false

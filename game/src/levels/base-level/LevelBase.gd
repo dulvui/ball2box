@@ -75,11 +75,11 @@ func on_star2_hit() -> void:
 
 
 func _on_Bin_win() -> void:
+	AudioMachine.hit(true)
 	if has_node("Tutorial"):
 		tutorial.fade_out()
 	level_complete.game_over()
 	level_complete.show()
-	AudioMachine.hit(true)
 	Global.save_data()
 	
 
@@ -130,14 +130,14 @@ func _on_LevelComplete_replay() -> void:
 func _on_LevelComplete_menu() -> void:
 	level_complete.reset_stars()
 	ball.reset_position()
-	main.show()
 	AudioMachine.reset()
 	star1.show_star()
 	star2.show_star()
 	
 	if portals:
 		portals.reset()
-
+	main.show()
+	level_complete.hide()
 
 func _camera_shake() -> void:
 	var start_position:Vector3 = camera.translation

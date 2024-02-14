@@ -9,6 +9,12 @@ signal menu
 signal levels
 signal help
 
+onready var animation_player:AnimationPlayer = $AnimationPlayer
+onready var level_label:Label = $VBoxContainer/Level
+onready var next_level_button:Button = $VBoxContainer/Buttons/NextLevel
+
+
+
 var stars:int = 1
 
 # to unlock next level without clicking on next level
@@ -30,7 +36,7 @@ func reset_stars() -> void:
 
 
 func game_over() -> void:
-	$VBoxContainer/Level.text = str(Global.current_level)
+	level_label.text = str(Global.current_level)
 	Global.set_level_stars(stars)
 	
 	if Global.unlock_next_level():
@@ -38,16 +44,16 @@ func game_over() -> void:
 		first_time_complete = true
 	
 	if Global.current_level >= Global.LEVELS:
-		$VBoxContainer/Buttons/NextLevel.hide()
+		next_level_button.hide()
 	
 	get_tree().paused = true
+	animation_player.play("FadeIn")
 
 
 func _on_Menu_pressed() -> void:
 	AudioMachine.click()
 	if first_time_complete:
 		Global.current_level -= 1
-	hide()
 	emit_signal("menu")
 
 
