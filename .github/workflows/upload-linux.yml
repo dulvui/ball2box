@@ -35,7 +35,7 @@ jobs:
         run: mkdir linux
 
       - name: Create export_presets.cfg
-        run: cp game/export_presets.html.example game/export_presets.cfg
+        run: cp game/export_presets.linux.example game/export_presets.cfg
 
       - name: Cache Godot files
         id: cache-godot
@@ -61,10 +61,6 @@ jobs:
           mv templates/* ~/.local/share/godot/templates/${{ env.GODOT_VERSION }}.stable
           rm -f Godot_v${{ env.GODOT_VERSION }}-stable_linux_headless.64.zip Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz
           godot -e -q
-
-      - name: Create export presets config
-        if: ${{ inputs.create-export-preset-cfg  == 'true' }}
-        run: cp ${{ env.WORKING_DIRECTORY }}/export_presets.linux.cfg ${{ env.WORKING_DIRECTORY }}/export_presets.cfg
 
       - name: Export
         run: godot --path ${{ env.WORKING_DIRECTORY }} --export Linux/X11 ${{ inputs.output-file-path }}
