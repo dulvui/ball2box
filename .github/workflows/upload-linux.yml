@@ -1,0 +1,87 @@
+# SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.org>
+
+# SPDX-License-Identifier: CC0-1.0
+
+name: Linux upload
+
+on:
+  push:
+    paths:
+      - "version"
+      - ".github/workflows/upload-linux.yml"
+      - "export_presets.linux.example"
+
+env:
+  WORKING_DIRECTORY: game
+  GODOT_VERSION: 3.5.3
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Read version number and version code
+        run: |
+          echo "VERSION_NAME=$(cat version | cut -f1 -d-)" >> $GITHUB_ENV
+          echo "VERSION_CODE=$(cat version | cut -f2 -d-)" >> $GITHUB_ENV
+
+      - name: Delete iOS icons
+        run: rm -rf $WORKING_DIRECTORY/AppIcons
+
+      - name: Create export directory
+        run: mkdir linux
+
+      - name: Create export_presets.cfg
+        run: cp game/export_presets.html.example game/export_presets.cfg
+
+      - name: Cache Godot files
+        id: cache-godot
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.local/share/godot/**
+            /usr/local/bin/godot
+            ~/.config/godot/**
+          key: ${{ runner.os }}-godot-${{ env.GODOT_VERSION }}
+
+      - name: Download and config Godot Engine headless linux server and templates
+        if: steps.cache-godot.outputs.cache-hit != 'true'
+        run: |
+          wget -q https://downloads.tuxfamily.org/godotengine/${{ env.GODOT_VERSION }}/Godot_v${{ env.GODOT_VERSION }}-stable_linux_headless.64.zip
+          wget -q https://downloads.tuxfamily.org/godotengine/${{ env.GODOT_VERSION }}/Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz
+          mkdir ~/.cache
+          mkdir -p ~/.config/godot
+          mkdir -p ~/.local/share/godot/templates/${{ env.GODOT_VERSION }}.stable
+          unzip Godot_v${{ env.GODOT_VERSION }}-stable_linux_headless.64.zip
+          mv Godot_v${{ env.GODOT_VERSION }}-stable_linux_headless.64 /usr/local/bin/godot
+          unzip Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz
+          mv templates/* ~/.local/share/godot/templates/${{ env.GODOT_VERSION }}.stable
+          rm -f Godot_v${{ env.GODOT_VERSION }}-stable_linux_headless.64.zip Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz
+          godot -e -q
+
+      - name: Create export presets config
+        if: ${{ inputs.create-export-preset-cfg  == 'true' }}
+        run: cp ${{ env.WORKING_DIRECTORY }}/export_presets.linux.cfg ${{ env.WORKING_DIRECTORY }}/export_presets.cfg
+
+      - name: Export
+        run: godot --path ${{ env.WORKING_DIRECTORY }} --export Linux/X11 ${{ inputs.output-file-path }}
+
+      - name: create archive
+        run: tar -czf ball2box.tar.gz game/Ball2Box.x86_64 game/Ball2Box.pck
+
+      - name: Upload binaries to Github release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./ball2box.tar.gz
+          asset_name: ball2box.tar.gz
+          tag: v${{ env.VERSION_NAME }}
+          overwrite: true
+          body:  ${{ steps.changelog.outputs.RELEASE_BODY }}
+
+
+
+
