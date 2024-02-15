@@ -73,7 +73,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ./ball2box.tar.gz
+          file: ./game/ball2box.tar.gz
           asset_name: ball2box.tar.gz
           tag: v${{ env.VERSION_NAME }}
           overwrite: true
