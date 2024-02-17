@@ -66,7 +66,7 @@ jobs:
         run: godot --path ${{ env.WORKING_DIRECTORY }} --export Linux/X11 ${{ inputs.output-file-path }}
 
       - name: create archive
-        run: tar -cfJ ball2box.tar.xz Ball2Box.x86_64 Ball2Box.pck
+        run: tar -cJf ball2box.tar.xz Ball2Box.x86_64 Ball2Box.pck
         working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Upload binaries to Github release
