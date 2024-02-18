@@ -25,21 +25,46 @@
   </description>
   <screenshots>
     <screenshot type="default">
-      https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-1.png</screenshot>
+      <image>
+        https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-1.png
+      </image>
+    </screenshot>
     <screenshot>
-      https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-2.png</screenshot>
+      <image>
+        https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-2.png
+      </image>
+    </screenshot>
     <screenshot>
-      https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-3.png</screenshot>
+      <image>
+        https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-3.png
+      </image>
+    </screenshot>
+
     <screenshot>
-      https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-4.png</screenshot>
+      <image>
+        https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-4.png
+      </image>
+    </screenshot>
     <screenshot>
-      https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-5.png</screenshot>
+      <image>
+        https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-5.png
+      </image>
+    </screenshot>
     <screenshot>
-      https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-6.png</screenshot>
+      <image>
+        https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-6.png
+      </image>
+    </screenshot>
     <screenshot>
-      https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-7.png</screenshot>
+      <image>
+        https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-7.png
+      </image>
+    </screenshot>
     <screenshot>
-      https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-8.png</screenshot>
+      <image>
+        https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-8.png
+      </image>
+    </screenshot>
   </screenshots>
   <content_rating type="oars-1.1" />
   <releases>
