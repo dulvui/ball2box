@@ -6,19 +6,20 @@
   <launchable type="desktop-id">org.simondalvai.ball2box.desktop</launchable>
   <project_license>AGPL-3.0-or-later</project_license>
   <metadata_license>CC0-1.0</metadata_license>
-  <summary>Casual game with the Godot engine 3</summary>
+  <summary>Shoot the ball into the red box</summary>
   <url type="homepage">https://simondalvai.org/games/ball2box</url>
   <url type="bugtracker">https://github.com/dulvui/ball2box/issues</url>
   <url type="donation">https://simondalvai.org/donate</url>
   <url type="vcs-browser">https://github.com/dulvui/ball2box</url>
   <description>
-    <p>Shoot the ball into the red box and hit all stars. Can you get all three stars on all
-      levels?
+    <p>Can you get all three stars on all levels?
     </p>
     <ul>
       <li>120+ levels and more coming soon...</li>
       <li>20+ different styled balls to collect</li>
       <li>Privacy friendly</li>
+      <li>Offline game</li>
+      <li>Created with Godot Engine 3</li>
     </ul>
   </description>
   <screenshots>
