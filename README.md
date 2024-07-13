@@ -33,6 +33,7 @@ Track the migration to Godot 4.x in [issue #6](https://github.com/dulvui/ball2bo
 ## Table of contents
 - [Ball2Box](#ball2box)
   - [Table of contents](#table-of-contents)
+  - [Roadmap](#roadmap)
   - [Setup](#setup)
     - [export\_presets.cfg](#export_presetscfg)
   - [Translations](#translations)
@@ -43,6 +44,9 @@ Track the migration to Godot 4.x in [issue #6](https://github.com/dulvui/ball2bo
     - [2D assets](#2d-assets)
     - [3D assets](#3d-assets)
     - [Font](#font)
+
+## Roadmap
+Features/issues lists are visible in the [Roadmap](ROADMAP.md) 
 
 ## Setup
 Get the latest version of the Godot Engine editor and check out the  
