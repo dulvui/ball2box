@@ -30,6 +30,7 @@ config/icon="res://icon.png"
 BallMachine="*res://src/utils/BallMachine.gd"
 AudioMachine="*res://src/utils/audio-machine/AudioMachine.tscn"
 Global="*res://src/globals/Global.tscn"
+ObjectsUtil="*res://src/level-editor/ObjectsUtil.gd"
 
 [display]
 
