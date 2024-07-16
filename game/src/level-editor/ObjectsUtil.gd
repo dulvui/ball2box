@@ -53,7 +53,7 @@ func _get_object_paths() -> Array:
 				sub_dir.list_dir_begin()
 				var sub_dir_file_name: String = sub_dir.get_next()
 				while sub_dir_file_name != "":
-					if ".tscn" in sub_dir_file_name:
+					if ".tscn" in sub_dir_file_name and sub_dir_file_name != "BaseObject.tscn":
 						list.append(OBJECTS_PATH + file_name + "/" + sub_dir_file_name)
 					sub_dir_file_name = sub_dir.get_next()
 			file_name = dir.get_next()

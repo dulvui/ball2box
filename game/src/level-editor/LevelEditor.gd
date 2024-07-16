@@ -8,31 +8,44 @@ onready var ball: RigidBody = $Ball
 onready var objects: Spatial = $Objects
 
 var objects_list: Array = []
+var active_object: Spatial
 
 func _ready() -> void:
 	var object: Spatial = ObjectsUtil.get_object()
-	objects.add_child(object)
-	objects_list.append(object)
-	object.fade_in()
-#	object.transform.origin = ball.transform.origin
-	
-	var object2: Spatial = ObjectsUtil.next()
-	objects.add_child(object2)
-	objects_list.append(object2)
-	object2.fade_in()
-#	object2.transform.origin = ball.transform.origin
+	_set_active(object)
+
 
 func _on_Add_pressed():
-	pass # Replace with function body.
-
-
-func _on_Undo_pressed():
-	pass # Replace with function body.
-
-
-func _on_Redo_pressed():
-	pass # Replace with function body.
+	var object: Spatial = ObjectsUtil.get_object()
+	objects_list.append(object)
+	add_child(object)
+	# TODO move a bit, replace with animation
+	object.transform.origin = Vector3(0, 22, 0)
+	if object.has_method("fade_in"):
+		object.fade_in()
+	print('add')
+	print(objects_list.size())
+	print(objects.get_child_count())
 
 
 func _on_Delete_pressed():
 	pass # Replace with function body.
+
+
+func _on_Next_pressed() -> void:
+	active_object.queue_free()
+	var object: Spatial = ObjectsUtil.next()
+	_set_active(object)
+
+
+func _on_Prev_pressed() -> void:
+	active_object.queue_free()
+	var object: Spatial = ObjectsUtil.prev()
+	_set_active(object)
+
+func _set_active(object: Spatial) -> void:
+	active_object = object
+	add_child(active_object)
+	active_object.transform.origin = active_object.transform.origin + Vector3(0, 9, 0)
+	if active_object.has_method("fade_in"):
+		active_object.fade_in()
