@@ -3,7 +3,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 extends Node
 
-
 const OBJECTS_PATH: String = "res://src/actors/objects/"
 
 var objects: Array = []
@@ -15,7 +14,7 @@ func _ready() -> void:
 
 
 func get_object() -> Spatial:
-	return objects[selected]
+	return objects[selected].instance()
 
 
 func next() -> Spatial:
@@ -35,7 +34,8 @@ func prev() -> Spatial:
 func _load_objects(objects_paths: Array) -> Array:
 	var list: Array = []
 	for path in objects_paths:
-		list.append(load(path))
+		var object_scene: PackedScene = load(path)
+		list.append(object_scene)
 	
 	return list
 

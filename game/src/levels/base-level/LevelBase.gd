@@ -23,8 +23,8 @@ onready var levels:Control = $UI/LevelSelect
 onready var shop:Control = $UI/Shop
 onready var info:Control = $UI/Info
 
-
 var portals:Spatial
+
 
 func _ready() -> void:
 	AudioMachine.reset()
@@ -43,7 +43,6 @@ func _ready() -> void:
 	else:
 		get_tree().paused = false
 		main.hide()
-		
 
 	fade_in_objects()
 	
