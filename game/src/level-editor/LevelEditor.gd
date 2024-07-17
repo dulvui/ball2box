@@ -26,6 +26,8 @@ func _on_Add_pressed():
 	print('add')
 	print(objects_list.size())
 	print(objects.get_child_count())
+	
+	print(export_as_base64())
 
 
 func _on_Delete_pressed():
@@ -49,3 +51,26 @@ func _set_active(object: Spatial) -> void:
 	active_object.transform.origin = active_object.transform.origin + Vector3(0, 9, 0)
 	if active_object.has_method("fade_in"):
 		active_object.fade_in()
+
+
+func export_as_base64() -> String:
+	var config: Dictionary = {}
+	config["version"] = Global.VERSION
+	config["objects"] = []
+	for object in objects_list:
+		var object_config: Dictionary = {}
+		object_config["origin"] = object.transform.origin
+		object_config["name"] = object.name
+		config["objects"].append(object_config)
+		
+		
+	var json: String = str(config)
+	print(json)
+	return Marshalls.utf8_to_base64(json)
+
+
+func import_as_base64(value: String) -> String:
+	var json: String = Marshalls.base64_to_utf8(value)
+	# TODO convet to dict
+	# check if level is valid
+	return json

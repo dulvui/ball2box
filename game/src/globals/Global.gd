@@ -6,30 +6,32 @@ extends Node
 
 const FDROID = false
 
+onready var VERSION: int = 1
+
 #onready var LEVELS:int = count_levels()
 # until new leavels are not ready
-onready var LEVELS:int = 120
+onready var LEVELS: int = 120
 
 var config:ConfigFile
 
-var coins:int
-var current_level:int = 1
+var coins: int
+var current_level: int = 1
 
-var show_main:bool = true
+var show_main: bool = true
 
-var tutorial_swipe_done:bool = false
-var tutorial_tap_done:bool = false
+var tutorial_swipe_done: bool = false
+var tutorial_tap_done: bool = false
 
-var level_stars:Array = [0]
+var level_stars: Array = [0]
 
-var unlocked_balls:Array
+var unlocked_balls: Array
 
-var music:bool
-var sfx:bool
+var music: bool
+var sfx: bool
 
-var generator_seed:int
-var codes:Array
-var own_code:String
+var generator_seed: int
+var codes: Array
+var own_code: String
 
 
 func _ready() -> void:
