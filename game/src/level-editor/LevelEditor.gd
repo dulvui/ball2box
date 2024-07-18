@@ -27,7 +27,10 @@ func _on_Add_pressed():
 	print(objects_list.size())
 	print(objects.get_child_count())
 	
-	print(export_as_base64())
+	var base64: String = export_as_base64()
+	print(base64)
+	
+	import_as_base64(base64)
 
 
 func _on_Delete_pressed():
@@ -60,17 +63,27 @@ func export_as_base64() -> String:
 	for object in objects_list:
 		var object_config: Dictionary = {}
 		object_config["origin"] = object.transform.origin
-		object_config["name"] = object.name
+		# TODO use simple int id
+		object_config["name"] = object.filename
 		config["objects"].append(object_config)
 		
-		
-	var json: String = str(config)
+	var json: String = JSON.print(config)
+	print("export")
 	print(json)
 	return Marshalls.utf8_to_base64(json)
 
 
-func import_as_base64(value: String) -> String:
+func import_as_base64(value: String) -> Dictionary:
 	var json: String = Marshalls.base64_to_utf8(value)
 	# TODO convet to dict
 	# check if level is valid
-	return json
+	print("import")
+	print(json)
+	var json_result: JSONParseResult = JSON.parse(json)
+	if json_result.error != OK:
+		print("error during level editor import")
+		print(value)
+		return {}
+	var config: Dictionary = json_result.result
+	print(config)
+	return config
