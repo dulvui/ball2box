@@ -9,6 +9,7 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/prod'
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
