@@ -4,30 +4,33 @@
 [ext_resource path="res://src/fade-effect/FadeEffect.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/screens/level-select/LevelSelect.gd" type="Script" id=4]
 
-[node name="LevelSelect" type="Control"]
+[node name="LevelSelect" type="MarginContainer"]
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
+custom_constants/margin_right = 80
+custom_constants/margin_top = 180
+custom_constants/margin_left = 80
+custom_constants/margin_bottom = 80
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="FadeEffect" parent="." instance=ExtResource( 2 )]
 node_path = NodePath("..")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -315.0
-margin_top = -505.0
-margin_right = 316.0
-margin_bottom = 569.0
+margin_left = 80.0
+margin_top = 180.0
+margin_right = 640.0
+margin_bottom = 1200.0
 
 [node name="Levels" type="GridContainer" parent="VBoxContainer"]
 pause_mode = 2
-margin_right = 631.0
-margin_bottom = 924.0
+margin_right = 560.0
+margin_bottom = 870.0
 rect_pivot_offset = Vector2( 310, 440 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -39,9 +42,9 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 948.0
-margin_right = 631.0
-margin_bottom = 1074.0
+margin_top = 894.0
+margin_right = 560.0
+margin_bottom = 1020.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": true
@@ -55,13 +58,13 @@ text = "<"
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 97.0
-margin_right = 169.0
+margin_right = 133.0
 margin_bottom = 126.0
 size_flags_horizontal = 3
 
 [node name="Back" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 173.0
-margin_right = 458.0
+margin_left = 137.0
+margin_right = 422.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 115, 0 )
 text = "MENU"
@@ -71,14 +74,14 @@ __meta__ = {
 
 [node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 462.0
-margin_right = 534.0
+margin_left = 426.0
+margin_right = 463.0
 margin_bottom = 126.0
 size_flags_horizontal = 3
 
 [node name="Next" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 538.0
-margin_right = 631.0
+margin_left = 467.0
+margin_right = 560.0
 margin_bottom = 126.0
 text = ">"
 
