@@ -34,34 +34,65 @@ __meta__ = {
 }
 
 [node name="Add" type="Button" parent="HUD/HBoxContainer"]
-margin_left = 78.0
-margin_right = 204.0
+margin_left = 96.0
+margin_right = 222.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 126, 126 )
 text = "+"
 
 [node name="Prev" type="Button" parent="HUD/HBoxContainer"]
-margin_left = 224.0
-margin_right = 350.0
+margin_left = 242.0
+margin_right = 368.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 126, 126 )
 text = "<"
 
 [node name="Next" type="Button" parent="HUD/HBoxContainer"]
-margin_left = 370.0
-margin_right = 496.0
+margin_left = 388.0
+margin_right = 514.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 126, 126 )
 text = ">"
 
 [node name="Delete" type="Button" parent="HUD/HBoxContainer"]
-margin_left = 516.0
-margin_right = 642.0
+visible = false
+margin_left = 461.0
+margin_right = 587.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 126, 126 )
 text = "-"
+
+[node name="Export" type="Button" parent="HUD/HBoxContainer"]
+margin_left = 534.0
+margin_right = 625.0
+margin_bottom = 126.0
+text = "E"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD"]
+anchor_right = 1.0
+anchor_bottom = 0.338
+margin_right = -1.0
+margin_bottom = 0.359955
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ImportText" type="TextEdit" parent="HUD/VBoxContainer"]
+margin_right = 719.0
+margin_bottom = 283.0
+size_flags_vertical = 3
+
+[node name="Import" type="Button" parent="HUD/VBoxContainer"]
+margin_left = 184.0
+margin_top = 307.0
+margin_right = 535.0
+margin_bottom = 433.0
+size_flags_horizontal = 4
+text = "IMPORT"
 
 [connection signal="pressed" from="HUD/HBoxContainer/Add" to="." method="_on_Add_pressed"]
 [connection signal="pressed" from="HUD/HBoxContainer/Prev" to="." method="_on_Prev_pressed"]
 [connection signal="pressed" from="HUD/HBoxContainer/Next" to="." method="_on_Next_pressed"]
 [connection signal="pressed" from="HUD/HBoxContainer/Delete" to="." method="_on_Delete_pressed"]
+[connection signal="pressed" from="HUD/HBoxContainer/Export" to="." method="_on_Export_pressed"]
+[connection signal="pressed" from="HUD/VBoxContainer/Import" to="." method="_on_Import_pressed"]

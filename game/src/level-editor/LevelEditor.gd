@@ -6,6 +6,7 @@ extends Spatial
 
 onready var ball: RigidBody = $Ball
 onready var objects: Spatial = $Objects
+onready var import_text: TextEdit = $HUD/VBoxContainer/ImportText
 
 var objects_list: Array = []
 var active_object: Spatial
@@ -23,14 +24,6 @@ func _on_Add_pressed():
 	object.transform.origin = Vector3(0, 22, 0)
 	if object.has_method("fade_in"):
 		object.fade_in()
-	print('add')
-	print(objects_list.size())
-	print(objects.get_child_count())
-	
-	var base64: String = export_as_base64()
-	print(base64)
-	
-	import_as_base64(base64)
 
 
 func _on_Delete_pressed():
@@ -62,9 +55,11 @@ func export_as_base64() -> String:
 	config["objects"] = []
 	for object in objects_list:
 		var object_config: Dictionary = {}
-		object_config["origin"] = object.transform.origin
-		# TODO use simple int id
-		object_config["name"] = object.filename
+		object_config["x"] = object.transform.origin.x
+		object_config["y"] = object.transform.origin.y
+		object_config["z"] = object.transform.origin.z
+		
+		object_config["id"] = object.filename
 		config["objects"].append(object_config)
 		
 	var json: String = JSON.print(config)
@@ -87,3 +82,36 @@ func import_as_base64(value: String) -> Dictionary:
 	var config: Dictionary = json_result.result
 	print(config)
 	return config
+
+
+func _on_Export_pressed() -> void:
+	var config: String = export_as_base64()
+	OS.clipboard = config
+
+
+func _on_Import_pressed() -> void:
+	if import_text.text.length() > 0:
+		var text: String = import_text.text
+		var config: Dictionary = import_as_base64(text)
+		print(config)
+		objects_list.clear()
+		
+		if "objects" in config:
+			for object_config in config["objects"]:
+				var object:Spatial = ObjectsUtil.get_object_by_id(object_config.id)
+				objects_list.append(object)
+				add_child(object)
+				# TODO move a bit, replace with animation
+				var x: float = float(object_config["x"])
+				var y: float = float(object_config["y"])
+				var z: float = float(object_config["z"])
+				
+				var origin: Vector3 = Vector3(x, y, z)
+				object.transform.origin = origin
+				if object.has_method("fade_in"):
+					object.fade_in()
+		else:
+			print("no objects defined in config")
+		
+		
+		

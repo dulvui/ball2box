@@ -21,7 +21,8 @@ func _ready() -> void:
 	if has_node("Body/MeshInstance/StaticBody"):
 		static_body = $Body/MeshInstance/StaticBody
 	hide()
-	
+
+
 func fade_in() -> void:
 	if not visible or new:
 		new = false

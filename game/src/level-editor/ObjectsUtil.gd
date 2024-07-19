@@ -13,9 +13,15 @@ func _ready() -> void:
 	objects = _load_objects(objects_paths)
 
 
-func get_object() -> Spatial:
-	return objects[selected].instance()
+func get_object(index: int = selected) -> Spatial:
+	return objects[index]
 
+
+func get_object_by_id(id: String) -> Spatial:
+	for object in objects:
+		if object.filename == id:
+			return object
+	return objects[0]
 
 func next() -> Spatial:
 	selected += 1
@@ -33,9 +39,12 @@ func prev() -> Spatial:
 
 func _load_objects(objects_paths: Array) -> Array:
 	var list: Array = []
+	var index: int = 0
 	for path in objects_paths:
 		var object_scene: PackedScene = load(path)
-		list.append(object_scene)
+		var object: Spatial = object_scene.instance()
+		list.append(object)
+		index += 1
 	
 	return list
 
