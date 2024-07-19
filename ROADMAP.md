@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.org>
+
+SPDX-License-Identifier: CC0-1.0
+-->
 # Roadmap
 List of features/issues for future versions of Ball2Box.  
 So users from [Codeberg](https://codeberg.org/dulvui/ball2box) and [Github](https://codeberg.org/dulvui/ball2box) can track issues/features with ease.
