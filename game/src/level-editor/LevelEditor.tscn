@@ -22,9 +22,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HUD"]
-anchor_top = 0.7875
+anchor_top = 0.88125
 anchor_right = 1.001
-anchor_bottom = 0.8855
+anchor_bottom = 0.97925
 margin_right = 0.279968
 margin_bottom = 0.559998
 custom_constants/separation = 20
@@ -68,7 +68,51 @@ margin_right = 625.0
 margin_bottom = 126.0
 text = "E"
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="HUD"]
+anchor_top = 0.046875
+anchor_right = 1.001
+anchor_bottom = 0.144875
+margin_right = 0.279968
+margin_bottom = 0.559998
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Move" type="Button" parent="HUD/HBoxContainer2"]
+margin_left = 297.0
+margin_right = 423.0
+margin_bottom = 126.0
+rect_min_size = Vector2( 126, 126 )
+toggle_mode = true
+text = "M"
+
+[node name="CameraControl" type="VBoxContainer" parent="HUD"]
+anchor_left = 0.0111111
+anchor_top = 0.164062
+anchor_right = 0.186
+anchor_bottom = 0.377
+margin_right = 0.0800018
+margin_bottom = -0.559998
+custom_constants/separation = 20
+alignment = 1
+
+[node name="CameraZoomIn" type="Button" parent="HUD/CameraControl"]
+margin_right = 126.0
+margin_bottom = 126.0
+rect_min_size = Vector2( 126, 126 )
+text = "+"
+
+[node name="CameraZoomOut" type="Button" parent="HUD/CameraControl"]
+margin_top = 146.0
+margin_right = 126.0
+margin_bottom = 272.0
+rect_min_size = Vector2( 126, 126 )
+text = "-"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="HUD"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 0.338
 margin_right = -1.0
@@ -95,4 +139,6 @@ text = "IMPORT"
 [connection signal="pressed" from="HUD/HBoxContainer/Next" to="." method="_on_Next_pressed"]
 [connection signal="pressed" from="HUD/HBoxContainer/Delete" to="." method="_on_Delete_pressed"]
 [connection signal="pressed" from="HUD/HBoxContainer/Export" to="." method="_on_Export_pressed"]
+[connection signal="pressed" from="HUD/CameraControl/CameraZoomIn" to="." method="_on_CameraZoomIn_pressed"]
+[connection signal="pressed" from="HUD/CameraControl/CameraZoomOut" to="." method="_on_CameraZoomOut_pressed"]
 [connection signal="pressed" from="HUD/VBoxContainer/Import" to="." method="_on_Import_pressed"]

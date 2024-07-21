@@ -8,6 +8,7 @@ onready var ball: RigidBody = $Ball
 onready var objects: Spatial = $Objects
 onready var import_text: TextEdit = $HUD/VBoxContainer/ImportText
 onready var camera: Camera = $Base/Camera
+onready var move: Button = $HUD/HBoxContainer2/Move
 
 var objects_list: Array = []
 var active_object: Spatial
@@ -16,19 +17,21 @@ var active_object: Spatial
 func _ready() -> void:
 	var object: Spatial = ObjectsUtil.get_object()
 	_set_active(object)
+	
+	camera.translation.z += 8
 
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventScreenTouch:
-		if event.pressed:
-			if active_object != null:
-				var mouse_position: Vector2 = get_viewport().get_mouse_position()
-				var plane: Plane = Plane(Vector3(0, 0, 10), 0)
-				var pos: Vector3 = plane.intersects_ray(camera.project_ray_origin(mouse_position), camera.project_ray_normal(mouse_position))
-				active_object.transform.origin.x = pos.x
-				active_object.transform.origin.y = pos.y
-	elif event is InputEventScreenDrag:
-		if active_object != null:
+#	if event is InputEventScreenTouch:
+#		if event.pressed:
+#			if active_object != null and move.pressed:
+#				var mouse_position: Vector2 = get_viewport().get_mouse_position()
+#				var plane: Plane = Plane(Vector3(0, 0, 10), 0)
+#				var pos: Vector3 = plane.intersects_ray(camera.project_ray_origin(mouse_position), camera.project_ray_normal(mouse_position))
+#				active_object.transform.origin.x = pos.x
+#				active_object.transform.origin.y = pos.y
+	if event is InputEventScreenDrag:
+		if active_object != null and move.pressed:
 			var mouse_position: Vector2 = get_viewport().get_mouse_position()
 			var plane: Plane = Plane(Vector3(0, 0, 10), 0)
 			var pos: Vector3 = plane.intersects_ray(camera.project_ray_origin(mouse_position), camera.project_ray_normal(mouse_position))
@@ -42,9 +45,9 @@ func _on_Add_pressed():
 	objects_list.append(object)
 	add_child(object)
 	# TODO move a bit, replace with animation
-	object.transform.origin = Vector3(0, 22, 0)
 	if object.has_method("fade_in"):
 		object.fade_in()
+	active_object = null
 
 
 func _on_Delete_pressed():
@@ -52,13 +55,15 @@ func _on_Delete_pressed():
 
 
 func _on_Next_pressed() -> void:
-	active_object.queue_free()
+	if active_object:
+		active_object.queue_free()
 	var object: Spatial = ObjectsUtil.next()
 	_set_active(object)
 
 
 func _on_Prev_pressed() -> void:
-	active_object.queue_free()
+	if active_object:
+		active_object.queue_free()
 	var object: Spatial = ObjectsUtil.prev()
 	_set_active(object)
 
@@ -66,7 +71,7 @@ func _on_Prev_pressed() -> void:
 func _set_active(object: Spatial) -> void:
 	active_object = object
 	add_child(active_object)
-	active_object.transform.origin = active_object.transform.origin + Vector3(0, 9, 0)
+	active_object.transform.origin = Vector3(0, 9, 0)
 	if active_object.has_method("fade_in"):
 		active_object.fade_in()
 
@@ -135,3 +140,12 @@ func _on_Import_pressed() -> void:
 		else:
 			print("no objects defined in config")
 
+
+func _on_CameraZoomIn_pressed() -> void:
+	if camera.translation.z > 24:
+		camera.translation.z -= 1
+
+
+func _on_CameraZoomOut_pressed() -> void:
+	if camera.translation.z < 56:
+		camera.translation.z += 1

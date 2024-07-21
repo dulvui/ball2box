@@ -14,7 +14,7 @@ func _ready() -> void:
 
 
 func get_object(index: int = selected) -> Spatial:
-	return objects[index]
+	return objects[index].instance()
 
 
 func get_object_by_id(id: String) -> Spatial:
@@ -42,8 +42,7 @@ func _load_objects(objects_paths: Array) -> Array:
 	var index: int = 0
 	for path in objects_paths:
 		var object_scene: PackedScene = load(path)
-		var object: Spatial = object_scene.instance()
-		list.append(object)
+		list.append(object_scene)
 		index += 1
 	
 	return list
