@@ -32,6 +32,7 @@ func _ready() -> void:
 	initial_position = Transform(transform)
 	teletransport_to_inital()
 
+
 func _process(delta:float) -> void:
 	if touch_start != Vector2.ZERO and touch_pos != Vector2.ZERO:
 		if touch_start.y > touch_pos.y:
@@ -44,7 +45,7 @@ func _process(delta:float) -> void:
 		geometry_up.clear()
 		geometry_down.clear()
 
-		
+
 func _input(event:InputEvent) -> void:
 	if event is InputEventScreenTouch:
 		if event.pressed:
@@ -63,6 +64,7 @@ func _input(event:InputEvent) -> void:
 		# Move
 		touch_pos = event.position
 
+
 func _shoot() -> void:
 	if not shooting and touch_pos != Vector2.ZERO and touch_start != Vector2.ZERO and touch_pos.distance_to(touch_start) > 100:
 		emit_signal("shoot")
@@ -70,7 +72,8 @@ func _shoot() -> void:
 		mode = RigidBody.MODE_RIGID
 		var direction = (touch_start - touch_pos)
 		apply_central_impulse(Vector3(- direction.x, direction.y , 0) * SPEED)
-	
+
+
 func reset_position() -> void:
 	print("reset")
 	emit_signal("reset")
@@ -79,12 +82,14 @@ func reset_position() -> void:
 	yield(animation_player, "animation_finished")
 	animation_player.play("FadeIn")
 	teletransport_to_inital()
-	
+
+
 func reset_position_no_signal() -> void:
 	print("reset no signal")
 	shooting = false
 	teletransport_to_inital()
-	
+
+
 func draw_indicator_up() -> void:
 	if not shooting and touch_start != Vector2.ZERO and touch_pos != Vector2.ZERO:
 		geometry_up.clear()
@@ -106,7 +111,8 @@ func draw_indicator_up() -> void:
 		geometry_up.add_vertex(Vector3(-(touch_pos.x - touch_start.x)/60, (touch_pos.y - touch_start.y)/60, 0))
 
 		geometry_up.end()
-	
+
+
 func draw_indicator_down():
 	if not shooting and touch_start != Vector2.ZERO and touch_pos != Vector2.ZERO:
 		geometry_down.clear()
@@ -129,10 +135,12 @@ func draw_indicator_down():
 
 		geometry_down.end()
 
+
 func teletransport(p_transform:Transform) -> void:
 	next_transform = p_transform
 	is_teletransporting = true
-	
+
+
 func teletransport_to_inital() -> void:
 	mode = RigidBody.MODE_STATIC
 	transform.origin = initial_position.origin
@@ -140,9 +148,12 @@ func teletransport_to_inital() -> void:
 	linear_velocity = Vector3.ZERO
 	rotation = Vector3.ZERO
 
+
 func _integrate_forces(state:PhysicsDirectBodyState) -> void:
 	if is_teletransporting:
 		state.transform = next_transform
 		is_teletransporting = false
 
 
+func _on_Ball_mouse_entered() -> void:
+	print("select ball")

@@ -7,13 +7,34 @@ extends Spatial
 onready var ball: RigidBody = $Ball
 onready var objects: Spatial = $Objects
 onready var import_text: TextEdit = $HUD/VBoxContainer/ImportText
+onready var camera: Camera = $Base/Camera
 
 var objects_list: Array = []
 var active_object: Spatial
 
+
 func _ready() -> void:
 	var object: Spatial = ObjectsUtil.get_object()
 	_set_active(object)
+
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			if active_object != null:
+				var mouse_position: Vector2 = get_viewport().get_mouse_position()
+				var plane: Plane = Plane(Vector3(0, 0, 10), 0)
+				var pos: Vector3 = plane.intersects_ray(camera.project_ray_origin(mouse_position), camera.project_ray_normal(mouse_position))
+				active_object.transform.origin.x = pos.x
+				active_object.transform.origin.y = pos.y
+	elif event is InputEventScreenDrag:
+		if active_object != null:
+			var mouse_position: Vector2 = get_viewport().get_mouse_position()
+			var plane: Plane = Plane(Vector3(0, 0, 10), 0)
+			var pos: Vector3 = plane.intersects_ray(camera.project_ray_origin(mouse_position), camera.project_ray_normal(mouse_position))
+			active_object.transform.origin.x = pos.x
+			active_object.transform.origin.y = pos.y
+
 
 
 func _on_Add_pressed():
@@ -40,6 +61,7 @@ func _on_Prev_pressed() -> void:
 	active_object.queue_free()
 	var object: Spatial = ObjectsUtil.prev()
 	_set_active(object)
+
 
 func _set_active(object: Spatial) -> void:
 	active_object = object
@@ -112,6 +134,4 @@ func _on_Import_pressed() -> void:
 					object.fade_in()
 		else:
 			print("no objects defined in config")
-		
-		
-		
+

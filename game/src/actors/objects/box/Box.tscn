@@ -23,3 +23,5 @@ physics_material_override = ExtResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Body/MeshInstance/StaticBody" index="0"]
 shape = SubResource( 3 )
+
+[connection signal="mouse_entered" from="Body/MeshInstance/StaticBody" to="." method="_on_StaticBody_mouse_entered"]

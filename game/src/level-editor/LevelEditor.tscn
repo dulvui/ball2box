@@ -79,14 +79,14 @@ __meta__ = {
 
 [node name="ImportText" type="TextEdit" parent="HUD/VBoxContainer"]
 margin_right = 719.0
-margin_bottom = 283.0
+margin_bottom = 282.0
 size_flags_vertical = 3
 
 [node name="Import" type="Button" parent="HUD/VBoxContainer"]
 margin_left = 184.0
-margin_top = 307.0
+margin_top = 306.0
 margin_right = 535.0
-margin_bottom = 433.0
+margin_bottom = 432.0
 size_flags_horizontal = 4
 text = "IMPORT"
 
