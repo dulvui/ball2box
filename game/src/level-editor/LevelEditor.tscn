@@ -18,6 +18,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.8553, 0 )
 [node name="Objects" type="Spatial" parent="."]
 
 [node name="HUD" type="Control" parent="."]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -68,26 +69,6 @@ margin_right = 625.0
 margin_bottom = 126.0
 text = "E"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="HUD"]
-anchor_top = 0.046875
-anchor_right = 1.001
-anchor_bottom = 0.144875
-margin_right = 0.279968
-margin_bottom = 0.559998
-custom_constants/separation = 20
-alignment = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Move" type="Button" parent="HUD/HBoxContainer2"]
-margin_left = 297.0
-margin_right = 423.0
-margin_bottom = 126.0
-rect_min_size = Vector2( 126, 126 )
-toggle_mode = true
-text = "M"
-
 [node name="CameraControl" type="VBoxContainer" parent="HUD"]
 anchor_left = 0.0111111
 anchor_top = 0.164062
@@ -134,6 +115,39 @@ margin_bottom = 432.0
 size_flags_horizontal = 4
 text = "IMPORT"
 
+[node name="ScrollContainer" type="ScrollContainer" parent="HUD"]
+anchor_right = 0.986111
+anchor_bottom = 0.090625
+margin_right = 12.0
+margin_bottom = 12.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Objects" type="HBoxContainer" parent="HUD/ScrollContainer"]
+margin_right = 463.0
+margin_bottom = 126.0
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Ball" type="Button" parent="HUD/ScrollContainer/Objects"]
+margin_right = 235.0
+margin_bottom = 126.0
+rect_min_size = Vector2( 126, 126 )
+toggle_mode = true
+text = "BALL"
+
+[node name="Box" type="Button" parent="HUD/ScrollContainer/Objects"]
+margin_left = 255.0
+margin_right = 463.0
+margin_bottom = 126.0
+rect_min_size = Vector2( 126, 126 )
+toggle_mode = true
+text = "BOX"
+
 [connection signal="pressed" from="HUD/HBoxContainer/Add" to="." method="_on_Add_pressed"]
 [connection signal="pressed" from="HUD/HBoxContainer/Prev" to="." method="_on_Prev_pressed"]
 [connection signal="pressed" from="HUD/HBoxContainer/Next" to="." method="_on_Next_pressed"]
@@ -142,3 +156,5 @@ text = "IMPORT"
 [connection signal="pressed" from="HUD/CameraControl/CameraZoomIn" to="." method="_on_CameraZoomIn_pressed"]
 [connection signal="pressed" from="HUD/CameraControl/CameraZoomOut" to="." method="_on_CameraZoomOut_pressed"]
 [connection signal="pressed" from="HUD/VBoxContainer/Import" to="." method="_on_Import_pressed"]
+[connection signal="pressed" from="HUD/ScrollContainer/Objects/Ball" to="." method="_on_Ball_pressed"]
+[connection signal="pressed" from="HUD/ScrollContainer/Objects/Box" to="." method="_on_Box_pressed"]

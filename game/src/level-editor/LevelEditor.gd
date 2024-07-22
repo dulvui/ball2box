@@ -4,19 +4,30 @@
 
 extends Spatial
 
+onready var box: StaticBody = $Bin
 onready var ball: RigidBody = $Ball
 onready var objects: Spatial = $Objects
+
 onready var import_text: TextEdit = $HUD/VBoxContainer/ImportText
 onready var camera: Camera = $Base/Camera
-onready var move: Button = $HUD/HBoxContainer2/Move
+
+onready var objects_button_container: HBoxContainer = $HUD/ScrollContainer/Objects
+onready var box_button: Button = $HUD/ScrollContainer/Objects/Box
+onready var ball_button: Button = $HUD/ScrollContainer/Objects/Ball
 
 var objects_list: Array = []
 var active_object: Spatial
+
+var index: int = 0
 
 
 func _ready() -> void:
 	var object: Spatial = ObjectsUtil.get_object()
 	_set_active(object)
+	
+#	get_tree().paused = true
+
+	ball.shoot_enabled = false
 	
 	camera.translation.z += 8
 
@@ -31,7 +42,7 @@ func _input(event: InputEvent) -> void:
 #				active_object.transform.origin.x = pos.x
 #				active_object.transform.origin.y = pos.y
 	if event is InputEventScreenDrag:
-		if active_object != null and move.pressed:
+		if active_object != null:
 			var mouse_position: Vector2 = get_viewport().get_mouse_position()
 			var plane: Plane = Plane(Vector3(0, 0, 10), 0)
 			var pos: Vector3 = plane.intersects_ray(camera.project_ray_origin(mouse_position), camera.project_ray_normal(mouse_position))
@@ -48,6 +59,16 @@ func _on_Add_pressed():
 	if object.has_method("fade_in"):
 		object.fade_in()
 	active_object = null
+	
+	var object_button: Button = Button.new()
+	object_button.text = str(index + 1)
+	objects_button_container.add_child(object_button)
+	object_button.connect("pressed", self, "on_object_button_pressed", [index])
+	index += 1
+	
+
+func on_object_button_pressed(index: int) -> void:
+	active_object = objects_list[index]
 
 
 func _on_Delete_pressed():
@@ -149,3 +170,11 @@ func _on_CameraZoomIn_pressed() -> void:
 func _on_CameraZoomOut_pressed() -> void:
 	if camera.translation.z < 56:
 		camera.translation.z += 1
+
+
+func _on_Ball_pressed() -> void:
+	active_object = ball
+
+
+func _on_Box_pressed() -> void:
+	active_object = box

@@ -27,6 +27,8 @@ var touch_start:Vector2
 var next_transform:Transform
 var is_teletransporting:bool = false
 
+var shoot_enabled: bool = true
+
 
 func _ready() -> void:
 	initial_position = Transform(transform)
@@ -34,35 +36,37 @@ func _ready() -> void:
 
 
 func _process(delta:float) -> void:
-	if touch_start != Vector2.ZERO and touch_pos != Vector2.ZERO:
-		if touch_start.y > touch_pos.y:
-			draw_indicator_up()
-			geometry_down.clear()
+	if shoot_enabled:
+		if touch_start != Vector2.ZERO and touch_pos != Vector2.ZERO:
+			if touch_start.y > touch_pos.y:
+				draw_indicator_up()
+				geometry_down.clear()
+			else:
+				draw_indicator_down()
+				geometry_up.clear()
 		else:
-			draw_indicator_down()
 			geometry_up.clear()
-	else:
-		geometry_up.clear()
-		geometry_down.clear()
+			geometry_down.clear()
 
 
 func _input(event:InputEvent) -> void:
-	if event is InputEventScreenTouch:
-		if event.pressed:
-#			if event.position.y > 140: # to prevent reset on pause
-			if shooting:
-				reset_position()
-			# Down
-			if touch_start == Vector2.ZERO:
-				touch_start = event.position
-		else:
-			# Up
-			_shoot()
-			touch_pos = Vector2.ZERO
-			touch_start = Vector2.ZERO
-	elif event is InputEventScreenDrag:
-		# Move
-		touch_pos = event.position
+	if shoot_enabled:
+		if event is InputEventScreenTouch:
+			if event.pressed:
+	#			if event.position.y > 140: # to prevent reset on pause
+				if shooting:
+					reset_position()
+				# Down
+				if touch_start == Vector2.ZERO:
+					touch_start = event.position
+			else:
+				# Up
+				_shoot()
+				touch_pos = Vector2.ZERO
+				touch_start = Vector2.ZERO
+		elif event is InputEventScreenDrag:
+			# Move
+			touch_pos = event.position
 
 
 func _shoot() -> void:
