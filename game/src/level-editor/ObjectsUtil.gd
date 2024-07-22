@@ -13,6 +13,13 @@ func _ready() -> void:
 	objects = _load_objects(objects_paths)
 
 
+func get_all_objects() -> Array:
+	var list: Array = []
+	for object in objects:
+		list.append(object.instance())
+	return list
+
+
 func get_object(index: int = selected) -> Spatial:
 	return objects[index].instance()
 
@@ -21,7 +28,8 @@ func get_object_by_id(id: String) -> Spatial:
 	for object in objects:
 		if object.filename == id:
 			return object
-	return objects[0]
+	return objects[0].instance()
+
 
 func next() -> Spatial:
 	selected += 1

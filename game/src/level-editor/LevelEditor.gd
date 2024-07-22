@@ -22,8 +22,8 @@ var index: int = 0
 
 
 func _ready() -> void:
-	var object: Spatial = ObjectsUtil.get_object()
-	_set_active(object)
+#	var object: Spatial = ObjectsUtil.get_object()
+#	_set_active(object)
 	
 #	get_tree().paused = true
 
