@@ -22,10 +22,10 @@ func _ready() -> void:
 		add_child(object)
 		
 		# TODO scale
-#		if abs(object.translation.x) > 0:
-#			object.scale.x = 1.0 / i
-#			object.scale.y = 1.0 / i
-#			object.scale.z = 1.0 / i
+		if abs(object.translation.x) > 0:
+			object.scale.x = 0.5
+			object.scale.y = 0.5
+			object.scale.z = 0.5
 		
 		
 		if object.has_method("fade_in"):
