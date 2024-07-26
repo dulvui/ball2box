@@ -63,6 +63,7 @@ common/physics_fps=240
 
 [rendering]
 
+renderer/rendering_method="mobile"
 environment/defaults/default_environment="res://default_env.tres"
 quality/driver/driver_name="GLES2"
 quality/driver/fallback_to_gles2=true
