@@ -1,171 +1,189 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=3 uid="uid://dnru8n3l1d160"]
 
-[ext_resource path="res://src/levels/base-level/LevelBase.gd" type="Script" id=1]
-[ext_resource path="res://src/levels/base-level/base-3d/Base3D.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/screens/main/Main.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/actors/bin/Bin.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/actors/ball/starter-ball/Ball.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/screens/level-complete/LevelComplete.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/actors/star/Star.tscn" type="PackedScene" id=7]
-[ext_resource path="res://src/levels/base-level/background/Background1.tscn" type="PackedScene" id=8]
-[ext_resource path="res://src/ui/coins/Coins.tscn" type="PackedScene" id=9]
-[ext_resource path="res://src/screens/shop/Shop.tscn" type="PackedScene" id=10]
-[ext_resource path="res://src/screens/info/Info.tscn" type="PackedScene" id=11]
-[ext_resource path="res://src/screens/level-select/LevelSelect.tscn" type="PackedScene" id=12]
-[ext_resource path="res://src/ui/tutorial/Tutorial.tscn" type="PackedScene" id=13]
-[ext_resource path="res://assets/pause.png" type="Texture2D" id=14]
-[ext_resource path="res://src/levels/base-level/Pause.gd" type="Script" id=15]
-[ext_resource path="res://src/screens/shop/Shop3D.tscn" type="PackedScene" id=16]
-[ext_resource path="res://src/screens/help/Help.tscn" type="PackedScene" id=17]
+[ext_resource type="Script" path="res://src/levels/base-level/LevelBase.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://dwjw2ephbw34" path="res://src/levels/base-level/base-3d/Base3D.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://src/screens/main/Main.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://d2yixvoeekahm" path="res://src/actors/bin/Bin.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://src/actors/ball/starter-ball/Ball.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://src/screens/level-complete/LevelComplete.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://src/actors/star/Star.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://src/levels/base-level/background/Background1.tscn" id="8"]
+[ext_resource type="PackedScene" path="res://src/ui/coins/Coins.tscn" id="9"]
+[ext_resource type="PackedScene" path="res://src/screens/shop/Shop.tscn" id="10"]
+[ext_resource type="PackedScene" path="res://src/screens/info/Info.tscn" id="11"]
+[ext_resource type="PackedScene" path="res://src/screens/level-select/LevelSelect.tscn" id="12"]
+[ext_resource type="PackedScene" path="res://src/ui/tutorial/Tutorial.tscn" id="13"]
+[ext_resource type="Texture2D" uid="uid://bv8dvaesw0nte" path="res://assets/pause.png" id="14"]
+[ext_resource type="Script" path="res://src/levels/base-level/Pause.gd" id="15"]
+[ext_resource type="PackedScene" path="res://src/screens/shop/Shop3D.tscn" id="16"]
+[ext_resource type="PackedScene" path="res://src/screens/help/Help.tscn" id="17"]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id="1"]
 resource_name = "FadeIn"
 length = 0.8
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Base/Camera3D:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.5, 0.8 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Vector3( -14, 17, 26 ), Vector3( -4, 17, 26 ), Vector3( 0, 17, 26 ) ]
+"values": [Vector3(-14, 17, 26), Vector3(-4, 17, 26), Vector3(0, 17, 26)]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id="2"]
 length = 0.4
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Base/Camera3D:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector3( 0, 55, 26 ), Vector3( 0, 17, 26 ) ]
+"values": [Vector3(0, 55, 26), Vector3(0, 17, 26)]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id="3"]
 length = 0.4
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Base/Camera3D:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector3( 0, 17, 26 ), Vector3( 0, 55, 26 ) ]
+"values": [Vector3(0, 17, 26), Vector3(0, 55, 26)]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id="20"]
 resource_name = "Idle"
 length = 0.8
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Base/Camera3D:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.8 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector3( 0, 17, 26 ), Vector3( 0, 17, 26 ) ]
+"values": [Vector3(0, 17, 26), Vector3(0, 17, 26)]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id="18"]
 length = 0.001
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Base/Camera3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector3( 0, 17, 26 ) ]
+"values": [Vector3(0, 17, 26)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("UI/Topbar:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="PhysicsMaterial" id=15]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iuduk"]
+_data = {
+"FadeIn": SubResource("1"),
+"GoToMenu": SubResource("2"),
+"GoToShop": SubResource("3"),
+"Idle": SubResource("20"),
+"RESET": SubResource("18")
+}
+
+[sub_resource type="PhysicsMaterial" id="15"]
 friction = 0.5
 bounce = 0.9
 
 [node name="LevelBase" type="Node3D"]
-script = ExtResource( 1 )
+script = ExtResource("1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 process_mode = 3
-anims/FadeIn = SubResource( 1 )
-anims/GoToMenu = SubResource( 2 )
-anims/GoToShop = SubResource( 3 )
-anims/Idle = SubResource( 20 )
-anims/RESET = SubResource( 18 )
+libraries = {
+"": SubResource("AnimationLibrary_iuduk")
+}
 
-[node name="Tween" type="Tween" parent="."]
+[node name="Base" parent="." instance=ExtResource("2")]
 
-[node name="Base" parent="." instance=ExtResource( 2 )]
-
-[node name="Ball" parent="." instance=ExtResource( 5 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.94765, 19.8625, 0 )
-physics_material_override = SubResource( 15 )
+[node name="Ball" parent="." instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.94765, 19.8625, 0)
+physics_material_override = SubResource("15")
 max_contacts_reported = 0
 contact_monitor = false
 
-[node name="Bin" parent="." instance=ExtResource( 4 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90741, 0, 0 )
+[node name="Bin" parent="." instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90741, 0, 0)
 
-[node name="Star1" parent="." instance=ExtResource( 7 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.18212, 19.6921, -1.21101 )
+[node name="Star1" parent="." instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.18212, 19.6921, -1.21101)
 
-[node name="Star2" parent="." instance=ExtResource( 7 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.06394, 9.04416, 0.575264 )
+[node name="Star2" parent="." instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.06394, 9.04416, 0.575264)
 
-[node name="Tutorial" parent="." instance=ExtResource( 13 )]
+[node name="Tutorial" parent="." instance=ExtResource("13")]
 
-[node name="Shop3D" parent="." instance=ExtResource( 16 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 61.1004, 0 )
+[node name="Shop3D" parent="." instance=ExtResource("16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 61.1004, 0)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Main" parent="UI" instance=ExtResource( 3 )]
+[node name="Main" parent="UI" instance=ExtResource("3")]
+anchors_preset = 15
 
-[node name="LevelComplete" parent="UI" instance=ExtResource( 6 )]
+[node name="LevelComplete" parent="UI" instance=ExtResource("6")]
 visible = false
+layout_mode = 3
+anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Shop" parent="UI" instance=ExtResource( 10 )]
+[node name="Shop" parent="UI" instance=ExtResource("10")]
 visible = false
+layout_mode = 3
+anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Info" parent="UI" instance=ExtResource( 11 )]
+[node name="Info" parent="UI" instance=ExtResource("11")]
 visible = false
+layout_mode = 3
 
-[node name="LevelSelect" parent="UI" instance=ExtResource( 12 )]
+[node name="LevelSelect" parent="UI" instance=ExtResource("12")]
 visible = false
+anchors_preset = 15
 
-[node name="Help" parent="UI" instance=ExtResource( 17 )]
+[node name="Help" parent="UI" instance=ExtResource("17")]
 visible = false
+anchors_preset = 15
 
 [node name="Topbar" type="HBoxContainer" parent="UI"]
+anchors_preset = -1
 anchor_left = 0.05
 anchor_top = 0.011
 anchor_right = 0.961
@@ -174,34 +192,25 @@ offset_top = -0.0800009
 offset_right = 0.0799561
 offset_bottom = 0.479996
 
-[node name="Coins" parent="UI/Topbar" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_top = 0.0
-offset_right = 104.0
-offset_bottom = 126.0
-scale = Vector2( 1, 1 )
+[node name="Coins" parent="UI/Topbar" instance=ExtResource("9")]
+layout_mode = 2
 alignment = 1
 
 [node name="VSeparator" type="VSeparator" parent="UI/Topbar"]
-modulate = Color( 1, 1, 1, 0 )
-offset_left = 108.0
-offset_right = 548.0
-offset_bottom = 126.0
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Pause" type="Button" parent="UI/Topbar"]
 process_mode = 3
-modulate = Color( 1, 1, 1, 0.705882 )
-offset_left = 552.0
-offset_right = 656.0
-offset_bottom = 126.0
-custom_minimum_size = Vector2( 100, 0 )
-icon = ExtResource( 14 )
+modulate = Color(1, 1, 1, 0.705882)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+icon = ExtResource("14")
 icon_alignment = 1
-script = ExtResource( 15 )
+script = ExtResource("15")
 
-[node name="Background" parent="." instance=ExtResource( 8 )]
+[node name="Background" parent="." instance=ExtResource("8")]
 
 [connection signal="reset" from="Ball" to="." method="_on_Ball_reset"]
 [connection signal="shoot" from="Ball" to="." method="_on_Ball_shoot"]

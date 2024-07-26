@@ -4,9 +4,6 @@
 
 extends Node3D
 
-const moveTrans:int = Tween.TRANS_LINEAR
-const moveEase:int = Tween.EASE_OUT
-
 @onready var camera: Camera3D = $Base/Camera3D
 @onready var shop3D: Node3D = $Shop3D
 @onready var ball: Ball = $Ball
@@ -150,12 +147,10 @@ func _camera_shake() -> void:
 	for i in shakes:
 		
 		var random_vector:Vector3 = camera.position - Vector3(randf_range(-1,1),randf_range(-1,1), randf_range(-1,1))
-		tween.interpolate_property(camera, "position",camera.position, random_vector, 0.1, moveTrans, moveEase)
-		tween.start()
+		tween.tween_property(camera, "position", random_vector, 0.1)
 		await tween.tween_all_completed
 	
-	tween.interpolate_property(camera, "position", camera.position, start_position, 0.2, moveTrans, moveEase)
-	tween.start()
+	tween.tween_property(camera, "position", start_position, 0.2)
 
 
 func _on_Pause_pressed() -> void:
