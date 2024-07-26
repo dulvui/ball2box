@@ -1,15 +1,19 @@
 [remap]
 
 importer="oggvorbisstr"
-type="AudioStreamOGGVorbis"
-path="res://.import/heist.ogg-632d23225095a0cae7117ca0442289c5.oggstr"
+type="AudioStreamOggVorbis"
+uid="uid://cb6nx8s1j7sx7"
+path="res://.godot/imported/heist.ogg-632d23225095a0cae7117ca0442289c5.oggvorbisstr"
 
 [deps]
 
 source_file="res://assets/audio/heist.ogg"
-dest_files=[ "res://.import/heist.ogg-632d23225095a0cae7117ca0442289c5.oggstr" ]
+dest_files=["res://.godot/imported/heist.ogg-632d23225095a0cae7117ca0442289c5.oggvorbisstr"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

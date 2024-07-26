@@ -1,15 +1,19 @@
 [remap]
 
 importer="oggvorbisstr"
-type="AudioStreamOGGVorbis"
-path="res://.import/snare05.ogg-e8723b91f9a6738957910bd50bd2ab26.oggstr"
+type="AudioStreamOggVorbis"
+uid="uid://clcl7nj33hdgf"
+path="res://.godot/imported/snare05.ogg-e8723b91f9a6738957910bd50bd2ab26.oggvorbisstr"
 
 [deps]
 
 source_file="res://assets/audio/snare05.ogg"
-dest_files=[ "res://.import/snare05.ogg-e8723b91f9a6738957910bd50bd2ab26.oggstr" ]
+dest_files=["res://.godot/imported/snare05.ogg-e8723b91f9a6738957910bd50bd2ab26.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
