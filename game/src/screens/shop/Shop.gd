@@ -28,12 +28,13 @@ func _on_Prev_pressed() -> void:
 	AudioMachine.click()
 
 
-func set_values(ball:RigidBody3D) -> void:
+func set_values(ball: RigidBody3D) -> void:
 	var mass_tween: Tween = get_tree().create_tween()
-	mass_tween.interpolate_property($VBoxContainer/Mass, "value", $VBoxContainer/Mass.value, ball.mass, 0.4, Tween.EASE_IN, Tween.EASE_OUT)
+	mass_tween.tween_property($VBoxContainer/Mass, "value", ball.mass, 0.4)
 	
 	var bounce_tween: Tween = get_tree().create_tween()
-	bounce_tween.interpolate_property($VBoxContainer/Bounce, "value", $VBoxContainer/Bounce.value, ball.bounce, 0.4, Tween.EASE_IN, Tween.EASE_OUT)
+	# TODO bounce not found
+	#bounce_tween.tween_property($VBoxContainer/Bounce, "value", ball.bounce, 0.4)
 
 
 func _on_Back_pressed() -> void:
@@ -80,5 +81,5 @@ func _set_select_label() -> void:
 			select_button.text = str(ball["price"])
 			star.show()
 			
-	var ball_instance = ball["real"].instance()
+	var ball_instance: RigidBody3D = ball["real"].instantiate()
 	set_values(ball_instance)

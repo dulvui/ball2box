@@ -34,13 +34,8 @@ func fade_in() -> void:
 	if node:
 		var tween: Tween = get_tree().create_tween()
 		node.modulate = Color(1, 1, 1, 0)
-		tween.interpolate_property(node, "modulate", 
-		Color(1, 1, 1, 0), Color(1, 1, 1, 1), DURATON, 
-		Tween.TRANS_LINEAR, Tween.EASE_IN)
+		tween.tween_property(node, "modulate", Color(1, 1, 1, 1), DURATON)
 	if node2:
 		var tween: Tween = get_tree().create_tween()
 		node2.modulate = Color(1, 1, 1, 0)
-		tween.interpolate_property(node2, "modulate", 
-		Color(1, 1, 1, 0), Color(1, 1, 1, 1), DURATON, 
-		Tween.TRANS_LINEAR, Tween.EASE_IN)
-		start()
+		tween.tween_property(node2, "modulate", Color(1, 1, 1, 1), DURATON)
