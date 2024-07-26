@@ -1,77 +1,92 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=3 uid="uid://dloudittm0nnr"]
 
-[ext_resource path="res://src/actors/ball/base-ball/Ball.gd" type="Script" id=1]
+[ext_resource type="Script" path="res://src/actors/ball/base-ball/Ball.gd" id="1"]
 
-[sub_resource type="StandardMaterial3D" id=3]
-albedo_color = Color( 0.94902, 0.0901961, 0.0901961, 1 )
+[sub_resource type="StandardMaterial3D" id="3"]
+albedo_color = Color(0.94902, 0.0901961, 0.0901961, 1)
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id="6"]
 resource_name = "FadeIn"
 length = 0.2
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.2 ),
-"transitions": PackedFloat32Array( 0.277392, 2.14355 ),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.277392, 2.14355),
 "update": 0,
-"values": [ Vector3( 0.01, 0.01, 0.01 ), Vector3( 1, 1, 1 ) ]
+"values": [Vector3(0.01, 0.01, 0.01), Vector3(1, 1, 1)]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id="4"]
 resource_name = "FadeOut"
 length = 0.2
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.2 ),
-"transitions": PackedFloat32Array( 1.93187, 0.287174 ),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1.93187, 0.287174),
 "update": 0,
-"values": [ Vector3( 1, 1, 1 ), Vector3( 0.01, 0.01, 0.01 ) ]
+"values": [Vector3(1, 1, 1), Vector3(0.01, 0.01, 0.01)]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id="5"]
 length = 0.001
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector3( 1, 1, 1 ) ]
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wf3l6"]
+_data = {
+"FadeIn": SubResource("6"),
+"FadeOut": SubResource("4"),
+"RESET": SubResource("5")
 }
 
 [node name="Ball" type="RigidBody3D" groups=["ball"]]
 collision_layer = 2
 collision_mask = 3
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
 mass = 6.28
 continuous_cd = true
 max_contacts_reported = 10
 contact_monitor = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-script = ExtResource( 1 )
+script = ExtResource("1")
 
 [node name="ImmediateGeometryUp" type="ImmediateMesh" parent="."]
-transform = Transform3D( -1, 3.25841e-07, 0, -3.25841e-07, -1, 0, 0, 0, 1, 0, 0, 0 )
-material_override = SubResource( 3 )
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+transform = Transform3D(-1, 3.25841e-07, 0, -3.25841e-07, -1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("3")
+script = null
 
-[node name="ImmediateGeometryDown" type="ImmediateMesh" parent="."]
-material_override = SubResource( 3 )
+[node name="ImmediateGeometryDown" type="MeshInstance3D" parent="."]
+material_override = SubResource("3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/FadeIn = SubResource( 6 )
-anims/FadeOut = SubResource( 4 )
-anims/RESET = SubResource( 5 )
+libraries = {
+"": SubResource("AnimationLibrary_wf3l6")
+}

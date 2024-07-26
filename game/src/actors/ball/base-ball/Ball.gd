@@ -9,8 +9,8 @@ class_name Ball
 signal reset
 signal shoot
 
-@onready var geometry_up:GeometryInstance3D = $ImmediateGeometryUp
-@onready var geometry_down:GeometryInstance3D = $ImmediateGeometryDown
+#@onready var geometry_up: GeometryInstance3D = $ImmediateGeometryUp
+#@onready var geometry_down: GeometryInstance3D = $ImmediateGeometryDown
 
 @onready var animation_player:AnimationPlayer = $AnimationPlayer
 
@@ -35,18 +35,18 @@ func _ready() -> void:
 	teletransport_to_inital()
 
 
-func _process(delta:float) -> void:
-	if shoot_enabled:
-		if touch_start != Vector2.ZERO and touch_pos != Vector2.ZERO:
-			if touch_start.y > touch_pos.y:
-				draw_indicator_up()
-				geometry_down.clear()
-			else:
-				draw_indicator_down()
-				geometry_up.clear()
-		else:
-			geometry_up.clear()
-			geometry_down.clear()
+#func _process(delta:float) -> void:
+	#if shoot_enabled:
+		#if touch_start != Vector2.ZERO and touch_pos != Vector2.ZERO:
+			#if touch_start.y > touch_pos.y:
+				#draw_indicator_up()
+				#geometry_down.clear()
+			#else:
+				#draw_indicator_down()
+				#geometry_up.clear()
+		#else:
+			#geometry_up.clear()
+			#geometry_down.clear()
 
 
 func _input(event:InputEvent) -> void:
@@ -73,7 +73,7 @@ func _shoot() -> void:
 	if not shooting and touch_pos != Vector2.ZERO and touch_start != Vector2.ZERO and touch_pos.distance_to(touch_start) > 100:
 		emit_signal("shoot")
 		shooting = true
-		mode = RigidBody3D.MODE_RIGID
+		#mode = RigidBody3D.MODE_RIGID
 		var direction = (touch_start - touch_pos)
 		apply_central_impulse(Vector3(- direction.x, direction.y , 0) * SPEED)
 
@@ -94,50 +94,50 @@ func reset_position_no_signal() -> void:
 	teletransport_to_inital()
 
 
-func draw_indicator_up() -> void:
-	if not shooting and touch_start != Vector2.ZERO and touch_pos != Vector2.ZERO:
-		geometry_up.clear()
-		geometry_up.begin(Mesh.PRIMITIVE_TRIANGLES)
+#func draw_indicator_up() -> void:
+	#if not shooting and touch_start != Vector2.ZERO and touch_pos != Vector2.ZERO:
+		#geometry_up.clear()
+		#geometry_up.begin(Mesh.PRIMITIVE_TRIANGLES)
+#
+		## Prepare attributes for add_vertex.
+		#geometry_up.set_normal(Vector3(0, 0, 1))
+		#geometry_up.set_uv(Vector2(0, 0))
+		## Call last for each vertex, adds the above attributes.
+		#geometry_up.add_vertex(Vector3(-0.8, 0, 0))
+#
+		#geometry_up.set_normal(Vector3(0, -50, 1))
+		#geometry_up.set_uv(Vector2(0, 1))
+		#geometry_up.add_vertex(Vector3(0.8, 0, 0))
+				#
+		#geometry_up.set_normal(Vector3(0, 0, 1))
+		#geometry_up.set_uv(Vector2(1, 1))
+		#geometry_up.set_uv(Vector2(1, 1))
+		#geometry_up.add_vertex(Vector3(-(touch_pos.x - touch_start.x)/60, (touch_pos.y - touch_start.y)/60, 0))
+#
+		#geometry_up.end()
 
-		# Prepare attributes for add_vertex.
-		geometry_up.set_normal(Vector3(0, 0, 1))
-		geometry_up.set_uv(Vector2(0, 0))
-		# Call last for each vertex, adds the above attributes.
-		geometry_up.add_vertex(Vector3(-0.8, 0, 0))
 
-		geometry_up.set_normal(Vector3(0, -50, 1))
-		geometry_up.set_uv(Vector2(0, 1))
-		geometry_up.add_vertex(Vector3(0.8, 0, 0))
-				
-		geometry_up.set_normal(Vector3(0, 0, 1))
-		geometry_up.set_uv(Vector2(1, 1))
-		geometry_up.set_uv(Vector2(1, 1))
-		geometry_up.add_vertex(Vector3(-(touch_pos.x - touch_start.x)/60, (touch_pos.y - touch_start.y)/60, 0))
-
-		geometry_up.end()
-
-
-func draw_indicator_down():
-	if not shooting and touch_start != Vector2.ZERO and touch_pos != Vector2.ZERO:
-		geometry_down.clear()
-		geometry_down.begin(Mesh.PRIMITIVE_TRIANGLES)
-
-		# Prepare attributes for add_vertex.
-		geometry_down.set_normal(Vector3(0, 0, 1))
-		geometry_down.set_uv(Vector2(0, 0))
-		# Call last for each vertex, adds the above attributes.
-		geometry_down.add_vertex(Vector3(-0.8, 0, 0))
-
-		geometry_down.set_normal(Vector3(0, -50, 1))
-		geometry_down.set_uv(Vector2(0, 1))
-		geometry_down.add_vertex(Vector3(0.8, 0, 0))
-				
-		geometry_down.set_normal(Vector3(0, 0, 1))
-		geometry_down.set_uv(Vector2(1, 1))
-		geometry_down.set_uv(Vector2(1, 1))
-		geometry_down.add_vertex(Vector3((touch_pos.x - touch_start.x)/60, -(touch_pos.y - touch_start.y)/60, 0))
-
-		geometry_down.end()
+#func draw_indicator_down():
+	#if not shooting and touch_start != Vector2.ZERO and touch_pos != Vector2.ZERO:
+		#geometry_down.clear()
+		#geometry_down.begin(Mesh.PRIMITIVE_TRIANGLES)
+#
+		## Prepare attributes for add_vertex.
+		#geometry_down.set_normal(Vector3(0, 0, 1))
+		#geometry_down.set_uv(Vector2(0, 0))
+		## Call last for each vertex, adds the above attributes.
+		#geometry_down.add_vertex(Vector3(-0.8, 0, 0))
+#
+		#geometry_down.set_normal(Vector3(0, -50, 1))
+		#geometry_down.set_uv(Vector2(0, 1))
+		#geometry_down.add_vertex(Vector3(0.8, 0, 0))
+				#
+		#geometry_down.set_normal(Vector3(0, 0, 1))
+		#geometry_down.set_uv(Vector2(1, 1))
+		#geometry_down.set_uv(Vector2(1, 1))
+		#geometry_down.add_vertex(Vector3((touch_pos.x - touch_start.x)/60, -(touch_pos.y - touch_start.y)/60, 0))
+#
+		#geometry_down.end()
 
 
 func teletransport(p_transform:Transform3D) -> void:
@@ -146,7 +146,7 @@ func teletransport(p_transform:Transform3D) -> void:
 
 
 func teletransport_to_inital() -> void:
-	mode = RigidBody3D.FREEZE_MODE_STATIC
+	#mode = RigidBody3D.FREEZE_MODE_STATIC
 	transform.origin = initial_position.origin
 	angular_velocity = Vector3.ZERO
 	linear_velocity = Vector3.ZERO

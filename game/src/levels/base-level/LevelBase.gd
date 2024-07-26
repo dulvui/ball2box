@@ -7,23 +7,22 @@ extends Node3D
 const moveTrans:int = Tween.TRANS_LINEAR
 const moveEase:int = Tween.EASE_OUT
 
-@onready var camera:Camera3D = $Base/Camera3D
-@onready var tween:Tween = $Tween
-@onready var shop3D:Node3D = $Shop3D
-@onready var ball:Ball = $Ball
-@onready var star1:Node3D = $Star1
-@onready var star2:Node3D = $Star2
-@onready var tutorial:Node3D = $Tutorial
-@onready var animation_player:AnimationPlayer = $AnimationPlayer
+@onready var camera: Camera3D = $Base/Camera3D
+@onready var shop3D: Node3D = $Shop3D
+@onready var ball: Ball = $Ball
+@onready var star1: Node3D = $Star1
+@onready var star2: Node3D = $Star2
+@onready var tutorial: Node3D = $Tutorial
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-@onready var main:Control = $UI/Main
-@onready var level_complete:Control = $UI/LevelComplete
-@onready var help:Control = $UI/Help
-@onready var levels:Control = $UI/LevelSelect
-@onready var shop:Control = $UI/Shop
-@onready var info:Control = $UI/Info
+@onready var main: Control = $UI/Main
+@onready var level_complete: Control = $UI/LevelComplete
+@onready var help: Control = $UI/Help
+@onready var levels: Control = $UI/LevelSelect
+@onready var shop: Control = $UI/Shop
+@onready var info: Control = $UI/Info
 
-var portals:Node3D
+var portals: Node3D
 
 
 func _ready() -> void:
@@ -57,16 +56,19 @@ func _ready() -> void:
 func fade_in_objects() -> void:
 	for object in get_tree().get_nodes_in_group("objects"):
 		object.fade_in()
-		
+
+
 func fade_in_pop_objects() -> void:
 	for object in get_tree().get_nodes_in_group("pop-objects"):
 		object.fade_in()
-	
+
+
 func on_star1_hit() -> void:
 	level_complete.add_star()
 	AudioMachine.hit(false)
 #	_camera_shake()
-	
+
+
 func on_star2_hit() -> void:
 	level_complete.add_star()
 	AudioMachine.hit(false)
@@ -126,6 +128,7 @@ func _on_LevelComplete_replay() -> void:
 	star1.show_star()
 	star2.show_star()
 
+
 func _on_LevelComplete_menu() -> void:
 	level_complete.reset_stars()
 	ball.reset_position()
@@ -138,11 +141,14 @@ func _on_LevelComplete_menu() -> void:
 	main.show()
 	level_complete.hide()
 
+
 func _camera_shake() -> void:
 	var start_position:Vector3 = camera.position
 	
+	var tween: Tween = get_tree().create_tween()
 	var shakes:int = (randi()%3) + 1
 	for i in shakes:
+		
 		var random_vector:Vector3 = camera.position - Vector3(randf_range(-1,1),randf_range(-1,1), randf_range(-1,1))
 		tween.interpolate_property(camera, "position",camera.position, random_vector, 0.1, moveTrans, moveEase)
 		tween.start()

@@ -2,7 +2,7 @@
 
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-extends Tween
+extends Node
 
 const DURATON:float = 0.3
 
@@ -32,14 +32,15 @@ func _ready() -> void:
 
 func fade_in() -> void:
 	if node:
+		var tween: Tween = get_tree().create_tween()
 		node.modulate = Color(1, 1, 1, 0)
-		interpolate_property(node, "modulate", 
+		tween.interpolate_property(node, "modulate", 
 		Color(1, 1, 1, 0), Color(1, 1, 1, 1), DURATON, 
 		Tween.TRANS_LINEAR, Tween.EASE_IN)
-		start()
 	if node2:
+		var tween: Tween = get_tree().create_tween()
 		node2.modulate = Color(1, 1, 1, 0)
-		interpolate_property(node2, "modulate", 
+		tween.interpolate_property(node2, "modulate", 
 		Color(1, 1, 1, 0), Color(1, 1, 1, 1), DURATON, 
 		Tween.TRANS_LINEAR, Tween.EASE_IN)
 		start()

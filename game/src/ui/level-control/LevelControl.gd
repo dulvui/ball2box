@@ -6,23 +6,26 @@ extends VBoxContainer
 
 signal levels
 
-@onready var star1:TextureRect = $Stars/Star1
-@onready var star2:TextureRect = $Stars/Star2
-@onready var star3:TextureRect = $Stars/Star3
+@onready var star1: TextureRect = $Stars/Star1
+@onready var star2: TextureRect = $Stars/Star2
+@onready var star3: TextureRect = $Stars/Star3
+
 
 func _ready() -> void:
 	update_level()
+
 
 func update_level() -> void:
 	$LevelControl/LevelButton.text = "level " + str(Global.current_level)
 	var stars:int = Global.level_stars[Global.current_level - 1]
 	
-	if stars >= 1:
-		star1.modulate = Color("#fce527")
-	if stars >= 2:
-		star2.modulate = Color("#fce527")
-	if stars >= 3: # on some devices wh old versions, > 3 stars could happen
-		star3.modulate = Color("#fce527")
+	#if stars >= 1:
+		#star1.modulate = Color("#fce527")
+	#if stars >= 2:
+		#star2.modulate = Color("#fce527")
+	#if stars >= 3: # on some devices wh old versions, > 3 stars could happen
+		#star3.modulate = Color("#fce527")
+
 
 func _on_PrevLevel_pressed() -> void:
 	AudioMachine.click()

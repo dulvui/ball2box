@@ -29,21 +29,16 @@ func _on_Prev_pressed() -> void:
 
 
 func set_values(ball:RigidBody3D) -> void:
-	var mass_tween:Tween = Tween.new()
-	add_child(mass_tween)
+	var mass_tween: Tween = get_tree().create_tween()
 	mass_tween.interpolate_property($VBoxContainer/Mass, "value", $VBoxContainer/Mass.value, ball.mass, 0.4, Tween.EASE_IN, Tween.EASE_OUT)
-	mass_tween.start()
 	
-	var bounce_tween:Tween = Tween.new()
-	add_child(bounce_tween)
+	var bounce_tween: Tween = get_tree().create_tween()
 	bounce_tween.interpolate_property($VBoxContainer/Bounce, "value", $VBoxContainer/Bounce.value, ball.bounce, 0.4, Tween.EASE_IN, Tween.EASE_OUT)
-	bounce_tween.start()
-	
-	
+
+
 func _on_Back_pressed() -> void:
 	AudioMachine.click()
 	emit_signal("back")
-	
 
 
 func _on_Select_pressed() -> void:

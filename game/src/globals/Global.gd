@@ -70,7 +70,7 @@ func save_data() -> void:
 	config.set_value("sfx","mute",sfx)
 	config.set_value("current_level","key",current_level)
 	config.set_value("balls","unlocked",unlocked_balls)
-	config.set_value("ball","selected", BallMachine.get_index())
+	config.set_value("ball","selected", BallMachine.get_ball_index())
 	config.set_value("coins","amount",coins)
 	config.set_value("level","stars",level_stars)
 	config.set_value("tutorial", "swipe", tutorial_swipe_done)
@@ -124,15 +124,15 @@ func unlock_ball() -> int:
 	return 0
 	
 # to save on close
-func _notification(event) -> void:
-	if event == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST or event == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		save_data()
-	
-	
+		get_tree().quit() # default behavior
+
+
 func count_levels() -> int:
-	var count = 0
-	var dir = DirAccess.new()
-	dir.open("res://src/levels/")
+	var count: int = 0
+	var dir: DirAccess = DirAccess.open("res://src/levels/")
 	dir.list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547
 	
 	var file_name = dir.get_next()

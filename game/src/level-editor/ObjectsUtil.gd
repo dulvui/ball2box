@@ -58,22 +58,18 @@ func _load_objects(objects_paths: Array) -> Array:
 
 func _get_object_paths() -> Array:
 	var list: Array = []
-	var dir: DirAccess = DirAccess.new()
-	if dir.open(OBJECTS_PATH) == OK:
-		dir.list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547
-		var file_name: String = dir.get_next()
-		while file_name != "":
-			if dir.current_is_dir() and file_name != "." and file_name != "..":
-				var sub_dir: DirAccess = DirAccess.new()
-				sub_dir.open(OBJECTS_PATH + file_name)
-				sub_dir.list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547
-				var sub_dir_file_name: String = sub_dir.get_next()
-				while sub_dir_file_name != "":
-					if ".tscn" in sub_dir_file_name and sub_dir_file_name != "BaseObject.tscn":
-						list.append(OBJECTS_PATH + file_name + "/" + sub_dir_file_name)
-					sub_dir_file_name = sub_dir.get_next()
-			file_name = dir.get_next()
-	else:
-		print("An error occurred when trying to access objects path.")
+	var dir: DirAccess = DirAccess.open(OBJECTS_PATH)
+	dir.list_dir_begin()
+	var file_name: String = dir.get_next()
+	while file_name != "":
+		if dir.current_is_dir() and file_name != "." and file_name != "..":
+			var sub_dir: DirAccess = DirAccess.open(OBJECTS_PATH + file_name)
+			sub_dir.list_dir_begin()
+			var sub_dir_file_name: String = sub_dir.get_next()
+			while sub_dir_file_name != "":
+				if ".tscn" in sub_dir_file_name and sub_dir_file_name != "BaseObject.tscn":
+					list.append(OBJECTS_PATH + file_name + "/" + sub_dir_file_name)
+				sub_dir_file_name = sub_dir.get_next()
+		file_name = dir.get_next()
 	return list
 

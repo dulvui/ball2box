@@ -32,7 +32,7 @@ func _ready() -> void:
 
 func _on_Copy_pressed() -> void:
 	AudioMachine.click()
-	OS.clipboard = Global.own_code
+	DisplayServer.clipboard_set(Global.own_code)
 
 
 func _on_Verify_pressed() -> void:
@@ -94,7 +94,7 @@ func _on_EnterCode_text_changed(new_text:String) -> void:
 
 func _on_Paste_pressed() -> void:
 	AudioMachine.click()
-	enter_code_line.text = OS.clipboard
+	enter_code_line.text = DisplayServer.clipboard_get()
 	verify()
 
 func _on_Video_pressed() -> void:
