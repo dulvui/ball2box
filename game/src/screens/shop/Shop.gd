@@ -9,8 +9,8 @@ signal prev
 signal back
 signal select
 
-onready var select_button:Button = $VBoxContainer/Buttons/Select
-onready var star:TextureRect = $VBoxContainer/Buttons/Select/Star
+@onready var select_button:Button = $VBoxContainer/Buttons/Select
+@onready var star:TextureRect = $VBoxContainer/Buttons/Select/Star
 
 
 func _ready() -> void:
@@ -28,7 +28,7 @@ func _on_Prev_pressed() -> void:
 	AudioMachine.click()
 
 
-func set_values(ball:RigidBody) -> void:
+func set_values(ball:RigidBody3D) -> void:
 	var mass_tween:Tween = Tween.new()
 	add_child(mass_tween)
 	mass_tween.interpolate_property($VBoxContainer/Mass, "value", $VBoxContainer/Mass.value, ball.mass, 0.4, Tween.EASE_IN, Tween.EASE_OUT)

@@ -12,14 +12,14 @@ resource_name = "Idle"
 length = 0.8
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Base/Camera:translation")
+tracks/0/path = NodePath("Base/Camera3D:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 0.8 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ Vector3( 0, 17, 26 ), Vector3( 0, 17, 26 ) ]
 }
@@ -30,28 +30,28 @@ tracks/0/keys = {
 anims/Idle = SubResource( 1 )
 
 [node name="Ball" parent="." index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7388, 26.4669, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7388, 26.4669, 0 )
 
 [node name="Bin" parent="." index="4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69, 0, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69, 0, 0 )
 
 [node name="Star1" parent="." index="5"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48568, 31.2998, -0.2 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48568, 31.2998, -0.2 )
 
 [node name="Star2" parent="." index="6"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8281, 7.96055, -1.90735e-06 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8281, 7.96055, -1.90735e-06 )
 
 [node name="Tube" parent="." index="7" instance=ExtResource( 3 )]
-transform = Transform( -0.704931, -0.709275, 0, 0.709275, -0.704931, 0, 0, 0, 1, -1.77699, 24.878, 0 )
+transform = Transform3D( -0.704931, -0.709275, 0, 0.709275, -0.704931, 0, 0, 0, 1, -1.77699, 24.878, 0 )
 
 [node name="ResizingCircle" parent="." index="8" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.24636, 15.4006, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.24636, 15.4006, 0 )
 
 [node name="Box" parent="." index="9" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.60027, 23.1856, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.60027, 23.1856, 0 )
 
 [node name="Triangle" parent="." index="10" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.41561, 7.53108, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.41561, 7.53108, 0 )
 
 [node name="ResizingSquare" parent="." index="11" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.23094, 15.316, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.23094, 15.316, 0 )

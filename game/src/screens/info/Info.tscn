@@ -12,7 +12,7 @@ content_margin_bottom = 10.0
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [node name="Info" type="Control"]
-pause_mode = 2
+process_mode = 3
 anchor_top = 0.102344
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -30,30 +30,30 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -300.0
-margin_top = -542.5
-margin_right = 300.0
-margin_bottom = 497.5
-rect_min_size = Vector2( 600, 1000 )
-custom_constants/separation = 100
+offset_left = -300.0
+offset_top = -542.5
+offset_right = 300.0
+offset_bottom = 497.5
+custom_minimum_size = Vector2( 600, 1000 )
+theme_override_constants/separation = 100
 alignment = 1
 
 [node name="Panel" type="PanelContainer" parent="VBoxContainer"]
-margin_right = 600.0
-margin_bottom = 664.0
-rect_min_size = Vector2( 600, 600 )
-rect_pivot_offset = Vector2( 265, 298 )
+offset_right = 600.0
+offset_bottom = 664.0
+custom_minimum_size = Vector2( 600, 600 )
+pivot_offset = Vector2( 265, 298 )
 size_flags_vertical = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Panel"]
-margin_left = 20.0
-margin_top = 20.0
-margin_right = 580.0
-margin_bottom = 644.0
-rect_pivot_offset = Vector2( 240, 266 )
-custom_styles/normal = SubResource( 1 )
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 580.0
+offset_bottom = 644.0
+pivot_offset = Vector2( 240, 266 )
+theme_override_styles/normal = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "This game is open source under the [url=https://github.com/dulvui/ball2box/blob/main/LICENSE]AGPL-3.0-or-later[/url] license.
+text = "This game is open source under the [url=https://github.com/dulvui/ball2box/blob/main/LICENSE]AGPL-3.0-or-later[/url] license.
 Its created with Godot Engine and lots of love <3
 
 
@@ -123,34 +123,34 @@ https://www.kenney.nl/assets/pattern-pack-2
 "
 
 [node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 764.0
-margin_right = 600.0
-margin_bottom = 1040.0
+offset_top = 764.0
+offset_right = 600.0
+offset_bottom = 1040.0
 alignment = 1
 
 [node name="Website" type="Button" parent="VBoxContainer/Buttons"]
-margin_right = 600.0
-margin_bottom = 126.0
+offset_right = 600.0
+offset_bottom = 126.0
 text = "website"
 
 [node name="Github" type="Button" parent="VBoxContainer/Buttons"]
 visible = false
-margin_top = 150.0
-margin_right = 600.0
-margin_bottom = 276.0
+offset_top = 150.0
+offset_right = 600.0
+offset_bottom = 276.0
 text = "github"
 
 [node name="Donate" type="Button" parent="VBoxContainer/Buttons"]
 visible = false
-margin_top = 300.0
-margin_right = 600.0
-margin_bottom = 426.0
+offset_top = 300.0
+offset_right = 600.0
+offset_bottom = 426.0
 text = "donate"
 
 [node name="Back" type="Button" parent="VBoxContainer/Buttons"]
-margin_top = 150.0
-margin_right = 600.0
-margin_bottom = 276.0
+offset_top = 150.0
+offset_right = 600.0
+offset_bottom = 276.0
 text = "menu"
 
 [connection signal="meta_clicked" from="VBoxContainer/Panel/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]

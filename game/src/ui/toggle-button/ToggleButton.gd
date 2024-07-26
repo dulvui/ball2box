@@ -4,8 +4,8 @@
 
 extends Button
 
-export var normal_texture:Texture
-export var pressed_texture:Texture
+@export var normal_texture:Texture2D
+@export var pressed_texture:Texture2D
 
 func _ready() -> void:
 	icon = normal_texture

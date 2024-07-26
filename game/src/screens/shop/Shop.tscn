@@ -3,13 +3,13 @@
 [ext_resource path="res://theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/screens/shop/Shop.gd" type="Script" id=2]
 [ext_resource path="res://src/fade-effect/FadeEffect.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/star.png" type="Texture" id=5]
+[ext_resource path="res://assets/star.png" type="Texture2D" id=5]
 
 [node name="Shop" type="Control"]
-pause_mode = 2
+process_mode = 3
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 360, 690 )
+pivot_offset = Vector2( 360, 690 )
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
 __meta__ = {
@@ -24,51 +24,51 @@ anchor_left = 0.5
 anchor_top = 0.568
 anchor_right = 0.5
 anchor_bottom = 0.568
-margin_left = -321.0
-margin_top = -365.04
-margin_right = 321.0
-margin_bottom = 390.96
+offset_left = -321.0
+offset_top = -365.04
+offset_right = 321.0
+offset_bottom = 390.96
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 642.0
-margin_bottom = 126.0
-custom_constants/separation = 130
+offset_right = 642.0
+offset_bottom = 126.0
+theme_override_constants/separation = 130
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="Prev" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_right = 93.0
-margin_bottom = 126.0
-rect_pivot_offset = Vector2( 50, 50 )
+offset_right = 93.0
+offset_bottom = 126.0
+pivot_offset = Vector2( 50, 50 )
 text = "<"
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 223.0
-margin_right = 419.0
-margin_bottom = 126.0
+offset_left = 223.0
+offset_right = 419.0
+offset_bottom = 126.0
 size_flags_horizontal = 3
 
 [node name="Next" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 549.0
-margin_right = 642.0
-margin_bottom = 126.0
+offset_left = 549.0
+offset_right = 642.0
+offset_bottom = 126.0
 text = ">"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 150.0
-margin_right = 642.0
-margin_bottom = 318.0
+offset_top = 150.0
+offset_right = 642.0
+offset_bottom = 318.0
 size_flags_vertical = 3
 
 [node name="Bounce" type="ProgressBar" parent="VBoxContainer"]
-margin_top = 342.0
-margin_right = 642.0
-margin_bottom = 462.0
-rect_min_size = Vector2( 0, 120 )
+offset_top = 342.0
+offset_right = 642.0
+offset_bottom = 462.0
+custom_minimum_size = Vector2( 0, 120 )
 size_flags_vertical = 1
 min_value = 0.6
 max_value = 1.0
@@ -89,10 +89,10 @@ __meta__ = {
 }
 
 [node name="Mass" type="ProgressBar" parent="VBoxContainer"]
-margin_top = 486.0
-margin_right = 642.0
-margin_bottom = 606.0
-rect_min_size = Vector2( 0, 120 )
+offset_top = 486.0
+offset_right = 642.0
+offset_bottom = 606.0
+custom_minimum_size = Vector2( 0, 120 )
 size_flags_vertical = 1
 min_value = 4.0
 max_value = 10.0
@@ -111,14 +111,14 @@ align = 1
 valign = 1
 
 [node name="Buttons" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 630.0
-margin_right = 642.0
-margin_bottom = 756.0
-custom_constants/separation = 80
+offset_top = 630.0
+offset_right = 642.0
+offset_bottom = 756.0
+theme_override_constants/separation = 80
 
 [node name="Back" type="Button" parent="VBoxContainer/Buttons"]
-margin_right = 285.0
-margin_bottom = 126.0
+offset_right = 285.0
+offset_bottom = 126.0
 size_flags_horizontal = 3
 text = "MENU"
 __meta__ = {
@@ -126,9 +126,9 @@ __meta__ = {
 }
 
 [node name="Select" type="Button" parent="VBoxContainer/Buttons"]
-margin_left = 365.0
-margin_right = 642.0
-margin_bottom = 126.0
+offset_left = 365.0
+offset_right = 642.0
+offset_bottom = 126.0
 size_flags_horizontal = 3
 text = "GO"
 clip_text = true
@@ -143,10 +143,10 @@ anchor_left = 0.690275
 anchor_top = 0.048
 anchor_right = 1.01025
 anchor_bottom = 0.841
-margin_left = -0.0559998
-margin_top = -0.0479999
-margin_right = -0.208008
-margin_bottom = 0.0339966
+offset_left = -0.0559998
+offset_top = -0.0479999
+offset_right = -0.208008
+offset_bottom = 0.0339966
 texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": true

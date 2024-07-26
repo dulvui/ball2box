@@ -2,36 +2,36 @@
 
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-extends RigidBody
+extends RigidBody3D
 
 class_name Ball
 
 signal reset
 signal shoot
 
-onready var geometry_up:GeometryInstance = $ImmediateGeometryUp
-onready var geometry_down:GeometryInstance = $ImmediateGeometryDown
+@onready var geometry_up:GeometryInstance3D = $ImmediateGeometryUp
+@onready var geometry_down:GeometryInstance3D = $ImmediateGeometryDown
 
-onready var animation_player:AnimationPlayer = $AnimationPlayer
+@onready var animation_player:AnimationPlayer = $AnimationPlayer
 
 
 const SPEED:int = 1
 
 var shooting:bool = false
 
-var initial_position:Transform
+var initial_position:Transform3D
 
 var touch_pos:Vector2
 var touch_start:Vector2
 
-var next_transform:Transform
+var next_transform:Transform3D
 var is_teletransporting:bool = false
 
 var shoot_enabled: bool = true
 
 
 func _ready() -> void:
-	initial_position = Transform(transform)
+	initial_position = Transform3D(transform)
 	teletransport_to_inital()
 
 
@@ -73,7 +73,7 @@ func _shoot() -> void:
 	if not shooting and touch_pos != Vector2.ZERO and touch_start != Vector2.ZERO and touch_pos.distance_to(touch_start) > 100:
 		emit_signal("shoot")
 		shooting = true
-		mode = RigidBody.MODE_RIGID
+		mode = RigidBody3D.MODE_RIGID
 		var direction = (touch_start - touch_pos)
 		apply_central_impulse(Vector3(- direction.x, direction.y , 0) * SPEED)
 
@@ -83,7 +83,7 @@ func reset_position() -> void:
 	emit_signal("reset")
 	animation_player.play("FadeOut")
 	shooting = false
-	yield(animation_player, "animation_finished")
+	await animation_player.animation_finished
 	animation_player.play("FadeIn")
 	teletransport_to_inital()
 
@@ -140,20 +140,20 @@ func draw_indicator_down():
 		geometry_down.end()
 
 
-func teletransport(p_transform:Transform) -> void:
+func teletransport(p_transform:Transform3D) -> void:
 	next_transform = p_transform
 	is_teletransporting = true
 
 
 func teletransport_to_inital() -> void:
-	mode = RigidBody.MODE_STATIC
+	mode = RigidBody3D.FREEZE_MODE_STATIC
 	transform.origin = initial_position.origin
 	angular_velocity = Vector3.ZERO
 	linear_velocity = Vector3.ZERO
 	rotation = Vector3.ZERO
 
 
-func _integrate_forces(state:PhysicsDirectBodyState) -> void:
+func _integrate_forces(state:PhysicsDirectBodyState3D) -> void:
 	if is_teletransporting:
 		state.transform = next_transform
 		is_teletransporting = false

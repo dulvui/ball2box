@@ -2,7 +2,7 @@
 
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-extends Spatial
+extends Node3D
 
 func _ready() -> void:
 	$AnimationPlayer.play("Rotate")

@@ -2,13 +2,13 @@
 
 [ext_resource path="res://theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/screens/level-select/level-button/LevelButton.gd" type="Script" id=2]
-[ext_resource path="res://assets/star.png" type="Texture" id=3]
+[ext_resource path="res://assets/star.png" type="Texture2D" id=3]
 
 [node name="LevelButton" type="Control"]
-pause_mode = 2
+process_mode = 3
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_scale = Vector2( 0.4, 0.4 )
+scale = Vector2( 0.4, 0.4 )
 size_flags_horizontal = 3
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
@@ -16,24 +16,24 @@ script = ExtResource( 2 )
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 0.257
 anchor_bottom = 0.131
-margin_right = 122.96
-margin_bottom = 111.32
-rect_scale = Vector2( 0.6, 0.6 )
+offset_right = 122.96
+offset_bottom = 111.32
+scale = Vector2( 0.6, 0.6 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="Button" type="Button" parent="MarginContainer"]
-pause_mode = 2
-margin_right = 308.0
-margin_bottom = 279.0
+process_mode = 3
+offset_right = 308.0
+offset_bottom = 279.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Info" type="VBoxContainer" parent="MarginContainer"]
-margin_right = 308.0
-margin_bottom = 279.0
+offset_right = 308.0
+offset_bottom = 279.0
 mouse_filter = 2
 alignment = 1
 __meta__ = {
@@ -41,10 +41,10 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="MarginContainer/Info"]
-margin_top = 18.0
-margin_right = 308.0
-margin_bottom = 136.0
-rect_pivot_offset = Vector2( 160, 59 )
+offset_top = 18.0
+offset_right = 308.0
+offset_bottom = 136.0
+pivot_offset = Vector2( 160, 59 )
 text = "2022"
 align = 1
 __meta__ = {
@@ -52,9 +52,9 @@ __meta__ = {
 }
 
 [node name="Stars" type="HBoxContainer" parent="MarginContainer/Info"]
-margin_top = 160.0
-margin_right = 308.0
-margin_bottom = 260.0
+offset_top = 160.0
+offset_right = 308.0
+offset_bottom = 260.0
 mouse_filter = 2
 alignment = 1
 __meta__ = {
@@ -62,22 +62,22 @@ __meta__ = {
 }
 
 [node name="Star1" type="TextureRect" parent="MarginContainer/Info/Stars"]
-margin_right = 100.0
-margin_bottom = 100.0
+offset_right = 100.0
+offset_bottom = 100.0
 mouse_filter = 2
 texture = ExtResource( 3 )
 
 [node name="Star2" type="TextureRect" parent="MarginContainer/Info/Stars"]
-margin_left = 104.0
-margin_right = 204.0
-margin_bottom = 100.0
+offset_left = 104.0
+offset_right = 204.0
+offset_bottom = 100.0
 mouse_filter = 2
 texture = ExtResource( 3 )
 
 [node name="Star3" type="TextureRect" parent="MarginContainer/Info/Stars"]
-margin_left = 208.0
-margin_right = 308.0
-margin_bottom = 100.0
+offset_left = 208.0
+offset_right = 308.0
+offset_bottom = 100.0
 mouse_filter = 2
 texture = ExtResource( 3 )
 

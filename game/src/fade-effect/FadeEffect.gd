@@ -6,8 +6,8 @@ extends Tween
 
 const DURATON:float = 0.3
 
-export var node_path:NodePath
-export var node_path2:NodePath
+@export var node_path:NodePath
+@export var node_path2:NodePath
 
 var node:Node
 var node2:Node
@@ -21,10 +21,10 @@ func _ready() -> void:
 	
 	if node:
 		node.modulate = Color(1, 1, 1, 0)
-		node.connect("visibility_changed", self, "fade_in")
+		node.connect("visibility_changed", Callable(self, "fade_in"))
 	if node2:
 		node2.modulate = Color(1, 1, 1, 0)
-		node2.connect("visibility_changed", self, "fade_in")
+		node2.connect("visibility_changed", Callable(self, "fade_in"))
 		
 		
 	fade_in()

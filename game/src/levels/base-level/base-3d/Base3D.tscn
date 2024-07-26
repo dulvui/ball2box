@@ -3,15 +3,15 @@
 [ext_resource path="res://materials/wall-material.tres" type="Material" id=1]
 [ext_resource path="res://materials/wall-physics-material.tres" type="PhysicsMaterial" id=2]
 
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape3D" id=5]
 
-[sub_resource type="CubeMesh" id=6]
+[sub_resource type="BoxMesh" id=6]
 
-[sub_resource type="CubeMesh" id=7]
+[sub_resource type="BoxMesh" id=7]
 
-[sub_resource type="BoxShape" id=8]
+[sub_resource type="BoxShape3D" id=8]
 
-[sub_resource type="SpatialMaterial" id=9]
+[sub_resource type="StandardMaterial3D" id=9]
 vertex_color_use_as_albedo = true
 
 [sub_resource type="SphereMesh" id=10]
@@ -19,82 +19,82 @@ material = SubResource( 9 )
 
 [sub_resource type="Gradient" id=21]
 interpolation_mode = 2
-offsets = PoolRealArray( 0.105455, 0.392727, 0.64, 0.916364 )
-colors = PoolColorArray( 0.984314, 0.980392, 0.396078, 1, 0.443137, 0.917647, 0.937255, 1, 0.92549, 0.368627, 0.368627, 1, 0.384314, 0.952941, 0.505882, 1 )
+offsets = PackedFloat32Array( 0.105455, 0.392727, 0.64, 0.916364 )
+colors = PackedColorArray( 0.984314, 0.980392, 0.396078, 1, 0.443137, 0.917647, 0.937255, 1, 0.92549, 0.368627, 0.368627, 1, 0.384314, 0.952941, 0.505882, 1 )
 
-[node name="Base" type="Spatial"]
+[node name="Base" type="Node3D"]
 
-[node name="Floor" type="StaticBody" parent="."]
-transform = Transform( 11, 0, 0, 0, 4, 0, 0, 0, 1, 0, -4, 0 )
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D( 11, 0, 0, 0, 4, 0, 0, 0, 1, 0, -4, 0 )
 physics_material_override = ExtResource( 2 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Floor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 shape = SubResource( 5 )
 
-[node name="MeshInstance" type="MeshInstance" parent="Floor"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 cast_shadow = 0
 use_in_baked_light = true
 mesh = SubResource( 6 )
 material/0 = ExtResource( 1 )
 
-[node name="WallLeft" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 100, 0, 0, 0, 1, -10, 100, 0 )
+[node name="WallLeft" type="StaticBody3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 100, 0, 0, 0, 1, -10, 100, 0 )
 physics_material_override = ExtResource( 2 )
 
-[node name="MeshInstance" type="MeshInstance" parent="WallLeft"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WallLeft"]
 use_in_baked_light = true
 mesh = SubResource( 7 )
 material/0 = ExtResource( 1 )
 
-[node name="CollisionShape" type="CollisionShape" parent="WallLeft"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallLeft"]
 shape = SubResource( 8 )
 
-[node name="WallRight" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 100, 0, 0, 0, 1, 10, 100, 0 )
+[node name="WallRight" type="StaticBody3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 100, 0, 0, 0, 1, 10, 100, 0 )
 physics_material_override = ExtResource( 2 )
 
-[node name="MeshInstance" type="MeshInstance" parent="WallRight"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WallRight"]
 use_in_baked_light = true
 mesh = SubResource( 7 )
 material/0 = ExtResource( 1 )
 
-[node name="CollisionShape" type="CollisionShape" parent="WallRight"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallRight"]
 shape = SubResource( 8 )
 
-[node name="Roof" type="StaticBody" parent="."]
-transform = Transform( 9, 0, 0, 0, 2, 0, 0, 0, 1, 0, 37, 0 )
+[node name="Roof" type="StaticBody3D" parent="."]
+transform = Transform3D( 9, 0, 0, 0, 2, 0, 0, 0, 1, 0, 37, 0 )
 physics_material_override = ExtResource( 2 )
 
-[node name="MeshInstance" type="MeshInstance" parent="Roof"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roof"]
 use_in_baked_light = true
 mesh = SubResource( 7 )
 material/0 = ExtResource( 1 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Roof"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roof"]
 shape = SubResource( 8 )
 
-[node name="ShopRoof" type="StaticBody" parent="."]
-transform = Transform( 9, 0, 0, 0, 2, 0, 0, 0, 1, 0, 75, 0 )
+[node name="ShopRoof" type="StaticBody3D" parent="."]
+transform = Transform3D( 9, 0, 0, 0, 2, 0, 0, 0, 1, 0, 75, 0 )
 physics_material_override = ExtResource( 2 )
 
-[node name="MeshInstance" type="MeshInstance" parent="ShopRoof"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ShopRoof"]
 use_in_baked_light = true
 mesh = SubResource( 7 )
 material/0 = ExtResource( 1 )
 
-[node name="CollisionShape" type="CollisionShape" parent="ShopRoof"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ShopRoof"]
 shape = SubResource( 8 )
 
-[node name="DirectionalLight" type="DirectionalLight" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 light_energy = 0.45
 
-[node name="Camera" type="Camera" parent="."]
-pause_mode = 2
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, 26 )
+[node name="Camera3D" type="Camera3D" parent="."]
+process_mode = 3
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, 26 )
 
-[node name="CPUParticles" type="CPUParticles" parent="."]
-pause_mode = 2
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -28.6212, -24 )
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+process_mode = 3
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -28.6212, -24 )
 amount = 24
 lifetime = 40.0
 preprocess = 440.0

@@ -1,20 +1,22 @@
 [remap]
 
 importer="wavefront_obj"
+importer_version=1
 type="Mesh"
-path="res://.import/torus-ball.obj-580116241f008d25a28a19659c68348e.mesh"
+uid="uid://cd4fif7n2jjx4"
+path="res://.godot/imported/torus-ball.obj-580116241f008d25a28a19659c68348e.mesh"
 
 [deps]
 
-files=[ "res://.import/torus-ball.obj-580116241f008d25a28a19659c68348e.mesh" ]
+files=["res://.godot/imported/torus-ball.obj-580116241f008d25a28a19659c68348e.mesh"]
 
 source_file="res://assets/obj/torus-ball.obj"
-dest_files=[ "res://.import/torus-ball.obj-580116241f008d25a28a19659c68348e.mesh", "res://.import/torus-ball.obj-580116241f008d25a28a19659c68348e.mesh" ]
+dest_files=["res://.godot/imported/torus-ball.obj-580116241f008d25a28a19659c68348e.mesh", "res://.godot/imported/torus-ball.obj-580116241f008d25a28a19659c68348e.mesh"]
 
 [params]
 
 generate_tangents=true
-scale_mesh=Vector3( 1, 1, 1 )
-offset_mesh=Vector3( 0, 0, 0 )
-octahedral_compression=true
-optimize_mesh_flags=4286
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

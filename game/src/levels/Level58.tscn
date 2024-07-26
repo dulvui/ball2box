@@ -5,13 +5,13 @@
 [node name="LevelBase" instance=ExtResource( 1 )]
 
 [node name="Ball" parent="." index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.58127, 3.96305, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.58127, 3.96305, 0 )
 
 [node name="Bin" parent="." index="4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.759, 0, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.759, 0, 0 )
 
 [node name="Star1" parent="." index="5"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.66956, 30.4293, -0.199996 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.66956, 30.4293, -0.199996 )
 
 [node name="Star2" parent="." index="6"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.660635, 19.7797, -1.90735e-06 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.660635, 19.7797, -1.90735e-06 )

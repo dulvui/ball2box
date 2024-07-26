@@ -10,8 +10,8 @@ signal info
 signal help
 
 func _ready() -> void:
-	$Buttons/Settings/MusicButton.pressed = Global.music
-	$Buttons/Settings/SfxButton.pressed = Global.sfx
+	$Buttons/Settings/MusicButton.button_pressed = Global.music
+	$Buttons/Settings/SfxButton.button_pressed = Global.sfx
 
 	
 func _on_Play_pressed() -> void:

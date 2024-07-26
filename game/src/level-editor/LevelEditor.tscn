@@ -7,7 +7,7 @@
 [ext_resource path="res://src/level-editor/objects-selector/ObjectsSelector.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/actors/star/Star.tscn" type="PackedScene" id=6]
 
-[node name="LevelEditor" type="Spatial"]
+[node name="LevelEditor" type="Node3D"]
 script = ExtResource( 2 )
 
 [node name="Base" parent="." instance=ExtResource( 1 )]
@@ -15,21 +15,21 @@ script = ExtResource( 2 )
 [node name="Bin" parent="." instance=ExtResource( 4 )]
 
 [node name="Ball" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 29.9642, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 29.9642, 0 )
 
-[node name="Objects" type="Spatial" parent="."]
+[node name="Objects" type="Node3D" parent="."]
 
 [node name="ObjectsSelector" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.986, 4 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.986, 4 )
 
 [node name="Star1" parent="." instance=ExtResource( 6 )]
-transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.016408, 21.0489, 0 )
+transform = Transform3D( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.016408, 21.0489, 0 )
 
 [node name="Star2" parent="." instance=ExtResource( 6 )]
-transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.016408, 10.3808, 0 )
+transform = Transform3D( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.016408, 10.3808, 0 )
 
 [node name="HUD" type="Control" parent="."]
-pause_mode = 2
+process_mode = 3
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -37,9 +37,9 @@ anchor_bottom = 1.0
 anchor_top = 0.88125
 anchor_right = 1.001
 anchor_bottom = 0.97925
-margin_right = 0.279968
-margin_bottom = 0.559998
-custom_constants/separation = 20
+offset_right = 0.279968
+offset_bottom = 0.559998
+theme_override_constants/separation = 20
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": true
@@ -47,40 +47,40 @@ __meta__ = {
 
 [node name="Add" type="Button" parent="HUD/HBoxContainer"]
 visible = false
-margin_left = 96.0
-margin_right = 222.0
-margin_bottom = 126.0
-rect_min_size = Vector2( 126, 126 )
+offset_left = 96.0
+offset_right = 222.0
+offset_bottom = 126.0
+custom_minimum_size = Vector2( 126, 126 )
 text = "+"
 
 [node name="Prev" type="Button" parent="HUD/HBoxContainer"]
 visible = false
-margin_left = 169.0
-margin_right = 295.0
-margin_bottom = 126.0
-rect_min_size = Vector2( 126, 126 )
+offset_left = 169.0
+offset_right = 295.0
+offset_bottom = 126.0
+custom_minimum_size = Vector2( 126, 126 )
 text = "<"
 
 [node name="Next" type="Button" parent="HUD/HBoxContainer"]
 visible = false
-margin_left = 242.0
-margin_right = 368.0
-margin_bottom = 126.0
-rect_min_size = Vector2( 126, 126 )
+offset_left = 242.0
+offset_right = 368.0
+offset_bottom = 126.0
+custom_minimum_size = Vector2( 126, 126 )
 text = ">"
 
 [node name="Delete" type="Button" parent="HUD/HBoxContainer"]
 visible = false
-margin_left = 461.0
-margin_right = 587.0
-margin_bottom = 126.0
-rect_min_size = Vector2( 126, 126 )
+offset_left = 461.0
+offset_right = 587.0
+offset_bottom = 126.0
+custom_minimum_size = Vector2( 126, 126 )
 text = "-"
 
 [node name="Export" type="Button" parent="HUD/HBoxContainer"]
-margin_left = 315.0
-margin_right = 406.0
-margin_bottom = 126.0
+offset_left = 315.0
+offset_right = 406.0
+offset_bottom = 126.0
 text = "E"
 
 [node name="CameraControl" type="VBoxContainer" parent="HUD"]
@@ -88,77 +88,77 @@ anchor_left = 0.0111111
 anchor_top = 0.164062
 anchor_right = 0.186
 anchor_bottom = 0.377
-margin_right = 0.0800018
-margin_bottom = -0.559998
-custom_constants/separation = 20
+offset_right = 0.0800018
+offset_bottom = -0.559998
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="CameraZoomIn" type="Button" parent="HUD/CameraControl"]
-margin_right = 126.0
-margin_bottom = 126.0
-rect_min_size = Vector2( 126, 126 )
+offset_right = 126.0
+offset_bottom = 126.0
+custom_minimum_size = Vector2( 126, 126 )
 text = "+"
 
 [node name="CameraZoomOut" type="Button" parent="HUD/CameraControl"]
-margin_top = 146.0
-margin_right = 126.0
-margin_bottom = 272.0
-rect_min_size = Vector2( 126, 126 )
+offset_top = 146.0
+offset_right = 126.0
+offset_bottom = 272.0
+custom_minimum_size = Vector2( 126, 126 )
 text = "-"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HUD"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 0.338
-margin_right = -1.0
-margin_bottom = 0.359955
+offset_right = -1.0
+offset_bottom = 0.359955
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="ImportText" type="TextEdit" parent="HUD/VBoxContainer"]
-margin_right = 719.0
-margin_bottom = 282.0
+offset_right = 719.0
+offset_bottom = 282.0
 size_flags_vertical = 3
 
 [node name="Import" type="Button" parent="HUD/VBoxContainer"]
-margin_left = 184.0
-margin_top = 306.0
-margin_right = 535.0
-margin_bottom = 432.0
+offset_left = 184.0
+offset_top = 306.0
+offset_right = 535.0
+offset_bottom = 432.0
 size_flags_horizontal = 4
 text = "IMPORT"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HUD"]
 anchor_right = 0.986111
 anchor_bottom = 0.090625
-margin_right = 12.0
-margin_bottom = 12.0
+offset_right = 12.0
+offset_bottom = 12.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="Objects" type="HBoxContainer" parent="HUD/ScrollContainer"]
-margin_right = 463.0
-margin_bottom = 126.0
-custom_constants/separation = 20
+offset_right = 463.0
+offset_bottom = 126.0
+theme_override_constants/separation = 20
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="Ball" type="Button" parent="HUD/ScrollContainer/Objects"]
-margin_right = 235.0
-margin_bottom = 126.0
-rect_min_size = Vector2( 126, 126 )
+offset_right = 235.0
+offset_bottom = 126.0
+custom_minimum_size = Vector2( 126, 126 )
 toggle_mode = true
 text = "BALL"
 
 [node name="Box" type="Button" parent="HUD/ScrollContainer/Objects"]
-margin_left = 255.0
-margin_right = 463.0
-margin_bottom = 126.0
-rect_min_size = Vector2( 126, 126 )
+offset_left = 255.0
+offset_right = 463.0
+offset_bottom = 126.0
+custom_minimum_size = Vector2( 126, 126 )
 toggle_mode = true
 text = "BOX"
 

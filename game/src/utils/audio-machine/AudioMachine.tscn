@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/audio/snare05.ogg" type="AudioStream" id=6]
 
 [node name="AudioMachine" type="Node2D"]
-pause_mode = 2
+process_mode = 3
 position = Vector2( 360, 624 )
 script = ExtResource( 2 )
 

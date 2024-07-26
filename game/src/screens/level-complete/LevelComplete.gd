@@ -9,9 +9,9 @@ signal menu
 signal levels
 signal help
 
-onready var animation_player:AnimationPlayer = $AnimationPlayer
-onready var level_label:Label = $VBoxContainer/Level
-onready var next_level_button:Button = $VBoxContainer/Buttons/NextLevel
+@onready var animation_player:AnimationPlayer = $AnimationPlayer
+@onready var level_label:Label = $VBoxContainer/Level
+@onready var next_level_button:Button = $VBoxContainer/Buttons/NextLevel
 
 
 
@@ -81,4 +81,4 @@ func _on_NextLevel_pressed() -> void:
 	AudioMachine.click()
 	if not first_time_complete:
 		Global.current_level += 1
-	get_tree().change_scene("res://src/levels/Level%s.tscn"%str(Global.current_level))
+	get_tree().change_scene_to_file("res://src/levels/Level%s.tscn"%str(Global.current_level))

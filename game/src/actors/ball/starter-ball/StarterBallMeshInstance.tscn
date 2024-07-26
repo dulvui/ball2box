@@ -4,6 +4,6 @@
 
 [sub_resource type="SphereMesh" id=1]
 
-[node name="MeshInstance" type="MeshInstance"]
+[node name="MeshInstance3D" type="MeshInstance3D"]
 mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )

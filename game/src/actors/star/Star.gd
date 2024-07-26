@@ -6,7 +6,7 @@ extends Node
 
 signal star_hit
 
-onready var animation_player:AnimationPlayer  = $AnimationPlayer
+@onready var animation_player:AnimationPlayer  = $AnimationPlayer
 
 var is_visible:bool = true
 

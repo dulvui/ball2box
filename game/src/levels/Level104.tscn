@@ -8,28 +8,28 @@
 [node name="LevelBase" instance=ExtResource( 3 )]
 
 [node name="Ball" parent="." index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.04025, 0.867947, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.04025, 0.867947, 0 )
 can_sleep = false
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="Bin" parent="." index="4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.67241, 21.1317, -2.38419e-07 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.67241, 21.1317, -2.38419e-07 )
 
 [node name="Star1" parent="." index="5"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83891, 18.5515, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83891, 18.5515, 0 )
 
 [node name="Star2" parent="." index="6"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.04241, 30.9475, -1.90735e-06 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.04241, 30.9475, -1.90735e-06 )
 
 [node name="Triangle" parent="." index="7" instance=ExtResource( 1 )]
-transform = Transform( -7, 2.7259e-06, 0, -2.7259e-06, -7, 0, 0, 0, 1, 11.9608, 7.12559, 1.90735e-06 )
+transform = Transform3D( -7, 2.7259e-06, 0, -2.7259e-06, -7, 0, 0, 0, 1, 11.9608, 7.12559, 1.90735e-06 )
 
 [node name="Rotator" parent="." index="8" instance=ExtResource( 2 )]
-transform = Transform( -0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, -6.2178, 32.3474, 0 )
+transform = Transform3D( -0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, -6.2178, 32.3474, 0 )
 
 [node name="Rotator2" parent="." index="9" instance=ExtResource( 2 )]
-transform = Transform( -0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, -6.36586, 2.95816, 0 )
+transform = Transform3D( -0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, -6.36586, 2.95816, 0 )
 
 [node name="VBoxUp" parent="." index="10" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.1687, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.1687, 0 )

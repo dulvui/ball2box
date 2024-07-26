@@ -2,19 +2,19 @@
 
 [ext_resource path="res://assets/obj/torus-ball.obj" type="ArrayMesh" id=1]
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="StandardMaterial3D" id=1]
 albedo_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="StandardMaterial3D" id=2]
 albedo_color = Color( 0.027451, 0.486275, 0.0117647, 1 )
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="StandardMaterial3D" id=3]
 albedo_color = Color( 0.866667, 0.729412, 0.168627, 1 )
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="StandardMaterial3D" id=4]
 albedo_color = Color( 0.988235, 0.133333, 0.133333, 1 )
 
-[node name="MeshInstance" type="MeshInstance"]
+[node name="MeshInstance3D" type="MeshInstance3D"]
 use_in_baked_light = true
 mesh = ExtResource( 1 )
 material/0 = SubResource( 1 )

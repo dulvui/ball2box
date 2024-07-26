@@ -4,6 +4,6 @@
 [ext_resource path="res://src/actors/ball/pick-ball/PickMeshInstance.tscn" type="PackedScene" id=2]
 
 [node name="PickBall" instance=ExtResource( 1 )]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
+transform = Transform3D( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 
-[node name="MeshInstance" parent="." index="0" instance=ExtResource( 2 )]
+[node name="MeshInstance3D" parent="." index="0" instance=ExtResource( 2 )]

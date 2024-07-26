@@ -12,20 +12,20 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 0.2 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ Vector3( 1, 1, 1 ), Vector3( 0.01, 0.01, 0.01 ) ]
 }
 
-[sub_resource type="CubeMesh" id=2]
+[sub_resource type="BoxMesh" id=2]
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="StandardMaterial3D" id=3]
 albedo_color = Color( 0.784314, 0.313726, 0.815686, 1 )
 
-[sub_resource type="BoxShape" id=4]
+[sub_resource type="BoxShape3D" id=4]
 
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape3D" id=5]
 
 [node name="PopObject" groups=[
 "pop-objects",
@@ -34,20 +34,20 @@ albedo_color = Color( 0.784314, 0.313726, 0.815686, 1 )
 [node name="AnimationPlayer" parent="." index="0"]
 anims/Pop = SubResource( 1 )
 
-[node name="MeshInstance" type="MeshInstance" parent="Body" index="0"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body" index="0"]
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
-[node name="StaticBody" type="StaticBody" parent="Body/MeshInstance" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Body/MeshInstance3D" index="0"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Body/MeshInstance/StaticBody" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/MeshInstance3D/StaticBody3D" index="0"]
 shape = SubResource( 4 )
 
-[node name="Area" type="Area" parent="Body" index="1"]
-transform = Transform( 1.02, 0, 0, 0, 1.02, 0, 0, 0, 1.02, 0, 0, 0 )
+[node name="Area3D" type="Area3D" parent="Body" index="1"]
+transform = Transform3D( 1.02, 0, 0, 0, 1.02, 0, 0, 0, 1.02, 0, 0, 0 )
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape" type="CollisionShape" parent="Body/Area" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Area3D" index="0"]
 shape = SubResource( 5 )
-[connection signal="body_entered" from="Body/Area" to="." method="_on_Area_body_entered"]
+[connection signal="body_entered" from="Body/Area3D" to="." method="_on_Area_body_entered"]

@@ -5,14 +5,14 @@
 [ext_resource path="res://src/screens/level-select/LevelSelect.gd" type="Script" id=4]
 
 [node name="LevelSelect" type="MarginContainer"]
-pause_mode = 2
+process_mode = 3
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
-custom_constants/margin_right = 80
-custom_constants/margin_top = 180
-custom_constants/margin_left = 80
-custom_constants/margin_bottom = 80
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_top = 180
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_bottom = 80
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": true
@@ -22,51 +22,51 @@ __meta__ = {
 node_path = NodePath("..")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 80.0
-margin_top = 180.0
-margin_right = 640.0
-margin_bottom = 1200.0
+offset_left = 80.0
+offset_top = 180.0
+offset_right = 640.0
+offset_bottom = 1200.0
 
 [node name="Levels" type="GridContainer" parent="VBoxContainer"]
-pause_mode = 2
-margin_right = 560.0
-margin_bottom = 870.0
-rect_pivot_offset = Vector2( 310, 440 )
+process_mode = 3
+offset_right = 560.0
+offset_bottom = 870.0
+pivot_offset = Vector2( 310, 440 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/vseparation = 180
-custom_constants/hseparation = 21
+theme_override_constants/v_separation = 180
+theme_override_constants/h_separation = 21
 columns = 3
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 894.0
-margin_right = 560.0
-margin_bottom = 1020.0
+offset_top = 894.0
+offset_right = 560.0
+offset_bottom = 1020.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="Prev" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_right = 93.0
-margin_bottom = 126.0
+offset_right = 93.0
+offset_bottom = 126.0
 text = "<"
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 97.0
-margin_right = 133.0
-margin_bottom = 126.0
+offset_left = 97.0
+offset_right = 133.0
+offset_bottom = 126.0
 size_flags_horizontal = 3
 
 [node name="Back" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 137.0
-margin_right = 422.0
-margin_bottom = 126.0
-rect_min_size = Vector2( 115, 0 )
+offset_left = 137.0
+offset_right = 422.0
+offset_bottom = 126.0
+custom_minimum_size = Vector2( 115, 0 )
 text = "MENU"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -74,15 +74,15 @@ __meta__ = {
 
 [node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 426.0
-margin_right = 463.0
-margin_bottom = 126.0
+offset_left = 426.0
+offset_right = 463.0
+offset_bottom = 126.0
 size_flags_horizontal = 3
 
 [node name="Next" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 467.0
-margin_right = 560.0
-margin_bottom = 126.0
+offset_left = 467.0
+offset_right = 560.0
+offset_bottom = 126.0
 text = ">"
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Prev" to="." method="_on_Prev_pressed"]

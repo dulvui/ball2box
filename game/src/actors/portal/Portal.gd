@@ -2,7 +2,7 @@
 
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-extends Spatial
+extends Node3D
 
 signal ball_entered(ball)
 

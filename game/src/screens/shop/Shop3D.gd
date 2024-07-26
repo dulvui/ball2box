@@ -2,7 +2,7 @@
 
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-extends Spatial
+extends Node3D
 
 var ball
 
@@ -28,5 +28,5 @@ func fade_in() -> void:
 	ball.fade_in()
 	
 func menu() -> void:
-	yield(get_tree().create_timer(0.2), "timeout") # its ugly whitout
+	await get_tree().create_timer(0.2).timeout # its ugly whitout
 	ball.fade_out()

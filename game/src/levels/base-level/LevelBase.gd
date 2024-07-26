@@ -2,28 +2,28 @@
 
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-extends Spatial
+extends Node3D
 
 const moveTrans:int = Tween.TRANS_LINEAR
 const moveEase:int = Tween.EASE_OUT
 
-onready var camera:Camera = $Base/Camera
-onready var tween:Tween = $Tween
-onready var shop3D:Spatial = $Shop3D
-onready var ball:Ball = $Ball
-onready var star1:Spatial = $Star1
-onready var star2:Spatial = $Star2
-onready var tutorial:Spatial = $Tutorial
-onready var animation_player:AnimationPlayer = $AnimationPlayer
+@onready var camera:Camera3D = $Base/Camera3D
+@onready var tween:Tween = $Tween
+@onready var shop3D:Node3D = $Shop3D
+@onready var ball:Ball = $Ball
+@onready var star1:Node3D = $Star1
+@onready var star2:Node3D = $Star2
+@onready var tutorial:Node3D = $Tutorial
+@onready var animation_player:AnimationPlayer = $AnimationPlayer
 
-onready var main:Control = $UI/Main
-onready var level_complete:Control = $UI/LevelComplete
-onready var help:Control = $UI/Help
-onready var levels:Control = $UI/LevelSelect
-onready var shop:Control = $UI/Shop
-onready var info:Control = $UI/Info
+@onready var main:Control = $UI/Main
+@onready var level_complete:Control = $UI/LevelComplete
+@onready var help:Control = $UI/Help
+@onready var levels:Control = $UI/LevelSelect
+@onready var shop:Control = $UI/Shop
+@onready var info:Control = $UI/Info
 
-var portals:Spatial
+var portals:Node3D
 
 
 func _ready() -> void:
@@ -47,8 +47,8 @@ func _ready() -> void:
 	fade_in_objects()
 	
 	_connect_ball_signals()
-	star1.connect("star_hit",self,"on_star1_hit")
-	star2.connect("star_hit",self,"on_star2_hit")
+	star1.connect("star_hit", Callable(self, "on_star1_hit"))
+	star2.connect("star_hit", Callable(self, "on_star2_hit"))
 	
 	# portals only exist in some levels
 	portals = get_node_or_null("Portals/PortalConnector")
@@ -95,7 +95,7 @@ func _on_Shop_select() -> void:
 	animation_player.play("GoToMenu")
 	
 	# ball setup
-	var pos:Transform = ball.initial_position
+	var pos:Transform3D = ball.initial_position
 	print("shop transform " + str(pos))
 	ball.queue_free()
 	
@@ -139,16 +139,16 @@ func _on_LevelComplete_menu() -> void:
 	level_complete.hide()
 
 func _camera_shake() -> void:
-	var start_position:Vector3 = camera.translation
+	var start_position:Vector3 = camera.position
 	
 	var shakes:int = (randi()%3) + 1
 	for i in shakes:
-		var random_vector:Vector3 = camera.translation - Vector3(rand_range(-1,1),rand_range(-1,1), rand_range(-1,1))
-		tween.interpolate_property(camera, "translation",camera.translation, random_vector, 0.1, moveTrans, moveEase)
+		var random_vector:Vector3 = camera.position - Vector3(randf_range(-1,1),randf_range(-1,1), randf_range(-1,1))
+		tween.interpolate_property(camera, "position",camera.position, random_vector, 0.1, moveTrans, moveEase)
 		tween.start()
-		yield(tween, "tween_all_completed")
+		await tween.tween_all_completed
 	
-	tween.interpolate_property(camera, "translation", camera.translation, start_position, 0.2, moveTrans, moveEase)
+	tween.interpolate_property(camera, "position", camera.position, start_position, 0.2, moveTrans, moveEase)
 	tween.start()
 
 
@@ -196,13 +196,13 @@ func _on_LevelComplete_levels():
 	levels.show()
 
 func _connect_ball_signals():
-	if ball.is_connected("reset", self, "_on_Ball_reset"):
-		ball.disconnect("reset",self,"_on_Ball_reset")
-	if ball.is_connected("shoot",self,"_on_Ball_shoot"):
-		ball.disconnect("shoot",self,"_on_Ball_shoot")
+	if ball.is_connected("reset", Callable(self, "_on_Ball_reset")):
+		ball.disconnect("reset", Callable(self, "_on_Ball_reset"))
+	if ball.is_connected("shoot", Callable(self, "_on_Ball_shoot")):
+		ball.disconnect("shoot", Callable(self, "_on_Ball_shoot"))
 	
-	ball.connect("reset",self,"_on_Ball_reset")
-	ball.connect("shoot",self,"_on_Ball_shoot")
+	ball.connect("reset", Callable(self, "_on_Ball_reset"))
+	ball.connect("shoot", Callable(self, "_on_Ball_shoot"))
 
 
 func _on_Main_play():

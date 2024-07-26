@@ -6,9 +6,9 @@ extends VBoxContainer
 
 signal levels
 
-onready var star1:TextureRect = $Stars/Star1
-onready var star2:TextureRect = $Stars/Star2
-onready var star3:TextureRect = $Stars/Star3
+@onready var star1:TextureRect = $Stars/Star1
+@onready var star2:TextureRect = $Stars/Star2
+@onready var star3:TextureRect = $Stars/Star3
 
 func _ready() -> void:
 	update_level()
@@ -29,7 +29,7 @@ func _on_PrevLevel_pressed() -> void:
 	if Global.current_level > 1:
 		Global.current_level -= 1
 		Global.show_main = true
-		get_tree().change_scene("res://src/levels/Level%s.tscn"%(Global.current_level))
+		get_tree().change_scene_to_file("res://src/levels/Level%s.tscn"%(Global.current_level))
 
 
 func _on_NextLevel_pressed() -> void:
@@ -37,7 +37,7 @@ func _on_NextLevel_pressed() -> void:
 	if Global.current_level < Global.LEVELS and Global.level_stars[Global.current_level] >= 0:
 		Global.current_level += 1
 		Global.show_main = true
-		get_tree().change_scene("res://src/levels/Level%s.tscn"%(Global.current_level))
+		get_tree().change_scene_to_file("res://src/levels/Level%s.tscn"%(Global.current_level))
 
 
 func _on_LevelButton_pressed() -> void:

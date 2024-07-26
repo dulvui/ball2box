@@ -8,7 +8,7 @@ signal back
 
 const level_button:PackedScene = preload("res://src/screens/level-select/level-button/LevelButton.tscn")
 
-onready var level_grid:GridContainer = $VBoxContainer/Levels
+@onready var level_grid:GridContainer = $VBoxContainer/Levels
 
 var current_page:int = 0
 
@@ -23,14 +23,14 @@ func _set_up_buttons() -> void:
 	
 	if current_page == 0:
 		for i in range(1,16):
-			var button:Control = level_button.instance()
+			var button:Control = level_button.instantiate()
 			button.set_level(i)
 			level_grid.add_child(button)
 	else:
 		if current_page == (Global.LEVELS/15):
 			current_page -= 1
 		for i in range(current_page * 15 + 1,(current_page + 1) * 15 + 1):
-			var button:Control = level_button.instance()
+			var button:Control = level_button.instantiate()
 			button.set_level(i)
 			level_grid.add_child(button)
 

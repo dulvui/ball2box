@@ -33,3 +33,28 @@ game/android/build/.gradle/
 
 # screenshots
 screenshots/
+# Godot 4+ specific ignores
+game/.godot/
+
+# Godot-specific ignores
+game/.import/
+.import/
+game/export.cfg
+game/export_presets.cfg
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+*.~lock.translations.csv#
+
+# Mono-specific ignores
+game/.mono/
+game/data_*/
+
+# Android
+game/android/
+*.apk
+*.aab
+*.keystore
+
+# VSCode/VSCodium
+game/.vscode/

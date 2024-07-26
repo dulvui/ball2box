@@ -2,12 +2,12 @@
 
 [ext_resource path="res://styles/button-normal.tres" type="StyleBox" id=1]
 [ext_resource path="res://styles/button-pressed.tres" type="StyleBox" id=2]
-[ext_resource path="res://assets/font/manrope.thin.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/font/manrope.thin.otf" type="FontFile" id=3]
 [ext_resource path="res://styles/button-disabled.tres" type="StyleBox" id=4]
 [ext_resource path="res://styles/button-transparent.tres" type="StyleBox" id=5]
 [ext_resource path="res://styles/panel.tres" type="StyleBox" id=6]
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="FontFile" id=9]
 size = 85
 outline_size = 5
 outline_color = Color( 0, 0, 0, 1 )
@@ -29,7 +29,7 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="FontFile" id=10]
 size = 34
 outline_size = 5
 outline_color = Color( 0, 0, 0, 1 )
@@ -37,7 +37,7 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="FontFile" id=11]
 size = 34
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )

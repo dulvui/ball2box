@@ -7,22 +7,22 @@
 [node name="LevelBase" instance=ExtResource( 1 )]
 
 [node name="Ball" parent="." index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0 )
 
 [node name="Bin" parent="." index="4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.15622, 28.3108, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.15622, 28.3108, 0 )
 
 [node name="Star1" parent="." index="5"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.808248, 11.1504, -0.2 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.808248, 11.1504, -0.2 )
 
 [node name="Rotator" parent="." index="6" instance=ExtResource( 3 )]
-transform = Transform( -0.24193, -0.970294, 0, 0.970294, -0.24193, 0, 0, 0, 1, 0.566856, 24.9538, -1.90735e-06 )
+transform = Transform3D( -0.24193, -0.970294, 0, 0.970294, -0.24193, 0, 0, 0, 1, 0.566856, 24.9538, -1.90735e-06 )
 
 [node name="Star2" parent="." index="7"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.83385, 28.2153, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.83385, 28.2153, 0 )
 
 [node name="Box" parent="." index="11" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.96409, 7.34421, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.96409, 7.34421, 0 )
 
 [node name="Box2" parent="." index="12" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7291, 16.3965, 0 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7291, 16.3965, 0 )

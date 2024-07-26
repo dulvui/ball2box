@@ -1,19 +1,19 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/patterns/pattern_0017.png" type="Texture" id=1]
+[ext_resource path="res://assets/patterns/pattern_0017.png" type="Texture2D" id=1]
 
 [sub_resource type="SphereMesh" id=3]
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="StandardMaterial3D" id=5]
 flags_transparent = true
 albedo_color = Color( 0.866667, 0.992157, 0.0588235, 1 )
 albedo_texture = ExtResource( 1 )
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="StandardMaterial3D" id=4]
 next_pass = SubResource( 5 )
 albedo_color = Color( 0.12549, 0.207843, 0.580392, 1 )
 
-[node name="MeshInstance" type="MeshInstance"]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+[node name="MeshInstance3D" type="MeshInstance3D"]
+transform = Transform3D( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 mesh = SubResource( 3 )
 material/0 = SubResource( 4 )

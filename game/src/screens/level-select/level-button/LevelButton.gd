@@ -30,4 +30,4 @@ func _on_Button_pressed() -> void:
 	if stars > -1:
 		AudioMachine.play_click()
 		Global.current_level = level
-		get_tree().change_scene("res://src/levels/Level%s.tscn"%level)
+		get_tree().change_scene_to_file("res://src/levels/Level%s.tscn"%level)

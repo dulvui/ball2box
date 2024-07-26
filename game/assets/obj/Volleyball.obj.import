@@ -1,20 +1,22 @@
 [remap]
 
 importer="wavefront_obj"
+importer_version=1
 type="Mesh"
-path="res://.import/Volleyball.obj-6477853fb833a57509b1b6b4087799dd.mesh"
+uid="uid://bt5uv1g0gjltq"
+path="res://.godot/imported/Volleyball.obj-6477853fb833a57509b1b6b4087799dd.mesh"
 
 [deps]
 
-files=[ "res://.import/Volleyball.obj-6477853fb833a57509b1b6b4087799dd.mesh" ]
+files=["res://.godot/imported/Volleyball.obj-6477853fb833a57509b1b6b4087799dd.mesh"]
 
 source_file="res://assets/obj/Volleyball.obj"
-dest_files=[ "res://.import/Volleyball.obj-6477853fb833a57509b1b6b4087799dd.mesh", "res://.import/Volleyball.obj-6477853fb833a57509b1b6b4087799dd.mesh" ]
+dest_files=["res://.godot/imported/Volleyball.obj-6477853fb833a57509b1b6b4087799dd.mesh", "res://.godot/imported/Volleyball.obj-6477853fb833a57509b1b6b4087799dd.mesh"]
 
 [params]
 
 generate_tangents=true
-scale_mesh=Vector3( 1, 1, 1 )
-offset_mesh=Vector3( 0, 0, 0 )
-octahedral_compression=true
-optimize_mesh_flags=4286
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

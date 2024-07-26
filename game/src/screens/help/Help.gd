@@ -13,10 +13,10 @@ const DIGITS:int = 6
 
 const DAY:int = 86400
 
-onready var paste_button:Button = $VBoxContainer/PasteContainer/Paste
-onready var code_line:LineEdit = $VBoxContainer/CopyContainer/Code
-onready var enter_code_line:LineEdit = $VBoxContainer/PasteContainer/EnterCode
-onready var instructions:RichTextLabel = $VBoxContainer/InstructionsContainer/Instructions
+@onready var paste_button:Button = $VBoxContainer/PasteContainer/Paste
+@onready var code_line:LineEdit = $VBoxContainer/CopyContainer/Code
+@onready var enter_code_line:LineEdit = $VBoxContainer/PasteContainer/EnterCode
+@onready var instructions:RichTextLabel = $VBoxContainer/InstructionsContainer/Instructions
 
 
 var random_seed:String = "such4secret9seed"
@@ -44,12 +44,12 @@ func verify() -> void:
 	var verify_code:String = enter_code_line.text
 	verify_code = verify_code.replace(" ", "")
 	# check if valid
-	if verify_code.length() == DIGITS and verify_code.is_valid_integer() and int(verify_code) in Global.codes:
+	if verify_code.length() == DIGITS and verify_code.is_valid_int() and int(verify_code) in Global.codes:
 		# unlock next locked level, if possible
 		if unlock_last_level():
 			Global.codes.erase(int(verify_code))
 			Global.save_data()
-			get_tree().change_scene("res://src/levels/Level%s.tscn"%str(Global.current_level))
+			get_tree().change_scene_to_file("res://src/levels/Level%s.tscn"%str(Global.current_level))
 		else:
 			print("NO LEVEL TO UNLOCK")
 	else:
@@ -66,7 +66,7 @@ func unlock_last_level() -> bool:
 
 
 func generate_codes() -> void:
-	var current_seed:int = hash(random_seed) + OS.get_unix_time() / DAY
+	var current_seed:int = hash(random_seed) + Time.get_unix_time_from_system() / DAY
 	if Global.generator_seed != current_seed:
 		# generate new seed
 		Global.generator_seed = current_seed

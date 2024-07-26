@@ -2,5 +2,5 @@
 
 [ext_resource path="res://src/level-editor/objects-selector/ObjectsSelector.gd" type="Script" id=1]
 
-[node name="ObjectsSelector" type="Spatial"]
+[node name="ObjectsSelector" type="Node3D"]
 script = ExtResource( 1 )

@@ -5,7 +5,7 @@
 [node name="ToggleButton" type="Button"]
 anchor_right = 0.191667
 anchor_bottom = 0.0984375
-rect_min_size = Vector2( 140, 0 )
+custom_minimum_size = Vector2( 140, 0 )
 toggle_mode = true
 script = ExtResource( 1 )
 __meta__ = {

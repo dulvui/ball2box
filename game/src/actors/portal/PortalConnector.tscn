@@ -2,5 +2,5 @@
 
 [ext_resource path="res://src/actors/portal/PortalConnector.gd" type="Script" id=1]
 
-[node name="PortalConnector" type="Spatial"]
+[node name="PortalConnector" type="Node3D"]
 script = ExtResource( 1 )
