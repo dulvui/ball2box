@@ -10,6 +10,9 @@ var center: Vector3 = Vector3(0, 0, 0)
 
 var camera: Camera
 
+var is_scrolling: bool = false
+var start_scroll: Vector3
+
 
 func _ready() -> void:
 	camera = get_node("../Base/Camera")
@@ -21,16 +24,14 @@ func _ready() -> void:
 		object.translation.x += i * 8
 		add_child(object)
 		
-		# TODO scale
 		if abs(object.translation.x) > 0:
 			object.scale.x = 0.5
 			object.scale.y = 0.5
 			object.scale.z = 0.5
 		
-		
 		if object.has_method("fade_in"):
 			object.fade_in()
-		
+
 
 
 func _input(event: InputEvent) -> void:
@@ -43,4 +44,30 @@ func _input(event: InputEvent) -> void:
 			var plane: Plane = Plane(Vector3(0, 0, 10), 0)
 			var pos: Vector3 = plane.intersects_ray(camera.project_ray_origin(mouse_position), camera.project_ray_normal(mouse_position))
 			# TODO scroll
+			
+			if not is_scrolling:
+				start_scroll = pos
+				is_scrolling = true
+			
+			_scroll_objects(pos)
+			
+#		else:
+#			start_scroll = Vector3.ZERO
+#			is_scrolling = false
+
+
+func _scroll_objects(pos: Vector3) -> void:
+	var delta_x: float = start_scroll.x - pos.x
+#	print(delta_x)
+#	print(pos)
+#	print(start_scroll)
+	for i in objects.size():
+		var object: Spatial = objects[i]
+		object.translation.x += delta_x
+		
+		# scale
+		if abs(object.translation.x) > 0:
+			object.scale.x = 0.5
+			object.scale.y = 0.5
+			object.scale.z = 0.5
 

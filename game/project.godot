@@ -13,9 +13,21 @@ _global_script_classes=[ {
 "class": "Ball",
 "language": "GDScript",
 "path": "res://src/actors/ball/base-ball/Ball.gd"
+}, {
+"base": "Reference",
+"class": "LevelConfig",
+"language": "GDScript",
+"path": "res://src/level-editor/level-config/level_config.gd"
+}, {
+"base": "Reference",
+"class": "ObjectConfig",
+"language": "GDScript",
+"path": "res://src/level-editor/level-config/object_config.gd"
 } ]
 _global_script_class_icons={
-"Ball": ""
+"Ball": "",
+"LevelConfig": "",
+"ObjectConfig": ""
 }
 
 [application]
