@@ -1,31 +1,27 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://xdq4pgtap13e"]
 
-[ext_resource path="res://theme.tres" type="Theme" id=1]
-[ext_resource path="res://src/fade-effect/FadeEffect.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/screens/info/Info.gd" type="Script" id=3]
+[ext_resource type="Theme" uid="uid://d3hrbmbgc4owt" path="res://theme.tres" id="1"]
+[ext_resource type="Script" path="res://src/screens/info/Info.gd" id="3"]
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id="1"]
 content_margin_left = 10.0
-content_margin_right = 10.0
 content_margin_top = 10.0
+content_margin_right = 10.0
 content_margin_bottom = 10.0
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Info" type="Control"]
 process_mode = 3
+layout_mode = 3
 anchor_top = 0.102344
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 1 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="FadeEffect" parent="." instance=ExtResource( 2 )]
-node_path = NodePath("..")
+theme = ExtResource("1")
+script = ExtResource("3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(600, 1000)
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -34,59 +30,18 @@ offset_left = -300.0
 offset_top = -542.5
 offset_right = 300.0
 offset_bottom = 497.5
-custom_minimum_size = Vector2( 600, 1000 )
 theme_override_constants/separation = 100
 alignment = 1
 
 [node name="Panel" type="PanelContainer" parent="VBoxContainer"]
-offset_right = 600.0
-offset_bottom = 664.0
-custom_minimum_size = Vector2( 600, 600 )
-pivot_offset = Vector2( 265, 298 )
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 2
 size_flags_vertical = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Panel"]
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 580.0
-offset_bottom = 644.0
-pivot_offset = Vector2( 240, 266 )
-theme_override_styles/normal = SubResource( 1 )
+layout_mode = 2
+theme_override_styles/normal = SubResource("1")
 bbcode_enabled = true
-text = "This game is open source under the [url=https://github.com/dulvui/ball2box/blob/main/LICENSE]AGPL-3.0-or-later[/url] license.
-Its created with Godot Engine and lots of love <3
-
-
-[center][b]Credits[/b][/center]
-
-[b]Code[/b]
-Godot Engine by Juan Linietsky, Ariel Manzur and contributors
-MIT
-[url=https://godotengine.org/license]godotengine.org/license[/url]
-
-[b]Audio[/b]
-\"The heist\" Royalty-Free Music by audiohub.com
-CC-BY-4.0
-[url=https://audiohub.com]audiohub.com[/url]
-
-\"Snares and Crash\" by LMMS
-CC0-1.0
-[url=https://github.com/LMMS/assets]github.com/LMMS/assets[/url]
-
-[b]2D[/b]
-\"Game Icons\" by kenney.nl
-CC0-1.0
-[url=https://www.kenney.nl/assets/game-icons]kenney.nl/assets/game-icons[/url]
-
-\"Patterns Pack\" by kenney.nl
-CC0-1.0
-[url=https://www.kenney.nl/assets/pattern-pack]https://www.kenney.nl/assets/pattern-pack[/url]
-
-\"Patterns Pack 2\" by kenney.nl
-CC0-1.0
-[url=https://www.kenney.nl/assets/pattern-pack-2]https://www.kenney.nl/assets/pattern-pack-2[/url]
-
-"
 text = "This game is open source under the AGPL-3.0-or-later license.
 Its created with Godot Engine and lots of love <3
 
@@ -123,34 +78,25 @@ https://www.kenney.nl/assets/pattern-pack-2
 "
 
 [node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
-offset_top = 764.0
-offset_right = 600.0
-offset_bottom = 1040.0
+layout_mode = 2
 alignment = 1
 
 [node name="Website" type="Button" parent="VBoxContainer/Buttons"]
-offset_right = 600.0
-offset_bottom = 126.0
+layout_mode = 2
 text = "website"
 
 [node name="Github" type="Button" parent="VBoxContainer/Buttons"]
 visible = false
-offset_top = 150.0
-offset_right = 600.0
-offset_bottom = 276.0
+layout_mode = 2
 text = "github"
 
 [node name="Donate" type="Button" parent="VBoxContainer/Buttons"]
 visible = false
-offset_top = 300.0
-offset_right = 600.0
-offset_bottom = 426.0
+layout_mode = 2
 text = "donate"
 
 [node name="Back" type="Button" parent="VBoxContainer/Buttons"]
-offset_top = 150.0
-offset_right = 600.0
-offset_bottom = 276.0
+layout_mode = 2
 text = "menu"
 
 [connection signal="meta_clicked" from="VBoxContainer/Panel/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]

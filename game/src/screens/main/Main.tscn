@@ -1,150 +1,109 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=3 uid="uid://dswwtp2gv5lmc"]
 
-[ext_resource path="res://assets/font/manrope.thin.otf" type="FontFile" id=1]
-[ext_resource path="res://theme.tres" type="Theme" id=2]
-[ext_resource path="res://assets/musicOff.png" type="Texture2D" id=3]
-[ext_resource path="res://src/screens/main/Main.gd" type="Script" id=4]
-[ext_resource path="res://assets/github.svg" type="Texture2D" id=6]
-[ext_resource path="res://src/ui/level-control/LevelControl.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/musicOn.png" type="Texture2D" id=8]
-[ext_resource path="res://src/ui/toggle-button/ToggleButton.tscn" type="PackedScene" id=9]
-[ext_resource path="res://src/fade-effect/FadeEffect.tscn" type="PackedScene" id=10]
-[ext_resource path="res://assets/audioOn.png" type="Texture2D" id=11]
-[ext_resource path="res://assets/audioOff.png" type="Texture2D" id=12]
-[ext_resource path="res://assets/information.png" type="Texture2D" id=13]
+[ext_resource type="FontFile" uid="uid://0h3gamm7rrf5" path="res://assets/font/manrope.thin.otf" id="1"]
+[ext_resource type="Theme" uid="uid://d3hrbmbgc4owt" path="res://theme.tres" id="2"]
+[ext_resource type="Texture2D" uid="uid://dqxdekl2euprp" path="res://assets/musicOff.png" id="3"]
+[ext_resource type="Script" path="res://src/screens/main/Main.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://pgybt5wmhy6s" path="res://assets/github.svg" id="6"]
+[ext_resource type="PackedScene" uid="uid://c3kbiihchfh61" path="res://src/ui/level-control/LevelControl.tscn" id="7"]
+[ext_resource type="Texture2D" uid="uid://vqhonb5ulhqs" path="res://assets/musicOn.png" id="8"]
+[ext_resource type="PackedScene" path="res://src/ui/toggle-button/ToggleButton.tscn" id="9"]
+[ext_resource type="Texture2D" uid="uid://dl55m157ujwvm" path="res://assets/audioOn.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://bo38qwccbthi7" path="res://assets/audioOff.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://8o2lm22xtw50" path="res://assets/information.png" id="13"]
 
-[sub_resource type="FontFile" id=13]
-size = 53
-outline_size = 3
-outline_color = Color( 0, 0, 0, 1 )
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="13"]
+fallbacks = Array[Font]([ExtResource("1"), ExtResource("1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [node name="Main" type="MarginContainer"]
 process_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-pivot_offset = Vector2( 360, 640 )
-theme = ExtResource( 2 )
-theme_override_constants/margin_right = 80
-theme_override_constants/margin_top = 180
+pivot_offset = Vector2(360, 640)
+theme = ExtResource("2")
 theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 180
+theme_override_constants/margin_right = 80
 theme_override_constants/margin_bottom = 80
-script = ExtResource( 4 )
+script = ExtResource("4")
 
 [node name="Buttons" type="VBoxContainer" parent="."]
-offset_left = 80.0
-offset_top = 180.0
-offset_right = 670.0
-offset_bottom = 1242.0
+layout_mode = 2
 theme_override_constants/separation = 40
 alignment = 1
 
-[node name="LevelControl" parent="Buttons" instance=ExtResource( 7 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 590.0
-offset_bottom = 350.0
+[node name="LevelControl" parent="Buttons" instance=ExtResource("7")]
+layout_mode = 2
 
 [node name="HSeparator2" type="HSeparator" parent="Buttons"]
-modulate = Color( 1, 1, 1, 0 )
-offset_top = 390.0
-offset_right = 590.0
-offset_bottom = 400.0
-custom_minimum_size = Vector2( 0, 10 )
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
 
 [node name="Play" type="Button" parent="Buttons"]
-offset_left = 105.0
-offset_top = 440.0
-offset_right = 485.0
-offset_bottom = 566.0
-custom_minimum_size = Vector2( 380, 0 )
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
 size_flags_horizontal = 4
 text = "PLAY"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Help" type="Button" parent="Buttons"]
-offset_left = 105.0
-offset_top = 606.0
-offset_right = 485.0
-offset_bottom = 732.0
-custom_minimum_size = Vector2( 380, 0 )
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
 size_flags_horizontal = 4
 text = "HELP"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HSeparator" type="HSeparator" parent="Buttons"]
-modulate = Color( 1, 1, 1, 0 )
-offset_top = 772.0
-offset_right = 590.0
-offset_bottom = 782.0
-custom_minimum_size = Vector2( 0, 10 )
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Settings" type="HBoxContainer" parent="Buttons"]
-offset_top = 822.0
-offset_right = 590.0
-offset_bottom = 948.0
+layout_mode = 2
 theme_override_constants/separation = 18
 alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="SfxButton" parent="Buttons/Settings" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 67.0
-offset_right = 207.0
-offset_bottom = 126.0
-icon = ExtResource( 11 )
-normal_texture = ExtResource( 11 )
-pressed_texture = ExtResource( 12 )
+[node name="SfxButton" parent="Buttons/Settings" instance=ExtResource("9")]
+layout_mode = 2
+icon = ExtResource("11")
+normal_texture = ExtResource("11")
+pressed_texture = ExtResource("12")
 
-[node name="MusicButton" parent="Buttons/Settings" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 225.0
-offset_right = 365.0
-offset_bottom = 126.0
-icon = ExtResource( 8 )
-normal_texture = ExtResource( 8 )
-pressed_texture = ExtResource( 3 )
+[node name="MusicButton" parent="Buttons/Settings" instance=ExtResource("9")]
+layout_mode = 2
+icon = ExtResource("8")
+normal_texture = ExtResource("8")
+pressed_texture = ExtResource("3")
 
 [node name="InfoButton" type="Button" parent="Buttons/Settings"]
 visible = false
-offset_left = 316.0
-offset_right = 456.0
-offset_bottom = 126.0
-custom_minimum_size = Vector2( 140, 0 )
-icon = ExtResource( 13 )
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+icon = ExtResource("13")
 icon_alignment = 1
 
 [node name="GithubButton" type="Button" parent="Buttons/Settings"]
-offset_left = 383.0
-offset_right = 523.0
-offset_bottom = 126.0
-custom_minimum_size = Vector2( 140, 0 )
-icon = ExtResource( 6 )
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+icon = ExtResource("6")
 icon_alignment = 1
 
 [node name="SimonDalvai" type="LinkButton" parent="Buttons"]
-offset_left = 102.0
-offset_top = 988.0
-offset_right = 488.0
-offset_bottom = 1062.0
-focus_mode = 2
+layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = SubResource( 13 )
+focus_mode = 2
+theme_override_fonts/font = SubResource("13")
 text = "simondalvai.org"
-
-[node name="FadeEffect" parent="." instance=ExtResource( 10 )]
-node_path = NodePath("..")
 
 [connection signal="levels" from="Buttons/LevelControl" to="." method="_on_LevelControl_levels"]
 [connection signal="pressed" from="Buttons/Play" to="." method="_on_Play_pressed"]

@@ -2,21 +2,21 @@
 
 [ext_resource type="Script" path="res://src/levels/base-level/LevelBase.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://dwjw2ephbw34" path="res://src/levels/base-level/base-3d/Base3D.tscn" id="2"]
-[ext_resource type="PackedScene" path="res://src/screens/main/Main.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://dswwtp2gv5lmc" path="res://src/screens/main/Main.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://d2yixvoeekahm" path="res://src/actors/bin/Bin.tscn" id="4"]
 [ext_resource type="PackedScene" path="res://src/actors/ball/starter-ball/Ball.tscn" id="5"]
 [ext_resource type="PackedScene" path="res://src/screens/level-complete/LevelComplete.tscn" id="6"]
 [ext_resource type="PackedScene" path="res://src/actors/star/Star.tscn" id="7"]
 [ext_resource type="PackedScene" path="res://src/levels/base-level/background/Background1.tscn" id="8"]
 [ext_resource type="PackedScene" path="res://src/ui/coins/Coins.tscn" id="9"]
-[ext_resource type="PackedScene" path="res://src/screens/shop/Shop.tscn" id="10"]
-[ext_resource type="PackedScene" path="res://src/screens/info/Info.tscn" id="11"]
-[ext_resource type="PackedScene" path="res://src/screens/level-select/LevelSelect.tscn" id="12"]
-[ext_resource type="PackedScene" path="res://src/ui/tutorial/Tutorial.tscn" id="13"]
+[ext_resource type="PackedScene" uid="uid://bmxmq1gsg0xcj" path="res://src/screens/shop/Shop.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://xdq4pgtap13e" path="res://src/screens/info/Info.tscn" id="11"]
+[ext_resource type="PackedScene" uid="uid://d1yfp5ma56wrq" path="res://src/screens/level-select/LevelSelect.tscn" id="12"]
+[ext_resource type="PackedScene" uid="uid://dtej7cjg0wx1e" path="res://src/ui/tutorial/Tutorial.tscn" id="13"]
 [ext_resource type="Texture2D" uid="uid://bv8dvaesw0nte" path="res://assets/pause.png" id="14"]
 [ext_resource type="Script" path="res://src/levels/base-level/Pause.gd" id="15"]
 [ext_resource type="PackedScene" path="res://src/screens/shop/Shop3D.tscn" id="16"]
-[ext_resource type="PackedScene" path="res://src/screens/help/Help.tscn" id="17"]
+[ext_resource type="PackedScene" uid="uid://bw5a8ke1q735f" path="res://src/screens/help/Help.tscn" id="17"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "FadeIn"
@@ -154,7 +154,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 61.1004, 0)
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Main" parent="UI" instance=ExtResource("3")]
-anchors_preset = 15
 
 [node name="LevelComplete" parent="UI" instance=ExtResource("6")]
 visible = false
@@ -165,18 +164,14 @@ grow_vertical = 2
 
 [node name="Shop" parent="UI" instance=ExtResource("10")]
 visible = false
-layout_mode = 3
-anchors_preset = 15
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Info" parent="UI" instance=ExtResource("11")]
 visible = false
-layout_mode = 3
 
 [node name="LevelSelect" parent="UI" instance=ExtResource("12")]
 visible = false
-anchors_preset = 15
 
 [node name="Help" parent="UI" instance=ExtResource("17")]
 visible = false

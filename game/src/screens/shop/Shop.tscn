@@ -1,25 +1,21 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://bmxmq1gsg0xcj"]
 
-[ext_resource path="res://theme.tres" type="Theme" id=1]
-[ext_resource path="res://src/screens/shop/Shop.gd" type="Script" id=2]
-[ext_resource path="res://src/fade-effect/FadeEffect.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/star.png" type="Texture2D" id=5]
+[ext_resource type="Theme" uid="uid://d3hrbmbgc4owt" path="res://theme.tres" id="1"]
+[ext_resource type="Script" path="res://src/screens/shop/Shop.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://nuc670g4s0d7" path="res://assets/star.png" id="5"]
 
 [node name="Shop" type="Control"]
 process_mode = 3
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-pivot_offset = Vector2( 360, 690 )
-theme = ExtResource( 1 )
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="FadeEffect" parent="." instance=ExtResource( 3 )]
-node_path = NodePath("..")
+pivot_offset = Vector2(360, 690)
+theme = ExtResource("1")
+script = ExtResource("2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.568
 anchor_right = 0.5
@@ -30,115 +26,76 @@ offset_right = 321.0
 offset_bottom = 390.96
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-offset_right = 642.0
-offset_bottom = 126.0
+layout_mode = 2
 theme_override_constants/separation = 130
 alignment = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="Prev" type="Button" parent="VBoxContainer/HBoxContainer"]
-offset_right = 93.0
-offset_bottom = 126.0
-pivot_offset = Vector2( 50, 50 )
+layout_mode = 2
 text = "<"
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
-offset_left = 223.0
-offset_right = 419.0
-offset_bottom = 126.0
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Next" type="Button" parent="VBoxContainer/HBoxContainer"]
-offset_left = 549.0
-offset_right = 642.0
-offset_bottom = 126.0
+layout_mode = 2
 text = ">"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
-offset_top = 150.0
-offset_right = 642.0
-offset_bottom = 318.0
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Bounce" type="ProgressBar" parent="VBoxContainer"]
-offset_top = 342.0
-offset_right = 642.0
-offset_bottom = 462.0
-custom_minimum_size = Vector2( 0, 120 )
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
 size_flags_vertical = 1
 min_value = 0.6
 max_value = 1.0
 value = 0.6
-percent_visible = false
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="Label" type="Label" parent="VBoxContainer/Bounce"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 text = "BOUNCE"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="Mass" type="ProgressBar" parent="VBoxContainer"]
-offset_top = 486.0
-offset_right = 642.0
-offset_bottom = 606.0
-custom_minimum_size = Vector2( 0, 120 )
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
 size_flags_vertical = 1
 min_value = 4.0
 max_value = 10.0
 step = 0.1
 value = 6.0
-percent_visible = false
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="Label" type="Label" parent="VBoxContainer/Mass"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 text = "MASS"
-align = 1
-valign = 1
 
 [node name="Buttons" type="HBoxContainer" parent="VBoxContainer"]
-offset_top = 630.0
-offset_right = 642.0
-offset_bottom = 756.0
+layout_mode = 2
 theme_override_constants/separation = 80
 
 [node name="Back" type="Button" parent="VBoxContainer/Buttons"]
-offset_right = 285.0
-offset_bottom = 126.0
+layout_mode = 2
 size_flags_horizontal = 3
 text = "MENU"
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="Select" type="Button" parent="VBoxContainer/Buttons"]
-offset_left = 365.0
-offset_right = 642.0
-offset_bottom = 126.0
+layout_mode = 2
 size_flags_horizontal = 3
 text = "GO"
 clip_text = true
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="Star" type="TextureRect" parent="VBoxContainer/Buttons/Select"]
 visible = false
-modulate = Color( 1, 0.968627, 0.227451, 1 )
+modulate = Color(1, 0.968627, 0.227451, 1)
+layout_mode = 0
 anchor_left = 0.690275
 anchor_top = 0.048
 anchor_right = 1.01025
@@ -147,10 +104,7 @@ offset_left = -0.0559998
 offset_top = -0.0479999
 offset_right = -0.208008
 offset_bottom = 0.0339966
-texture = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+texture = ExtResource("5")
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Prev" to="." method="_on_Prev_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Next" to="." method="_on_Next_pressed"]
