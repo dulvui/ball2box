@@ -139,7 +139,7 @@ __meta__ = {
 }
 
 [node name="Objects" type="HBoxContainer" parent="HUD/ScrollContainer"]
-margin_right = 463.0
+margin_right = 1102.0
 margin_bottom = 126.0
 custom_constants/separation = 20
 alignment = 1
@@ -162,6 +162,22 @@ rect_min_size = Vector2( 126, 126 )
 toggle_mode = true
 text = "BOX"
 
+[node name="Star1" type="Button" parent="HUD/ScrollContainer/Objects"]
+margin_left = 483.0
+margin_right = 783.0
+margin_bottom = 126.0
+rect_min_size = Vector2( 126, 126 )
+toggle_mode = true
+text = "STAR 1"
+
+[node name="Star2" type="Button" parent="HUD/ScrollContainer/Objects"]
+margin_left = 803.0
+margin_right = 1102.0
+margin_bottom = 126.0
+rect_min_size = Vector2( 126, 126 )
+toggle_mode = true
+text = "STAR2"
+
 [connection signal="pressed" from="HUD/HBoxContainer/Add" to="." method="_on_Add_pressed"]
 [connection signal="pressed" from="HUD/HBoxContainer/Prev" to="." method="_on_Prev_pressed"]
 [connection signal="pressed" from="HUD/HBoxContainer/Next" to="." method="_on_Next_pressed"]
@@ -172,3 +188,5 @@ text = "BOX"
 [connection signal="pressed" from="HUD/VBoxContainer/Import" to="." method="_on_Import_pressed"]
 [connection signal="pressed" from="HUD/ScrollContainer/Objects/Ball" to="." method="_on_Ball_pressed"]
 [connection signal="pressed" from="HUD/ScrollContainer/Objects/Box" to="." method="_on_Box_pressed"]
+[connection signal="pressed" from="HUD/ScrollContainer/Objects/Star1" to="." method="_on_Star1_pressed"]
+[connection signal="pressed" from="HUD/ScrollContainer/Objects/Star2" to="." method="_on_Star2_pressed"]

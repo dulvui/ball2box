@@ -149,7 +149,6 @@ icon_align = 1
 [connection signal="next" from="UI/Shop" to="." method="_on_Shop_next"]
 [connection signal="prev" from="UI/Shop" to="." method="_on_Shop_prev"]
 [connection signal="select" from="UI/Shop" to="." method="_on_Shop_select"]
-[connection signal="shop" from="UI/Menu" to="." method="_on_Menu_shop"]
 [connection signal="levels" from="UI/LevelComplete" to="." method="_on_LevelComplete_levels"]
 [connection signal="menu" from="UI/LevelComplete" to="." method="_on_LevelComplete_menu"]
 [connection signal="replay" from="UI/LevelComplete" to="." method="_on_LevelComplete_replay"]

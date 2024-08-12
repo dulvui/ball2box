@@ -26,3 +26,4 @@ script = ExtResource( 1 )
 anims/FadeIn = SubResource( 1 )
 
 [node name="Body" type="Spatial" parent="."]
+transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0 )
