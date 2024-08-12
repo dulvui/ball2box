@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwjw2ephbw34"]
+[gd_scene load_steps=11 format=3 uid="uid://dwjw2ephbw34"]
 
 [ext_resource type="PhysicsMaterial" path="res://materials/wall-physics-material.tres" id="2"]
 [ext_resource type="Material" path="res://materials/background-material.tres" id="2_eeiix"]
@@ -10,6 +10,10 @@ material = ExtResource("2_eeiix")
 
 [sub_resource type="BoxMesh" id="7"]
 material = ExtResource("2_eeiix")
+size = Vector3(20, 1, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0jx5y"]
+data = PackedVector3Array(-0.5, 10, 0.5, 0.5, 10, 0.5, -0.5, -10, 0.5, 0.5, 10, 0.5, 0.5, -10, 0.5, -0.5, -10, 0.5, 0.5, 10, -0.5, -0.5, 10, -0.5, 0.5, -10, -0.5, -0.5, 10, -0.5, -0.5, -10, -0.5, 0.5, -10, -0.5, 0.5, 10, 0.5, 0.5, 10, -0.5, 0.5, -10, 0.5, 0.5, 10, -0.5, 0.5, -10, -0.5, 0.5, -10, 0.5, -0.5, 10, -0.5, -0.5, 10, 0.5, -0.5, -10, -0.5, -0.5, 10, 0.5, -0.5, -10, 0.5, -0.5, -10, -0.5, 0.5, 10, 0.5, -0.5, 10, 0.5, 0.5, 10, -0.5, -0.5, 10, 0.5, -0.5, 10, -0.5, 0.5, 10, -0.5, -0.5, -10, 0.5, 0.5, -10, 0.5, -0.5, -10, -0.5, 0.5, -10, 0.5, 0.5, -10, -0.5, -0.5, -10, -0.5)
 
 [sub_resource type="BoxShape3D" id="8"]
 
@@ -38,7 +42,7 @@ cast_shadow = 0
 mesh = SubResource("6")
 
 [node name="WallLeft" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 100, 0, 0, 0, 1, -10, 100, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 100, 0)
 physics_material_override = ExtResource("2")
 constant_linear_velocity = Vector3(1, 0, 0)
 
@@ -46,7 +50,7 @@ constant_linear_velocity = Vector3(1, 0, 0)
 mesh = SubResource("7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WallLeft"]
-shape = SubResource("8")
+shape = SubResource("ConcavePolygonShape3D_0jx5y")
 
 [node name="WallRight" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 100, 0, 0, 0, 1, 10, 100, 0)
@@ -59,7 +63,7 @@ mesh = SubResource("7")
 shape = SubResource("8")
 
 [node name="Roof" type="StaticBody3D" parent="."]
-transform = Transform3D(9, 0, 0, 0, 2, 0, 0, 0, 1, 0, 37, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 37, 0)
 physics_material_override = ExtResource("2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Roof"]
@@ -92,7 +96,7 @@ amount = 24
 lifetime = 40.0
 preprocess = 440.0
 mesh = SubResource("10")
-emission_shape = 2
-emission_sphere_radius = 1.0
+emission_shape = 3
+emission_box_extents = Vector3(20, 1, 1)
 gravity = Vector3(0, 0.1, 0)
 color_initial_ramp = SubResource("21")

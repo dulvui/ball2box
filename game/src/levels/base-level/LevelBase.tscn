@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dswwtp2gv5lmc" path="res://src/screens/main/Main.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://d2yixvoeekahm" path="res://src/actors/bin/Bin.tscn" id="4"]
 [ext_resource type="PackedScene" path="res://src/actors/ball/starter-ball/Ball.tscn" id="5"]
-[ext_resource type="PackedScene" path="res://src/screens/level-complete/LevelComplete.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://bsym0jqy5ikf3" path="res://src/screens/level-complete/LevelComplete.tscn" id="6"]
 [ext_resource type="PackedScene" path="res://src/actors/star/Star.tscn" id="7"]
 [ext_resource type="PackedScene" path="res://src/levels/base-level/background/Background1.tscn" id="8"]
 [ext_resource type="PackedScene" path="res://src/ui/coins/Coins.tscn" id="9"]

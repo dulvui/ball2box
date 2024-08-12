@@ -1,114 +1,119 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://bsym0jqy5ikf3"]
 
-[ext_resource path="res://theme.tres" type="Theme" id=1]
-[ext_resource path="res://src/screens/level-complete/LevelComplete.gd" type="Script" id=2]
-[ext_resource path="res://assets/star.png" type="Texture2D" id=3]
-[ext_resource path="res://src/fade-effect/FadeEffect.tscn" type="PackedScene" id=4]
-[ext_resource path="res://styles/big-font.tres" type="FontFile" id=5]
+[ext_resource type="Theme" uid="uid://d3hrbmbgc4owt" path="res://theme.tres" id="1"]
+[ext_resource type="Script" path="res://src/screens/level-complete/LevelComplete.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://nuc670g4s0d7" path="res://assets/star.png" id="3"]
+[ext_resource type="FontFile" path="res://styles/big-font.tres" id="5"]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id="1"]
 resource_name = "FadeIn"
 length = 0.8
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("VBoxContainer/Stars/Star3:scale")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.4, 0.7, 0.8 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.4, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( 0.01, 0.01 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+"values": [Vector2(0.01, 0.01), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(1, 1)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("VBoxContainer/Stars/Star2:scale")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.7, 0.8 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( 0.01, 0.01 ), Vector2( 1.41, 1.4 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+"values": [Vector2(0.01, 0.01), Vector2(1.41, 1.4), Vector2(1, 1), Vector2(1, 1)]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("VBoxContainer/Stars/Star1:scale")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0, 0.2, 0.7, 0.8 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.2, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( 0.01, 0.01 ), Vector2( 1.6, 1.6 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+"values": [Vector2(0.01, 0.01), Vector2(1.6, 1.6), Vector2(1, 1), Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id="2"]
 length = 0.001
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("VBoxContainer/Stars/Star1:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [Vector2(1, 1)]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("VBoxContainer/Stars/Star2:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [Vector2(1, 1)]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("VBoxContainer/Stars/Star3:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rvsyw"]
+_data = {
+"FadeIn": SubResource("1"),
+"RESET": SubResource("2")
 }
 
 [node name="LevelComplete" type="Control"]
 process_mode = 3
 process_priority = 3
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 1 )
-script = ExtResource( 2 )
-
-[node name="FadeEffect" parent="." instance=ExtResource( 4 )]
-node_path = NodePath("..")
+theme = ExtResource("1")
+script = ExtResource("2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -120,103 +125,69 @@ offset_bottom = 409.0
 alignment = 1
 
 [node name="Level" type="Label" parent="VBoxContainer"]
-offset_top = 34.0
-offset_right = 574.0
-offset_bottom = 230.0
-pivot_offset = Vector2( 287, 98 )
-theme_override_fonts/font = ExtResource( 5 )
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5")
 text = "12"
-align = 1
 
 [node name="Stars" type="HBoxContainer" parent="VBoxContainer"]
-offset_top = 254.0
-offset_right = 574.0
-offset_bottom = 454.0
-custom_minimum_size = Vector2( 0, 200 )
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
 alignment = 1
 
 [node name="Star1" type="TextureRect" parent="VBoxContainer/Stars"]
-self_modulate = Color( 0.988235, 0.898039, 0.152941, 1 )
-offset_right = 188.0
-offset_bottom = 200.0
-pivot_offset = Vector2( 77, 100 )
+self_modulate = Color(0.988235, 0.898039, 0.152941, 1)
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 3 )
+texture = ExtResource("3")
 stretch_mode = 6
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Star2" type="TextureRect" parent="VBoxContainer/Stars"]
-self_modulate = Color( 0.984314, 0.956863, 0.745098, 1 )
-offset_left = 192.0
-offset_right = 381.0
-offset_bottom = 200.0
-pivot_offset = Vector2( 78, 100 )
+self_modulate = Color(0.984314, 0.956863, 0.745098, 1)
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 3 )
+texture = ExtResource("3")
 stretch_mode = 6
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Star3" type="TextureRect" parent="VBoxContainer/Stars"]
-self_modulate = Color( 0.984314, 0.956863, 0.745098, 1 )
-offset_left = 385.0
-offset_right = 574.0
-offset_bottom = 200.0
-pivot_offset = Vector2( 78, 100 )
+self_modulate = Color(0.984314, 0.956863, 0.745098, 1)
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 3 )
+texture = ExtResource("3")
 stretch_mode = 6
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
-offset_top = 478.0
-offset_right = 574.0
-offset_bottom = 896.0
-pivot_offset = Vector2( 194, 215 )
+layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="NextLevel" type="Button" parent="VBoxContainer/Buttons"]
-offset_right = 574.0
-offset_bottom = 126.0
+layout_mode = 2
 text = "NEXT"
 
 [node name="Replay" type="Button" parent="VBoxContainer/Buttons"]
-offset_top = 146.0
-offset_right = 574.0
-offset_bottom = 272.0
+layout_mode = 2
 text = "REPLAY"
 
 [node name="Levels" type="Button" parent="VBoxContainer/Buttons"]
 visible = false
-offset_top = 292.0
-offset_right = 388.0
-offset_bottom = 418.0
+layout_mode = 2
 text = "LEVELS"
 
 [node name="Help" type="Button" parent="VBoxContainer/Buttons"]
 visible = false
-offset_top = 292.0
-offset_right = 574.0
-offset_bottom = 418.0
+layout_mode = 2
 text = "HELP"
 
 [node name="Menu" type="Button" parent="VBoxContainer/Buttons"]
-offset_top = 292.0
-offset_right = 574.0
-offset_bottom = 418.0
+layout_mode = 2
 text = "MENU"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/FadeIn = SubResource( 1 )
-anims/RESET = SubResource( 2 )
+libraries = {
+"": SubResource("AnimationLibrary_rvsyw")
+}
 
 [connection signal="pressed" from="VBoxContainer/Buttons/NextLevel" to="." method="_on_NextLevel_pressed"]
 [connection signal="pressed" from="VBoxContainer/Buttons/Replay" to="." method="_on_Replay_pressed"]

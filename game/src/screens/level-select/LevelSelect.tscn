@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1yfp5ma56wrq"]
+[gd_scene load_steps=3 format=3 uid="uid://d1yfp5ma56wrq"]
 
 [ext_resource type="Theme" uid="uid://d3hrbmbgc4owt" path="res://theme.tres" id="1"]
-[ext_resource type="PackedScene" uid="uid://bsg6rr7thsk5k" path="res://src/fade-effect/FadeEffect.tscn" id="2"]
 [ext_resource type="Script" path="res://src/screens/level-select/LevelSelect.gd" id="4"]
 
 [node name="LevelSelect" type="MarginContainer"]
@@ -15,16 +14,6 @@ theme_override_constants/margin_top = 180
 theme_override_constants/margin_right = 80
 theme_override_constants/margin_bottom = 80
 script = ExtResource("4")
-
-[node name="FadeEffect" parent="." instance=ExtResource("2")]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-editor_description = ""
-node_path = NodePath("..")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
