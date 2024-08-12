@@ -214,7 +214,6 @@ func _connect_ball_signals():
 func _on_Main_play():
 	AudioMachine.click()
 #	get_tree().paused = false
-
 	main.hide()
 	animation_player.play("GoToShop")
 	shop3D.fade_in()
@@ -260,3 +259,11 @@ func _on_Main_help() -> void:
 	AudioMachine.click()
 	main.hide()
 	help.show()
+
+
+func _on_LevelSelect_select() -> void:
+	AudioMachine.click()
+	levels.hide()
+	animation_player.play("GoToShop")
+	shop3D.fade_in()
+	shop.show()

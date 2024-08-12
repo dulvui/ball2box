@@ -4,6 +4,8 @@
 
 extends Control
 
+signal select
+
 var level:int = 1
 var stars:int
 
@@ -30,4 +32,4 @@ func _on_Button_pressed() -> void:
 	if stars > -1:
 		AudioMachine.play_click()
 		Global.current_level = level
-		get_tree().change_scene("res://src/levels/Level%s.tscn"%level)
+		emit_signal("select")
