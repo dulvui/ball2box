@@ -83,7 +83,7 @@ jobs:
 
       # GODOT EXPORT
       - name: Godot Android export
-        uses: dulvui/godot-android-export@v3.0.0
+        uses: dulvui/godot-android-export@v4.1.0
         with:
           working-directory: $WORKING_DIRECTORY
 
