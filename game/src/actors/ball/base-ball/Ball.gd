@@ -160,4 +160,5 @@ func _integrate_forces(state:PhysicsDirectBodyState) -> void:
 
 
 func _on_Ball_mouse_entered() -> void:
-	print("select ball")
+	pass
+#	print("select ball")

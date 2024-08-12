@@ -43,7 +43,6 @@ func set_values(ball:RigidBody) -> void:
 func _on_Back_pressed() -> void:
 	AudioMachine.click()
 	emit_signal("back")
-	
 
 
 func _on_Select_pressed() -> void:

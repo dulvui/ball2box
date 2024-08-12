@@ -46,7 +46,8 @@ func _ready() -> void:
 
 	fade_in_objects()
 	
-	_connect_ball_signals()
+	ball_setup()
+	
 	star1.connect("star_hit",self,"on_star1_hit")
 	star2.connect("star_hit",self,"on_star2_hit")
 	
@@ -57,16 +58,19 @@ func _ready() -> void:
 func fade_in_objects() -> void:
 	for object in get_tree().get_nodes_in_group("objects"):
 		object.fade_in()
-		
+
+
 func fade_in_pop_objects() -> void:
 	for object in get_tree().get_nodes_in_group("pop-objects"):
 		object.fade_in()
-	
+
+
 func on_star1_hit() -> void:
 	level_complete.add_star()
 	AudioMachine.hit(false)
 #	_camera_shake()
-	
+
+
 func on_star2_hit() -> void:
 	level_complete.add_star()
 	AudioMachine.hit(false)
@@ -93,8 +97,10 @@ func _on_Shop_select() -> void:
 	# menu animations
 	shop.hide()
 	animation_player.play("GoToMenu")
-	
-	# ball setup
+	ball_setup()
+
+
+func ball_setup() -> void:
 	var pos:Transform = ball.initial_position
 	print("shop transform " + str(pos))
 	ball.queue_free()
