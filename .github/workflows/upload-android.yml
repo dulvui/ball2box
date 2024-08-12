@@ -11,6 +11,7 @@ on:
       - ".github/workflows/upload-android.yml"
       - "fdroid/*"
       - "export_presets.android.example"
+      - "metadata/*"
 
 env:
   WORKING_DIRECTORY: game
