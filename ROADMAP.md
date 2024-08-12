@@ -43,5 +43,8 @@ List of features that are currently worked on.
 ## Done 
 Features/issues that are added/solved in specific version
 
+- 4.1.2
+    - laod correct level when using level selector screen
+
 - 4.1.1
     - 4.1.0 bugs: Keeps reverting to default ball when selecting "next" - https://github.com/dulvui/ball2box/issues/16

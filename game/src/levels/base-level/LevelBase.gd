@@ -94,11 +94,12 @@ func _on_Shop_back() -> void:
 
 
 func _on_Shop_select() -> void:
-	# menu animations
-	shop.hide()
-	animation_player.play("GoToMenu")
-	ball_setup()
-	get_tree().paused = false
+	# menu animations broken, since new level needs to be loaded
+#	shop.hide()
+#	animation_player.play("GoToMenu")
+#	ball_setup()
+#	get_tree().paused = false
+	get_tree().change_scene("res://src/levels/Level%s.tscn"%str(Global.current_level))
 
 
 func ball_setup() -> void:
