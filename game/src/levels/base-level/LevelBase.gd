@@ -98,6 +98,7 @@ func _on_Shop_select() -> void:
 	shop.hide()
 	animation_player.play("GoToMenu")
 	ball_setup()
+	get_tree().paused = false
 
 
 func ball_setup() -> void:
@@ -112,8 +113,6 @@ func ball_setup() -> void:
 	ball.initial_position = pos
 	ball.teletransport_to_inital()
 	_connect_ball_signals()
-	
-	get_tree().paused = false
 
 
 func _on_Shop_prev() -> void:
