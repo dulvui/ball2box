@@ -71,10 +71,11 @@
   </screenshots>
   <content_rating type="oars-1.1" />
   <releases>
-    <release version="4.1.1" date="2024-08-12">
+    <release version="4.1.2" date="2024-08-12">
       <description>
         <ul>
           <li>fix always yellow ball bug on reset or level change</li>
+          <li>load correct level when using level selector screen</li>
         </ul>
       </description>
       <url>https://github.com/dulvui/ball2box/releases/tag/v4.1.1</url>
