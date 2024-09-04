@@ -40,6 +40,8 @@ List of features that are currently worked on.
     - new game mechanics
         - portals
 
+- Z-fighting on level 65 - https://github.com/dulvui/ball2box/issues/17
+
 ## Done 
 Features/issues that are added/solved in specific version
 
