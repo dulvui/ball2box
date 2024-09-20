@@ -13,8 +13,9 @@ func _ready() -> void:
 	$Buttons/Settings/MusicButton.pressed = Global.music
 	$Buttons/Settings/SfxButton.pressed = Global.sfx
 	$Buttons/Settings/FullScreenButton.visible = OS.get_name() != "Android" and OS.get_name() != "iOS"
+	$Buttons/Settings/FullScreenButton.pressed = Global.full_screen
 
-	
+
 func _on_Play_pressed() -> void:
 	AudioMachine.click()
 	emit_signal("play")
