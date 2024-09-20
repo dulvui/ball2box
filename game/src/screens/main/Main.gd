@@ -12,6 +12,7 @@ signal help
 func _ready() -> void:
 	$Buttons/Settings/MusicButton.pressed = Global.music
 	$Buttons/Settings/SfxButton.pressed = Global.sfx
+	$Buttons/Settings/FullScreenButton.visible = OS.get_name() != "Android" and OS.get_name() != "iOS"
 
 	
 func _on_Play_pressed() -> void:
@@ -47,6 +48,12 @@ func _on_MusicButton_pressed() -> void:
 	Global.toggle_music()
 
 
+func _on_FullScreenButton_pressed() -> void:
+	AudioMachine.click()
+	Global.toggle_full_screen()
+
+
+
 func _on_Help_pressed() -> void:
 	AudioMachine.click()
 	emit_signal("help")
@@ -54,4 +61,3 @@ func _on_Help_pressed() -> void:
 
 func _on_LevelControl_levels() -> void:
 	emit_signal("levels")
-

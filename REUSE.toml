@@ -44,7 +44,20 @@ SPDX-FileCopyrightText = "lmms.io"
 SPDX-License-Identifier = "CC0-1.0"
 
 [[annotations]]
-path = ["|", "game/assets/star.png", "game/assets/right.png", "game/assets/musicOn.png", "game/assets/musicOff.png", "game/assets/left.png", "game/assets/audioOn.png", "game/assets/audioOff.png", "game/assets/information.png", "game/assets/arrowDown.png", "game/assets/pointer.png", "game/assets/patterns/**"]
+path = [
+    "game/assets/star.png",
+    "game/assets/right.png",
+    "game/assets/musicOn.png",
+    "game/assets/musicOff.png",
+    "game/assets/left.png",
+    "game/assets/audioOn.png",
+    "game/assets/audioOff.png",
+    "game/assets/information.png",
+    "game/assets/arrowDown.png",
+    "game/assets/pointer.png",
+    "game/assets/smaller.png",
+    "game/assets/larger.png",
+    "game/assets/patterns/**"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2010 - 2022 https://kenney.nl"
 SPDX-License-Identifier = "CC0-1.0"
