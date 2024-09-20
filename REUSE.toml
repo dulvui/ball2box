@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 Simon Dalvai <info@simondalvai.org>
+#
+# SPDX-License-Identifier: CC0-1.0
+
 version = 1
 SPDX-PackageName = "Ball2Box"
 SPDX-PackageSupplier = "Simon Dalvai <info@simondalvai.org>"
@@ -10,13 +14,13 @@ SPDX-FileCopyrightText = "2022 Simon Dalvai <info@simondalvai.org>"
 SPDX-License-Identifier = "AGPL-3.0-or-later"
 
 [[annotations]]
-path = ["|", "game/AppIcons/**", "**icon.png", "game/assets/background.png", "game/splash.png", "game/assets/obj/torus-ball.obj", "game/assets/pause.png", "game/assets/target.jpg", "game/assets/background-2.png", "/metadata/en-US/images/**"]
+path = ["game/AppIcons/**", "**icon.png", "game/assets/background.png", "game/splash.png", "game/assets/obj/torus-ball.obj", "game/assets/pause.png", "game/assets/target.jpg", "game/assets/background-2.png", "metadata/en-US/images/**"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2022 Simon Dalvai <info@simondalvai.org>"
 SPDX-License-Identifier = "CC-BY-SA-4.0"
 
 [[annotations]]
-path = ["REUSE.toml", "**.mtl", "**.import", "exportOptions.plist", ".gitignore", "metadata/**", "**.csv", "**.material", "**.tres", "**.translation", "version", "fdroid/**", "flatpak/**"]
+path = ["**.mtl", "**.import", "exportOptions.plist", ".gitignore", "metadata/**", "**.csv", "**.material", "**.tres", "**.translation", "version", "fdroid/**", "flatpak/**"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2022 Simon Dalvai <info@simondalvai.org>"
 SPDX-License-Identifier = "CC0-1.0"
