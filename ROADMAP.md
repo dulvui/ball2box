@@ -42,6 +42,8 @@ List of features that are currently worked on.
 
 - Z-fighting on level 65 - https://github.com/dulvui/ball2box/issues/17
 
+- Fullscreen button please - https://github.com/dulvui/ball2box/issues/18 
+
 ## Done 
 Features/issues that are added/solved in specific version
 
