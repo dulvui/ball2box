@@ -31,13 +31,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 6, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 14, 0 )
 
 [node name="BigBox" parent="." index="10" instance=ExtResource( 2 )]
-transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, -9, 14, 0 )
+transform = Transform( -1.63084e-07, -1.001, 0, 1.001, -1.63084e-07, 0, 0, 0, 1.001, -9, 14, 0 )
 
 [node name="BigBox2" parent="." index="11" instance=ExtResource( 2 )]
-transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 9, 14, 0 )
+transform = Transform( -1.63084e-07, -1.001, 0, 1.001, -1.63084e-07, 0, 0, 0, 1.001, 9, 14, 0 )
 
 [node name="BigBox3" parent="." index="12" instance=ExtResource( 2 )]
-transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 13, 6, 0 )
+transform = Transform( -1.63084e-07, -1.001, 0, 1.001, -1.63084e-07, 0, 0, 0, 1.001, 13, 6, 0 )
 
 [node name="RotatingPlaneSquare" parent="." index="13" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0740238, 22.7246, 0 )
