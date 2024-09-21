@@ -42,7 +42,7 @@ func _ready() -> void:
 #	if err == OK: # if not, something went wrong with the file loading
 	sfx = config.get_value("sfx", "mute", false)
 	music = config.get_value("music", "mute", false)
-	full_screen = config.get_value("settings", "full_screen", false)
+	full_screen = config.get_value("settings", "full_screen", OS.get_name() == "Linux" or OS.get_name() == "Windows")
 	tutorial_swipe_done = config.get_value("tutorial", "swipe", false)
 	tutorial_tap_done = config.get_value("tutorial", "tap", false)
 	current_level = config.get_value("current_level", "key", 1)
@@ -51,7 +51,6 @@ func _ready() -> void:
 	generator_seed = config.get_value("generator", "seed", 0)
 	codes = config.get_value("generator", "codes", [])
 	own_code = config.get_value("generator", "own_code", "")
-	
 	
 	BallMachine.set_ball_index(config.get_value("ball", "selected", 0))
 	if config.has_section_key("level", "stars"):
