@@ -13,8 +13,7 @@ on:
 
 env:
   WORKING_DIRECTORY: game
-  GODOT_VERSION: 3.5.3
-
+  GODOT_VERSION: 3.6
 jobs:
   deploy:
     if: github.ref == 'refs/heads/prod'

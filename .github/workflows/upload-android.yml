@@ -83,8 +83,9 @@ jobs:
 
       # GODOT EXPORT
       - name: Godot Android export
-        uses: dulvui/godot-android-export@v3.0.0
+        uses: dulvui/godot-android-export@v3.1.0
         with:
+          godot-version: 3.6
           working-directory: $WORKING_DIRECTORY
 
       # GOOGLE PLAY STORE

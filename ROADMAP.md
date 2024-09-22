@@ -40,6 +40,8 @@ List of features that are currently worked on.
     - new game mechanics
         - portals
 
+- Godot 3.6 update
+
 - Z-fighting on level 65 - https://github.com/dulvui/ball2box/issues/17
 
 - Fullscreen button please - https://github.com/dulvui/ball2box/issues/18 
