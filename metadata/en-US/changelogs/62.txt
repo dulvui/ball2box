@@ -1,1 +1,1 @@
-- laod correct level when using level selector screen
+- load correct level when using level selector screen
