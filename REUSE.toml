@@ -26,12 +26,6 @@ SPDX-FileCopyrightText = "2022 Simon Dalvai <info@simondalvai.org>"
 SPDX-License-Identifier = "CC0-1.0"
 
 [[annotations]]
-path = "store-images/**"
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2022 Simon Dalvai <info@simondalvai.org>"
-SPDX-License-Identifier = "CC0-1.0"
-
-[[annotations]]
 path = "game/assets/audio/heist.ogg"
 precedence = "aggregate"
 SPDX-FileCopyrightText = "audiohub.com <info@audiohub.com>"
@@ -103,3 +97,10 @@ path = ["game/assets/copy.svg", "game/assets/paste.svg"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "Google material-design-icons https://github.com/google/material-design-icons"
 SPDX-License-Identifier = "Apache-2.0"
+
+[[annotations]]
+path = "store-images/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "The corresponding app store organization"
+SPDX-License-Identifier = "LicenseRef-STORE-ICONS"
+
