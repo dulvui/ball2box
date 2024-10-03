@@ -42,6 +42,9 @@ List of features that are currently worked on.
 ## Done 
 Features/issues that are added/solved in specific version
 
+- 4.1.4
+    - fix menu alignment
+
 - 4.1.3
     - Z-fighting on level 65 - https://github.com/dulvui/ball2box/issues/17
         - fixed also level 67 

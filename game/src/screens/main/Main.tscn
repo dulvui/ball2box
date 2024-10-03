@@ -27,39 +27,42 @@ font_data = ExtResource( 1 )
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = 2.0
 rect_pivot_offset = Vector2( 360, 640 )
 theme = ExtResource( 2 )
-custom_constants/margin_right = 80
-custom_constants/margin_top = 180
-custom_constants/margin_left = 80
+custom_constants/margin_right = 20
+custom_constants/margin_top = 140
+custom_constants/margin_left = 20
 custom_constants/margin_bottom = 80
 script = ExtResource( 4 )
 
 [node name="Buttons" type="VBoxContainer" parent="."]
-margin_left = 80.0
-margin_top = 180.0
-margin_right = 694.0
-margin_bottom = 1242.0
+margin_left = 20.0
+margin_top = 140.0
+margin_right = 700.0
+margin_bottom = 1202.0
 custom_constants/separation = 40
 alignment = 1
 
 [node name="LevelControl" parent="Buttons" instance=ExtResource( 7 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 614.0
+margin_left = 45.0
+margin_right = 635.0
 margin_bottom = 350.0
+size_flags_horizontal = 4
 
 [node name="HSeparator2" type="HSeparator" parent="Buttons"]
 modulate = Color( 1, 1, 1, 0 )
 margin_top = 390.0
-margin_right = 614.0
+margin_right = 680.0
 margin_bottom = 400.0
 rect_min_size = Vector2( 0, 10 )
 
 [node name="Play" type="Button" parent="Buttons"]
-margin_left = 117.0
+margin_left = 150.0
 margin_top = 440.0
-margin_right = 497.0
+margin_right = 530.0
 margin_bottom = 566.0
 rect_min_size = Vector2( 380, 0 )
 size_flags_horizontal = 4
@@ -69,9 +72,9 @@ __meta__ = {
 }
 
 [node name="Help" type="Button" parent="Buttons"]
-margin_left = 117.0
+margin_left = 150.0
 margin_top = 606.0
-margin_right = 497.0
+margin_right = 530.0
 margin_bottom = 732.0
 rect_min_size = Vector2( 380, 0 )
 size_flags_horizontal = 4
@@ -83,14 +86,14 @@ __meta__ = {
 [node name="HSeparator" type="HSeparator" parent="Buttons"]
 modulate = Color( 1, 1, 1, 0 )
 margin_top = 772.0
-margin_right = 614.0
+margin_right = 680.0
 margin_bottom = 782.0
 rect_min_size = Vector2( 0, 10 )
 size_flags_vertical = 3
 
 [node name="Settings" type="HBoxContainer" parent="Buttons"]
 margin_top = 822.0
-margin_right = 614.0
+margin_right = 680.0
 margin_bottom = 948.0
 custom_constants/separation = 18
 alignment = 1
@@ -101,7 +104,8 @@ __meta__ = {
 [node name="SfxButton" parent="Buttons/Settings" instance=ExtResource( 9 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 140.0
+margin_left = 33.0
+margin_right = 173.0
 margin_bottom = 126.0
 icon = ExtResource( 11 )
 normal_texture = ExtResource( 11 )
@@ -110,8 +114,8 @@ pressed_texture = ExtResource( 12 )
 [node name="MusicButton" parent="Buttons/Settings" instance=ExtResource( 9 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 158.0
-margin_right = 298.0
+margin_left = 191.0
+margin_right = 331.0
 margin_bottom = 126.0
 icon = ExtResource( 8 )
 normal_texture = ExtResource( 8 )
@@ -129,25 +133,25 @@ icon_align = 1
 [node name="FullScreenButton" parent="Buttons/Settings" instance=ExtResource( 9 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 316.0
-margin_right = 456.0
+margin_left = 349.0
+margin_right = 489.0
 margin_bottom = 126.0
 icon = ExtResource( 5 )
 normal_texture = ExtResource( 5 )
 pressed_texture = ExtResource( 14 )
 
 [node name="GithubButton" type="Button" parent="Buttons/Settings"]
-margin_left = 474.0
-margin_right = 614.0
+margin_left = 507.0
+margin_right = 647.0
 margin_bottom = 126.0
 rect_min_size = Vector2( 140, 0 )
 icon = ExtResource( 6 )
 icon_align = 1
 
 [node name="SimonDalvai" type="LinkButton" parent="Buttons"]
-margin_left = 114.0
+margin_left = 147.0
 margin_top = 988.0
-margin_right = 500.0
+margin_right = 533.0
 margin_bottom = 1062.0
 focus_mode = 2
 size_flags_horizontal = 4
