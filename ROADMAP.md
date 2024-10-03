@@ -34,20 +34,19 @@ Features/issues that will [probably] be added/solved in future
 ## In progress
 List of features that are currently worked on.
 
-
 - (when) will there be new levels? - https://github.com/dulvui/ball2box/issues/14
     - new background
     - new game mechanics
         - portals
 
-- Godot 3.6 update
-
-- Z-fighting on level 65 - https://github.com/dulvui/ball2box/issues/17
-
-- Fullscreen button please - https://github.com/dulvui/ball2box/issues/18 
-
 ## Done 
 Features/issues that are added/solved in specific version
+
+- 4.1.3
+    - Z-fighting on level 65 - https://github.com/dulvui/ball2box/issues/17
+        - fixed also level 67 
+    - Fullscreen button please - https://github.com/dulvui/ball2box/issues/18 
+    - Godot 3.6 update
 
 - 4.1.2
     - laod correct level when using level selector screen
