@@ -72,8 +72,9 @@ jobs:
           sed -i -e "s|IOS_APPSTORE_TEAM_ID|$IOS_APPSTORE_TEAM_ID|g" $WORKING_DIRECTORY/export_presets.cfg
 
       - name: Export and upload to Testflight
-        uses: dulvui/godot-ios-upload@v1.1.2
+        uses: dulvui/godot-ios-upload@v3
         with:
+          godot-version: 3.6
           working-directory: $WORKING_DIRECTORY
           project-name: $PROJECT_NAME
           provision-profile-path: ~/Library/MobileDevice/Provisioning\ Profiles/build_pp.mobileprovision

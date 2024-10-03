@@ -32,9 +32,9 @@ jobs:
         run: cp game/export_presets.html.example game/export_presets.cfg
 
       - name: Godot HTML5 export
-        uses: dulvui/godot-html-export@v0.0.2
+        uses: dulvui/godot-html-export@v1
         with:
-          working-directory: $WORKING_DIRECTORY
+          working-directory: ${{ env.WORKING_DIRECTORY }} 
           godot-version: 3.6
           create-export-preset-cfg: false
 
