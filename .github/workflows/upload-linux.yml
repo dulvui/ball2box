@@ -49,8 +49,8 @@ jobs:
       - name: Download and config Godot Engine headless linux server and templates
         if: steps.cache-godot.outputs.cache-hit != 'true'
         run: |
-          wget -q https://github.com/godotengine/godot-builds/releases/download/${{ env.GODOT_VERSION }}/Godot_v${{ env.GODOT_VERSION }}-stable_linux_headless.64.zip
-          wget -q https://github.com/godotengine/godot-builds/releases/download/${{ env.GODOT_VERSION }}/Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz
+          wget -q https://github.com/godotengine/godot-builds/releases/download/${{ env.GODOT_VERSION }}-stable/Godot_v${{ env.GODOT_VERSION }}-stable_linux_headless.64.zip
+          wget -q https://github.com/godotengine/godot-builds/releases/download/${{ env.GODOT_VERSION }}-stable/Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz
           mkdir ~/.cache
           mkdir -p ~/.config/godot
           mkdir -p ~/.local/share/godot/templates/${{ env.GODOT_VERSION }}.stable
