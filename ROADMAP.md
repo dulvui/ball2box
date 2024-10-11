@@ -39,6 +39,8 @@ List of features that are currently worked on.
     - new game mechanics
         - portals
 
+- Ball gets stuck in narrow places - https://github.com/dulvui/ball2box/issues/19
+
 ## Done 
 Features/issues that are added/solved in specific version
 
