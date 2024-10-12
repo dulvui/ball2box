@@ -71,6 +71,16 @@
   </screenshots>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="4.1.4" date="2024-10-12">
+      <description>
+        <ul>
+          <li>fix z-fighting for level 65 and 67</li>
+          <li>update to Godot 3.6</li>
+          <li>fix menu alignment</li>
+        </ul>
+      </description>
+      <url>https://github.com/dulvui/ball2box/releases/tag/v4.1.4</url>
+    </release>
     <release version="4.1.2" date="2024-08-12">
       <description>
         <ul>
@@ -78,7 +88,7 @@
           <li>load correct level when using level selector screen</li>
         </ul>
       </description>
-      <url>https://github.com/dulvui/ball2box/releases/tag/v4.1.1</url>
+      <url>https://github.com/dulvui/ball2box/releases/tag/v4.1.2</url>
     </release>
   </releases>
 </component>
