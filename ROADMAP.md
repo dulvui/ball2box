@@ -39,6 +39,8 @@ List of features that are currently worked on.
     - new game mechanics
         - portals
 
+- Bug: resetting ball (and level) doesn't always respawn all purple boxes - https://github.com/dulvui/ball2box/issues/20
+
 ## Done 
 Features/issues that are added/solved in specific version
 
