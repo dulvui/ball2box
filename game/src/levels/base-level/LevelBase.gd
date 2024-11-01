@@ -144,6 +144,7 @@ func _on_LevelComplete_menu() -> void:
 	main.show()
 	level_complete.hide()
 
+
 func _camera_shake() -> void:
 	var start_position:Vector3 = camera.translation
 	
