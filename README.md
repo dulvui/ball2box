@@ -12,6 +12,8 @@ SPDX-License-Identifier: CC0-1.0
 Swipe to toss the ball and hit the box in over 100 levels.
 This game is open source, with no ads and no tracking.  
 
+Available on [Codeberg](https://codeberg.org/dulvui/ball2box) and [Github](https://github.com/dulvui/ball2box).
+
 Made with [Godot Engine](https://godotengine.org) version 3.x
 Track the migration to Godot 4.x in [issue #6](https://github.com/dulvui/ball2box/issues/6)  
 
