@@ -10,8 +10,6 @@
 [node name="Ball" parent="." index="3"]
 transform = Transform( -0.999964, 0.00846486, 0, -0.00846486, -0.999964, 0, 0, 0, 1, 7.85412, 24.499, -0.00337219 )
 can_sleep = false
-axis_lock_angular_x = true
-axis_lock_angular_y = true
 
 [node name="Bin" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75845, 5.1269, 0 )
@@ -38,4 +36,4 @@ transform = Transform( 0.00293449, -0.50795, 0, 0.50795, 0.00293449, 0, 0, 0, 0.
 transform = Transform( 0.651362, 0, 0, 0, 0.651362, 0, 0, 0, 1.01624, -4.24329, 28.7024, 0 )
 
 [node name="ResizingCircle" parent="." index="12" instance=ExtResource( 4 )]
-transform = Transform( 0.623937, 0, 0, 0, 0.623937, 0, 0, 0, 1, 6.68388, 12.1795, 0 )
+transform = Transform( 0.623937, 0, 0, 0, 0.623937, 0, 0, 0, 1, 5.72078, 12.1795, 0 )
