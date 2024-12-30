@@ -6,13 +6,14 @@ extends Spatial
 
 
 onready var animation_player: AnimationPlayer = $AnimationPlayer
+onready var body: Spatial = $Body
 
 export var delay: float = 0
 
 var static_body: StaticBody
 var area: Area
 
-var hit: bool = false
+var first_fade_in: bool = true
 
 
 func _ready() -> void:
@@ -24,22 +25,23 @@ func _ready() -> void:
 
 
 func fade_in() -> void:
-	_set_colission(false)
-	if animation_player.is_playing():
-		yield(animation_player,"animation_finished")
-
+	# wait 0.3 seconds to make sure pop animation is finished
+	if first_fade_in:
+		first_fade_in = false
+	else:
+		yield(get_tree().create_timer(0.3), "timeout")
+	
+	_set_colission(true)
 	show()
 
-	animation_player.play("FadeIn")
-	yield(animation_player,"animation_finished")
-	if delay > 0:
-		yield(get_tree().create_timer(delay/10.0), "timeout")
-			
+	if body.scale != Vector3.ONE:
+		animation_player.play("FadeIn")
+		yield(animation_player,"animation_finished")
+		if delay > 0:
+			yield(get_tree().create_timer(delay/10.0), "timeout")
+
 	if animation_player.has_animation("Act"):
 		animation_player.play("Act")
-
-	_set_colission(true)
-	hit = false	
 
 
 func _set_colission(enabled: bool) -> void:
@@ -50,14 +52,10 @@ func _set_colission(enabled: bool) -> void:
 		area.set_collision_mask_bit(1, enabled)
 
 
-func _on_Area_body_entered(body) -> void:
-	if body.is_in_group("ball") and not hit:
-		static_body.set_collision_layer_bit(0,false)
-		static_body.set_collision_mask_bit(0,false)
-		area.set_collision_layer_bit(1,false)
-		area.set_collision_mask_bit(1,false)
+func _on_Area_body_entered(body_entered: Spatial) -> void:
+	if body.scale == Vector3.ONE and body_entered.is_in_group("ball"):
+		_set_colission(false)
 		animation_player.play("Pop")
-		yield(animation_player,"animation_finished")
-		hide()	
-
+		yield(animation_player, "animation_finished")
+		hide()
 

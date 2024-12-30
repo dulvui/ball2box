@@ -32,6 +32,9 @@ albedo_color = Color( 0.784314, 0.313726, 0.815686, 1 )
 [node name="AnimationPlayer" parent="." index="0"]
 anims/Pop = SubResource( 1 )
 
+[node name="Body" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
 [node name="MeshInstance" type="MeshInstance" parent="Body" index="0"]
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
