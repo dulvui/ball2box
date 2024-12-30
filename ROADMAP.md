@@ -44,6 +44,10 @@ List of features that are currently worked on.
 ## Done 
 Features/issues that are added/solved in specific version
 
+- 4.1.6
+    - Level 113: move rotator, to fit first ball
+    - Level 114: move resizing circle, to fit first ball
+
 - 4.1.5
     - Ball gets stuck in narrow places - https://github.com/dulvui/ball2box/issues/19
 
