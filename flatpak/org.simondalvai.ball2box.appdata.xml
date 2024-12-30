@@ -71,10 +71,20 @@
   </screenshots>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="4.1.6" date="2024-12-30">
+      <description>
+        <ul>
+          <li>fix fade in of pop objects</li>
+          <li>level 113: move rotator for more space</li>
+          <li>level 114: more resizing circle for more space</li>
+        </ul>
+      </description>
+      <url>https://github.com/dulvui/ball2box/releases/tag/v4.1.5</url>
+    </release>
     <release version="4.1.5" date="2024-10-13">
       <description>
         <ul>
-        <li>reduce pick ball radius, to unify ball sizes</li>
+          <li>reduce pick ball radius, to unify ball sizes</li>
         </ul>
       </description>
       <url>https://github.com/dulvui/ball2box/releases/tag/v4.1.5</url>
