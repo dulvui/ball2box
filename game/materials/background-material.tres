@@ -1,7 +1,8 @@
-[gd_resource type="StandardMaterial3D" format=2]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://chud5n3hyti0h"]
+
+[ext_resource type="Texture2D" uid="uid://bhm8wxa8e7vw4" path="res://assets/background-2.png" id="1_7pv40"]
 
 [resource]
-albedo_color = Color( 0.239216, 0.45098, 0.65098, 1 )
-metallic = 0.47
-metallic_specular = 1.0
-roughness = 0.64
+transparency = 1
+albedo_color = Color(0.0705882, 0.266667, 0.45098, 1)
+albedo_texture = ExtResource("1_7pv40")

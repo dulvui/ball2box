@@ -1,21 +1,21 @@
 [gd_scene load_steps=25 format=3 uid="uid://dnru8n3l1d160"]
 
-[ext_resource type="Script" path="res://src/levels/base-level/LevelBase.gd" id="1"]
+[ext_resource type="Script" uid="uid://d2g82randuri7" path="res://src/levels/base-level/LevelBase.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://dwjw2ephbw34" path="res://src/levels/base-level/base-3d/Base3D.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://dswwtp2gv5lmc" path="res://src/screens/main/Main.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://d2yixvoeekahm" path="res://src/actors/bin/Bin.tscn" id="4"]
-[ext_resource type="PackedScene" path="res://src/actors/ball/starter-ball/Ball.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://dx78gc4rrxq3l" path="res://src/actors/ball/starter-ball/Ball.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://bsym0jqy5ikf3" path="res://src/screens/level-complete/LevelComplete.tscn" id="6"]
-[ext_resource type="PackedScene" path="res://src/actors/star/Star.tscn" id="7"]
-[ext_resource type="PackedScene" path="res://src/levels/base-level/background/Background1.tscn" id="8"]
-[ext_resource type="PackedScene" path="res://src/ui/coins/Coins.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://dkq8f7kcbgo7g" path="res://src/actors/star/Star.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://c8y8iqd7ubdwj" path="res://src/levels/base-level/background/Background1.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://ugwel1cgfqjd" path="res://src/ui/coins/Coins.tscn" id="9"]
 [ext_resource type="PackedScene" uid="uid://bmxmq1gsg0xcj" path="res://src/screens/shop/Shop.tscn" id="10"]
 [ext_resource type="PackedScene" uid="uid://xdq4pgtap13e" path="res://src/screens/info/Info.tscn" id="11"]
 [ext_resource type="PackedScene" uid="uid://d1yfp5ma56wrq" path="res://src/screens/level-select/LevelSelect.tscn" id="12"]
 [ext_resource type="PackedScene" uid="uid://dtej7cjg0wx1e" path="res://src/ui/tutorial/Tutorial.tscn" id="13"]
 [ext_resource type="Texture2D" uid="uid://bv8dvaesw0nte" path="res://assets/pause.png" id="14"]
-[ext_resource type="Script" path="res://src/levels/base-level/Pause.gd" id="15"]
-[ext_resource type="PackedScene" path="res://src/screens/shop/Shop3D.tscn" id="16"]
+[ext_resource type="Script" uid="uid://jwhcmnjbtdvj" path="res://src/levels/base-level/Pause.gd" id="15"]
+[ext_resource type="PackedScene" uid="uid://clgmhpprnmcbf" path="res://src/screens/shop/Shop3D.tscn" id="16"]
 [ext_resource type="PackedScene" uid="uid://bw5a8ke1q735f" path="res://src/screens/help/Help.tscn" id="17"]
 
 [sub_resource type="Animation" id="1"]
@@ -46,7 +46,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 55, 26), Vector3(0, 17, 26)]
+"values": [Vector3(0, 54, 26), Vector3(0, 17, 26)]
 }
 
 [sub_resource type="Animation" id="3"]
@@ -61,7 +61,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 17, 26), Vector3(0, 55, 26)]
+"values": [Vector3(0, 17, 26), Vector3(0, 54, 26)]
 }
 
 [sub_resource type="Animation" id="20"]
@@ -109,11 +109,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iuduk"]
 _data = {
-"FadeIn": SubResource("1"),
-"GoToMenu": SubResource("2"),
-"GoToShop": SubResource("3"),
-"Idle": SubResource("20"),
-"RESET": SubResource("18")
+&"FadeIn": SubResource("1"),
+&"GoToMenu": SubResource("2"),
+&"GoToShop": SubResource("3"),
+&"Idle": SubResource("20"),
+&"RESET": SubResource("18")
 }
 
 [sub_resource type="PhysicsMaterial" id="15"]
@@ -126,7 +126,7 @@ script = ExtResource("1")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 process_mode = 3
 libraries = {
-"": SubResource("AnimationLibrary_iuduk")
+&"": SubResource("AnimationLibrary_iuduk")
 }
 
 [node name="Base" parent="." instance=ExtResource("2")]
@@ -134,8 +134,8 @@ libraries = {
 [node name="Ball" parent="." instance=ExtResource("5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.94765, 19.8625, 0)
 physics_material_override = SubResource("15")
-max_contacts_reported = 0
 contact_monitor = false
+max_contacts_reported = 0
 
 [node name="Bin" parent="." instance=ExtResource("4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90741, 0, 0)
@@ -157,15 +157,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 61.1004, 0)
 
 [node name="LevelComplete" parent="UI" instance=ExtResource("6")]
 visible = false
-layout_mode = 3
-anchors_preset = 15
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="Shop" parent="UI" instance=ExtResource("10")]
 visible = false
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="Info" parent="UI" instance=ExtResource("11")]
 visible = false
@@ -175,7 +169,6 @@ visible = false
 
 [node name="Help" parent="UI" instance=ExtResource("17")]
 visible = false
-anchors_preset = 15
 
 [node name="Topbar" type="HBoxContainer" parent="UI"]
 anchors_preset = -1

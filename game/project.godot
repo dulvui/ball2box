@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Ball2Box"
 run/main_scene="res://src/screens/splah/SplashScreen.tscn"
-config/features=PackedStringArray("4.2")
+config/features=PackedStringArray("4.4")
 boot_splash/bg_color=Color(0.105882, 0.105882, 0.231373, 1)
 config/icon="res://icon.png"
 
@@ -28,10 +28,9 @@ ObjectsUtil="*res://src/level-editor/ObjectsUtil.gd"
 window/size/viewport_width=720
 window/size/viewport_height=1280
 window/size/always_on_top=true
-window/size/window_width_override=540
-window/size/window_height_override=1280
+window/size/window_width_override=360
+window/size/window_height_override=640
 window/stretch/mode="viewport"
-window/stretch/aspect="keep_width"
 window/handheld/orientation="portrait"
 
 [global]
@@ -63,7 +62,8 @@ common/physics_fps=240
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_environment="res://default_env.tres"
 quality/driver/driver_name="GLES2"
 quality/driver/fallback_to_gles2=true

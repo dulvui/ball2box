@@ -1,21 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://cu6m5uggltmep"]
 
-[ext_resource path="res://assets/patterns/pattern_0024.png" type="Texture2D" id=1]
+[ext_resource type="Texture2D" uid="uid://cx7h2jqtug300" path="res://assets/patterns/pattern_0024.png" id="1"]
 
-[sub_resource type="StandardMaterial3D" id=4]
-flags_transparent = true
-albedo_color = Color( 0.858824, 0.764706, 0.345098, 1 )
-albedo_texture = ExtResource( 1 )
+[sub_resource type="StandardMaterial3D" id="4"]
+transparency = 1
+albedo_color = Color(0.858824, 0.764706, 0.345098, 1)
+albedo_texture = ExtResource("1")
 
-[sub_resource type="StandardMaterial3D" id=3]
-next_pass = SubResource( 4 )
-albedo_color = Color( 0.368627, 0.117647, 0.117647, 1 )
+[sub_resource type="StandardMaterial3D" id="3"]
+next_pass = SubResource("4")
+albedo_color = Color(0.368627, 0.117647, 0.117647, 1)
 clearcoat_enabled = true
 clearcoat = 0.97
-clearcoat_gloss = 0.5
 
-[sub_resource type="SphereMesh" id=2]
-material = SubResource( 3 )
+[sub_resource type="SphereMesh" id="2"]
+material = SubResource("3")
 
 [node name="MeshInstance3D" type="MeshInstance3D"]
-mesh = SubResource( 2 )
+mesh = SubResource("2")

@@ -1,15 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://c8y8iqd7ubdwj"]
 
-[ext_resource path="res://assets/background-2.png" type="Texture2D" id=1]
+[ext_resource type="Material" uid="uid://chud5n3hyti0h" path="res://materials/background-material.tres" id="1_vd7ge"]
 
-[sub_resource type="PlaneMesh" id=16]
-
-[sub_resource type="StandardMaterial3D" id=17]
-flags_transparent = true
-albedo_color = Color( 0.0705882, 0.266667, 0.45098, 1 )
-albedo_texture = ExtResource( 1 )
+[sub_resource type="PlaneMesh" id="16"]
 
 [node name="Background" type="MeshInstance3D"]
-transform = Transform3D( 15, 0, 0, 0, -4.37114e-08, -60, 0, 1, -2.62268e-06, 0, 37.6553, -6.80032 )
-mesh = SubResource( 16 )
-material/0 = SubResource( 17 )
+transform = Transform3D(15, 0, 0, 0, -4.37114e-08, -60, 0, 1, -2.62268e-06, 0, 37.6553, -6.80032)
+mesh = SubResource("16")
+surface_material_override/0 = ExtResource("1_vd7ge")

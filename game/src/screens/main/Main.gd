@@ -54,4 +54,3 @@ func _on_Help_pressed() -> void:
 
 func _on_LevelControl_levels() -> void:
 	emit_signal("levels")
-

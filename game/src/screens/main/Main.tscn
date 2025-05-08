@@ -3,11 +3,11 @@
 [ext_resource type="FontFile" uid="uid://0h3gamm7rrf5" path="res://assets/font/manrope.thin.otf" id="1"]
 [ext_resource type="Theme" uid="uid://d3hrbmbgc4owt" path="res://theme.tres" id="2"]
 [ext_resource type="Texture2D" uid="uid://dqxdekl2euprp" path="res://assets/musicOff.png" id="3"]
-[ext_resource type="Script" path="res://src/screens/main/Main.gd" id="4"]
+[ext_resource type="Script" uid="uid://bngv5fonpxy2k" path="res://src/screens/main/Main.gd" id="4"]
 [ext_resource type="Texture2D" uid="uid://pgybt5wmhy6s" path="res://assets/github.svg" id="6"]
 [ext_resource type="PackedScene" uid="uid://c3kbiihchfh61" path="res://src/ui/level-control/LevelControl.tscn" id="7"]
 [ext_resource type="Texture2D" uid="uid://vqhonb5ulhqs" path="res://assets/musicOn.png" id="8"]
-[ext_resource type="PackedScene" path="res://src/ui/toggle-button/ToggleButton.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://cdao8vdkdl2rc" path="res://src/ui/toggle-button/ToggleButton.tscn" id="9"]
 [ext_resource type="Texture2D" uid="uid://dl55m157ujwvm" path="res://assets/audioOn.png" id="11"]
 [ext_resource type="Texture2D" uid="uid://bo38qwccbthi7" path="res://assets/audioOff.png" id="12"]
 [ext_resource type="Texture2D" uid="uid://8o2lm22xtw50" path="res://assets/information.png" id="13"]
@@ -23,6 +23,16 @@ cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/48/0/ascent = 0.0
+cache/0/48/0/descent = 0.0
+cache/0/48/0/underline_position = 0.0
+cache/0/48/0/underline_thickness = 0.0
+cache/0/48/0/scale = 1.0
 
 [node name="Main" type="MarginContainer"]
 process_mode = 3

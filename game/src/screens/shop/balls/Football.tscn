@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://b0vsru2m06ql3"]
 
-[ext_resource path="res://src/screens/shop/balls/base-ball/BaseBall.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/actors/ball/football/FootballMeshInstance.tscn" type="PackedScene" id=2]
+[ext_resource type="PackedScene" uid="uid://7ad7sls8x10w" path="res://src/screens/shop/balls/base-ball/BaseBall.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://cgdnjq58b174h" path="res://src/actors/ball/football/FootballMeshInstance.tscn" id="2"]
 
-[node name="BaseBall" instance=ExtResource( 1 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+[node name="BaseBall" instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="MeshInstance3D" parent="." index="0" instance=ExtResource( 2 )]
+[node name="MeshInstance3D" parent="." index="0" instance=ExtResource("2")]

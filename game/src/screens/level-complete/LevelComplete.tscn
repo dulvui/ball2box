@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://bsym0jqy5ikf3"]
 
 [ext_resource type="Theme" uid="uid://d3hrbmbgc4owt" path="res://theme.tres" id="1"]
-[ext_resource type="Script" path="res://src/screens/level-complete/LevelComplete.gd" id="2"]
+[ext_resource type="Script" uid="uid://d2pkow0e6da5t" path="res://src/screens/level-complete/LevelComplete.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://nuc670g4s0d7" path="res://assets/star.png" id="3"]
-[ext_resource type="FontFile" path="res://styles/big-font.tres" id="5"]
+[ext_resource type="FontFile" uid="uid://cuvgs58evga4f" path="res://styles/big-font.tres" id="5"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "FadeIn"
@@ -98,8 +98,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rvsyw"]
 _data = {
-"FadeIn": SubResource("1"),
-"RESET": SubResource("2")
+&"FadeIn": SubResource("1"),
+&"RESET": SubResource("2")
 }
 
 [node name="LevelComplete" type="Control"]
@@ -109,6 +109,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1")
 script = ExtResource("2")
 
@@ -186,7 +188,7 @@ text = "MENU"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_rvsyw")
+&"": SubResource("AnimationLibrary_rvsyw")
 }
 
 [connection signal="pressed" from="VBoxContainer/Buttons/NextLevel" to="." method="_on_NextLevel_pressed"]

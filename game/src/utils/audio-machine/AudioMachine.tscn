@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cty52cy5r84dg"]
 
 [ext_resource type="AudioStream" uid="uid://djejtfpy3igxh" path="res://assets/audio/crash02.ogg" id="1"]
-[ext_resource type="Script" path="res://src/utils/audio-machine/AudioMachine.gd" id="2"]
+[ext_resource type="Script" uid="uid://bnu0rx4e58jl6" path="res://src/utils/audio-machine/AudioMachine.gd" id="2"]
 [ext_resource type="AudioStream" uid="uid://cb6nx8s1j7sx7" path="res://assets/audio/heist.ogg" id="4"]
 [ext_resource type="AudioStream" uid="uid://bhfm8d5bxyq25" path="res://assets/audio/snare02.ogg" id="5"]
 [ext_resource type="AudioStream" uid="uid://clcl7nj33hdgf" path="res://assets/audio/snare05.ogg" id="6"]

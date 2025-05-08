@@ -1,9 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://dloudittm0nnr"]
+[gd_scene load_steps=10 format=3 uid="uid://dloudittm0nnr"]
 
-[ext_resource type="Script" path="res://src/actors/ball/base-ball/Ball.gd" id="1"]
+[ext_resource type="Script" uid="uid://b0a5poexj1ado" path="res://src/actors/ball/base-ball/Ball.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cv8ksqbp8ykvu" path="res://assets/arrowDown.png" id="2_fdaii"]
 
 [sub_resource type="StandardMaterial3D" id="3"]
 albedo_color = Color(0.94902, 0.0901961, 0.0901961, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fjb2f"]
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5jm3"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("2_fdaii")
+uv1_scale = Vector3(1, -1, 1)
+billboard_keep_scale = true
 
 [sub_resource type="Animation" id="6"]
 resource_name = "FadeIn"
@@ -54,22 +68,24 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wf3l6"]
 _data = {
-"FadeIn": SubResource("6"),
-"FadeOut": SubResource("4"),
-"RESET": SubResource("5")
+&"FadeIn": SubResource("6"),
+&"FadeOut": SubResource("4"),
+&"RESET": SubResource("5")
 }
 
-[node name="Ball" type="RigidBody3D" groups=["ball"]]
+[node name="Ball" type="RigidBody3D" node_paths=PackedStringArray("geometry") groups=["ball"]]
 collision_layer = 2
 collision_mask = 3
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 mass = 6.28
+gravity_scale = 0.0
 continuous_cd = true
-max_contacts_reported = 10
 contact_monitor = true
+max_contacts_reported = 10
 script = ExtResource("1")
+geometry = NodePath("GeometryRotate")
 
 [node name="ImmediateGeometryUp" type="ImmediateMesh" parent="."]
 _import_path = NodePath("")
@@ -78,15 +94,22 @@ process_mode = 0
 process_priority = 0
 process_physics_priority = 0
 process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
 editor_description = ""
 transform = Transform3D(-1, 3.25841e-07, 0, -3.25841e-07, -1, 0, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("3")
 script = null
 
-[node name="ImmediateGeometryDown" type="MeshInstance3D" parent="."]
-material_override = SubResource("3")
+[node name="GeometryRotate" type="Node3D" parent="."]
+
+[node name="ImmediateGeometry" type="MeshInstance3D" parent="GeometryRotate"]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("PlaneMesh_fjb2f")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_b5jm3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_wf3l6")
+&"": SubResource("AnimationLibrary_wf3l6")
 }

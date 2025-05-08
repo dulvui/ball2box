@@ -6,8 +6,13 @@ extends RigidBody3D
 
 class_name Ball
 
+const min_geometry_scale := 2
+const max_geometry_scale := 6
+
 signal reset
 signal shoot
+
+@export var geometry: Node3D
 
 #@onready var geometry_up: GeometryInstance3D = $ImmediateGeometryUp
 #@onready var geometry_down: GeometryInstance3D = $ImmediateGeometryDown
@@ -21,8 +26,8 @@ var shooting:bool = false
 
 var initial_position:Transform3D
 
-var touch_pos:Vector2
-var touch_start:Vector2
+var touch_pos: Vector2
+var touch_start: Vector2
 
 var next_transform:Transform3D
 var is_teletransporting:bool = false
@@ -35,9 +40,13 @@ func _ready() -> void:
 	teletransport_to_inital()
 
 
-#func _process(delta:float) -> void:
-	#if shoot_enabled:
-		#if touch_start != Vector2.ZERO and touch_pos != Vector2.ZERO:
+func _process(delta:float) -> void:
+	if shoot_enabled:
+		if touch_start != Vector2.ZERO and touch_pos != Vector2.ZERO:
+			draw_indicator(touch_pos)
+		else:
+			geomtery_clear()
+			
 			#if touch_start.y > touch_pos.y:
 				#draw_indicator_up()
 				#geometry_down.clear()
@@ -71,11 +80,14 @@ func _input(event:InputEvent) -> void:
 
 func _shoot() -> void:
 	if not shooting and touch_pos != Vector2.ZERO and touch_start != Vector2.ZERO and touch_pos.distance_to(touch_start) > 100:
+		geomtery_clear()
 		emit_signal("shoot")
 		shooting = true
+		freeze = false
 		#mode = RigidBody3D.MODE_RIGID
 		var direction = (touch_start - touch_pos)
 		apply_central_impulse(Vector3(- direction.x, direction.y , 0) * SPEED)
+		gravity_scale = 1.0
 
 
 func reset_position() -> void:
@@ -83,6 +95,7 @@ func reset_position() -> void:
 	emit_signal("reset")
 	animation_player.play("FadeOut")
 	shooting = false
+	gravity_scale = 0.0
 	await animation_player.animation_finished
 	animation_player.play("FadeIn")
 	teletransport_to_inital()
@@ -91,7 +104,25 @@ func reset_position() -> void:
 func reset_position_no_signal() -> void:
 	print("reset no signal")
 	shooting = false
+	reset_position()
 	teletransport_to_inital()
+
+
+func draw_indicator(dest_pos: Vector2) -> void:
+	geometry.show()
+
+	geometry.rotation.z = - get_viewport().get_camera_3d().unproject_position(global_position).angle_to_point(dest_pos) - deg_to_rad(90)
+	
+	var scale_ratio := get_viewport().get_camera_3d().unproject_position(global_position).distance_to(dest_pos) / 120
+	geometry.scale = Vector3(
+		clamp(scale_ratio, min_geometry_scale * 2, max_geometry_scale) / 2, 
+		clamp(scale_ratio, min_geometry_scale, max_geometry_scale), 
+		1
+	)
+
+
+func geomtery_clear() -> void:
+	geometry.hide()
 
 
 #func draw_indicator_up() -> void:
@@ -146,6 +177,7 @@ func teletransport(p_transform:Transform3D) -> void:
 
 
 func teletransport_to_inital() -> void:
+	freeze = true
 	#mode = RigidBody3D.FREEZE_MODE_STATIC
 	transform.origin = initial_position.origin
 	angular_velocity = Vector3.ZERO
