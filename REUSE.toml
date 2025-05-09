@@ -1,0 +1,106 @@
+# SPDX-FileCopyrightText: 2024 Simon Dalvai <info@simondalvai.org>
+#
+# SPDX-License-Identifier: CC0-1.0
+
+version = 1
+SPDX-PackageName = "Ball2Box"
+SPDX-PackageSupplier = "Simon Dalvai <info@simondalvai.org>"
+SPDX-PackageDownloadLocation = "https://github.com/dulvui/ball2box"
+
+[[annotations]]
+path = ["game/src/**.tscn", "game/project.godot", "game/**.import", "game/export_presets.**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2022 Simon Dalvai <info@simondalvai.org>"
+SPDX-License-Identifier = "AGPL-3.0-or-later"
+
+[[annotations]]
+path = ["game/AppIcons/**", "**icon.png", "game/assets/background.png", "game/splash.png", "game/assets/obj/torus-ball.obj", "game/assets/pause.png", "game/assets/target.jpg", "game/assets/background-2.png", "metadata/en-US/images/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2022 Simon Dalvai <info@simondalvai.org>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = ["**.mtl", "**.import", "exportOptions.plist", ".gitignore", "metadata/**", "**.csv", "**.material", "**.tres", "**.translation", "version", "fdroid/**", "flatpak/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2022 Simon Dalvai <info@simondalvai.org>"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = "game/assets/audio/heist.ogg"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "audiohub.com <info@audiohub.com>"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["game/assets/audio/snare05.ogg", "game/assets/audio/snare02.ogg", "game/assets/audio/crash02.ogg"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "lmms.io"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = [
+    "game/assets/star.png",
+    "game/assets/right.png",
+    "game/assets/musicOn.png",
+    "game/assets/musicOff.png",
+    "game/assets/left.png",
+    "game/assets/audioOn.png",
+    "game/assets/audioOff.png",
+    "game/assets/information.png",
+    "game/assets/arrowDown.png",
+    "game/assets/pointer.png",
+    "game/assets/smaller.png",
+    "game/assets/larger.png",
+    "game/assets/patterns/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2010 - 2022 https://kenney.nl"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = "game/assets/obj/star.obj"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2011 Savino"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = "game/assets/obj/Volleyball.obj"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2020 PatelDev"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = "game/assets/obj/Football.blend.obj"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2020 siixarn"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = "game/assets/obj/Octoball.obj"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2020 EZduzziteh"
+SPDX-License-Identifier = "CC-BY-3.0"
+
+[[annotations]]
+path = "game/assets/font/manrope.thin.otf"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2020 EZduzziteh"
+SPDX-License-Identifier = "OFL-1.1"
+
+[[annotations]]
+path = "game/assets/github.svg"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "simple-icons https://github.com/simple-icons/simple-icons"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = ["game/assets/copy.svg", "game/assets/paste.svg"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Google material-design-icons https://github.com/google/material-design-icons"
+SPDX-License-Identifier = "Apache-2.0"
+
+[[annotations]]
+path = "store-images/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "The corresponding app store organization"
+SPDX-License-Identifier = "LicenseRef-STORE-ICONS"
+

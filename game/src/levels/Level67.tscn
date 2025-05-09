@@ -10,8 +10,6 @@
 [node name="Ball" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5502, 31.0882, 0)
 can_sleep = false
-axis_lock_angular_x = true
-axis_lock_angular_y = true
 
 [node name="Bin" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.839, 0, 0)

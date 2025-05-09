@@ -1,0 +1,3 @@
+- fix fade in of pop objects
+- level 113: move rotator for more space
+- level 114: more resizing circle for more space

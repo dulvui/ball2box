@@ -7,6 +7,8 @@ extends Node3D
 @onready var box: StaticBody3D = $Bin
 @onready var ball: RigidBody3D = $Ball
 @onready var objects: Node3D = $Objects
+@onready var star_1: Spatial = $Star1
+@onready var star_2: Spatial = $Star2
 
 @onready var import_text: TextEdit = $HUD/VBoxContainer/ImportText
 @onready var camera: Camera3D = $Base/Camera3D
@@ -180,3 +182,11 @@ func _on_Ball_pressed() -> void:
 
 func _on_Box_pressed() -> void:
 	active_object = box
+
+
+func _on_Star1_pressed() -> void:
+	active_object = star_1
+
+
+func _on_Star2_pressed() -> void:
+	active_object = star_2

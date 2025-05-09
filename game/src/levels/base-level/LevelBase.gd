@@ -43,8 +43,10 @@ func _ready() -> void:
 	fade_in_objects()
 	
 	_connect_ball_signals()
-	star1.connect("star_hit", Callable(self, "on_star1_hit"))
-	star2.connect("star_hit", Callable(self, "on_star2_hit"))
+	ball_setup()
+	
+	star1.star_hit.connect("on_star1_hit")
+	star2.star_hit.connect("on_star2_hit")
 	
 	# portals only exist in some levels
 	portals = get_node_or_null("Portals/PortalConnector")
@@ -89,12 +91,16 @@ func _on_Shop_back() -> void:
 
 
 func _on_Shop_select() -> void:
-	# menu animations
-	shop.hide()
-	animation_player.play("GoToMenu")
-	
-	# ball setup
-	var pos:Transform3D = ball.initial_position
+	# menu animations broken, since new level needs to be loaded
+#	shop.hide()
+#	animation_player.play("GoToMenu")
+#	ball_setup()
+#	get_tree().paused = false
+	get_tree().change_scene("res://src/levels/Level%s.tscn"%str(Global.current_level))
+
+
+func ball_setup() -> void:
+	var pos:Transform = ball.initial_position
 	print("shop transform " + str(pos))
 	ball.queue_free()
 	
@@ -105,8 +111,6 @@ func _on_Shop_select() -> void:
 	ball.initial_position = pos
 	ball.teletransport_to_inital()
 	_connect_ball_signals()
-	
-	get_tree().paused = false
 
 
 func _on_Shop_prev() -> void:
@@ -209,7 +213,6 @@ func _connect_ball_signals():
 func _on_Main_play():
 	AudioMachine.click()
 #	get_tree().paused = false
-
 	main.hide()
 	animation_player.play("GoToShop")
 	shop3D.fade_in()
@@ -255,3 +258,11 @@ func _on_Main_help() -> void:
 	AudioMachine.click()
 	main.hide()
 	help.show()
+
+
+func _on_LevelSelect_select() -> void:
+	AudioMachine.click()
+	levels.hide()
+	animation_player.play("GoToShop")
+	shop3D.fade_in()
+	shop.show()

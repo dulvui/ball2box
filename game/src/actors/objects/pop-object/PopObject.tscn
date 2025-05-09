@@ -46,7 +46,7 @@ transform = Transform3D(1.02, 0, 0, 0, 1.02, 0, 0, 0, 1.02, 0, 0, 0)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Area3D" index="0"]
-shape = SubResource("5")
+[node name="CollisionShape" type="CollisionShape" parent="Body/Area" index="0"]
+shape = SubResource( 5 )
 
-[connection signal="body_entered" from="Body/Area3D" to="." method="_on_Area_body_entered"]
+[connection signal="body_entered" from="Body/Area" to="." method="_on_Area_body_entered"]

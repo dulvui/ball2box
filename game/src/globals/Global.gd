@@ -28,6 +28,7 @@ var unlocked_balls: Array
 
 var music: bool
 var sfx: bool
+var full_screen: bool
 
 var generator_seed: int
 var codes: Array
@@ -41,6 +42,7 @@ func _ready() -> void:
 #	if err == OK: # if not, something went wrong with the file loading
 	sfx = config.get_value("sfx", "mute", false)
 	music = config.get_value("music", "mute", false)
+	full_screen = config.get_value("settings", "full_screen", OS.get_name() == "Linux" or OS.get_name() == "Windows")
 	tutorial_swipe_done = config.get_value("tutorial", "swipe", false)
 	tutorial_tap_done = config.get_value("tutorial", "tap", false)
 	current_level = config.get_value("current_level", "key", 1)
@@ -65,9 +67,13 @@ func _ready() -> void:
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Sfx"), sfx)
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"), music)
 
+	OS.window_fullscreen = full_screen
+
+
 func save_data() -> void:
 	config.set_value("music","mute",music)
 	config.set_value("sfx","mute",sfx)
+	config.set_value("settings", "full_screen", full_screen)
 	config.set_value("current_level","key",current_level)
 	config.set_value("balls","unlocked",unlocked_balls)
 	config.set_value("ball","selected", BallMachine.get_ball_index())
@@ -80,10 +86,12 @@ func save_data() -> void:
 	config.set_value("generator", "own_code", own_code)
 	config.save("user://settings.cfg")
 
+
 func set_level_stars(stars) -> void:
 	if level_stars[current_level - 1] < stars:
 		coins += (stars - level_stars[current_level - 1])
 		level_stars[current_level - 1] = stars
+
 
 func unlock_next_level() -> bool:
 	if Global.current_level >= Global.LEVELS:
@@ -93,18 +101,28 @@ func unlock_next_level() -> bool:
 		return true
 	return false
 
+
 func use_coins(n) -> bool:
 	if coins - n >= 0:
 		coins -= n
 		return true
 	return false
-	
+
+
 func toggle_music() -> void:
 	music = not music
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"), music)
-	config.set_value("music","mute",music)
+	config.set_value("music", "mute" ,music)
+	config.save("user://settings.cfg")
+
+
+func toggle_full_screen() -> void:
+	full_screen = not full_screen
+	OS.window_fullscreen = full_screen
+	config.set_value("settings", "full_screen", full_screen)
 	config.save("user://settings.cfg")
 	
+
 func toggle_sfx() -> void:
 	sfx = not sfx
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Sfx"), sfx)

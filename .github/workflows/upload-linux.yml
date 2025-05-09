@@ -13,8 +13,7 @@ on:
 
 env:
   WORKING_DIRECTORY: game
-  GODOT_VERSION: 3.5.3
-
+  GODOT_VERSION: 3.6
 jobs:
   deploy:
     if: github.ref == 'refs/heads/prod'
@@ -50,8 +49,8 @@ jobs:
       - name: Download and config Godot Engine headless linux server and templates
         if: steps.cache-godot.outputs.cache-hit != 'true'
         run: |
-          wget -q https://downloads.tuxfamily.org/godotengine/${{ env.GODOT_VERSION }}/Godot_v${{ env.GODOT_VERSION }}-stable_linux_headless.64.zip
-          wget -q https://downloads.tuxfamily.org/godotengine/${{ env.GODOT_VERSION }}/Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz
+          wget -q https://github.com/godotengine/godot-builds/releases/download/${{ env.GODOT_VERSION }}-stable/Godot_v${{ env.GODOT_VERSION }}-stable_linux_headless.64.zip
+          wget -q https://github.com/godotengine/godot-builds/releases/download/${{ env.GODOT_VERSION }}-stable/Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz
           mkdir ~/.cache
           mkdir -p ~/.config/godot
           mkdir -p ~/.local/share/godot/templates/${{ env.GODOT_VERSION }}.stable
@@ -60,7 +59,6 @@ jobs:
           unzip Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz
           mv templates/* ~/.local/share/godot/templates/${{ env.GODOT_VERSION }}.stable
           rm -f Godot_v${{ env.GODOT_VERSION }}-stable_linux_headless.64.zip Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz
-          godot -e -q
 
       - name: Export
         run: godot --path ${{ env.WORKING_DIRECTORY }} --export Linux/X11 ${{ inputs.output-file-path }}

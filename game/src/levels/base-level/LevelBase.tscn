@@ -217,5 +217,6 @@ script = ExtResource("15")
 [connection signal="select" from="UI/Shop" to="." method="_on_Shop_select"]
 [connection signal="back" from="UI/Info" to="." method="_on_Info_back"]
 [connection signal="back" from="UI/LevelSelect" to="." method="_on_LevelSelect_back"]
+[connection signal="select" from="UI/LevelSelect" to="." method="_on_LevelSelect_select"]
 [connection signal="back" from="UI/Help" to="." method="_on_Help_back"]
 [connection signal="pressed" from="UI/Topbar/Pause" to="." method="_on_Pause_pressed"]

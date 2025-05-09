@@ -102,6 +102,16 @@ layout_mode = 2
 icon = ExtResource("13")
 icon_alignment = 1
 
+[node name="FullScreenButton" parent="Buttons/Settings" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 349.0
+margin_right = 489.0
+margin_bottom = 126.0
+icon = ExtResource( 5 )
+normal_texture = ExtResource( 5 )
+pressed_texture = ExtResource( 14 )
+
 [node name="GithubButton" type="Button" parent="Buttons/Settings"]
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
@@ -121,5 +131,6 @@ text = "simondalvai.org"
 [connection signal="pressed" from="Buttons/Settings/SfxButton" to="." method="_on_SfxButton_pressed"]
 [connection signal="pressed" from="Buttons/Settings/MusicButton" to="." method="_on_MusicButton_pressed"]
 [connection signal="pressed" from="Buttons/Settings/InfoButton" to="." method="_on_InfoButton_pressed"]
+[connection signal="pressed" from="Buttons/Settings/FullScreenButton" to="." method="_on_FullScreenButton_pressed"]
 [connection signal="pressed" from="Buttons/Settings/GithubButton" to="." method="_on_GithubButton_pressed"]
 [connection signal="pressed" from="Buttons/SimonDalvai" to="." method="_on_SimonDalvai_pressed"]

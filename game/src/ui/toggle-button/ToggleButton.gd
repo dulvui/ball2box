@@ -16,3 +16,4 @@ func _on_ToggleButton_toggled(button_pressed: bool) -> void:
 		icon = pressed_texture
 	else:
 		icon = normal_texture
+

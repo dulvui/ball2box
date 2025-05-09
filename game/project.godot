@@ -28,10 +28,10 @@ ObjectsUtil="*res://src/level-editor/ObjectsUtil.gd"
 window/size/viewport_width=720
 window/size/viewport_height=1280
 window/size/always_on_top=true
-window/size/window_width_override=360
-window/size/window_height_override=640
-window/stretch/mode="viewport"
-window/handheld/orientation="portrait"
+window/size/window_width_override=540
+window/size/window_height_override=1280
+window/stretch/mode="2d"
+window/handheld/orientation="sensor_portrait"
 
 [global]
 

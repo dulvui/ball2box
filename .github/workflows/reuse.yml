@@ -9,9 +9,8 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/prod'
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
       - name: REUSE Compliance Check
-        uses: fsfe/reuse-action@v2
+        uses: fsfe/reuse-action@v4

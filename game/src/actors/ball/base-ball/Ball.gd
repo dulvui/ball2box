@@ -189,7 +189,3 @@ func _integrate_forces(state:PhysicsDirectBodyState3D) -> void:
 	if is_teletransporting:
 		state.transform = next_transform
 		is_teletransporting = false
-
-
-func _on_Ball_mouse_entered() -> void:
-	print("select ball")
