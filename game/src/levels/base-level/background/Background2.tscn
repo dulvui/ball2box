@@ -1,24 +1,24 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://dtvupsf8wjugl"]
 
-[ext_resource path="res://assets/patterns/pattern_0007.png" type="Texture2D" id=1]
+[ext_resource type="Texture2D" uid="uid://btim6dkw0q3yc" path="res://assets/patterns/pattern_0007.png" id="1"]
 
-[sub_resource type="PlaneMesh" id=16]
+[sub_resource type="PlaneMesh" id="16"]
 
-[sub_resource type="StandardMaterial3D" id=17]
-flags_transparent = true
-albedo_color = Color( 0, 0.239216, 0.160784, 1 )
-albedo_texture = ExtResource( 1 )
+[sub_resource type="StandardMaterial3D" id="17"]
+transparency = 1
+albedo_color = Color(0, 0.239216, 0.160784, 1)
+albedo_texture = ExtResource("1")
 
 [node name="Background" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D( 25, 0, 0, 0, -1.09278e-06, -25, 0, 25, -1.09278e-06, 0, 7.22761, -6.80032 )
-mesh = SubResource( 16 )
+transform = Transform3D(25, 0, 0, 0, -1.09278e-06, -25, 0, 25, -1.09278e-06, 0, 7.22761, -6.80032)
+mesh = SubResource("16")
 skeleton = NodePath("../../Base")
-material/0 = SubResource( 17 )
+material/0 = SubResource("17")
 
 [node name="MeshInstance2" type="MeshInstance3D" parent="."]
-transform = Transform3D( 25, 0, 0, 0, -1.09278e-06, -25, 0, 25, -1.09278e-06, 0, 56.2159, -6.80032 )
-mesh = SubResource( 16 )
+transform = Transform3D(25, 0, 0, 0, -1.09278e-06, -25, 0, 25, -1.09278e-06, 0, 56.2159, -6.80032)
+mesh = SubResource("16")
 skeleton = NodePath("../../Base")
-material/0 = SubResource( 17 )
+material/0 = SubResource("17")

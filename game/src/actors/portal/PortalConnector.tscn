@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://cesmsdqhprqsk"]
 
-[ext_resource path="res://src/actors/portal/PortalConnector.gd" type="Script" id=1]
+[ext_resource type="Script" uid="uid://c70f8xagufpqg" path="res://src/actors/portal/PortalConnector.gd" id="1"]
 
 [node name="PortalConnector" type="Node3D"]
-script = ExtResource( 1 )
+script = ExtResource("1")

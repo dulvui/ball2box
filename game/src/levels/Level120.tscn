@@ -1,69 +1,69 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=7 format=3 uid="uid://btxo5f4leswgp"]
 
-[ext_resource path="res://src/actors/objects/rotator/Rotator.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/actors/objects/rotating-square/RotatingSquare.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/levels/base-level/LevelBase.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/actors/objects/rotating-planeaquare/RotatingPlaneSquare.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/actors/objects/resizing-square/ResizingSquare.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/actors/objects/resizing-circle/ResizingCircle.tscn" type="PackedScene" id=6]
+[ext_resource type="PackedScene" uid="uid://dsnlcppbx6ssi" path="res://src/actors/objects/rotator/Rotator.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://x8viopf8ob44" path="res://src/actors/objects/rotating-square/RotatingSquare.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://dnru8n3l1d160" path="res://src/levels/base-level/LevelBase.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://dw6tfk2hsepx5" path="res://src/actors/objects/rotating-planeaquare/RotatingPlaneSquare.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://br25hd1oevs35" path="res://src/actors/objects/resizing-square/ResizingSquare.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://c0b4pp8nfs41x" path="res://src/actors/objects/resizing-circle/ResizingCircle.tscn" id="6"]
 
-[node name="LevelBase" instance=ExtResource( 3 )]
+[node name="LevelBase" instance=ExtResource("3")]
 
 [node name="Ball" parent="." index="3"]
-transform = Transform3D( -0.999965, -0.00841241, 0, 0.00841241, -0.999965, 0, 0, 0, 1, -7.01905, 9.68865, -0.00337219 )
+transform = Transform3D(-0.999965, -0.00841241, 0, 0.00841241, -0.999965, 0, 0, 0, 1, -7.01905, 9.68865, -0.00337219)
 can_sleep = false
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="Bin" parent="." index="4"]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17317, 21.965, 0 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17317, 21.965, 0)
 
 [node name="Star1" parent="." index="5"]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.55969, 26.309, 0.00637817 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.55969, 26.309, 0.00637817)
 
 [node name="Star2" parent="." index="6"]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.30018, 25.9345, -0.72722 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.30018, 25.9345, -0.72722)
 
-[node name="Rotator" parent="." index="7" instance=ExtResource( 1 )]
-transform = Transform3D( -0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, -7.12502, 3.60925, -0.610519 )
+[node name="Rotator" parent="." index="7" instance=ExtResource("1")]
+transform = Transform3D(-0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, -7.12502, 3.60925, -0.610519)
 
-[node name="Rotator2" parent="." index="8" instance=ExtResource( 1 )]
-transform = Transform3D( -0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, -2.59054, 3.74317, 0 )
+[node name="Rotator2" parent="." index="8" instance=ExtResource("1")]
+transform = Transform3D(-0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, -2.59054, 3.74317, 0)
 
-[node name="Rotator3" parent="." index="9" instance=ExtResource( 1 )]
-transform = Transform3D( -0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, 2.24633, 3.94996, 0 )
+[node name="Rotator3" parent="." index="9" instance=ExtResource("1")]
+transform = Transform3D(-0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, 2.24633, 3.94996, 0)
 
-[node name="Rotator4" parent="." index="10" instance=ExtResource( 1 )]
-transform = Transform3D( -0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, 6.76953, 3.96707, -0.610519 )
+[node name="Rotator4" parent="." index="10" instance=ExtResource("1")]
+transform = Transform3D(-0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, 6.76953, 3.96707, -0.610519)
 
-[node name="RotatingSquare" parent="." index="11" instance=ExtResource( 2 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.423248, 11.4667, 0 )
+[node name="RotatingSquare" parent="." index="11" instance=ExtResource("2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.423248, 11.4667, 0)
 
-[node name="RotatingPlaneSquare" parent="." index="12" instance=ExtResource( 4 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.78733, 15.7498, 0 )
+[node name="RotatingPlaneSquare" parent="." index="12" instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.78733, 15.7498, 0)
 
-[node name="ResizingSquare" parent="." index="13" instance=ExtResource( 5 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.28579, 21.5609, 0 )
+[node name="ResizingSquare" parent="." index="13" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.28579, 21.5609, 0)
 delay = 5
 
-[node name="ResizingSquare2" parent="." index="14" instance=ExtResource( 5 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1364, 15.5346, 0 )
+[node name="ResizingSquare2" parent="." index="14" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1364, 15.5346, 0)
 
-[node name="ResizingCircle" parent="." index="15" instance=ExtResource( 6 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51875, 24.1249, 0 )
+[node name="ResizingCircle" parent="." index="15" instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51875, 24.1249, 0)
 
-[node name="ResizingCircle2" parent="." index="16" instance=ExtResource( 6 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 29.0149, 0 )
+[node name="ResizingCircle2" parent="." index="16" instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 29.0149, 0)
 delay = 3
 
-[node name="Rotator5" parent="." index="17" instance=ExtResource( 1 )]
-transform = Transform3D( -0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, -7.12502, 31.4067, 0 )
+[node name="Rotator5" parent="." index="17" instance=ExtResource("1")]
+transform = Transform3D(-0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, -7.12502, 31.4067, 0)
 
-[node name="Rotator6" parent="." index="18" instance=ExtResource( 1 )]
-transform = Transform3D( -0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, -2.59054, 31.5406, 0 )
+[node name="Rotator6" parent="." index="18" instance=ExtResource("1")]
+transform = Transform3D(-0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, -2.59054, 31.5406, 0)
 
-[node name="Rotator7" parent="." index="19" instance=ExtResource( 1 )]
-transform = Transform3D( -0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, 2.24633, 31.7474, 0 )
+[node name="Rotator7" parent="." index="19" instance=ExtResource("1")]
+transform = Transform3D(-0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, 2.24633, 31.7474, 0)
 
-[node name="Rotator8" parent="." index="20" instance=ExtResource( 1 )]
-transform = Transform3D( -0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, 6.76953, 31.7645, 0 )
+[node name="Rotator8" parent="." index="20" instance=ExtResource("1")]
+transform = Transform3D(-0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, 6.76953, 31.7645, 0)

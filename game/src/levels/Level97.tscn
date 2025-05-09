@@ -1,50 +1,50 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://bo4k7ht5pwimw"]
 
-[ext_resource path="res://src/actors/objects/pop-object/PopObject.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/actors/objects/separator/Separator.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/levels/base-level/LevelBase.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/actors/objects/resizing-circle/ResizingCircle.tscn" type="PackedScene" id=4]
+[ext_resource type="PackedScene" uid="uid://b4s3rm1mg14b7" path="res://src/actors/objects/pop-object/PopObject.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://bnutkkvndisgn" path="res://src/actors/objects/separator/Separator.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://dnru8n3l1d160" path="res://src/levels/base-level/LevelBase.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://c0b4pp8nfs41x" path="res://src/actors/objects/resizing-circle/ResizingCircle.tscn" id="4"]
 
-[node name="LevelBase" instance=ExtResource( 3 )]
+[node name="LevelBase" instance=ExtResource("3")]
 
 [node name="Ball" parent="." index="3"]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.59762, 33.063, 0 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.59762, 33.063, 0)
 can_sleep = false
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="Bin" parent="." index="4"]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32629, 0, 0 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32629, 0, 0)
 
 [node name="Star1" parent="." index="5"]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.97393, 25.2414, 0 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.97393, 25.2414, 0)
 
 [node name="Star2" parent="." index="6"]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.30635, 11.8725, -1.90735e-06 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.30635, 11.8725, -1.90735e-06)
 
-[node name="Separator" parent="." index="7" instance=ExtResource( 2 )]
-transform = Transform3D( 0.0174523, -0.999848, 0, 0.999848, 0.0174523, 0, 0, 0, 1, -9, 30, 0 )
+[node name="Separator" parent="." index="7" instance=ExtResource("2")]
+transform = Transform3D(0.0174523, -0.999848, 0, 0.999848, 0.0174523, 0, 0, 0, 1, -9, 30, 0)
 
-[node name="Separator3" parent="." index="8" instance=ExtResource( 2 )]
-transform = Transform3D( 0.0174523, -0.999848, 0, 0.999848, 0.0174523, 0, 0, 0, 1, -9, 17, 0 )
+[node name="Separator3" parent="." index="8" instance=ExtResource("2")]
+transform = Transform3D(0.0174523, -0.999848, 0, 0.999848, 0.0174523, 0, 0, 0, 1, -9, 17, 0)
 
-[node name="Separator2" parent="." index="9" instance=ExtResource( 2 )]
-transform = Transform3D( -0.0174525, -0.999848, 0, 0.999848, -0.0174525, 0, 0, 0, 1, 9, 23, 0 )
+[node name="Separator2" parent="." index="9" instance=ExtResource("2")]
+transform = Transform3D(-0.0174525, -0.999848, 0, 0.999848, -0.0174525, 0, 0, 0, 1, 9, 23, 0)
 
-[node name="Separator4" parent="." index="10" instance=ExtResource( 2 )]
-transform = Transform3D( -0.0174525, -0.999848, 0, 0.999848, -0.0174525, 0, 0, 0, 1, 9, 10, 0 )
+[node name="Separator4" parent="." index="10" instance=ExtResource("2")]
+transform = Transform3D(-0.0174525, -0.999848, 0, 0.999848, -0.0174525, 0, 0, 0, 1, 9, 10, 0)
 
-[node name="PopObject" parent="." index="11" instance=ExtResource( 1 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 33.2056, 0 )
+[node name="PopObject" parent="." index="11" instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 33.2056, 0)
 
-[node name="PopObject2" parent="." index="12" instance=ExtResource( 1 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0770454, 26.1947, 0 )
+[node name="PopObject2" parent="." index="12" instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0770454, 26.1947, 0)
 
-[node name="PopObject3" parent="." index="13" instance=ExtResource( 1 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0770452, 19.8001, 0 )
+[node name="PopObject3" parent="." index="13" instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0770452, 19.8001, 0)
 
-[node name="PopObject4" parent="." index="14" instance=ExtResource( 1 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0770452, 13.2514, 0 )
+[node name="PopObject4" parent="." index="14" instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0770452, 13.2514, 0)
 
-[node name="ResizingCircle" parent="." index="15" instance=ExtResource( 4 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.55514, 4.7403, 0 )
+[node name="ResizingCircle" parent="." index="15" instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.55514, 4.7403, 0)

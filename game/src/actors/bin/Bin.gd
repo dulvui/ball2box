@@ -12,7 +12,9 @@ func _ready():
 
 func _on_BallDetector_body_entered(body) -> void:
 	if body.is_in_group("ball"):
-		$Timer.start()
+		await get_tree().process_frame
+		_on_Timer_timeout()
+		#$Timer.start()
 
 
 func _on_Timer_timeout() -> void:

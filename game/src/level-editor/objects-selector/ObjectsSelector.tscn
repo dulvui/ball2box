@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://dg4mh6kmo6t3h"]
 
-[ext_resource path="res://src/level-editor/objects-selector/ObjectsSelector.gd" type="Script" id=1]
+[ext_resource type="Script" uid="uid://c2d6j431rtt1d" path="res://src/level-editor/objects-selector/ObjectsSelector.gd" id="1"]
 
 [node name="ObjectsSelector" type="Node3D"]
-script = ExtResource( 1 )
+script = ExtResource("1")

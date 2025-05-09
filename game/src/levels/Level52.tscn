@@ -1,27 +1,27 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://cng6fy44jhkeo"]
 
-[ext_resource path="res://src/levels/base-level/LevelBase.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/actors/objects/big-box/BigBox.tscn" type="PackedScene" id=5]
+[ext_resource type="PackedScene" uid="uid://dnru8n3l1d160" path="res://src/levels/base-level/LevelBase.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://dqtmvi3jqihto" path="res://src/actors/objects/big-box/BigBox.tscn" id="5"]
 
-[node name="LevelBase" instance=ExtResource( 1 )]
+[node name="LevelBase" instance=ExtResource("1")]
 
 [node name="Ball" parent="." index="3"]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 32, 0 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 32, 0)
 
 [node name="Bin" parent="." index="4"]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03844, 5.68365, 0 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03844, 5.68365, 0)
 
 [node name="Star1" parent="." index="5"]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.04603, 4.81035, -0.199996 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.04603, 4.81035, -0.199996)
 
 [node name="Star2" parent="." index="6"]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0986891, 13.7073, -1.90735e-06 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0986891, 13.7073, -1.90735e-06)
 
-[node name="BigBox" parent="." index="7" instance=ExtResource( 5 )]
-transform = Transform3D( 0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 1, 22, 0 )
+[node name="BigBox" parent="." index="7" instance=ExtResource("5")]
+transform = Transform3D(0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 1, 22, 0)
 
-[node name="BigBox3" parent="." index="8" instance=ExtResource( 5 )]
-transform = Transform3D( 0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, -8.54398, 0.419838, 0 )
+[node name="BigBox3" parent="." index="8" instance=ExtResource("5")]
+transform = Transform3D(0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, -8.54398, 0.419838, 0)
 
-[node name="BigBox2" parent="." index="9" instance=ExtResource( 5 )]
-transform = Transform3D( 0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, 1, 22, 0 )
+[node name="BigBox2" parent="." index="9" instance=ExtResource("5")]
+transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, 1, 22, 0)

@@ -1,92 +1,99 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://dkq8f7kcbgo7g"]
 
-[ext_resource path="res://src/actors/star/Star.gd" type="Script" id=1]
-[ext_resource path="res://assets/obj/star.obj" type="ArrayMesh" id=2]
+[ext_resource type="Script" uid="uid://v2g57lx1fg7v" path="res://src/actors/star/Star.gd" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://cbunjp5rt7qle" path="res://assets/obj/star.obj" id="2"]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id="2"]
 resource_name = "Pop"
 length = 0.2
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.2 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector3( 1, 1, 1 ), Vector3( 0.01, 0.01, 0.01 ) ]
+"values": [Vector3(1, 1, 1), Vector3(0.01, 0.01, 0.01)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath(".:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 0.2 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ true, false ]
+"values": [true, false]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id="3"]
 resource_name = "Unpop"
 length = 0.3
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.2 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector3( 0.01, 0.01, 0.01 ), Vector3( 1, 1, 1 ) ]
+"values": [Vector3(0.01, 0.01, 0.01), Vector3(1, 1, 1)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath(".:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 0.2 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ true, true ]
+"values": [true, true]
 }
 
-[sub_resource type="SphereShape3D" id=4]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n21o8"]
+_data = {
+&"Pop": SubResource("2"),
+&"Unpop": SubResource("3")
+}
+
+[sub_resource type="SphereShape3D" id="4"]
 radius = 1.87979
 
-[sub_resource type="StandardMaterial3D" id=5]
-albedo_color = Color( 0.823529, 0.721569, 0.152941, 1 )
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yi3ra"]
+albedo_color = Color(1, 1, 0, 1)
 
 [node name="Stars" type="Node3D"]
 process_mode = 3
-transform = Transform3D( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.016408, 0, 0 )
-script = ExtResource( 1 )
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.016408, 0, 0)
+script = ExtResource("1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Pop = SubResource( 2 )
-anims/Unpop = SubResource( 3 )
+libraries = {
+&"": SubResource("AnimationLibrary_n21o8")
+}
 
 [node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D( 1, 5.58794e-09, 1.67638e-08, -5.58794e-09, 1, 1.98523e-22, -1.67638e-08, -9.36753e-17, 1, -0.791125, 0.113597, 0 )
+transform = Transform3D(1, 5.58794e-09, 1.67638e-08, -5.58794e-09, 1, 1.98523e-22, -1.67638e-08, -9.36753e-17, 1, -0.791125, 0.113597, 0)
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D( 1, -7.26432e-08, 5.7742e-08, -3.1665e-08, 1, 4.76837e-07, 6.51926e-08, -2.98023e-08, 0.999999, 1.18363, 0.70267, 1.98082e-08 )
-shape = SubResource( 4 )
+transform = Transform3D(1, -7.26432e-08, 5.7742e-08, -3.1665e-08, 1, 4.76837e-07, 6.51926e-08, -2.98023e-08, 0.999999, 1.18363, 0.70267, 1.98082e-08)
+shape = SubResource("4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D( -1.74846e-08, 0, 0.8, 0, 0.8, 0, -0.4, 0, -3.49691e-08, -1.56072, 3.17217, 0 )
-mesh = ExtResource( 2 )
-material/0 = SubResource( 5 )
+transform = Transform3D(-1.74846e-08, 0, 0.8, 0, 0.8, 0, -0.4, 0, -3.49691e-08, -1.56072, 3.17217, 0)
+mesh = ExtResource("2")
+surface_material_override/0 = SubResource("StandardMaterial3D_yi3ra")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_Area_body_entered"]

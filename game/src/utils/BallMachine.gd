@@ -102,14 +102,14 @@ func get_current_ball_info() -> Dictionary:
 func get_real() -> RigidBody3D:
 	return balls[selected_ball]["real"].instantiate()
 
-func next() -> PackedScene:
+func next() -> Node3D:
 	if current_ball + 1 < balls.size():
 		current_ball += 1
 	else:
 		current_ball = 0
 	return balls[current_ball]["model"].instantiate()
 	
-func prev() -> PackedScene:
+func prev() -> Node3D:
 	if current_ball - 1 >= 0:
 		current_ball -= 1
 	else:

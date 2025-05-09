@@ -1,23 +1,24 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=6 format=3 uid="uid://4eyckubaqq5x"]
 
-[ext_resource path="res://src/actors/ball/russia-ball/shine.gdshader" type="Shader" id=1]
+[ext_resource type="Shader" uid="uid://bn88i4q7kc3we" path="res://src/actors/ball/russia-ball/shine.gdshader" id="1"]
 
-[sub_resource type="StandardMaterial3D" id=1]
+[sub_resource type="StandardMaterial3D" id="1"]
 
-[sub_resource type="SphereMesh" id=2]
-material = SubResource( 1 )
+[sub_resource type="SphereMesh" id="2"]
+material = SubResource("1")
 
-[sub_resource type="ShaderMaterial" id=4]
-shader = ExtResource( 1 )
-shader_param/shine_color = Color( 1, 1, 1, 1 )
-shader_param/cycle_interval = 2.304
-shader_param/shine_speed = 1.262
-shader_param/shine_width = 22.117
+[sub_resource type="ShaderMaterial" id="4"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/cycle_interval = 2.304
+shader_parameter/shine_speed = 1.262
+shader_parameter/shine_width = 22.117
 
-[sub_resource type="StandardMaterial3D" id=5]
-next_pass = SubResource( 4 )
-albedo_color = Color( 0.0901961, 0.533333, 0.0862745, 1 )
+[sub_resource type="StandardMaterial3D" id="5"]
+next_pass = SubResource("4")
+albedo_color = Color(0.0901961, 0.533333, 0.0862745, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D"]
-mesh = SubResource( 2 )
-material/0 = SubResource( 5 )
+mesh = SubResource("2")
+material/0 = SubResource("5")

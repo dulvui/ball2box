@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://cxyva1gyp8b1v"]
 
-[ext_resource path="res://src/actors/ball/green-ball/green-ball-material.tres" type="Material" id=1]
+[ext_resource type="Material" path="res://src/actors/ball/green-ball/green-ball-material.tres" id="1"]
 
-[sub_resource type="SphereMesh" id=1]
+[sub_resource type="SphereMesh" id="1"]
 
 [node name="MeshInstance3D" type="MeshInstance3D"]
-transform = Transform3D( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0 )
-mesh = SubResource( 1 )
-material/0 = ExtResource( 1 )
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+mesh = SubResource("1")
+surface_material_override/0 = ExtResource("1")

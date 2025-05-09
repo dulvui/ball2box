@@ -1,13 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://brrbnolhljguc"]
 
-[ext_resource path="res://assets/obj/Octoball.obj" type="ArrayMesh" id=1]
+[ext_resource type="ArrayMesh" uid="uid://ckv01tbegpigl" path="res://assets/obj/Octoball.obj" id="1"]
 
-[sub_resource type="StandardMaterial3D" id=3]
-albedo_color = Color( 0.215686, 0.678431, 0.858824, 1 )
+[sub_resource type="StandardMaterial3D" id="3"]
+albedo_color = Color(0.215686, 0.678431, 0.858824, 1)
 metallic = 0.35
 roughness = 0.23
 
 [node name="MeshInstance3D" type="MeshInstance3D"]
-transform = Transform3D( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, -4.99463, -1.65715 )
-mesh = ExtResource( 1 )
-material/0 = SubResource( 3 )
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, -4.99463, -1.65715)
+mesh = ExtResource("1")
+material/0 = SubResource("3")

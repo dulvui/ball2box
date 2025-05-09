@@ -1,21 +1,31 @@
-[gd_scene load_steps=11 format=3 uid="uid://dwjw2ephbw34"]
+[gd_scene load_steps=12 format=3 uid="uid://dwjw2ephbw34"]
 
 [ext_resource type="PhysicsMaterial" path="res://materials/wall-physics-material.tres" id="2"]
-[ext_resource type="Material" path="res://materials/background-material.tres" id="2_eeiix"]
 
 [sub_resource type="BoxShape3D" id="5"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6bvwh"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_color = Color(1, 1, 1, 0)
+
 [sub_resource type="BoxMesh" id="6"]
-material = ExtResource("2_eeiix")
+material = SubResource("StandardMaterial3D_6bvwh")
 
 [sub_resource type="BoxMesh" id="7"]
-material = ExtResource("2_eeiix")
-size = Vector3(20, 1, 1)
+material = SubResource("StandardMaterial3D_6bvwh")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0jx5y"]
 data = PackedVector3Array(-0.5, 10, 0.5, 0.5, 10, 0.5, -0.5, -10, 0.5, 0.5, 10, 0.5, 0.5, -10, 0.5, -0.5, -10, 0.5, 0.5, 10, -0.5, -0.5, 10, -0.5, 0.5, -10, -0.5, -0.5, 10, -0.5, -0.5, -10, -0.5, 0.5, -10, -0.5, 0.5, 10, 0.5, 0.5, 10, -0.5, 0.5, -10, 0.5, 0.5, 10, -0.5, 0.5, -10, -0.5, 0.5, -10, 0.5, -0.5, 10, -0.5, -0.5, 10, 0.5, -0.5, -10, -0.5, -0.5, 10, 0.5, -0.5, -10, 0.5, -0.5, -10, -0.5, 0.5, 10, 0.5, -0.5, 10, 0.5, 0.5, 10, -0.5, -0.5, 10, 0.5, -0.5, 10, -0.5, 0.5, 10, -0.5, -0.5, -10, 0.5, 0.5, -10, 0.5, -0.5, -10, -0.5, 0.5, -10, 0.5, 0.5, -10, -0.5, -0.5, -10, -0.5)
 
 [sub_resource type="BoxShape3D" id="8"]
+
+[sub_resource type="Environment" id="Environment_lt3u6"]
+background_mode = 1
+background_color = Color(0.032, 0.1188, 0.2, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="9"]
 vertex_color_use_as_albedo = true
@@ -31,7 +41,7 @@ colors = PackedColorArray(0.984314, 0.980392, 0.396078, 1, 0.443137, 0.917647, 0
 [node name="Base" type="Node3D"]
 
 [node name="Floor" type="StaticBody3D" parent="."]
-transform = Transform3D(11, 0, 0, 0, 4, 0, 0, 0, 1, 0, -4, 0)
+transform = Transform3D(22, 0, 0, 0, 8, 0, 0, 0, 1, 0, -4, 0)
 physics_material_override = ExtResource("2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
@@ -42,7 +52,7 @@ cast_shadow = 0
 mesh = SubResource("6")
 
 [node name="WallLeft" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 100, 0)
+transform = Transform3D(1, 0, 0, 0, 200, 0, 0, 0, 1, -10, 100, 0)
 physics_material_override = ExtResource("2")
 constant_linear_velocity = Vector3(1, 0, 0)
 
@@ -53,7 +63,7 @@ mesh = SubResource("7")
 shape = SubResource("ConcavePolygonShape3D_0jx5y")
 
 [node name="WallRight" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 100, 0, 0, 0, 1, 10, 100, 0)
+transform = Transform3D(1, 0, 0, 0, 200, 0, 0, 0, 1, 10, 100, 0)
 physics_material_override = ExtResource("2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WallRight"]
@@ -63,7 +73,7 @@ mesh = SubResource("7")
 shape = SubResource("8")
 
 [node name="Roof" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 37, 0)
+transform = Transform3D(18, 0, 0, 0, 4, 0, 0, 0, 1, 0, 37, 0)
 physics_material_override = ExtResource("2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Roof"]
@@ -73,7 +83,7 @@ mesh = SubResource("7")
 shape = SubResource("8")
 
 [node name="ShopRoof" type="StaticBody3D" parent="."]
-transform = Transform3D(9, 0, 0, 0, 2, 0, 0, 0, 1, 0, 75, 0)
+transform = Transform3D(18, 0, 0, 0, 4, 0, 0, 0, 1, 0, 75, 0)
 physics_material_override = ExtResource("2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ShopRoof"]
@@ -88,6 +98,7 @@ light_energy = 0.45
 [node name="Camera3D" type="Camera3D" parent="."]
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, 26)
+environment = SubResource("Environment_lt3u6")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="."]
 process_mode = 3

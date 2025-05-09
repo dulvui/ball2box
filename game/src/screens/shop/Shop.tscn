@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmxmq1gsg0xcj"]
 
 [ext_resource type="Theme" uid="uid://d3hrbmbgc4owt" path="res://theme.tres" id="1"]
-[ext_resource type="Script" path="res://src/screens/shop/Shop.gd" id="2"]
+[ext_resource type="Script" uid="uid://c63u8inakhqjd" path="res://src/screens/shop/Shop.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://nuc670g4s0d7" path="res://assets/star.png" id="5"]
 
 [node name="Shop" type="Control"]
@@ -10,6 +10,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 pivot_offset = Vector2(360, 690)
 theme = ExtResource("1")
 script = ExtResource("2")
@@ -57,10 +59,15 @@ max_value = 1.0
 value = 0.6
 
 [node name="Label" type="Label" parent="VBoxContainer/Bounce"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "BOUNCE"
+vertical_alignment = 1
 
 [node name="Mass" type="ProgressBar" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 120)
@@ -72,10 +79,15 @@ step = 0.1
 value = 6.0
 
 [node name="Label" type="Label" parent="VBoxContainer/Mass"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "MASS"
+vertical_alignment = 1
 
 [node name="Buttons" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2

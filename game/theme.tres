@@ -1,7 +1,7 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://d3hrbmbgc4owt"]
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://d3hrbmbgc4owt"]
 
 [ext_resource type="StyleBox" path="res://styles/button-normal.tres" id="1"]
-[ext_resource type="StyleBox" path="res://styles/button-pressed.tres" id="2"]
+[ext_resource type="StyleBox" uid="uid://b0xpdljolqvnq" path="res://styles/button-pressed.tres" id="2"]
 [ext_resource type="StyleBox" path="res://styles/button-disabled.tres" id="4"]
 [ext_resource type="StyleBox" path="res://styles/button-transparent.tres" id="5"]
 [ext_resource type="StyleBox" path="res://styles/panel.tres" id="6"]
@@ -14,6 +14,33 @@ cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/48/0/ascent = 0.0
+cache/0/48/0/descent = 0.0
+cache/0/48/0/underline_position = 0.0
+cache/0/48/0/underline_thickness = 0.0
+cache/0/48/0/scale = 1.0
+cache/0/36/0/ascent = 0.0
+cache/0/36/0/descent = 0.0
+cache/0/36/0/underline_position = 0.0
+cache/0/36/0/underline_thickness = 0.0
+cache/0/36/0/scale = 1.0
+cache/0/2/0/ascent = 0.0
+cache/0/2/0/descent = 0.0
+cache/0/2/0/underline_position = 0.0
+cache/0/2/0/underline_thickness = 0.0
+cache/0/2/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rmny"]
+bg_color = Color(0.529412, 0.917647, 0.807843, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="4"]
 bg_color = Color(0.529412, 0.917647, 0.807843, 1)
@@ -23,6 +50,13 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="5"]
+bg_color = Color(0.0392157, 0.588235, 0.431373, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mihib"]
 bg_color = Color(0.0392157, 0.588235, 0.431373, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
@@ -40,6 +74,7 @@ bg_color = Color(1, 0.188235, 0.027451, 1)
 
 [resource]
 default_font = ExtResource("6_n7vg8")
+default_font_size = 48
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_color_disabled = Color(0.9, 0.9, 0.9, 0.2)
 Button/colors/font_color_hover = Color(0.94, 0.94, 0.94, 1)
@@ -68,8 +103,10 @@ PanelContainer/styles/panel = ExtResource("6")
 ProgressBar/colors/font_color = Color(0.94, 0.94, 0.94, 1)
 ProgressBar/colors/font_color_shadow = Color(0, 0, 0, 1)
 ProgressBar/fonts/font = SubResource("9")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_1rmny")
 ProgressBar/styles/bg = SubResource("4")
 ProgressBar/styles/fg = SubResource("5")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_mihib")
 RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
 RichTextLabel/colors/font_color_selected = Color(0.49, 0.49, 0.49, 1)
 RichTextLabel/colors/font_color_shadow = Color(0, 0, 0, 0)

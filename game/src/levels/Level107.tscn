@@ -1,45 +1,45 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=6 format=3 uid="uid://cwkkptg7jo0kj"]
 
-[ext_resource path="res://src/actors/objects/triangle/Triangle.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/actors/objects/shooter/Shooter.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/levels/base-level/LevelBase.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/actors/objects/rotator/Rotator.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/actors/objects/pop-object/PopObject.tscn" type="PackedScene" id=5]
+[ext_resource type="PackedScene" uid="uid://deq27gfl7sw7b" path="res://src/actors/objects/triangle/Triangle.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://dlmln3kkp3hsr" path="res://src/actors/objects/shooter/Shooter.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://dnru8n3l1d160" path="res://src/levels/base-level/LevelBase.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://dsnlcppbx6ssi" path="res://src/actors/objects/rotator/Rotator.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://b4s3rm1mg14b7" path="res://src/actors/objects/pop-object/PopObject.tscn" id="5"]
 
-[node name="LevelBase" instance=ExtResource( 3 )]
+[node name="LevelBase" instance=ExtResource("3")]
 
 [node name="Ball" parent="." index="3"]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.31545, 1.98911, 0 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.31545, 1.98911, 0)
 can_sleep = false
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 
 [node name="Bin" parent="." index="4"]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.67272, 16.3572, 0 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.67272, 16.3572, 0)
 
 [node name="Star1" parent="." index="5"]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.10256, 22.6819, 0 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.10256, 22.6819, 0)
 
 [node name="Star2" parent="." index="6"]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.57623, 18.8396, -1.90735e-06 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.57623, 18.8396, -1.90735e-06)
 
-[node name="Triangle" parent="." index="7" instance=ExtResource( 1 )]
-transform = Transform3D( 0.677467, -0.735554, 0, 0.735554, 0.677467, 0, 0, 0, 1, -6.62856, 8.83685, 0 )
+[node name="Triangle" parent="." index="7" instance=ExtResource("1")]
+transform = Transform3D(0.677467, -0.735554, 0, 0.735554, 0.677467, 0, 0, 0, 1, -6.62856, 8.83685, 0)
 
-[node name="Triangle2" parent="." index="8" instance=ExtResource( 1 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95081, 10.8936, 0 )
+[node name="Triangle2" parent="." index="8" instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95081, 10.8936, 0)
 
-[node name="Triangle3" parent="." index="9" instance=ExtResource( 1 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.30094, 10.9731, 0.560312 )
+[node name="Triangle3" parent="." index="9" instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.30094, 10.9731, 0.560312)
 
-[node name="Triangle4" parent="." index="10" instance=ExtResource( 1 )]
-transform = Transform3D( -0.999883, -0.0152884, 0, 0.0152884, -0.999883, 0, 0, 0, 1, 0.0685787, 11.6826, 0 )
+[node name="Triangle4" parent="." index="10" instance=ExtResource("1")]
+transform = Transform3D(-0.999883, -0.0152884, 0, 0.0152884, -0.999883, 0, 0, 0, 1, 0.0685787, 11.6826, 0)
 
-[node name="Mover" parent="." index="11" instance=ExtResource( 2 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.33557, 0 )
+[node name="Mover" parent="." index="11" instance=ExtResource("2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.33557, 0)
 
-[node name="Rotator" parent="." index="12" instance=ExtResource( 4 )]
-transform = Transform3D( -0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, -5.8566, 30.2821, 0 )
+[node name="Rotator" parent="." index="12" instance=ExtResource("4")]
+transform = Transform3D(-0.913545, 0.406737, 0, -0.406737, -0.913545, 0, 0, 0, 1, -5.8566, 30.2821, 0)
 
-[node name="PopObject" parent="." index="13" instance=ExtResource( 5 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22657, 0 )
+[node name="PopObject" parent="." index="13" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22657, 0)
