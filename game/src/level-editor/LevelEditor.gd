@@ -136,7 +136,7 @@ func import_as_base64(value: String) -> Dictionary:
 
 func _on_Export_pressed() -> void:
 	var config: String = export_as_base64()
-	OS.clipboard = config
+	DisplayServe.clipboard.set(config)
 
 
 func _on_Import_pressed() -> void:
