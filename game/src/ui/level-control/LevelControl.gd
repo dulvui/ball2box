@@ -22,9 +22,12 @@ func update_level() -> void:
 	$Buttons/LevelButton.text = "level " + str(Global.current_level)
 	var stars:int = Global.level_stars[Global.current_level - 1]
 
-	# disable prev/next level button for last and first level
-	next_level_button.disabled = Global.current_level == Global.LEVELS
+	# disable prev level button for first level
 	prev_level_button.disabled = Global.current_level == 1
+	# disable next level button for last level or if next level is still locked
+	var last_locked_level: int = Global.level_stars.find(-1)
+	next_level_button.disabled = \
+		Global.current_level == Global.LEVELS or Global.current_level == last_locked_level
 	
 	if stars >= 1:
 		star1.modulate = Color("#fce527")
