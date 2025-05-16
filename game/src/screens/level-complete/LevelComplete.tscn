@@ -197,7 +197,7 @@ text = "REPLAY"
 [node name="Levels" type="Button" parent="VBoxContainer/Buttons"]
 visible = false
 margin_top = 292.0
-margin_right = 388.0
+margin_right = 574.0
 margin_bottom = 418.0
 text = "LEVELS"
 

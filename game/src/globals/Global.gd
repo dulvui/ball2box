@@ -9,7 +9,7 @@ const FDROID = false
 onready var VERSION: int = 1
 
 #onready var LEVELS:int = count_levels()
-# until new leavels are not ready
+# until new levels are not ready
 onready var LEVELS: int = 120
 
 var config:ConfigFile

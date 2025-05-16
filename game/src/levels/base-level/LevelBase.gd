@@ -268,3 +268,4 @@ func _on_LevelSelect_select() -> void:
 	animation_player.play("GoToShop")
 	shop3D.fade_in()
 	shop.show()
+

@@ -9,11 +9,19 @@ signal levels
 signal info
 signal help
 
+onready var help_button: Button = $Buttons/Help
+
+
 func _ready() -> void:
 	$Buttons/Settings/MusicButton.pressed = Global.music
 	$Buttons/Settings/SfxButton.pressed = Global.sfx
 	$Buttons/Settings/FullScreenButton.visible = OS.get_name() != "Android" and OS.get_name() != "iOS"
 	$Buttons/Settings/FullScreenButton.pressed = Global.full_screen
+
+	# hide help button, if current level is not last level or if all levels are unlocked
+	var last_locked_level: int = Global.level_stars.find(-1)
+	if last_locked_level >= Global.LEVELS -1 or last_locked_level != Global.current_level:
+		help_button.hide()
 
 
 func _on_Play_pressed() -> void:
@@ -62,3 +70,4 @@ func _on_Help_pressed() -> void:
 
 func _on_LevelControl_levels() -> void:
 	emit_signal("levels")
+

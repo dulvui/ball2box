@@ -6,17 +6,17 @@ extends MarginContainer
 signal back
 
 
-const MIN:int = 100000
-const MAX:int = 999999
-const FACTOR:int = 10000 # MAX + 1 / FACTOR = aproximation amount of codes
-const DIGITS:int = 6
+const MIN: int = 100000
+const MAX: int = 999999
+const FACTOR: int = 10000 # MAX + 1 / FACTOR = approximation amount of codes
+const DIGITS: int = 6
 
-const DAY:int = 86400
+const DAY: int = 86400
 
-onready var paste_button:Button = $VBoxContainer/PasteContainer/Paste
-onready var code_line:LineEdit = $VBoxContainer/CopyContainer/Code
-onready var enter_code_line:LineEdit = $VBoxContainer/PasteContainer/EnterCode
-onready var instructions:RichTextLabel = $VBoxContainer/InstructionsContainer/Instructions
+onready var paste_button: Button = $VBoxContainer/PasteContainer/Paste
+onready var code_line: LineEdit = $VBoxContainer/CopyContainer/Code
+onready var enter_code_line: LineEdit = $VBoxContainer/PasteContainer/EnterCode
+onready var instructions: RichTextLabel = $VBoxContainer/InstructionsContainer/Instructions
 
 
 var random_seed:String = "such4secret9seed"
@@ -57,7 +57,7 @@ func verify() -> void:
 
 
 func unlock_last_level() -> bool:
-	var last_level:int = Global.level_stars.find(-1, 0)
+	var last_level: int = Global.level_stars.find(-1)
 	if last_level < 0 or last_level > Global.LEVELS:
 		return false
 	Global.level_stars[last_level] = 0

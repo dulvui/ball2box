@@ -47,8 +47,8 @@ alignment = 1
 [node name="LevelControl" parent="Buttons" instance=ExtResource( 7 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 45.0
-margin_right = 635.0
+margin_left = 47.0
+margin_right = 633.0
 margin_bottom = 350.0
 size_flags_horizontal = 4
 
