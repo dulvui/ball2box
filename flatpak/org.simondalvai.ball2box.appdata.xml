@@ -8,9 +8,9 @@
   <metadata_license>CC0-1.0</metadata_license>
   <summary>Shoot the ball into the red box</summary>
   <url type="homepage">https://simondalvai.org/games/ball2box</url>
-  <url type="bugtracker">https://github.com/dulvui/ball2box/issues</url>
+  <url type="bugtracker">https://codeberg.org/dulvui/ball2box/issues</url>
   <url type="donation">https://simondalvai.org/donate</url>
-  <url type="vcs-browser">https://github.com/dulvui/ball2box</url>
+  <url type="vcs-browser">https://codeberg.org/dulvui/ball2box</url>
   <description>
     <p>Can you get all three stars on all levels?
     </p>
@@ -29,43 +29,42 @@
   <screenshots>
     <screenshot type="default">
       <image>
-        https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-1.png
+        https://codeberg.org/dulvui/ball2box/src/commit/db850c47a51630b1e287fd992044ecca45acbcc2/metadata/en-US/images/phoneScreenshots/Android-1.png
       </image>
     </screenshot>
     <screenshot>
       <image>
-        https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-2.png
+        https://codeberg.org/dulvui/ball2box/src/commit/db850c47a51630b1e287fd992044ecca45acbcc2/metadata/en-US/images/phoneScreenshots/Android-2.png
       </image>
     </screenshot>
     <screenshot>
       <image>
-        https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-3.png
-      </image>
-    </screenshot>
-
-    <screenshot>
-      <image>
-        https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-4.png
+        https://codeberg.org/dulvui/ball2box/src/commit/db850c47a51630b1e287fd992044ecca45acbcc2/metadata/en-US/images/phoneScreenshots/Android-3.png
       </image>
     </screenshot>
     <screenshot>
       <image>
-        https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-5.png
+        https://codeberg.org/dulvui/ball2box/src/commit/db850c47a51630b1e287fd992044ecca45acbcc2/metadata/en-US/images/phoneScreenshots/Android-4.png
       </image>
     </screenshot>
     <screenshot>
       <image>
-        https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-6.png
+        https://codeberg.org/dulvui/ball2box/src/commit/db850c47a51630b1e287fd992044ecca45acbcc2/metadata/en-US/images/phoneScreenshots/Android-5.png
       </image>
     </screenshot>
     <screenshot>
       <image>
-        https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-7.png
+        https://codeberg.org/dulvui/ball2box/src/commit/db850c47a51630b1e287fd992044ecca45acbcc2/metadata/en-US/images/phoneScreenshots/Android-6.png
       </image>
     </screenshot>
     <screenshot>
       <image>
-        https://raw.githubusercontent.com/dulvui/ball2box/570f236ac3d220d40e313e99859424d324386738/metadata/en-US/images/phoneScreenshots/Android-8.png
+        https://codeberg.org/dulvui/ball2box/src/commit/db850c47a51630b1e287fd992044ecca45acbcc2/metadata/en-US/images/phoneScreenshots/Android-7.png
+      </image>
+    </screenshot>
+    <screenshot>
+      <image>
+        https://codeberg.org/dulvui/ball2box/src/commit/db850c47a51630b1e287fd992044ecca45acbcc2/metadata/en-US/images/phoneScreenshots/Android-8.png
       </image>
     </screenshot>
   </screenshots>
