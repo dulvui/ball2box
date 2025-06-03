@@ -3,16 +3,16 @@ SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.org>
 
 SPDX-License-Identifier: CC0-1.0
 -->
-# Ball2Box
-[![Android upload](https://github.com/dulvui/ball2box/actions/workflows/upload-android.yml/badge.svg)](https://github.com/dulvui/ball2box/actions/workflows/upload-android.yml)
-[![iOS upload](https://github.com/dulvui/ball2box/actions/workflows/upload-ios.yml/badge.svg)](https://github.com/dulvui/ball2box/actions/workflows/upload-ios.yml)
-[![itch.io upload](https://github.com/dulvui/ball2box/actions/workflows/upload-itchio.yml/badge.svg)](https://github.com/dulvui/ball2box/actions/workflows/upload-itchio.yml)
-[![REUSE Compliance Check](https://github.com/dulvui/ball2box/actions/workflows/reuse.yml/badge.svg)](https://github.com/dulvui/ball2box/actions/workflows/reuse.yml)  
 
+# MOVED TO CODEBERG
+The main repository is on now [Codeberg](https://codeberg.org/dulvui/ball2box).  
+FOSS should be hosted by FOSS.
+
+----
+
+# Ball2Box
 Swipe to toss the ball and hit the box in over 100 levels.
 This game is open source, with no ads and no tracking.  
-
-Available on [Codeberg](https://codeberg.org/dulvui/ball2box) and [Github](https://github.com/dulvui/ball2box).
 
 Made with [Godot Engine](https://godotengine.org) version 3.x
 Track the migration to Godot 4.x in [issue #6](https://github.com/dulvui/ball2box/issues/6)  
